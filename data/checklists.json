@@ -1,0 +1,5324 @@
+{
+  "library": {
+    "app_building": {
+      "name": "Building Permit Application",
+      "description": "",
+      "links": [
+        {
+          "label": "Building Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf"
+        }
+      ]
+    },
+    "app_electrical": {
+      "name": "Electrical Permit Application",
+      "description": "",
+      "links": [
+        {
+          "label": "Electrical Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf"
+        }
+      ]
+    },
+    "app_mechanical": {
+      "name": "Mechanical Permit Application",
+      "description": "",
+      "links": [
+        {
+          "label": "Mechanical Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf"
+        }
+      ]
+    },
+    "app_plumbing": {
+      "name": "Plumbing Permit Application",
+      "description": "",
+      "links": [
+        {
+          "label": "Plumbing Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf"
+        }
+      ]
+    },
+    "app_engineering": {
+      "name": "Engineering Permit Application",
+      "description": "",      
+      "links": [
+        {
+          "label": "Engineering Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Engineering-Permit-Application.pdf"
+        }
+      ]
+    },
+    "app_fire": {
+      "name": "Fire Plan Review Application",
+      "description": "",
+      "links": [
+        {
+          "label": "Fire Plan Review Application",
+          "url": "(https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Fire-Plan-Review-Application.pdf"
+        }
+      ]
+    },
+    "app_landscape": {
+      "name": "Tree Permit Application",
+      "description": "",
+      "links": [
+        {
+          "label": "Tree Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Tree-Permit-Application.pdf"
+        }
+      ]
+    },
+    "app_zoning": {
+      "name": "Zoning Compliance Application",
+      "description": "",
+      "links": [
+        {
+          "label": "Zoning Compliance Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Zoning-Compliance-Application.pdf"
+        }
+      ]
+    },
+    "doc_noc": {
+      "name": "Notice of Commencement",
+      "description": "Required for projects exceeding $5,000"
+    },
+    "plan_structural": {
+      "name": "Structural Plans"
+    },
+    "plan_product_approvals": {
+      "name": "Product Approvals",
+      "links": [
+        {
+          "label": "Florida Product Approval",
+          "url": "https://www.floridabuilding.org"
+        },
+        {
+          "label](https://www.floridabuilding.org%22},{%22label)": "Miami-Dade NOA",
+          "url": "https://www.miamidade.gov"
+        }
+      ]
+    },
+    "tech_wind_load": {
+      "name": "Wind Load Calculations"
+    }
+  },
+
+  "permits": [
+    {"file": "ac_change_out",
+      "name": "A/C Change Out",
+      "category": "Mechanical",
+      "guidance": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [{ "id": "app_mechanical" }]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            { "type": "requirement", "label":"A/C Replacement Data Form", "description": "Unfiform Broward County form for replacing A/C Systems, and detailing Existing and New Unit specs.", "links": [{"label": "A/C Replacement Data Form", "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/AC-Replacement-Data-Form.pdf"}]},
+            { "type": "requirement", "label": "AHRI certificate", "description": "An AHRI Certificate is required to verify that HVAC equipment meets tested efficiency and performance ratings for code compliance.", "links": [{"label":"https://www.ahridirectory.org", "url":"https://www.ahridirectory.org/"}] },
+            { "type": "requirement", "label": "Attachments Details", "description": "Provide attachment details for outdoor equipment using one of the following: Florida Product Approval, Miami-Dade NOA, or signed and sealed engineered plans.", "links": [{"label":"Florida Product Approvals","url":"https://www.floridabuilding.org/pr/pr_app_srch.aspx"}, {"label":"Miami-Dade NOA", "url":"https://www.miamidade.gov/building/pc-search_app.asp"}] }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "ROUGH",
+                "FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "additions",
+      "name": "Additions",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The lateral or vertical extension, or increase in floor area or height of a structure, requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing", "description": "Required if plumbing work is included" },
+            { "id": "app_fire", "description": "Required for commercial projects only" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals (Commercial)",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval are required for commercial projects."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & HVAC Documentation",
+              "description": "Provide energy calculations, Manual J heat load calculations, AHRI certificates, and tie-down attachment details."
+            },
+            {
+              "type": "requirement",
+              "label": "Truss Engineering",
+              "description": "Signed and sealed truss engineering shop drawings reviewed by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsurface report with foundation design recommendations."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required when applicable per Florida Statute 553.79 and Broward County amendments."
+            },
+            {
+              "type": "requirement",
+              "label": "Equipment & Fixture Specifications",
+              "description": "Manufacturer cut sheets for all equipment and fixtures being installed."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a full set of signed and sealed plans including survey, site plan, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, and landscape plans."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG FORMBOARD SURVEY",
+                "BLDG SOIL TREATMENT",
+                "BLDG SOIL COMPACTION",
+                "BLDG SLAB/REINFORCING",
+                "BLDG ELEVATION CERTIFICATE",
+                "BLDG COLUMNS/SHEAR WALL",
+                "BLDG ENGINEER REPORTS",
+                "BLDG TIE BEAMS",
+                "BLDG FRAMING",
+                "BLDG WALL INSULATION",
+                "BLDG DRYWALL - SCREW/NAIL",
+                "BLDG WALL SHEATHING",
+                "BLDG ROOF FRAMING",
+                "BLDG TRUSS",
+                "BLDG ROOF SHEATHING",
+                "BLDG LATH",
+                "BLDG CEILING INSULATION",
+                "BLDG WINDOW/DOOR FRAMING",
+                "BLDG WINDOW/DOORS",
+                "BLDG BLOWER DOOR TEST",
+                "BLDG FINAL SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Roofing Inspections",
+              "inspections": [
+                "BLDG TIN TAG",
+                "BLDG MOP-IN PROGRESS",
+                "BLDG TILE/SHINGLE-IN PROGRESS",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL FOUNDATION GROUND",
+                "EL ROUGH",
+                "EL SERVICE ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P TOP OUT",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L PRE-CON MEETING",
+                "L TREE PROTECTION INSPECTION",
+                "L SITE/SOIL INSPECTION",
+                "L TREE/PLANT DELIVERY INSP",
+                "L SHRUB/SOD/GROUNDCOVER",
+                "L IRRIGATION WET TEST",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FP FIRE SPRINKLER ROUGH",
+                "FP FIRE ALARM ROUGH",
+                "FP FIRE STANDPIPE ROUGH",
+                "FP FIRE SPRINKLER FINAL",
+                "FP FIRE ALARM CERT. LETTER REQ",
+                "FP FIRE STANDPIPE FINAL",
+                "FP FIRE ALARM FINAL INSPECTION",
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "asphalt_restriping",
+      "name": "Asphalt & Restriping",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or repair of asphalt surfaces requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_fire" },
+            { "id": "app_landscape" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Contract or Schedule of Values",
+              "description": "Provide a contract or detailed cost breakdown for the proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Survey or site plan showing the location, type, size, and details of the proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Engineering Standard Details",
+              "description": "Provide applicable engineering standard details for the proposed paving and striping work."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Protection Plan",
+              "description": "Required if trees are adjacent to the work area, including protection details."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG EGRESS",
+                "BLDG ACCESSIBILITY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections (New Asphalt Paving)",
+              "inspections": [
+                "E PAVING ROCK BASE INSPECTION",
+                "E CURB FORM/STEEL",
+                "E PAVING PRIME COAT INSPECTION",
+                "E CURB FINAL INSPECTION",
+                "E PAVING ASPH. FINAL INSPECT."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "awning_canopy",
+      "name": "Awning/Canopy",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of an awning or canopy requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_fire", "description": "Required for commercial projects only" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
+            },
+            {
+              "type": "requirement",
+              "label": "Certificate of Flame Resistance",
+              "description": "Provide documentation showing the awning or canopy material meets flame resistance requirements."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals or Engineered Plans",
+              "description": "Provide Miami-Dade NOA, Florida Product Approval, or signed and sealed construction plans detailing the scope of work."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide a survey or site plan showing the location of the proposed awning or canopy."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Awning/Canopy Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "backflow_replacement",
+      "name": "Backflow Replacement",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a backflow device requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Device Specifications",
+              "description": "Provide the size and manufacturer of the backflow device being installed."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "building_shell",
+      "name": "Building Shell",
+      "category": "Building",
+      "propertyType": ["Commercial"],
+      "guidance": "The construction of a building shell requires a Building Permit. Separate permits are required for interior buildouts or tenant units.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical", "description": "If applicable" },
+            { "id": "app_plumbing", "description": "Required for irrigation systems" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" },
+            { "id": "app_fire" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Utility Connection & Capital Recovery",
+              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & HVAC Documentation",
+              "description": "Provide energy calculations, Manual J heat load calculations, AHRI certificates, and tie-down attachment details."
+            },
+            {
+              "type": "requirement",
+              "label": "Truss Engineering",
+              "description": "Signed and sealed truss engineering shop drawings reviewed by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsurface report for foundation design recommendations."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Threshold and/or special inspector form required when applicable per Florida Statute 553.79 and Broward County amendments."
+            },
+            {
+              "type": "requirement",
+              "label": "Equipment & Fixture Specifications",
+              "description": "Manufacturer cut sheets for all equipment and fixtures being installed."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a full set of signed and sealed plans including civil plans, site plans, survey, elevations, foundation plans, floor plans, structural plans and calculations, fire alarm plans, fire sprinkler plans, mechanical plans, electrical site lighting and photometric plans, plumbing plans, irrigation plans, CPTED plans, landscape plans, and tree disposition plans."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building (Shell) Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG SLAB/REINF",
+                "BLDG BEAMS",
+                "BLDG FRAMING",
+                "BLDG DRYWALL-SCREW/NAIL",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Roofing Inspections",
+              "inspections": [
+                "BLDG TIN TAG",
+                "BLDG MOP-IN PROGRESS",
+                "BLDG TILE/SHINGLE-IN PROGRESS",
+                "BLDG ENGINEERS REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections (Concrete Paving)",
+              "inspections": [
+                "E PAVING CONC.FORM/STEEL INSP",
+                "E PAVING CONCRETE/FINAL INSP."
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L PRE-CON MEETING",
+                "L TREE PROTECTION INSPECTION",
+                "L SITE/SOIL INSPECTION",
+                "L TREE/PLANT DELIVERY INSP",
+                "L SHRUB/SOD/GROUNDCOVER",
+                "L IRRIGATION WET TEST",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "burglar_alarm",
+      "name": "Burglar Alarm (Hard Wired)",
+      "category": "Electrical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of a hard wired burglar alarm system requires an Electrical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_electrical" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Alarm Registration",
+              "description": "If the alarm system is not registered, submit a completed Alarm Registration Application."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "carport_enclosure",
+      "name": "Carport Enclosure",
+      "category": "Building",
+      "propertyType": ["Residential"],
+      "guidance": "The enclosure of a carport or construction of a garage requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_zoning" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Provide Miami-Dade NOA or Florida Product Approval with all elements identified."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & HVAC Documentation",
+              "description": "Provide Manual J heat load calculations and energy calculations."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a full set of plans including survey, floor plan, building elevations, structural details, window and door schedule, HVAC plans, and electrical plans."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG SLAB",
+                "BLDG COLUMNS",
+                "BLDG BEAMS",
+                "BLDG FRAMING",
+                "BLDG WALL INSULATION",
+                "BLDG CEILING INSULATION",
+                "BLDG WINDOW/DOORS",
+                "BLDG ELEVATION CERTIFICATE",
+                "BLDG SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "cell_tower",
+      "name": "Cell Tower",
+      "category": "Building",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation, upgrade, or replacement of a cell tower requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_zoning" },
+            { "id": "app_fire", "description": "Required for commercial projects" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required for inspections in accordance with Florida Statutes and local amendments."
+            },
+            {
+              "type": "requirement",
+              "label": "Structural Analysis",
+              "description": "Provide structural analysis and calculations for the tower."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a complete set of plans including site plan, elevations, mounting details, electrical plans, and equipment grounding details."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG SLAB REINF",
+                "BLDG ATTACHMENTS",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "change_of_use",
+      "name": "Change of Use",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "A Change of Use permit is required when Planning and Zoning determines that the use of a building or unit has changed.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_fire" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Certificate of Occupancy Change Form",
+              "description": "Submit a completed Building Change of Certificate of Occupancy form."
+            },
+            {
+              "type": "requirement",
+              "label": "Life Safety Plan",
+              "description": "Provide a life safety plan showing construction type, occupancy classification, occupant load, fire ratings, exits, travel distances, emergency lighting, exit signage, fire protection systems, and exit capacities."
+            },
+            {
+              "type": "requirement",
+              "label": "Floor Plan",
+              "description": "Provide a floor plan showing existing and proposed conditions."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Plans",
+              "description": "Submit signed and sealed construction plans for any proposed alterations."
+            },
+            {
+              "type": "requirement",
+              "label": "Trade Permit Applications",
+              "description": "Submit separate permit applications for mechanical, electrical, and plumbing work if applicable."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG EGRESS",
+                "BLDG FIRE PROTECTION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FP FIRE SPRINKLER ROUGH",
+                "FP FIRE ALARM ROUGH",
+                "FP FIRE SPRINKLER FINAL",
+                "FP FIRE ALARM FINAL",
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "chickee_hut",
+      "name": "Chickee Hut",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a chickee hut requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building", "description": "Must be submitted by a member of a Native American Tribe" },
+            { "id": "app_zoning", "description": "Must be submitted by a member of a Native American Tribe" },
+            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
+            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Tribal Identification",
+              "description": "Provide identification verifying installer is a member of a Native American Tribe."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location and dimensions of the chickee hut."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "commercial_building",
+      "name": "Commercial Building",
+      "category": "Building",
+      "propertyType": ["Commercial"],
+      "guidance": "The construction of a commercial building requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" },
+            { "id": "app_fire" }          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Utility Connection & Capital Recovery",
+              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            },
+            {
+              "type": "requirement",
+              "label": "Boundary Survey",
+              "description": "Survey showing crown of road elevations, flood zone designation, finished floor elevations, and coastal construction line where applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Miami-Dade NOA or Florida Product Approval for all applicable systems, including supporting documentation, installation manuals, and calculations."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & HVAC Documentation",
+              "description": "Provide energy calculations, Manual J heat load calculations, AHRI certificates, and tie-down attachment details."
+            },
+            {
+              "type": "requirement",
+              "label": "Truss Engineering",
+              "description": "Signed and sealed truss engineering shop drawings reviewed by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsurface report for foundation design recommendations."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Threshold and/or special inspector form required when applicable per Florida Statute 553.79 and Broward County amendments."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a full set of signed and sealed plans including civil plans, site plans, elevations, foundation plans, floor plans, structural calculations, life safety plans, fire alarm plans, fire sprinkler plans, mechanical plans, electrical lighting and photometric plans, riser diagrams, plumbing plans, irrigation plans, isometrics, CPTED plans, landscape plans, and tree disposition plans."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG PILES",
+                "BLDG PILE LOG",
+                "BLDG SOIL TREATMENT",
+                "BLDG FOOTINGS",
+                "BLDG FORMBOARD SURVEY",
+                "BLDG SLAB/REINF",
+                "BLDG ELEVATION CERTIFICATE",
+                "BLDG COLUMNS/SHEAR WALL",
+                "BLDG ENGINEER REPORTS",
+                "BLDG TIE BEAMS",
+                "BLDG INSULATION-CEILINGS",
+                "BLDG INSULATION-WALLS",
+                "BLDG FRAMING",
+                "BLDG CEILING FRAME/GRID",
+                "BLDG DRYWALL-SCREW/NAIL",
+                "BLDG ROOF FRAMING",
+                "BLDG TRUSS",
+                "BLDG ROOF SHEATHING",
+                "BLDG LATH",
+                "BLDG WINDOW/DOOR FRAMING",
+                "BLDG WINDOW/DOORS",
+                "BLDG FIRE PROTECTION",
+                "BLDG EGRESS",
+                "BLDG HANDICAP ACCESS",
+                "BLDG FINAL SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Erosion Control Inspections",
+              "inspections": [
+                "EROSION CONTROL INSPECTION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FP FIRE ON SITE FIRE HYDRANT",
+                "FP FIRE SPRINKLER ROUGH",
+                "FP FIRE ALARM ROUGH",
+                "FP FIRE STANDPIPE ROUGH",
+                "FP FIRE SPRINKLER FINAL",
+                "FP FIRE ALARM CERT. LETTER REQ",
+                "FP FIRE STANDPIPE FINAL",
+                "FP FIRE ALARM FINAL INSPECTION",
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Roofing Inspections",
+              "inspections": [
+                "BLDG TIN TAG",
+                "BLDG MOP-IN PROGRESS",
+                "BLDG TILE/SHINGLE-IN PROGRESS",
+                "BLDG ENGINEERS REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections",
+              "inspections": [
+                "E PAVING CONC.FORM/STEEL INSP",
+                "E PAVING CONCRETE/FINAL INSP.",
+                "E WATER SERVICE INSPECT.",
+                "E WATER MAIN TAP INSPECTION",
+                "E WATER MAIN FINAL INSP./CERT.",
+                "E CURB FORM/STEEL",
+                "E CURB FINAL INSPECTION",
+                "E PAVING ROCK BASE INSPECTION",
+                "E PAVING SUBGRADE INSPECTION",
+                "E SIDEWALK FORM (OFF-SITE)",
+                "E SIDEWALK FINAL (OFF-SITE)"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P TOP OUT",
+                "P FINAL-PLUMBING",
+                "P WATER SERVICE",
+                "P CATCH BASIN/DRAINAGE",
+                "P SEWER",
+                "P INTERCEPTOR",
+                "P LAWN SPRINKLER"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M CURB/ROOF STAND IN PROGRESS",
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L PRE-CON MEETING",
+                "L TREE PROTECTION INSPECTION",
+                "L SITE/SOIL INSPECTION",
+                "L TREE/PLANT DELIVERY INSP",
+                "L SHRUB/SOD/GROUNDCOVER",
+                "L IRRIGATION WET TEST",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "commercial_pool_heater",
+      "name": "Commercial Pool Heater",
+      "category": "Plumbing",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation or replacement of a commercial pool heater requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_plumbing", "description": "Additional plumbing application required for gas heaters" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Survey",
+              "description": "Provide survey showing the location of the pool heater."
+            },
+            {
+              "type": "requirement",
+              "label": "Pool Piping Diagram",
+              "description": "Provide pool piping diagram and system details."
+            },
+            {
+              "type": "requirement",
+              "label": "Anchoring Detail",
+              "description": "Provide anchoring detail including bracket type, screw type, size, length, count, and locations. Must be from manufacturer or signed and sealed by a structural engineer."
+            },
+            {
+              "type": "requirement",
+              "label": "Gas Piping Plans (If applicable)",
+              "description": "Provide plan and isometric drawings showing gas piping layout, total developed length, BTU loads, materials, and sizing per FBC Fuel Gas."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide installation instructions showing required clearances for maintenance and servicing."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (If applicable)",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Gas Inspections (If applicable)",
+              "inspections": [
+                "P GAS ROUGH",
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "commercial_refrigeration",
+      "name": "Commercial Refrigeration",
+      "category": "Mechanical",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation of commercial refrigeration systems requires a Mechanical Permit. Fire suppression is required for coolers over 400 sq. ft.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_building" },
+            { "id": "app_fire" },
+            { "id": "app_zoning" },
+            {
+              "type": "requirement",
+              "label": "Broward County Environmental Approval",
+              "description": "Submit Broward County Environmental approval."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Engineered Plans",
+              "description": "Provide signed and sealed drawings showing location, attachments, equipment layout, and fire suppression systems for coolers over 400 sq. ft."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide manufacturer installation instructions."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M CURB/ROOF STAND IN PROGRESS",
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "commercial_spray_booth",
+      "name": "Commercial Spray Booth",
+      "category": "Mechanical",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation of a commercial spray booth requires a Mechanical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_building" },
+            { "id": "app_fire" },
+            { "id": "app_zoning" },
+            {
+              "type": "requirement",
+              "label": "Broward County Environmental Approval",
+              "description": "Submit Broward County Environmental approval."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Engineered Plans",
+              "description": "Provide signed and sealed drawings showing location, attachments, ventilation, calculations, equipment layout, and fire suppression systems."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide manufacturer installation instructions."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections (Booth)",
+              "inspections": [
+                "M CURB/ROOF STAND IN PROGRESS",
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections (Fire Suppression)",
+              "inspections": [
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P AIR COMPRESSOR/LINES",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical (Fire Alarm) Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FP FIRE SPRINKLER ROUGH",
+                "FP EXTINGUISHMENT SYSTEM ROUGH",
+                "FP FIRE ALARM ROUGH",
+                "FP FIRE SPRINKLER FINAL",
+                "FP FIRE ALARM CERT. LETTER REQ",
+                "FP FIRE ALARM FINAL INSPECTION",
+                "FP EXTINGUISHMENT SYSTEM FINAL",
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections (If applicable)",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "concrete_restoration",
+      "name": "Concrete Restoration",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The restoration or repair of concrete on a building requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_fire" },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Submit completed Special Inspector Form."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location of proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Plans",
+              "description": "Provide signed and sealed construction plans detailing the scope of work."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "concrete_slab",
+      "name": "Concrete Slab",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of a concrete slab requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location and dimensions of the slab."
+            },
+            {
+              "type": "requirement",
+              "label": "Slab Detail",
+              "description": "Provide slab detail showing thickness and reinforcement."
+            },
+            {
+              "type": "requirement",
+              "label": "Residential Lot Coverage Worksheet",
+              "description": "Submit Residential Lot Coverage Worksheet."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Protection Plan",
+              "description": "Required if trees are located adjacent to the work area."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Slab Inspections",
+              "inspections": [
+                "BLDG SOIL TREATMENT",
+                "BLDG SLAB/REINFORCING",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "construction_temp_power",
+      "name": "Construction Temporary Power",
+      "category": "Electrical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "Providing temporary electrical power to a jobsite or trailer requires an Electrical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_electrical" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Riser Diagram",
+              "description": "Provide riser diagram signed by an Architect, Engineer, or notarized by the Electrical Contractor."
+            },
+            {
+              "type": "requirement",
+              "label": "Site Plan",
+              "description": "Provide site plan showing the location of the temporary service and construction trailer if applicable."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL CONSTRUCTION TEMPORARY",
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "cooling_tower",
+      "name": "Cooling Tower",
+      "category": "Mechanical",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation, alteration, or major repair of a cooling tower requires a Mechanical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_building" },
+            { "id": "app_fire" },
+            { "id": "app_zoning" },
+            {
+              "type": "requirement",
+              "label": "Broward County Environmental Approval",
+              "description": "Submit Broward County Environmental approval."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required if welded structural connections are included."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Engineered Plans",
+              "description": "Provide signed and sealed drawings showing location, attachments, layout, and control systems in compliance with applicable mechanical codes."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide manufacturer installation instructions."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M CURB/ROOF STAND IN PROGRESS",
+                "M PIPE PRESSURE TEST",
+                "M GROUND ROUGH/CONDENSATE",
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P WATER SERVICE",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL SERVICE ROUGH",
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections (If applicable)",
+              "inspections": [
+                "BLDG SLAB/REINFORCING",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections (If applicable)",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "demolition",
+      "name": "Demolition",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The demolition of a structure requires a permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_zoning" },
+            { "id": "app_fire", "description": "Required for commercial projects with fire systems" },
+            { "id": "app_landscape" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Asbestos Acknowledgment Form",
+              "description": "Submit Broward County Statement of Responsibilities Regarding Asbestos Form."
+            },
+            {
+              "type": "requirement",
+              "label": "Site Plan or Survey",
+              "description": "Provide a site plan or survey identifying the limits and scope of demolition."
+            },
+            {
+              "type": "requirement",
+              "label": "Utility Disconnect Letters",
+              "description": "Provide TECO Gas clearance letter and FPL power disconnect letter for total demolition."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Protection Plan",
+              "description": "Provide tree protection barricade plan, including tree survey and appraisal where applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Temporary Fence and Screening",
+              "description": "Provide temporary fencing and screening per City ordinance requirements."
+            },
+            {
+              "type": "requirement",
+              "label": "Erosion Control Plan",
+              "description": "Required for sites greater than one acre or located along a waterway."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Demolition Inspections",
+              "inspections": [
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fence/Screening Inspections",
+              "inspections": [
+                "BLDG TEMP FENCE/SCREENING",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L SITE/SOIL INSPECTION",
+                "L SHRUB/SOD/GROUNDCOVER",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Erosion Control Inspections (If applicable)",
+              "inspections": [
+                "EROSION CONTROL INSPECTION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "dock",
+      "name": "Dock",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation, replacement, or major repair of a dock requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_engineering" },
+            { "id": "app_electrical" },
+            { "id": "app_zoning", "description": "Required if work encroaches property lines" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Environmental Approvals",
+              "description": "Provide Broward County Environmental Resource License and Florida DEP or Army Corps of Engineers approval or exemption."
+            },
+            {
+              "type": "requirement",
+              "label": "Contract or Schedule of Values",
+              "description": "Provide contract or detailed cost breakdown for the proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required if pile installation is utilized."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location of the proposed dock."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Plans",
+              "description": "Signed and sealed plans detailing scope of work and erosion control best management practices."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans",
+              "description": "Signed and notarized electrical plans if electrical work is included."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG PILE LOG",
+                "BLDG FRAMING",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections",
+              "inspections": [
+                "E DOCK PILING INSPECTION",
+                "E DOCK FRAMING INSPECTION",
+                "E DOCK DECKING INSPECTION",
+                "E DOCK FINAL INSPECTION"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (If applicable)",
+              "inspections": [
+                "EL UNDERGROUND WIRING/PIP",
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections (If applicable)",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "driveway_patio",
+      "name": "Driveway / Patio",
+      "category": "Building",
+      "propertyType": ["Residential"],
+      "guidance": "The installation, replacement, or major repair of a residential driveway or patio requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for asphalt installation or removal."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing location, setbacks, and dimensions of the driveway or patio."
+            },
+            {
+              "type": "requirement",
+              "label": "Contract or Schedule of Values",
+              "description": "Provide contract or detailed cost breakdown for the proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Engineering Standards (If applicable)",
+              "description": "For asphalt work within City right-of-way, provide engineer detail standards."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Protection Plan",
+              "description": "Required if trees are located adjacent to the work area."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections (Paver)",
+              "inspections": [
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections (Concrete)",
+              "inspections": [
+                "BLDG SLAB/REINFORCING",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections (Paver)",
+              "inspections": [
+                "E PAVER LIMEROCK BASE INSP.",
+                "E PAVER BLOCK FINAL INSPECTION"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections (Concrete)",
+              "inspections": [
+                "E PAVING CONC. FORM/STEEL INSP",
+                "E PAVING CONCRETE/FINAL INSP."
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections (Asphalt)",
+              "inspections": [
+                "E PAVING ROCK BASE INSPECTION",
+                "E PAVING ASPH. FINAL INSPECT."
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "ductwork_changeout",
+      "name": "Ductwork Change Out",
+      "category": "Mechanical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or alteration of mechanical ductwork requires a Mechanical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_mechanical" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Ductwork Plans",
+              "description": "Provide signed and sealed duct plans showing duct sizes, R-values, return air balance, and hanging details."
+            },
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "dumpster_enclosure",
+      "name": "Dumpster Enclosure",
+      "category": "Building",
+      "propertyType": ["Commercial", "Multi-Family"],
+      "guidance": "The installation of a dumpster enclosure requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_fire" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Construction Plans",
+              "description": "Provide signed and sealed construction plans detailing the scope of work."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location and dimensions of the dumpster enclosure."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Protection Plan",
+              "description": "Required if trees are located adjacent to the work area."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Structural Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG COLUMNS/SHEAR WALL",
+                "BLDG BEAMS",
+                "BLDG FINAL SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L SITE /SOIL INSPECTION",
+                "L TREE/PLAN DELIVERY INSP",
+                "L IRRIGATION WET TEST",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "electrical_panel_change",
+      "name": "Electrical Panel Change",
+      "category": "Electrical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The replacement of an electrical panel requires an Electrical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_electrical" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Load Calculations (If applicable)",
+              "description": "Required if additional electrical loads are added to the panel."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "electrical_service_turn_on",
+      "name": "Electrical Service Turn-On",
+      "category": "Electrical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "A Service Turn-On Permit is required when power has been disconnected and an inspection is needed before restoration by the utility provider.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Electrical Service Turn-On Request Form",
+              "description": "Submit completed Electrical Service Turn-On Request Form."
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": []
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspection",
+              "inspections": [
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "erosion_control",
+      "name": "Erosion Control",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of erosion control devices requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_fire", "description": "Required for commercial projects (not required for single-family residences)" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Best Management Practices (BMP) Plan",
+              "description": "Provide signed and sealed plan showing location of erosion control devices including tracking pads, silt fences, filter fabric, stockpiles, and other mitigation measures."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing location, height, type of temporary construction fence, and access gates."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Erosion Control Inspections",
+              "inspections": [
+                "EROSION CONTROL INSPECTION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "fence",
+      "name": "Fence",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation, replacement, or major repair of a fence requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_fire", "description": "Required for multi-family, condominium, and commercial projects" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approval or Engineered Details",
+              "description": "Required for fence materials other than standard 6-foot chain link or wood."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing location, height, and type of fence and gates."
+            },
+            {
+              "type": "requirement",
+              "label": "Pool Safety Compliance",
+              "description": "If a pool exists within the fenced area, provide details demonstrating compliance with Florida Swimming Pool Safety Act."
+            },
+            {
+              "type": "requirement",
+              "label": "Easement Agreements",
+              "description": "Required if the proposed fence encroaches into an easement."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Fence Inspections",
+              "inspections": [
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "flooring_sound_barrier",
+      "name": "Flooring / Sound Barrier",
+      "category": "Building",
+      "propertyType": ["Residential"],
+      "guidance": "A Flooring Permit is required for installation of new flooring in condominium units or similar dwellings located above another unit or service area. Ground floor units, single-family homes, and commercial spaces do not require a permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Condo Association Approval",
+              "description": "Letter from the condominium association approving the proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Floor Plan",
+              "description": "Provide a floor plan showing the scope and location of flooring work."
+            },
+            {
+              "type": "requirement",
+              "label": "Acoustic Test Report",
+              "description": "Provide sound transmission/acoustic report demonstrating STC and IIC ratings of 50 or greater and matching actual site conditions."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG SOUND BARRIER IN PROGRESS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "foundation_only",
+      "name": "Foundation Only",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of a foundation requires a Building Permit. This permit may be issued as a phased permit prior to full building approval.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_fire" },
+            { "id": "app_landscape" },
+            {
+              "type": "requirement",
+              "label": "Threshold Inspection & Special Inspector",
+              "description": "Submit Threshold Inspection Application and Special Building Inspector Form signed and sealed by a licensed architect or engineer."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County & Agency Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and any applicable state or federal approvals (including FAA if cranes are used)."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Provide signed and sealed geotechnical/subsoil report and Special Inspector Form if pile installation is utilized."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey & Flood Data",
+              "description": "Provide topographic survey with flood zone, base flood elevation, finish floor elevation, and V-Zone certification if applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Full Plan Set",
+              "description": "Provide civil plans, site plans, elevations, foundation plans, structural plans and calculations, mechanical plans, landscape plans, and tree disposition plans."
+            },
+            {
+              "type": "requirement",
+              "label": "Maintenance of Traffic Plan",
+              "description": "Provide MOT plan with Broward County, Fire Prevention, and Engineering approvals."
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Phased Permit Acknowledgment",
+              "description": "Foundation-only permits are issued at applicant risk prior to full building approval. Additional corrections may be required to meet code."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Foundation Inspections",
+              "inspections": [
+                "BLDG PILES",
+                "BLDG PILE LOG",
+                "BLDG FOOTINGS",
+                "BLDG GRADE BEAMS",
+                "BLDG ENGINEER REPORTS",
+                "BLDG ELEVATION SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL FOUNDATION GROUND",
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "gas_piping",
+      "name": "Gas Piping",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of gas piping requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Gas Piping Plans",
+              "description": "Provide plan and isometric drawings showing total developed length, BTU load for each appliance, piping materials, and sizing in accordance with FBC Fuel Gas."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Installation Instructions",
+              "description": "Provide manufacturer specifications showing required clearances for maintenance and servicing."
+            },
+            {
+              "type": "requirement",
+              "label": "Generator Gas Plans (If applicable)",
+              "description": "Provide gas piping plans for generators including BTU loads, system connection, piping layout, materials, and sizing calculations."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey (Generator Installations)",
+              "description": "Provide survey showing location of generator if applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals (Commercial Generators)",
+              "description": "Planning and Development Management Division approval and Transportation Concurrency Certificate required for commercial generator installations."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Gas Inspections",
+              "inspections": [
+                "P GAS ROUGH",
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "gazebo_pergola",
+      "name": "Gazebo / Pergola",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a gazebo or pergola requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_electrical", "description": "Required if electrical work is included" },
+            { "id": "app_fire", "description": "Required for commercial projects (not required for single-family residences)" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location and dimensions of the structure."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approval or Engineered Plans",
+              "description": "Provide Miami-Dade NOA, Florida Product Approval, or signed and sealed construction plans."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans",
+              "description": "Provide electrical plan and riser diagram if electrical work is included."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Protection Plan",
+              "description": "Required if trees are located adjacent to the work area."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Structure Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG COLUMNS",
+                "BLDG TIE BEAMS",
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (If applicable)",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "generator",
+      "name": "Generator",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a generator requires permits.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_plumbing" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape", "description": "Tree permit required if trees are adjacent to work area" },
+            { "id": "app_fire", "description": "Required for commercial generators" },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Required for commercial generators including Planning and Development Management Division approval and Transportation Concurrency Certificate."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide site plan showing generator location, distances from openings, and compliance with 10-foot exhaust clearance requirements."
+            },
+            {
+              "type": "requirement",
+              "label": "Foundation Details",
+              "description": "Provide foundation design including size, reinforcement, type, and elevation in NAVD where applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans & Load Calculations",
+              "description": "Provide riser diagram, load calculations per NEC 220, and identify load shedding systems if used."
+            },
+            {
+              "type": "requirement",
+              "label": "Gas Piping Plans",
+              "description": "Provide plan and isometric drawings showing BTU loads, piping layout, materials, sizes, and compliance with FBC Fuel Gas."
+            },
+            {
+              "type": "requirement",
+              "label": "Equipment Labeling",
+              "description": "Electrical service must be labeled to indicate alternate power source connection (generator)."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "A WORK VERIFICATION INSPECTION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL UNDERGROUND WIRING/PIPING",
+                "EL SERVICE ROUGH",
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Gas Inspections",
+              "inspections": [
+                "P GAS ROUGH",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "helical_piles",
+      "name": "Helical Piles",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of helical piles for foundation support requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Submit signed, sealed, and dated Special Building Inspector Form from a licensed architect or engineer."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Site Plan or Survey",
+              "description": "Provide site plan or survey showing the location of the proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Structural Plans",
+              "description": "Provide structural plans detailing the scope of work."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG PILES",
+                "BLDG PILE LOG",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "hood_system",
+      "name": "Hood System",
+      "category": "Mechanical",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation of a hood system requires a Mechanical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_fire" },
+            { "id": "app_zoning" },
+            {
+              "type": "requirement",
+              "label": "Broward County Approval",
+              "description": "Planning and Development Management Division (P.D.M.D.) approval required."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Engineered Plans",
+              "description": "Submit signed and sealed drawings showing location, attachments, ventilation, calculations, equipment layout, and fire suppression."
+            },
+            {
+              "type": "requirement",
+              "label": "Manual N Calculations",
+              "description": "Provide Manual N heat load calculations."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide cut sheets for all kitchen equipment."
+            },
+            {
+              "type": "requirement",
+              "label": "Fire Suppression Plans (Type I Hood)",
+              "description": "Required for Type I hoods, including fire suppression drawings and application from licensed fire suppression contractor."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M CURB/ROOF STAND IN PROGRESS",
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Gas Inspections",
+              "inspections": [
+                "P GAS ROUGH",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FP EXTINGUISHMENT SYSTEM ROUGH",
+                "FP EXTINGUISHMENT SYSTEM FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections (If applicable)",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "interior_buildout",
+      "name": "Interior Buildout",
+      "category": "Building",
+      "propertyType": ["Commercial"],
+      "guidance": "The interior buildout of a building shell requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_zoning" },
+            { "id": "app_fire" },
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, and Transportation Concurrency Certificate."
+            },
+            {
+              "type": "requirement",
+              "label": "Utility Connection & Capital Recovery",
+              "description": "Required if applicable."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit floor plans, life safety plans, mechanical, electrical, and plumbing plans, riser diagrams, isometrics, fire sprinkler and fire alarm drawings, and all supporting details."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Provide Miami-Dade NOA, Florida Product Approvals, manufacturer specifications, installation manuals, calculations, and supporting documentation."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG SOIL TREATMENT",
+                "BLDG SLAB REINF",
+                "BLDG ELEVATION CERTIFICATE",
+                "BLDG INSULATION-CEILINGS",
+                "BLDG INSULATION-WALLS",
+                "BLDG FRAMING",
+                "BLDG CEILING FRAME/GRID",
+                "BLDG DRYWALL-SCREW/NAIL",
+                "BLDG FIRE PROTECTION",
+                "BLDG EGRESS",
+                "BLDG HANDICAP ACCESS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FP FIRE SPRINKLER ROUGH",
+                "FP FIRE ALARM ROUGH",
+                "FP FIRE STANDPIPE ROUGH",
+                "FP FIRE SPRINKLER FINAL",
+                "FP FIRE ALARM CERT. LETTER REQ",
+                "FP FIRE STANDPIPE FINAL",
+                "FP FIRE ALARM FINAL INSPECTION",
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P TOP OUT",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M CURB/ROOF STAND IN PROGRESS",
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical (Fire Alarm) Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "irrigation_system",
+      "name": "Irrigation System",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of an irrigation system requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Irrigation Plans",
+              "description": "Provide detailed lawn irrigation plans showing piping sizes, layout, sprinkler heads, backflow preventer, rain sensor, and related components in accordance with FBC Plumbing Appendix F."
+            },
+            {
+              "type": "requirement",
+              "label": "Agency Approvals",
+              "description": "Provide approval from South Florida Water Management District and Broward County Health Department (for well systems)."
+            },
+            {
+              "type": "requirement",
+              "label": "Water Source & Reuse Compliance",
+              "description": "Identify water source (City, well, or reuse). If reuse is required, all system components must be designated for non-potable use per FBC Plumbing Appendix F."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Irrigation Inspections",
+              "inspections": [
+                "P LAWN SPRINKLER",
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "kitchen_bath_renovation",
+      "name": "Kitchen/Bath Renovation",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation, alteration, or major repair of a kitchen or bathroom requires a permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_fire", "description": "Required for commercial and multi-family projects" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Condo Association Approval",
+              "description": "Required for condominium projects."
+            },
+            {
+              "type": "requirement",
+              "label": "Architectural Plans",
+              "description": "Provide plan view showing location and scope of work, including framing details and any fire-rated wall assemblies."
+            },
+            {
+              "type": "requirement",
+              "label": "Plumbing Plans",
+              "description": "Show full scope of plumbing work including all fixtures and appliances to be replaced."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans",
+              "description": "Electrical plans must be signed and sealed by a design professional or include contractor qualifier notarization."
+            },
+            {
+              "type": "requirement",
+              "label": "Fire Protection Plan",
+              "description": "Show location of fire devices including smoke detectors, sprinklers, and alarms (not required for single-family homes)."
+            },
+            {
+              "type": "requirement",
+              "label": "Flooring Sound Control",
+              "description": "For multi-story buildings, provide sound barrier test reports meeting ASTM E-90 and ASTM E-492 requirements."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide manufacturer spec sheets, installation manuals, and product approvals where applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Gas Plans",
+              "description": "Provide gas plans including flat and isometric drawings if applicable."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG SOUND BARRIER IN PROGRESS",
+                "BLDG FRAMING",
+                "BLDG DRYWALL-SCREW/NAIL",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FP SINGLE STATION SMKE. INSP",
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P TOP OUT",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (If applicable)",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "light_poles",
+      "name": "Light Poles",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of lights and associated light poles requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_zoning" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Site Plan or Survey",
+              "description": "Provide site plan or survey showing the location of the proposed light poles."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans",
+              "description": "Provide electrical plan and riser diagram."
+            },
+            {
+              "type": "requirement",
+              "label": "Structural Calculations",
+              "description": "Provide structural calculations for the light pole installation."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide UL-listed manufacturer specifications for light fixtures."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG ATTACHMENTS",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL UNDERGROUND WIRING/PIPING",
+                "EL ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "mobile_home",
+      "name": "Mobile Home",
+      "category": "Building",
+      "propertyType": ["Residential"],
+      "guidance": "The installation of a mobile home requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" },
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Property Owner Authorization",
+              "description": "Provide notarized letter from property owner granting permission to install the mobile home."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey, Site Plan & Elevation Certificates",
+              "description": "Provide survey/site plan and elevation certificates showing location, size, setbacks, and elevation of the structure."
+            },
+            {
+              "type": "requirement",
+              "label": "Foundation & Tie-Down Details",
+              "description": "Provide foundation design including tie-down system and minimum elevation requirements in NAVD where applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals & Equipment Attachment",
+              "description": "Provide Florida Product Approval or Miami-Dade NOA for exposed mechanical equipment and tie-down details."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Documents",
+              "description": "Provide installation instructions, manufacturer specifications, anchoring details, electrical riser diagrams, and finish floor elevation details."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG TIE-DOWNS",
+                "BLDG MANUFACTURE CERTIFICATION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL SERVICE ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P WATER SERVICE",
+                "P SEWER",
+                "P FINAL-PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "new_single_family_residence",
+      "name": "New Single Family Residence",
+      "category": "Building",
+      "propertyType": ["Residential"],
+      "guidance": "The construction of a new single-family residence or duplex requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Utility Connection & Capital Recovery",
+              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & HVAC Documentation",
+              "description": "Provide energy calculations, Manual J heat load calculations, AHRI certificates, and tie-down attachment details."
+            },
+            {
+              "type": "requirement",
+              "label": "Truss Engineering",
+              "description": "Signed and sealed truss engineering shop drawings reviewed by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsurface report with foundation design recommendations."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required when applicable per Florida Statute 553.79 and Broward County amendments."
+            },
+            {
+              "type": "requirement",
+              "label": "Equipment & Fixture Specifications",
+              "description": "Manufacturer cut sheets for all equipment and fixtures being installed."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a full set of signed and sealed plans including survey, site plan, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, irrigation plans, and landscape plans."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG FORMBOARD SURVEY",
+                "BLDG SOIL TREATMENT",
+                "BLDG SOIL COMPACTION",
+                "BLDG SLAB/REINFORCING",
+                "BLDG ELEVATION CERTIFICATE",
+                "BLDG COLUMNS/SHEAR WALL",
+                "BLDG ENGINEER REPORTS",
+                "BLDG TIE BEAMS",
+                "BLDG FRAMING",
+                "BLDG WALL INSULATION",
+                "BLDG DRYWALL - SCREW/NAIL",
+                "BLDG WALL SHEATHING",
+                "BLDG ROOF FRAMING",
+                "BLDG TRUSS",
+                "BLDG ROOF SHEATHING",
+                "BLDG LATH",
+                "BLDG CEILING INSULATION",
+                "BLDG WINDOW/DOOR FRAMING",
+                "BLDG WINDOW/DOORS",
+                "BLDG BLOWER DOOR TEST",
+                "BLDG FINAL SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Roofing Inspections",
+              "inspections": [
+                "BLDG TIN TAG",
+                "BLDG MOP-IN PROGRESS",
+                "BLDG TILE/SHINGLE-IN PROGRESS",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL FOUNDATION GROUND",
+                "EL ROUGH",
+                "EL SERVICE ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P TOP OUT",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L PRE-CON MEETING",
+                "L TREE PROTECTION INSPECTION",
+                "L SITE/SOIL INSPECTION",
+                "L TREE/PLANT DELIVERY INSP",
+                "L SHRUB/SOD/GROUNDCOVER",
+                "L IRRIGATION WET TEST",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "new_swimming_pool",
+      "name": "New Swimming Pool",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The construction of a new swimming pool requires a permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building", "description": "Structural application required for pool construction" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Pool Safety Act Form",
+              "description": "Submit completed Residential Swimming Pool, Spa and Hot Tub Safety Act form."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsoil report and Special Inspector Form if required."
+            },
+            {
+              "type": "requirement",
+              "label": "Plans and Diagrams",
+              "description": "Provide site plan, electrical plan, pool plan, piping diagram, and construction details."
+            },
+            {
+              "type": "requirement",
+              "label": "Gas System Documentation",
+              "description": "If applicable, provide gas piping plans with isometric drawings, BTU loads, and manufacturer specifications for heaters or heat pumps."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Compliance",
+              "description": "Electrical plans must comply with NEC 680 requirements."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Pool Inspections",
+              "inspections": [
+                "BLDG SOIL COMPACTION",
+                "BLDG POOL STEEL",
+                "BLDG POOL BARRIER",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (Pool/Spa)",
+              "inspections": [
+                "EL UNDERGROUND WIRING/PIPING",
+                "EL POOL LIGHT POTTING COMPOUND",
+                "EL POOL BONDING",
+                "EL POOL DECK BONDING",
+                "EL POOL EXIT ALARM",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P POOL MAIN DRAIN",
+                "P POOL PERIMETER PIPING",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "plumbing_tunnel_job",
+      "name": "Plumbing Tunnel Job (Under Slab Drain Replacement)",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "Excavation below a foundation for pipe or drain replacement requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Floor/Site Plan",
+              "description": "Provide plan showing the location of proposed work and clearly label areas to be replaced (e.g., kitchen, bathroom, etc.)."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "racking_system",
+      "name": "Racking System",
+      "category": "Building",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation of a racking system in a commercial building requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_fire" },
+            { "id": "app_electrical" },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, and Transportation Concurrency Certificate (if applicable)."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Construction Floor Plans",
+              "description": "Provide floor plans including storage layout, structural connection details, fire sprinkler and alarm systems, and electrical plans with calculations if applicable."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG EGRESS",
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FP FIRE SPRINKLER ROUGH",
+                "FP FIRE ALARM ROUGH",
+                "FP FIRE STANDPIPE ROUGH",
+                "FP FIRE SPRINKLER FINAL",
+                "FP FIRE ALARM CERT. LETTER REQ",
+                "FP FIRE STANDPIPE FINAL",
+                "FP FIRE ALARM FINAL INSPECTION",
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "reroof",
+      "name": "Reroof",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation, replacement, or major repair of a roofing system requires a Building Permit. A permit is not required for minor repairs that do not affect approval or safety.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_fire", "description": "Required for multi-family, condominium, and commercial projects" },
+            {
+              "type": "requirement",
+              "label": "HVHZ Permit Application",
+              "description": "High Velocity Hurricane Zone Uniform Permit Application with required attachments."
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Miami-Dade NOA or Florida Product Approval for roofing materials, underlayments, fasteners, adhesives, and Fire Directory listing pages."
+            },
+            {
+              "type": "requirement",
+              "label": "Asbestos Certificate",
+              "description": "Broward County Asbestos Certificate of Submittal."
+            },
+            {
+              "type": "requirement",
+              "label": "Site Plan",
+              "description": "Required for multi-family, condominium, and commercial projects. Must show staging areas, fire access, and equipment locations."
+            },
+            {
+              "type": "requirement",
+              "label": "Wind Load Verification",
+              "description": "Provide wind load compliance using prescriptive charts or engineer-sealed calculations depending on project type."
+            },
+            {
+              "type": "requirement",
+              "label": "Roofing Affidavit for Wind Mitigation",
+              "description": "Required for single-family and duplex structures confirming roof-to-wall compliance."
+            },
+            {
+              "type": "requirement",
+              "label": "Rooftop Equipment Affidavit",
+              "description": "Required when rooftop-mounted equipment is present."
+            },
+            {
+              "type": "requirement",
+              "label": "Insulation Attachment Calculations",
+              "description": "Required when installing insulation boards to demonstrate fastening and uplift compliance."
+            },
+            {
+              "type": "requirement",
+              "label": "Withdrawal Resistance Test",
+              "description": "Required when verifying deck or fastener pull-out strength."
+            },
+            {
+              "type": "requirement",
+              "label": "Moisture Survey Report",
+              "description": "Required for roof recover or renovation projects to confirm substrate condition."
+            },
+            {
+              "type": "requirement",
+              "label": "HOA/Condo Authorization Letter",
+              "description": "Required when work is performed on properties governed by an HOA or condominium association."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Roofing Inspections",
+              "inspections": [
+                "BLDG TIN TAG",
+                "BLDG MOP-IN PROGRESS",
+                "BLDG TILE/SHINGLE-IN PROGRESS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "reuse_connection",
+      "name": "Reuse Connection",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The transfer of irrigation from potable water to the City’s reuse connection requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Reuse Connection Application",
+              "description": "Submit completed Reclaimed Water Connection Application/Permit and Hold Harmless Agreement."
+            },
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "seawall",
+      "name": "Seawall",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation, replacement, or major repair of a seawall requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_engineering" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Environmental Resource License",
+              "description": "Provide Broward County Environmental Resource General License."
+            },
+            {
+              "type": "requirement",
+              "label": "Contract or Schedule of Values",
+              "description": "Provide contract or detailed cost breakdown for the proposed work."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required if pile installation is utilized."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location of the proposed seawall."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Plans",
+              "description": "Provide signed and sealed plans detailing the scope of work."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Marine Inspections",
+              "inspections": [
+                "EROSION CONTROL INSPECTION",
+                "BLDG FOOTINGS",
+                "SEAWALL PANEL REINF",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections (Seawall)",
+              "inspections": [
+                "E SEAWALL FOOTER FORM/STEEL",
+                "E SEAWALL FOOTER FINAL INSP."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "septic_to_sewer",
+      "name": "Septic to Sewer Conversion",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The conversion from a septic system to a municipal sewer connection requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Environmental Review Approval",
+              "description": "Provide Broward County Environmental Review Approval Certificate."
+            },
+            {
+              "type": "requirement",
+              "label": "Sewer Connection Drawing",
+              "description": "Provide drawing showing sewer connection including 6-inch cleanout up to grade at sewer lateral if not already installed."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "shutters",
+      "name": "Shutters",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of shutters requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approval",
+              "description": "Provide Miami-Dade NOA or Florida Product Approval with all elements identified."
+            },
+            {
+              "type": "requirement",
+              "label": "Plan Showing Installation",
+              "description": "Provide plan showing location, size, and type of shutters."
+            },
+            {
+              "type": "requirement",
+              "label": "Association Approval",
+              "description": "Required for condominium or HOA projects."
+            },
+            {
+              "type": "requirement",
+              "label": "Wind Load Compliance",
+              "description": "Provide site-specific design wind loads (for buildings over 30 feet) or use Broward County Fenestration Voluntary Wind Load Chart for buildings under 30 feet."
+            },
+            {
+              "type": "requirement",
+              "label": "Window & Door Schedule",
+              "description": "Submit Broward County Uniform Retrofit Window & Door Schedule."
+            },
+            {
+              "type": "requirement",
+              "label": "Catwalk Clearance Documentation",
+              "description": "If applicable, provide photo showing door clearance where adjacent catwalks exist."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Window/Door Inspections",
+              "inspections": [
+                    "BLDG ATTACHMENT",
+                    "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+   {"file": "sign",
+      "name": "Sign",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a sign requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_zoning" },
+            {
+              "type": "requirement",
+              "label": "Sign Code Compliance Application",
+              "description": "Submit completed Sign Code Compliance Permit Application."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Site Plan",
+              "description": "Provide site plan showing the location and dimensions of the sign."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Plans",
+              "description": "Provide signed and sealed plans including footing details, mounting details, engineering details, calculations, and specifications."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans",
+              "description": "Provide signed and sealed electrical plans or plans with contractor qualifier notarization."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Sign Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG ATTACHMENT",
+                "BLDG WELDING CERTIFICATES",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (If applicable)",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "site_work",
+      "name": "Site Work",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "Site work associated with a building project requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building", "description": "Required for sub-surface enhancement work" },
+            { "id": "app_plumbing", "description": "Required for irrigation and on-site plumbing" },
+            { "id": "app_electrical", "description": "Required for site lighting" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" },
+            { "id": "app_fire" },
+            {
+              "type": "requirement",
+              "label": "Utility Connection & Capital Recovery",
+              "description": "Submit completed Utility Connection and Capital Recovery Fee Application."
+            },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            },
+            {
+              "type": "requirement",
+              "label": "Civil & Site Plans",
+              "description": "Submit civil plans, site plans, survey, lighting plans, photometric plans, irrigation plans, CPTED plans, landscape plans, and tree disposition plans."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsoil report."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required if pile or vibro-replacement installation is utilized."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG PILES",
+                "BLDG PILE LOG",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Erosion Control Inspections",
+              "inspections": [
+                "EROSION CONTROL INSPECTION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FP FIRE ON SITE FIRE HYDRANT",
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Engineering Inspections",
+              "inspections": [
+                "E WATER SERVICE INSPECT.",
+                "E WATER MAIN TAP INSPECTION",
+                "E WATER MAIN FINAL INSP./CERT.",
+                "E CURB FORM/STEEL",
+                "E CURB FINAL INSPECTION",
+                "E PAVING ROCK BASE INSPECTION",
+                "E PAVING SUBGRADE INSPECTION",
+                "E SIDEWALK FORM (OFF-SITE)",
+                "E SIDEWALK FINAL (OFF-SITE)"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections (On Site)",
+              "inspections": [
+                "P WATER SERVICE",
+                "P CATCH BASIN/DRAINAGE",
+                "P SEWER",
+                "P INTERCEPTOR",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections (Irrigation)",
+              "inspections": [
+                "P LAWN SPRINKLER",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L PRE-CON MEETING",
+                "L TREE PROTECTION INSPECTION",
+                "L SITE/SOIL INSPECTION",
+                "L TREE/PLANT DELIVERY INSP",
+                "L SHRUB/SOD/GROUNDCOVER",
+                "L IRRIGATION WET TEST",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "solar_systems",
+      "name": "Solar Systems (Thermal & Photovoltaic)",
+      "category": "Electrical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of solar thermal or photovoltaic systems requires applicable Building, Electrical, and/or Plumbing permits depending on system type.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building", "description": "Required for mounting panels" },
+            { "id": "app_electrical", "description": "Required for photovoltaic systems" },
+            { "id": "app_plumbing", "description": "Required for solar thermal systems" },
+            { "id": "app_fire" },
+            { "id": "app_zoning" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required when attachment details involve truss anchors or when otherwise applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "FSEC Approval or Engineered Plans",
+              "description": "Provide Florida Solar Energy Center (FSEC) system approval report or signed and sealed engineered drawings."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Roof Plan",
+              "description": "Scaled roof plan showing location of solar panel installation."
+            },
+            {
+              "type": "requirement",
+              "label": "Attachment & Structural Details",
+              "description": "Provide attachment, flashing, and structural design details for wind loads and site conditions."
+            },
+            {
+              "type": "requirement",
+              "label": "Solar Thermal System Documents",
+              "description": "Plumbing riser diagram and manufacturer specifications for panels, pumps, frames, and mounting systems."
+            },
+            {
+              "type": "requirement",
+              "label": "Photovoltaic System Documents",
+              "description": "Electrical diagrams showing array configuration, wiring, overcurrent protection, inverter, disconnects, grounding, and interconnection details."
+            },
+            {
+              "type": "requirement",
+              "label": "Battery Backup (If applicable)",
+              "description": "Provide standby load summary including power ratings and estimated energy consumption."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Calculations",
+              "description": "Provide calculations for conductor sizing, conduit fill, and ambient temperature derating."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Specification sheets and installation manuals for all system components."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections (Photovoltaic)",
+              "inspections": [
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (Photovoltaic)",
+              "inspections": [
+                "EL PHOTOVOLATIC RAIL BOND",
+                "EL SERVICE ROUGH",
+                "EL FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections (Solar Thermal)",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "ZONING FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "special_event",
+      "name": "Special Event",
+      "category": "Building",
+      "propertyType": ["Commercial"],
+      "guidance": "An approved special event requires a permit to be issued.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building", "description": "Structural application required for temporary structures" },
+            { "id": "app_electrical" },
+            { "id": "app_fire" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000 (if applicable)" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Approved Special Event Form",
+              "description": "Provide a copy of the approved Special Event Form with all required signatures."
+            },
+            {
+              "type": "requirement",
+              "label": "Site Plan",
+              "description": "Provide site plan showing layout including canopies, fencing, and dimensions."
+            },
+            {
+              "type": "requirement",
+              "label": "Flame Retardant Certificates",
+              "description": "Provide flame retardant certification for all canopies."
+            },
+            {
+              "type": "requirement",
+              "label": "Tie-Down Engineering",
+              "description": "Provide signed and sealed plans for anchoring and tie-down details."
+            },
+            {
+              "type": "requirement",
+              "label": "Life Safety Layout",
+              "description": "Provide plans showing seating arrangement, fire extinguishers, exits, and occupancy layout."
+            },
+            {
+              "type": "requirement",
+              "label": "Business Tax Receipt",
+              "description": "Provide a valid business tax receipt."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG TIE DOWNS",
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (If applicable)",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "storage_shed",
+      "name": "Storage Shed",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a storage shed requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_electrical", "description": "Required if electrical work is included" },
+            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location and dimensions of the storage shed."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approval or Engineered Plans",
+              "description": "Provide Miami-Dade NOA, Florida Product Approval, or signed and sealed construction plans."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans",
+              "description": "Provide electrical plan and riser diagram if electrical work is included."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG TIE DOWNS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (If applicable)",
+              "inspections": [
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "tankless_water_heater",
+      "name": "Tankless Water Heater",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Water Heater Replacement Data Form",
+              "description": "Submit completed Broward County Dwelling Unit Water Heater Replacement Data Form."
+            },
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
+            },
+            {
+              "type": "requirement",
+              "label": "Gas Piping Plans",
+              "description": "Provide plan and isometric drawings showing gas piping layout, total developed length, BTU loads, materials, and connection points in compliance with FBC Fuel Gas."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide specification sheets and installation instructions showing third-party certification compliance."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Riser Diagram",
+              "description": "Provide riser diagram showing service size, circuitry, conductor sizes, panel schedule, and grounding system."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P GAS ROUGH",
+                "P FINAL PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL SERVICE ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "temporary_construction_fence",
+      "name": "Temporary Construction Fence",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of a temporary construction fence requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location, height, type of fence, and access gates."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Fence Inspections",
+              "inspections": [
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "temporary_construction_trailer",
+      "name": "Temporary Construction / Sales Trailer",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of a temporary construction or sales trailer requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_plumbing", "description": "Required if trailer includes restroom facilities" },
+            { "id": "app_zoning" },
+            { "id": "app_fire" },
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "app_engineering", "description": "Required for erosion control (sales trailers)" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Zoning Board Approval",
+              "description": "Temporary Permit Approval from the Zoning Board of Appeals and Development Order signed by the Zoning Director (for sales trailers)."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, and Transportation Concurrency Certificate."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan with location, size, setbacks, and elevation details of the trailer."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Documents",
+              "description": "Provide installation instructions, anchoring details, electrical riser diagrams, and finish floor elevation details."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Provide Florida Product Approval or Miami-Dade NOA for anchoring, mechanical equipment, and (for sales trailers) windows, doors, storefronts, and shutters."
+            },
+            {
+              "type": "requirement",
+              "label": "Plumbing Layout",
+              "description": "Provide plan showing water service, backflow, sewer, or holding tank locations if plumbing is included."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG TIE-DOWNS",
+                "BLDG HANDICAP ACCESSIBILITY",
+                "BLDG ELEVATION CERTIFICATE",
+                "BLDG FINAL SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FP FIRE DEPARTMENT FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL UNDERGROUND WIRING/PIPING",
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections (If applicable)",
+              "inspections": [
+                "P WATER SERVICE",
+                "P SEWER",
+                "P BACKFLOW PREVENTER",
+                "P FINAL-PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "tiki_hut",
+      "name": "Tiki Hut",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a tiki hut requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_zoning" },
+            { "id": "app_electrical", "description": "Required if electrical work is included" },
+            { "id": "app_plumbing", "description": "Required if plumbing work is included" },
+            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
+            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing the location and dimensions of the tiki hut."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans",
+              "description": "Provide electrical plan and riser diagram if electrical work is included."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "townhomes",
+      "name": "Townhomes (Site, Shell, and Units)",
+      "category": "Building",
+      "propertyType": ["Residential"],
+      "guidance": "Townhome developments are permitted under a multi-permit structure including a Site Permit, Master Building Permit, and individual Unit Permits.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" },
+            { "id": "app_fire" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+          ]
+        },
+        {
+          "name": "Permit Structure",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Site Permit",
+              "description": "Includes all site-related work such as paving, parking, lighting, irrigation, landscaping, fencing, and CPTED requirements."
+            },
+            {
+              "type": "requirement",
+              "label": "Master Building Permit",
+              "description": "Includes full building plans and documents for the entire structure, including shell and all units."
+            },
+            {
+              "type": "requirement",
+              "label": "Townhome Unit Permits",
+              "description": "Used for final Certificate of Occupancy and unit-specific documentation."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Site Plans",
+              "description": "Include site plan, survey, lighting plans, irrigation plans, landscaping plans, CPTED plans, and fire alarm monitoring plans."
+            },
+            {
+              "type": "requirement",
+              "label": "Building Plans",
+              "description": "Include architectural, structural, mechanical, electrical, plumbing, fire sprinkler, and fire alarm plans."
+            },
+            {
+              "type": "requirement",
+              "label": "Unit Identification Plans",
+              "description": "Provide floor plan identifying each specific unit for unit permits."
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Provide Miami-Dade NOA or Florida Product Approvals for roofing, windows, doors, and other structural components."
+            },
+            {
+              "type": "requirement",
+              "label": "Structural Calculations",
+              "description": "Provide full structural calculations, truss drawings, and shop drawings."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Provide geotechnical/subsurface report for foundation design."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Transportation Concurrency, and Surface Water Management approvals."
+            },
+            {
+              "type": "requirement",
+              "label": "Administrative Documents",
+              "description": "Include development orders, easement agreements, utility easements, engineering schedule of values, and signature affidavits."
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "vehicle_charging_station",
+      "name": "Vehicle Charging Station",
+      "category": "Electrical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a vehicle charging station requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_zoning" },
+            { "id": "app_fire", "description": "Required for commercial and multi-family projects" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "HOA/Condo Approval",
+              "description": "Required if the installation is within a condominium or homeowners association."
+            },
+            {
+              "type": "requirement",
+              "label": "Anchoring Details",
+              "description": "Provide Florida Product Approval, Miami-Dade NOA, or signed and sealed engineered plans for anchoring and tie-down details."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Plans & Calculations",
+              "description": "Provide riser diagram, electrical plans, and load calculations for the charging station."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide installation manual and manufacturer specifications for the charging equipment."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide a survey or site plan showing the location of the charging station."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG TIE DOWNS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "water_heater_changeout",
+      "name": "Water Heater Changeout",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of a water heater, whether commercial or residential, requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Water Heater Replacement Data Form",
+              "description": "Completed Broward County Dwelling Unit Water Heater Replacement Data Form.",
+              "links": [
+                {
+                  "label": "Water Heater Replacement Data Form",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Dwelling-Unit-Water-Heater-Replacement-Data-Form.pdf"
+                }
+              ]
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Cut Sheets",
+              "description": "Provide cut sheets showing the energy efficiency rating of the proposed water heater."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "water_service",
+      "name": "Water Service",
+      "category": "Plumbing",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation or replacement of water service requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_plumbing" },
+            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Owner/Builder Affidavit",
+              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P FINAL PLUMBING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "window_door_changeouts",
+      "name": "Window & Door Changeouts",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation, replacement or major repair of any windows or doors, whether Commercial or Residential, requires a Building Permit be issued. A permit is not required for the replacement of any part which does not alter its approval or make it unsafe.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_fire", "description": "Required for commercial projects only" }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            { "type": "requirement", "value": "Opening schedule showing size, type, and location" },
+            { "type": "requirement", "value": "Plan showing location of all windows and doors" },
+            { "type": "requirement", "value": "Product approvals (Florida Product Approval or Miami-Dade NOA) with items marked" }
+          ]
+        },
+        {
+          "name": "Technical",
+          "items": [
+            { "type": "requirement", "value": "Design pressures" },
+            { "type": "requirement", "value": "Broward County Fenestration Voluntary Wind Load Chart" },
+            { "type": "requirement", "value": "Mean roof height" },
+            { "type": "requirement", "value": "Site-specific wind load calculations (required if building height exceeds 30 feet)" }
+          ]
+        },
+        {
+          "name": "Supporting Documents",
+          "items": [
+            { "type": "requirement", "value": "Association approval letter (if applicable)" },
+            { "type": "requirement", "value": "Owner/Builder affidavit (if applicable)" },
+            { "type": "requirement", "value": "Photo of existing door condition if encroaching required width" }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Window/Door Permit Inspections",
+              "inspections": [
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Permit Inspections (If applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

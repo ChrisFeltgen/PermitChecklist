@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Permit Application Checklists</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: white !important;
+        padding: 0;
+      }
+
+      #searchInput,
+      #clearSearch,
+      #propertyTypeFilter,
+      #categoryTabs,
+      #permitList {
+        display: none !important;
+      }
+
+      #content {
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.2);
+      }
+
+      a {
+        color: black !important;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 p-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+
+    <!-- LEFT PANEL -->
+    <div class="md:col-span-1">
+
+      <div class="mb-4 flex gap-2">
+        <input id="searchInput" placeholder="Search permit type..." class="w-full rounded border p-2" />
+        <button id="clearSearch" class="rounded border bg-gray-100 px-3">x</button>
+      </div>
+
+      <div class="mb-4">
+        <select id="propertyTypeFilter" class="w-full rounded border p-2 text-sm">
+          <option value="All">All Property Types</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
+        </select>
+      </div>
+
+      <div id="categoryTabs" class="mb-4"></div>
+
+      <div id="permitList" class="space-y-1 max-h-[70vh] overflow-y-auto"></div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="md:col-span-3">
+      <div class="flex justify-between items-center mb-4">
+        <div class="text-2xl font-semibold">Permit Application Checklists</div>
+        <button onclick="window.print()" class="px-4 py-2 bg-blue-600 text-white rounded text-sm">
+          Print Checklist
+        </button>
+      </div>
+
+      <div id="content" class="rounded bg-white p-6 shadow"></div>
+    </div>
+
+  </div>
+
+<script>
+const DATA_FILE = "./data/checklists.json";
+
+let state = {
+  library: {},
+  permits: [],
+  selectedPermit: null,
+  selectedFile: null,
+  selectedCategory: null,
+  activeCategory: "All",
+  propertyType: "All"
+};
+
+init();
+
+function init() {
+  loadData();
+  bindSearch();
+  bindPropertyFilter();
+}
+
+function loadData() {
+  fetch(DATA_FILE)
+    .then(r => r.json())
+    .then(data => {
+      state.library = data.library || {};
+      state.permits = data.permits || [];
+      renderAll();
+    });
+}
+
+function bindSearch() {
+  const input = document.getElementById("searchInput");
+  const clearBtn = document.getElementById("clearSearch");
+
+  input.addEventListener("input", () => {
+    state.activeCategory = "All";
+    renderAll();
+  });
+
+  clearBtn.addEventListener("click", () => {
+    input.value = "";
+    state.activeCategory = "All";
+    state.selectedPermit = null;
+    renderAll();
+  });
+}
+
+function bindPropertyFilter() {
+  document.getElementById("propertyTypeFilter").addEventListener("change", (e) => {
+    state.propertyType = e.target.value;
+    renderPermitList();
+  });
+}
+
+function getCategories(permit) {
+  return Array.isArray(permit.category)
+    ? permit.category
+    : [permit.category || "Other"];
+}
+
+function renderAll() {
+  renderCategoryTabs();
+  renderPermitList();
+  renderContent();
+}
+
+function renderCategoryTabs() {
+  const container = document.getElementById("categoryTabs");
+  container.innerHTML = "";
+
+  const categories = new Set();
+  state.permits.forEach(p => {
+    getCategories(p).forEach(c => {
+      if (c) categories.add(c.trim());
+    });
+  });
+
+  const allBtn = document.createElement("button");
+  allBtn.className = `w-full mb-2 px-3 py-2 rounded border text-sm ${state.activeCategory === "All" ? "bg-blue-600 text-white" : "bg-white"}`;
+  allBtn.textContent = "All";
+  allBtn.onclick = () => { state.activeCategory = "All"; renderAll(); };
+  container.appendChild(allBtn);
+
+  const grid = document.createElement("div");
+  grid.className = "grid grid-cols-2 gap-2";
+
+  Array.from(categories).sort().forEach(cat => {
+    const btn = document.createElement("button");
+    btn.className = `px-3 py-2 rounded border text-sm ${state.activeCategory === cat ? "bg-blue-600 text-white" : "bg-white"}`;
+    btn.textContent = cat;
+    btn.onclick = () => { state.activeCategory = cat; renderAll(); };
+    grid.appendChild(btn);
+  });
+
+  container.appendChild(grid);
+}
+
+function renderPermitList() {
+  const container = document.getElementById("permitList");
+  const filter = document.getElementById("searchInput").value.toLowerCase();
+
+  container.innerHTML = "";
+
+  const filtered = state.permits.filter(p => {
+    const matchesSearch = p.name.toLowerCase().includes(filter);
+
+    const matchesCategory =
+      state.activeCategory === "All" ||
+      getCategories(p).includes(state.activeCategory);
+
+    const matchesProperty =
+      state.propertyType === "All" ||
+      !p.propertyType ||
+      p.propertyType.includes(state.propertyType);
+
+    return matchesSearch && matchesCategory && matchesProperty;
+  });
+
+  if (!filtered.length) {
+    container.innerHTML = `<div class="text-gray-500 text-center">No results</div>`;
+    return;
+  }
+
+  filtered.forEach(permit => {
+    const btn = document.createElement("button");
+    const isSelected = state.selectedFile === permit.file;
+
+    const category = permit.category;
+    const property = (permit.propertyType || []).join(", ");
+
+    btn.className = `w-full text-left rounded border px-3 py-2 ${isSelected ? "bg-blue-600 text-white" : "hover:bg-gray-100"}`;
+
+    btn.innerHTML = `
+      <div>${permit.name}</div>
+      <div class="text-xs ${isSelected ? "text-blue-100" : "text-gray-500"}">
+        ${category}${property ? " • " + property : ""}
+      </div>
+    `;
+
+    btn.onclick = () => {
+      state.selectedPermit = permit;
+      state.selectedFile = permit.file;
+      state.selectedCategory = permit.category;
+      renderAll();
+    };
+
+    container.appendChild(btn);
+  });
+}
+
+function renderContent() {
+  const container = document.getElementById("content");
+
+  if (!state.selectedPermit) {
+    container.innerHTML = `
+      <div class="text-gray-600">
+        <div class="text-lg font-semibold mb-2">Select a Permit</div>
+        <p>Select a permit from the list to view application requirements and checklist details.</p>
+        <p class="mt-2 text-sm text-gray-500">Use search or filters to locate a specific permit type.</p>
+      </div>
+    `;
+    return;
+  }
+
+  const data = state.selectedPermit;
+
+  let html = `<div class="mb-4 text-xl font-semibold">${data.name}</div>`;
+
+  if (data.guidance) {
+    html += `
+      <div class="mb-4 p-4 rounded border-l-4 border-blue-500 bg-blue-50 text-sm text-gray-700">
+        <div class="font-semibold text-blue-700 mb-1">When do I need a Permit?</div>
+        <div>${data.guidance}</div>
+      </div>
+    `;
+  }
+
+  data.sections.forEach(section => {
+    html += `<div class="mb-6 border rounded-lg p-4 bg-gray-50">
+      <h2 class="font-semibold mb-3">${section.name}</h2>`;
+
+    section.items.forEach(item => {
+      if (item.type === "inspection_group") {
+        html += `
+          <div class="mb-4 p-4 border rounded bg-white">
+            <div class="font-semibold mb-2">${item.label}</div>
+            <ol class="list-decimal ml-5 space-y-1 text-sm">
+              ${item.inspections.map(i => `<li>${i}</li>`).join("")}
+            </ol>
+          </div>
+        `;
+        return;
+      }
+      let name = "";
+      let description = "";
+      let links = [];
+
+      if (item.type === "requirement") {
+        name = item.label || item.value || "";
+        description = item.description || "";
+        links = item.links || [];
+      } else {
+        const req = state.library[item.id] || {};
+        name = req.name || item.id || "";
+        description = item.description || req.description || "";
+        links = item.links || req.links || [];
+      }
+
+      html += `
+        <div class="flex items-start gap-3 p-3 mb-2 border rounded bg-white">
+          <input type="checkbox" class="mt-1 w-4 h-4" />
+          <div>
+            <div class="font-medium">${name}</div>
+            ${description ? `<div class="text-sm text-gray-500 mt-1">${description}</div>` : ""}
+            ${links.length ? `
+              <div class="mt-1 text-sm">
+                ${links.map(l => `<a href="${l.url}" target="_blank" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
+              </div>
+            ` : ""}
+          </div>
+        </div>
+      `;
+    });
+
+    html += `</div>`;
+  });
+
+if (data.noticeOfCommencement) {
+  html += `
+    <div class="mt-8 p-4 border-l-4 border-yellow-500 bg-yellow-50 text-sm text-gray-700 rounded">
+      <div class="font-semibold text-yellow-700 mb-1">Notice of Commencement</div>
+      <div>${data.noticeOfCommencement}</div>
+    </div>
+  `;
+}
+
+  html += `
+    <div class="mt-6 text-sm text-gray-500 text-center">
+      <strong>Additional Requirements:</strong> Each project is unique. Additional information or documentation may be required based on the scope of work.
+    </div>
+  `;
+
+  container.innerHTML = html;
+}
+</script>
+</body>
+</html>
