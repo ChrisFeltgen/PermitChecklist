@@ -52,7 +52,7 @@
     },
     "app_fire": {
       "name": "Fire Plan Review Application",
-      "description": "",
+      "description": "Required for projects in Multi-Family Buildings, Commericial, and Condominiums.",
       "links": [
         {
           "label": "Fire Plan Review Application",
@@ -2420,8 +2420,7 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_building" }
           ]
         },
         {
@@ -4105,18 +4104,12 @@
           "name": "Applications",
           "items": [
             { "id": "app_building" },
-            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_fire"}
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Product Approval",
@@ -5264,38 +5257,56 @@
       "name": "Window & Door Changeouts",
       "category": "Building",
       "propertyType": ["Residential", "Commercial"],
-      "guidance": "The installation, replacement or major repair of any windows or doors, whether Commercial or Residential, requires a Building Permit be issued. A permit is not required for the replacement of any part which does not alter its approval or make it unsafe.",
+      "guidance": "The installation, replacement or major repair of any windows or doors requires a Building Permit. A permit is not required for replacement of components that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
           "items": [
             { "id": "app_building" },
-            { "id": "app_fire", "description": "Required for commercial projects only" }
+            { "id": "app_fire" }
           ]
         },
         {
-          "name": "Plans",
+          "name": "Requirements",
           "items": [
-            { "type": "requirement", "value": "Opening schedule showing size, type, and location" },
-            { "type": "requirement", "value": "Plan showing location of all windows and doors" },
-            { "type": "requirement", "value": "Product approvals (Florida Product Approval or Miami-Dade NOA) with items marked" }
-          ]
-        },
-        {
-          "name": "Technical",
-          "items": [
-            { "type": "requirement", "value": "Design pressures" },
-            { "type": "requirement", "value": "Broward County Fenestration Voluntary Wind Load Chart" },
-            { "type": "requirement", "value": "Mean roof height" },
-            { "type": "requirement", "value": "Site-specific wind load calculations (required if building height exceeds 30 feet)" }
-          ]
-        },
-        {
-          "name": "Supporting Documents",
-          "items": [
-            { "type": "requirement", "value": "Association approval letter (if applicable)" },
-            { "type": "requirement", "value": "Owner/Builder affidavit (if applicable)" },
-            { "type": "requirement", "value": "Photo of existing door condition if encroaching required width" }
+            {
+              "type": "requirement",
+              "label": "HOA / Condo Association Approval",
+              "description": "Provide association approval letter if applicable."
+            },
+            {
+              "type": "requirement",
+              "label": "Retrofit Window & Door Schedule",
+              "description": "Provide opening schedule showing size, type, and location of all windows and doors.",
+              "links": [
+                {
+                  "label": "Broward County Uniform Retrofit Window & Door Schedule",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Retrofit-Window-and-Door-Schedule.pdf"
+                }
+              ]
+            },
+            {
+              "type": "requirement",
+              "label": "Floor Plan Showing Openings",
+              "description": "Submit a plan or drawing showing the location, size, and type of each window or door. A marked-up floor plan or a clear sketch is acceptable, provided the information is legible."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approval Documents",
+              "description": "Provide a current Florida Product Approval or Miami-Dade Notice of Acceptance (NOA) for each window or door product being installed. The selected product must be clearly identified within the approval document by circling or highlighting it.",
+              "links": [{"label":"Florida Product Approvals","url":"https://www.floridabuilding.org/pr/pr_app_srch.aspx"}, {"label":"Miami-Dade NOA", "url":"https://www.miamidade.gov/building/pc-search_app.asp"}]
+            },
+            {
+              "type": "requirement",
+              "label": "Wind Load Requirements and Design Pressures",
+              "description": "Provide documentation showing the required design pressures for each window and door opening.<br><br>For buildings with a mean roof height of 30 feet or less, submit a plan showing all openings and their design pressures. This may be based on the Broward County Fenestration Voluntary Wind Load Chart or supported by a signed and sealed document from a Florida Professional Engineer or Architect.<br><br>For buildings with a mean roof height greater than 30 feet, a site-specific design is required. This must be signed and sealed by a Florida Professional Engineer or Architect and must identify the location of all openings and the required design pressures for each opening. Generic charts or standard tables are not permitted.",
+              "links": [{"label":"Broward County Fenestration Voluntary Wind Load Chart", "url":"https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/resources/Fenestration-Wind-Load-and-Roof-Uplift-Chart.pdf"}]
+            },
+            {
+              "type": "requirement",
+              "label": "Photos of Doors Adjacent to Catwalks or Egress Walkways",
+              "description": "If a door is located adjacent to a catwalk or required egress walkway, the door must not reduce the required width of the walkway by more than one-half when in any open position. If this condition may be affected, submit a photo of the existing door and walkway for review."
+            }
           ]
         },
         {
@@ -5303,7 +5314,7 @@
           "items": [
             {
               "type": "inspection_group",
-              "label": "Window/Door Permit Inspections",
+              "label": "Window/Door Inspections",
               "inspections": [
                 "BLDG ATTACHMENT",
                 "BLDG FINAL STRUCTURAL"
@@ -5311,7 +5322,7 @@
             },
             {
               "type": "inspection_group",
-              "label": "Fire Permit Inspections (If applicable)",
+              "label": "Fire Inspections (If applicable)",
               "inspections": [
                 "FIRE DEPARTMENT FINAL"
               ]
