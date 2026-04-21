@@ -50,6 +50,16 @@
         }
       ]
     },
+    "app_floodplain": {
+      "name": "Floodplain Permit Application",
+      "description": "TO BE ENTERED",
+      "links": [
+        {
+          "label": "Floodplain Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf" 
+        }
+      ]
+    },
     "app_fire": {
       "name": "Fire Plan Review Application",
       "description": "Required for projects in Multi-Family Buildings, Commericial, and Condominiums.",
@@ -107,6 +117,7 @@
 
   "permits": [
     {"file": "ac_change_out",
+      "lastupdatesd": "12,112.22",
       "name": "A/C Change Out",
       "category": "Mechanical",
       "guidance": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
@@ -152,6 +163,7 @@
             { "id": "app_electrical" },
             { "id": "app_mechanical" },
             { "id": "app_plumbing", "description": "Required if plumbing work is included" },
+            { "id": "app_floodplain" },
             { "id": "app_fire", "description": "Required for commercial projects only" },
             { "id": "app_zoning" },
             { "id": "app_landscape" }
@@ -160,11 +172,6 @@
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
-            },
             {
               "type": "requirement",
               "label": "Broward County Approvals (Commercial)",
@@ -332,10 +339,9 @@
           "items": [
             { "id": "app_building" },
             { "id": "app_engineering" },
-            { "id": "app_zoning" },
             { "id": "app_fire" },
             { "id": "app_landscape" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_zoning" }
           ]
         },
         {
@@ -415,19 +421,13 @@
           "name": "Applications",
           "items": [
             { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_fire", "description": "Required for commercial projects only" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_fire" },
+            { "id": "app_zoning" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
-            },
             {
               "type": "requirement",
               "label": "Certificate of Flame Resistance",
@@ -789,8 +789,7 @@
             { "id": "app_building" },
             { "id": "app_electrical" },
             { "id": "app_zoning" },
-            { "id": "app_fire", "description": "Required for commercial projects" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+            { "id": "app_fire", "description": "Required for commercial projects" }
           ]
         },
         {
@@ -947,8 +946,7 @@
             { "id": "app_building", "description": "Must be submitted by a member of a Native American Tribe" },
             { "id": "app_zoning", "description": "Must be submitted by a member of a Native American Tribe" },
             { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" }
           ]
         },
         {
@@ -1227,8 +1225,7 @@
           "items": [
             { "id": "app_plumbing" },
             { "id": "app_electrical" },
-            { "id": "app_plumbing", "description": "Additional plumbing application required for gas heaters" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_plumbing", "description": "Additional plumbing application required for gas heaters" }
           ]
         },
         {
@@ -1311,8 +1308,7 @@
               "type": "requirement",
               "label": "Broward County Environmental Approval",
               "description": "Submit Broward County Environmental approval."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -1374,8 +1370,7 @@
               "type": "requirement",
               "label": "Broward County Environmental Approval",
               "description": "Submit Broward County Environmental approval."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -1485,8 +1480,7 @@
               "type": "requirement",
               "label": "Special Inspector Form",
               "description": "Submit completed Special Inspector Form."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -1538,18 +1532,12 @@
           "items": [
             { "id": "app_building" },
             { "id": "app_zoning" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
-            },
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
@@ -1605,8 +1593,7 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_electrical" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_electrical" }
           ]
         },
         {
@@ -1664,8 +1651,7 @@
               "type": "requirement",
               "label": "Special Inspector Form",
               "description": "Required if welded structural connections are included."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -1756,8 +1742,7 @@
             { "id": "app_mechanical" },
             { "id": "app_zoning" },
             { "id": "app_fire", "description": "Required for commercial projects with fire systems" },
-            { "id": "app_landscape" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape" }
           ]
         },
         {
@@ -1877,8 +1862,7 @@
             { "id": "app_engineering" },
             { "id": "app_electrical" },
             { "id": "app_zoning", "description": "Required if work encroaches property lines" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
@@ -1980,18 +1964,12 @@
             { "id": "app_building" },
             { "id": "app_engineering" },
             { "id": "app_zoning" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for asphalt installation or removal."
-            },
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
@@ -2085,8 +2063,7 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_mechanical" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_mechanical" }
           ]
         },
         {
@@ -2096,11 +2073,6 @@
               "type": "requirement",
               "label": "Ductwork Plans",
               "description": "Provide signed and sealed duct plans showing duct sizes, R-values, return air balance, and hanging details."
-            },
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
             }
           ]
         },
@@ -2132,8 +2104,7 @@
             { "id": "app_building" },
             { "id": "app_zoning" },
             { "id": "app_fire" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
@@ -2253,10 +2224,6 @@
           ]
         },
         {
-          "name": "Requirements",
-          "items": []
-        },
-        {
           "name": "Inspections",
           "items": [
             {
@@ -2281,18 +2248,12 @@
           "name": "Applications",
           "items": [
             { "id": "app_building" },
-            { "id": "app_fire", "description": "Required for commercial projects (not required for single-family residences)" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_fire", "description": "Required for commercial projects (not required for single-family residences)" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Best Management Practices (BMP) Plan",
@@ -2340,18 +2301,12 @@
             { "id": "app_building" },
             { "id": "app_zoning" },
             { "id": "app_fire", "description": "Required for multi-family, condominium, and commercial projects" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Product Approval or Engineered Details",
@@ -2484,8 +2439,7 @@
               "type": "requirement",
               "label": "Broward County & Agency Approvals",
               "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and any applicable state or federal approvals (including FAA if cranes are used)."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -2575,8 +2529,7 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_plumbing" }
           ]
         },
         {
@@ -2638,18 +2591,12 @@
             { "id": "app_zoning" },
             { "id": "app_electrical", "description": "Required if electrical work is included" },
             { "id": "app_fire", "description": "Required for commercial projects (not required for single-family residences)" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
-            },
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
@@ -2740,8 +2687,7 @@
               "type": "requirement",
               "label": "Broward County Approvals",
               "description": "Required for commercial generators including Planning and Development Management Division approval and Transportation Concurrency Certificate."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -2844,8 +2790,7 @@
               "type": "requirement",
               "label": "Special Inspector Form",
               "description": "Submit signed, sealed, and dated Special Building Inspector Form from a licensed architect or engineer."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -2899,8 +2844,7 @@
               "type": "requirement",
               "label": "Broward County Approval",
               "description": "Planning and Development Management Division (P.D.M.D.) approval required."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -3005,8 +2949,7 @@
               "type": "requirement",
               "label": "Utility Connection & Capital Recovery",
               "description": "Required if applicable."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+            }
           ]
         },
         {
@@ -3114,18 +3057,12 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_plumbing" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Irrigation Plans",
@@ -3160,7 +3097,7 @@
     },
 
     {"file": "kitchen_bath_renovation",
-      "name": "Kitchen/Bath Renovation",
+      "name": "Kitchen / Bath Renovation",
       "category": "Building",
       "propertyType": ["Residential", "Commercial"],
       "guidance": "The installation, alteration, or major repair of a kitchen or bathroom requires a permit.",
@@ -3177,11 +3114,6 @@
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Condo Association Approval",
@@ -3278,8 +3210,7 @@
           "items": [
             { "id": "app_building" },
             { "id": "app_electrical" },
-            { "id": "app_zoning" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_zoning" }
           ]
         },
         {
@@ -3360,8 +3291,7 @@
               "type": "requirement",
               "label": "Floodplain Permit Application",
               "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+            }
           ]
         },
         {
@@ -3460,8 +3390,7 @@
             { "id": "app_plumbing" },
             { "id": "app_engineering" },
             { "id": "app_zoning" },
-            { "id": "app_landscape" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+            { "id": "app_landscape" }
           ]
         },
         {
@@ -3632,8 +3561,7 @@
             { "id": "app_plumbing" },
             { "id": "app_electrical" },
             { "id": "app_zoning" },
-            { "id": "app_landscape" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape" }
           ]
         },
         {
@@ -3722,7 +3650,7 @@
     },
 
     {"file": "plumbing_tunnel_job",
-      "name": "Plumbing Tunnel Job (Under Slab Drain Replacement)",
+      "name": "Plumbing Tunnel Job",
       "category": "Plumbing",
       "propertyType": ["Residential", "Commercial"],
       "guidance": "Excavation below a foundation for pipe or drain replacement requires a Plumbing Permit.",
@@ -3730,18 +3658,12 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_plumbing" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Floor/Site Plan",
@@ -3781,8 +3703,7 @@
               "type": "requirement",
               "label": "Broward County Approvals",
               "description": "Environmental Review, Planning & Redevelopment approval, and Transportation Concurrency Certificate (if applicable)."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -3844,11 +3765,14 @@
           "name": "Applications",
           "items": [
             { "id": "app_building" },
-            { "id": "app_fire", "description": "Required for multi-family, condominium, and commercial projects" },
+            { "id": "app_fire" },
             {
               "type": "requirement",
               "label": "HVHZ Permit Application",
-              "description": "High Velocity Hurricane Zone Uniform Permit Application with required attachments."
+              "description": "High Velocity Hurricane Zone Uniform Permit Application with required attachments.",
+              "links": [
+                { "label" : "HVHZ Permit Application", "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/HVHZ-Application.pdf"}
+              ]
             }
           ]
         },
@@ -3941,8 +3865,7 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_plumbing" }
           ]
         },
         {
@@ -3952,11 +3875,6 @@
               "type": "requirement",
               "label": "Reuse Connection Application",
               "description": "Submit completed Reclaimed Water Connection Application/Permit and Hold Harmless Agreement."
-            },
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
             }
           ]
         },
@@ -3985,8 +3903,7 @@
           "name": "Applications",
           "items": [
             { "id": "app_building" },
-            { "id": "app_engineering" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_engineering" }
           ]
         },
         {
@@ -4055,18 +3972,12 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_plumbing" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Environmental Review Approval",
@@ -4181,8 +4092,7 @@
               "type": "requirement",
               "label": "Sign Code Compliance Application",
               "description": "Submit completed Sign Code Compliance Permit Application."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -4265,8 +4175,7 @@
               "type": "requirement",
               "label": "Utility Connection & Capital Recovery",
               "description": "Submit completed Utility Connection and Capital Recovery Fee Application."
-            },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            }
           ]
         },
         {
@@ -4383,17 +4292,16 @@
     },
 
     {"file": "solar_systems",
-      "name": "Solar Systems (Thermal & Photovoltaic)",
+      "name": "Solar Systems (Photovoltaic)",
       "category": "Electrical",
       "propertyType": ["Residential", "Commercial"],
-      "guidance": "The installation of solar thermal or photovoltaic systems requires applicable Building, Electrical, and/or Plumbing permits depending on system type.",
+      "guidance": "The installation of solar (photovoltaic) systems requires applicable Building and Electrical permits.",
       "sections": [
         {
           "name": "Applications",
           "items": [
             { "id": "app_building", "description": "Required for mounting panels" },
             { "id": "app_electrical", "description": "Required for photovoltaic systems" },
-            { "id": "app_plumbing", "description": "Required for solar thermal systems" },
             { "id": "app_fire" },
             { "id": "app_zoning" }
           ]
@@ -4475,14 +4383,6 @@
             },
             {
               "type": "inspection_group",
-              "label": "Plumbing Inspections (Solar Thermal)",
-              "inspections": [
-                "P PLUMBING ROUGH",
-                "P FINAL-PLUMBING"
-              ]
-            },
-            {
-              "type": "inspection_group",
               "label": "Fire Inspections (If applicable)",
               "inspections": [
                 "FIRE DEPARTMENT FINAL"
@@ -4511,8 +4411,7 @@
           "items": [
             { "id": "app_building", "description": "Structural application required for temporary structures" },
             { "id": "app_electrical" },
-            { "id": "app_fire" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000 (if applicable)" }
+            { "id": "app_fire" }
           ]
         },
         {
@@ -4595,18 +4494,12 @@
             { "id": "app_zoning" },
             { "id": "app_electrical", "description": "Required if electrical work is included" },
             { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
-            },
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
@@ -4680,8 +4573,7 @@
           "name": "Applications",
           "items": [
             { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_electrical" }
           ]
         },
         {
@@ -4691,11 +4583,6 @@
               "type": "requirement",
               "label": "Water Heater Replacement Data Form",
               "description": "Submit completed Broward County Dwelling Unit Water Heater Replacement Data Form."
-            },
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103."
             },
             {
               "type": "requirement",
@@ -4751,18 +4638,12 @@
             { "id": "app_building" },
             { "id": "app_zoning" },
             { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            },
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
@@ -4822,8 +4703,7 @@
             { "id": "app_zoning" },
             { "id": "app_fire" },
             { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "app_engineering", "description": "Required for erosion control (sales trailers)" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+            { "id": "app_engineering", "description": "Required for erosion control (sales trailers)" }
           ]
         },
         {
@@ -4932,8 +4812,7 @@
             { "id": "app_electrical", "description": "Required if electrical work is included" },
             { "id": "app_plumbing", "description": "Required if plumbing work is included" },
             { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
+            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" }
           ]
         },
         {
@@ -5006,8 +4885,7 @@
             { "id": "app_engineering" },
             { "id": "app_zoning" },
             { "id": "app_landscape" },
-            { "id": "app_fire" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $2,500" }
+            { "id": "app_fire" }
           ]
         },
         {
@@ -5095,7 +4973,7 @@
             { "id": "app_building" },
             { "id": "app_electrical" },
             { "id": "app_zoning" },
-            { "id": "app_fire", "description": "Required for commercial and multi-family projects" }
+            { "id": "app_fire" }
           ]
         },
         {
@@ -5176,7 +5054,9 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            { "id": "app_plumbing" },
+            { "id": "app_electrical",
+              "description": "Only required when..." }
           ]
         },
         {
@@ -5224,18 +5104,7 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "doc_noc", "description": "Required for projects exceeding $5,000" }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Owner/Builder Affidavit",
-              "description": "Required if applying as an owner/builder under Florida Statute 489.103. Not permitted for condominium work."
-            }
+            { "id": "app_plumbing" }
           ]
         },
         {
