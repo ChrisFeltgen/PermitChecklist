@@ -66,7 +66,7 @@
       "links": [
         {
           "label": "Fire Plan Review Application",
-          "url": "(https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Fire-Plan-Review-Application.pdf"
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Fire-Plan-Review-Application.pdf"
         }
       ]
     },
@@ -94,6 +94,16 @@
       "name": "Notice of Commencement",
       "description": "Required for projects exceeding $5,000"
     },
+    "form_easement": {
+      "name": "Easement Agreements",
+      "description": "Required when proposed work is located within a utility or drainage easement.<br><br>A completed Easement Agreement must be signed by each utility provider with facilities in the easement. To obtain signatures, send the agreement, a property survey, and a sketch of the proposed work to each utility for review. Contact information for each provider is included within the form.",
+      "links": [
+        {
+          "label": "Easment Agreement Form",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Easement-Agreement.pdf"
+        }
+      ]
+    },
     "plan_structural": {
       "name": "Structural Plans"
     },
@@ -105,7 +115,7 @@
           "url": "https://www.floridabuilding.org"
         },
         {
-          "label](https://www.floridabuilding.org%22},{%22label)": "Miami-Dade NOA",
+          "label": "Miami-Dade NOA",
           "url": "https://www.miamidade.gov"
         }
       ]
@@ -412,7 +422,7 @@
     },
 
     {"file": "awning_canopy",
-      "name": "Awning/Canopy",
+      "name": "Awning / Canopy",
       "category": "Building",
       "propertyType": ["Residential", "Commercial"],
       "guidance": "The installation or replacement of an awning or canopy requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
@@ -476,16 +486,19 @@
       ]
     },
 
-    {"file": "backflow_replacement",
-      "name": "Backflow Replacement",
+    {"file": "backflow_preventer",
+      "name": "Backflow Preventer",
       "category": "Plumbing",
       "propertyType": ["Residential", "Commercial"],
-      "guidance": "The installation or replacement of a backflow device requires a Plumbing Permit.",
+      "guidance": "The installation or replacement of a backflow preventer requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            {
+              "id": "app_plumbing",
+              "description": "Must include backflow preventer type (RPZ, DC, PVB, etc.), use (domestic, irrigation, fire, etc.), and size."
+            }
           ]
         },
         {
@@ -493,8 +506,14 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Device Specifications",
-              "description": "Provide the size and manufacturer of the backflow device being installed."
+              "label": "Test & Maintenance Report",
+              "description": "Registration with BSI Online Tracking is required prior to final inspection. The backflow preventer must be registered, and a completed City of Pompano Beach Backflow Prevention Assembly Test and Maintenance Report must be available on-site at the time of final inspection.",
+              "links": [
+                {
+                  "label": "BSIOnlineTracking.com",
+                  "url": "https://www.bsionlinetracking.com"
+                }
+              ]
             }
           ]
         },
@@ -1207,81 +1226,6 @@
                 "L SHRUB/SOD/GROUNDCOVER",
                 "L IRRIGATION WET TEST",
                 "L FINAL LANDSCAPE"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-
-    {"file": "commercial_pool_heater",
-      "name": "Commercial Pool Heater",
-      "category": "Plumbing",
-      "propertyType": ["Commercial"],
-      "guidance": "The installation or replacement of a commercial pool heater requires a Plumbing Permit.",
-      "sections": [
-        {
-          "name": "Applications",
-          "items": [
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_plumbing", "description": "Additional plumbing application required for gas heaters" }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Survey",
-              "description": "Provide survey showing the location of the pool heater."
-            },
-            {
-              "type": "requirement",
-              "label": "Pool Piping Diagram",
-              "description": "Provide pool piping diagram and system details."
-            },
-            {
-              "type": "requirement",
-              "label": "Anchoring Detail",
-              "description": "Provide anchoring detail including bracket type, screw type, size, length, count, and locations. Must be from manufacturer or signed and sealed by a structural engineer."
-            },
-            {
-              "type": "requirement",
-              "label": "Gas Piping Plans (If applicable)",
-              "description": "Provide plan and isometric drawings showing gas piping layout, total developed length, BTU loads, materials, and sizing per FBC Fuel Gas."
-            },
-            {
-              "type": "requirement",
-              "label": "Manufacturer Specifications",
-              "description": "Provide installation instructions showing required clearances for maintenance and servicing."
-            }
-          ]
-        },
-        {
-          "name": "Inspections",
-          "items": [
-            {
-              "type": "inspection_group",
-              "label": "Plumbing Inspections",
-              "inspections": [
-                "P FINAL-PLUMBING"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Electrical Inspections (If applicable)",
-              "inspections": [
-                "EL ROUGH",
-                "EL FINAL-ELECTRIC"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Gas Inspections (If applicable)",
-              "inspections": [
-                "P GAS ROUGH",
-                "P FINAL PLUMBING"
               ]
             }
           ]
@@ -2296,12 +2240,13 @@
       "guidance": "The installation, replacement, or major repair of a fence requires a Building Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications & Forms",
           "items": [
             { "id": "app_building" },
             { "id": "app_zoning" },
             { "id": "app_fire", "description": "Required for multi-family, condominium, and commercial projects" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
+            { "id": "form_easement" }
           ]
         },
         {
@@ -2321,11 +2266,6 @@
               "type": "requirement",
               "label": "Pool Safety Compliance",
               "description": "If a pool exists within the fenced area, provide details demonstrating compliance with Florida Swimming Pool Safety Act."
-            },
-            {
-              "type": "requirement",
-              "label": "Easement Agreements",
-              "description": "Required if the proposed fence encroaches into an easement."
             }
           ]
         },
@@ -2547,6 +2487,11 @@
             },
             {
               "type": "requirement",
+              "label": "Gas Appliance & Regulator Specifications",
+              "description": "Provide manufacturer specification sheets and installation instructions for all gas appliances and regulators."
+            },
+            {
+              "type": "requirement",
               "label": "Generator Gas Plans (If applicable)",
               "description": "Provide gas piping plans for generators including BTU loads, system connection, piping layout, materials, and sizing calculations."
             },
@@ -2570,6 +2515,7 @@
               "label": "Gas Inspections",
               "inspections": [
                 "P GAS ROUGH",
+                "P GAS DROP TEST",
                 "P FINAL PLUMBING"
               ]
             }
@@ -3272,6 +3218,77 @@
       ]
     },
 
+    {"file": "mini_split_system_new",
+      "name": "Mini-Split System (New)",
+      "category": "Mechanical",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The installation of a new mini-split system requires a Mechanical Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_mechanical" },
+            { "id": "app_electrical" },
+            { "id": "app_floodplain" },
+            { "id": "app_zoning" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing location of exterior equipment."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & Load Calculations",
+              "description": "Provide heat load calculations, AHRI certificate, and tie-down/attachment details."
+            },
+            {
+              "type": "requirement",
+              "label": "HVAC & Electrical Plans",
+              "description": "Provide plans showing complete scope of mechanical and electrical work."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide equipment manufacturer specification sheets."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
     {"file": "mobile_home",
       "name": "Mobile Home",
       "category": "Building",
@@ -3375,22 +3392,18 @@
       ]
     },
 
-    {"file": "new_single_family_residence",
-      "name": "New Single Family Residence",
-      "category": "Building",
-      "propertyType": ["Residential"],
-      "guidance": "The construction of a new single-family residence or duplex requires a Building Permit.",
+    {"file": "pool_heater_commercial",
+      "name": "Pool Heater (Commercial)",
+      "category": "Plumbing",
+      "propertyType": ["Commercial"],
+      "guidance": "The installation or replacement of a commercial pool heater requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
             { "id": "app_plumbing" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" }
+            { "id": "app_electrical" },
+            { "id": "app_plumbing", "description": "Additional plumbing application required for gas heaters" }
           ]
         },
         {
@@ -3398,58 +3411,38 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+              "label": "Survey",
+              "description": "Provide survey showing the location of the pool heater."
             },
             {
               "type": "requirement",
-              "label": "Utility Connection & Capital Recovery",
-              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
+              "label": "Pool Piping Diagram",
+              "description": "Provide pool piping diagram and system details."
             },
             {
               "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+              "label": "Anchoring Detail",
+              "description": "Provide anchoring detail including bracket type, screw type, size, length, count, and locations. Must be from manufacturer or signed and sealed by a structural engineer."
             },
             {
               "type": "requirement",
-              "label": "Product Approvals",
-              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
+              "label": "Gas Piping Plans (If applicable)",
+              "description": "Provide plan and isometric drawings showing gas piping layout, total developed length, BTU loads, materials, and sizing per FBC Fuel Gas."
             },
             {
               "type": "requirement",
-              "label": "Energy & HVAC Documentation",
-              "description": "Provide energy calculations, Manual J heat load calculations, AHRI certificates, and tie-down attachment details."
+              "label": "Manufacturer Specifications",
+              "description": "Provide installation instructions showing required clearances for maintenance and servicing."
             },
             {
               "type": "requirement",
-              "label": "Truss Engineering",
-              "description": "Signed and sealed truss engineering shop drawings reviewed by the design professional."
+              "label": "Health Department Approval",
+              "description": "For commercial pools with 33 or more units, provide Broward County Health Department review comments/approval letter. For 32 units or less, provide exemption letter."
             },
             {
               "type": "requirement",
-              "label": "Geotechnical Report",
-              "description": "Signed and sealed geotechnical/subsurface report with foundation design recommendations."
-            },
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Required when applicable per Florida Statute 553.79 and Broward County amendments."
-            },
-            {
-              "type": "requirement",
-              "label": "Equipment & Fixture Specifications",
-              "description": "Manufacturer cut sheets for all equipment and fixtures being installed."
-            }
-          ]
-        },
-        {
-          "name": "Plans",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Complete Plan Set",
-              "description": "Submit a full set of signed and sealed plans including survey, site plan, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, irrigation plans, and landscape plans."
+              "label": "DPEP Approval",
+              "description": "Development Permit Engineering Program (DPEP) approval is required."
             }
           ]
         },
@@ -3458,190 +3451,25 @@
           "items": [
             {
               "type": "inspection_group",
-              "label": "Building Inspections",
-              "inspections": [
-                "BLDG FOOTINGS",
-                "BLDG FORMBOARD SURVEY",
-                "BLDG SOIL TREATMENT",
-                "BLDG SOIL COMPACTION",
-                "BLDG SLAB/REINFORCING",
-                "BLDG ELEVATION CERTIFICATE",
-                "BLDG COLUMNS/SHEAR WALL",
-                "BLDG ENGINEER REPORTS",
-                "BLDG TIE BEAMS",
-                "BLDG FRAMING",
-                "BLDG WALL INSULATION",
-                "BLDG DRYWALL - SCREW/NAIL",
-                "BLDG WALL SHEATHING",
-                "BLDG ROOF FRAMING",
-                "BLDG TRUSS",
-                "BLDG ROOF SHEATHING",
-                "BLDG LATH",
-                "BLDG CEILING INSULATION",
-                "BLDG WINDOW/DOOR FRAMING",
-                "BLDG WINDOW/DOORS",
-                "BLDG BLOWER DOOR TEST",
-                "BLDG FINAL SURVEY",
-                "BLDG FINAL STRUCTURAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Roofing Inspections",
-              "inspections": [
-                "BLDG TIN TAG",
-                "BLDG MOP-IN PROGRESS",
-                "BLDG TILE/SHINGLE-IN PROGRESS",
-                "BLDG ENGINEER REPORTS",
-                "BLDG FINAL STRUCTURAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Zoning Inspections",
-              "inspections": [
-                "Z ZONING FINAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Mechanical Inspections",
-              "inspections": [
-                "M ROUGH",
-                "M FINAL-MECHANICAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Electrical Inspections",
-              "inspections": [
-                "EL FOUNDATION GROUND",
-                "EL ROUGH",
-                "EL SERVICE ROUGH",
-                "EL FINAL-ELECTRICAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
               "label": "Plumbing Inspections",
               "inspections": [
-                "P PLUMBING ROUGH",
-                "P TOP OUT",
                 "P FINAL-PLUMBING"
               ]
             },
             {
               "type": "inspection_group",
-              "label": "Tree Inspections",
+              "label": "Electrical Inspections (If applicable)",
               "inspections": [
-                "L PRE-CON MEETING",
-                "L TREE PROTECTION INSPECTION",
-                "L SITE/SOIL INSPECTION",
-                "L TREE/PLANT DELIVERY INSP",
-                "L SHRUB/SOD/GROUNDCOVER",
-                "L IRRIGATION WET TEST",
-                "L FINAL LANDSCAPE"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-
-    {"file": "new_swimming_pool",
-      "name": "New Swimming Pool",
-      "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
-      "guidance": "The construction of a new swimming pool requires a permit.",
-      "sections": [
-        {
-          "name": "Applications",
-          "items": [
-            { "id": "app_building", "description": "Structural application required for pool construction" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Pool Safety Act Form",
-              "description": "Submit completed Residential Swimming Pool, Spa and Hot Tub Safety Act form."
-            },
-            {
-              "type": "requirement",
-              "label": "Geotechnical Report",
-              "description": "Signed and sealed geotechnical/subsoil report and Special Inspector Form if required."
-            },
-            {
-              "type": "requirement",
-              "label": "Plans and Diagrams",
-              "description": "Provide site plan, electrical plan, pool plan, piping diagram, and construction details."
-            },
-            {
-              "type": "requirement",
-              "label": "Gas System Documentation",
-              "description": "If applicable, provide gas piping plans with isometric drawings, BTU loads, and manufacturer specifications for heaters or heat pumps."
-            },
-            {
-              "type": "requirement",
-              "label": "Electrical Compliance",
-              "description": "Electrical plans must comply with NEC 680 requirements."
-            }
-          ]
-        },
-        {
-          "name": "Inspections",
-          "items": [
-            {
-              "type": "inspection_group",
-              "label": "Pool Inspections",
-              "inspections": [
-                "BLDG SOIL COMPACTION",
-                "BLDG POOL STEEL",
-                "BLDG POOL BARRIER",
-                "BLDG ENGINEER REPORTS",
-                "BLDG FINAL STRUCTURAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Electrical Inspections (Pool/Spa)",
-              "inspections": [
-                "EL UNDERGROUND WIRING/PIPING",
-                "EL POOL LIGHT POTTING COMPOUND",
-                "EL POOL BONDING",
-                "EL POOL DECK BONDING",
-                "EL POOL EXIT ALARM",
+                "EL ROUGH",
                 "EL FINAL-ELECTRIC"
               ]
             },
             {
               "type": "inspection_group",
-              "label": "Plumbing Inspections",
+              "label": "Gas Inspections (If applicable)",
               "inspections": [
-                "P POOL MAIN DRAIN",
-                "P POOL PERIMETER PIPING",
-                "P FINAL-PLUMBING"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Zoning Inspections",
-              "inspections": [
-                "Z ZONING FINAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Tree Inspections",
-              "inspections": [
-                "L TREE PROTECTION INSPECTION",
-                "L FINAL LANDSCAPE"
+                "P GAS ROUGH",
+                "P FINAL PLUMBING"
               ]
             }
           ]
@@ -3667,7 +3495,7 @@
             {
               "type": "requirement",
               "label": "Floor/Site Plan",
-              "description": "Provide plan showing the location of proposed work and clearly label areas to be replaced (e.g., kitchen, bathroom, etc.)."
+              "description": "Provide plan showing the location of proposed work, clearly label areas to be replaced (e.g., kitchen, bathroom, etc.), and indicate whether the permit is for building drains only or for building drains and sewer. If sewer connection is included, provide a 6-inch cleanout at the City connection."
             }
           ]
         },
@@ -3865,7 +3693,15 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            { "id": "app_plumbing" },
+            {
+              "type": "requirement",
+              "label": "Reuse Connection Application",
+              "description": "Submit completed Reclaimed Water Connection Application/Permit and Hold Harmless Agreement:",
+              "links": [
+                {"label": "Hold Harmless Agreement", "url": "https://cdn.pompanobeachfl.gov/city/pages/utilities/HOLD%20HARMLESS.pdf"}
+              ]
+            }
           ]
         },
         {
@@ -3873,8 +3709,8 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Reuse Connection Application",
-              "description": "Submit completed Reclaimed Water Connection Application/Permit and Hold Harmless Agreement."
+              "label": "Backflow & Thermal Expansion",
+              "description": "Provide a backflow preventer at the domestic water meter and a thermal expansion valve (unless a tankless water heater is installed). Both must be shown on submitted drawings."
             }
           ]
         },
@@ -3980,14 +3816,24 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Environmental Review Approval",
+              "label": "Broward Environmental Review Approval",
               "description": "Provide Broward County Environmental Review Approval Certificate."
             },
+            {
+            "type": "requirement",
+            "label": "Broward Septic to Sewer Approval",
+            "description": "Provide Broward County Environmental Septic to Sewer Approval Certificate."
+          },
             {
               "type": "requirement",
               "label": "Sewer Connection Drawing",
               "description": "Provide drawing showing sewer connection including 6-inch cleanout up to grade at sewer lateral if not already installed."
-            }
+            },
+          {
+            "type": "requirement",
+            "label": "Septic Tank Abandonment",
+            "description": "Abandon existing septic tank in accordance with Broward County requirements."
+          }
           ]
         },
         {
@@ -4563,6 +4409,280 @@
       ]
     },
 
+    {"file": "single_family_residence_new",
+      "name": "Single Family Residence (New)",
+      "category": "Building",
+      "propertyType": ["Residential"],
+      "guidance": "The construction of a new single-family residence or duplex requires a Building Permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building" },
+            { "id": "app_electrical" },
+            { "id": "app_mechanical" },
+            { "id": "app_plumbing" },
+            { "id": "app_engineering" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+            },
+            {
+              "type": "requirement",
+              "label": "Utility Connection & Capital Recovery",
+              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
+            },
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            },
+            {
+              "type": "requirement",
+              "label": "Product Approvals",
+              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & HVAC Documentation",
+              "description": "Provide energy calculations, Manual J heat load calculations, AHRI certificates, and tie-down attachment details."
+            },
+            {
+              "type": "requirement",
+              "label": "Truss Engineering",
+              "description": "Signed and sealed truss engineering shop drawings reviewed by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsurface report with foundation design recommendations."
+            },
+            {
+              "type": "requirement",
+              "label": "Special Inspector Form",
+              "description": "Required when applicable per Florida Statute 553.79 and Broward County amendments."
+            },
+            {
+              "type": "requirement",
+              "label": "Equipment & Fixture Specifications",
+              "description": "Manufacturer cut sheets for all equipment and fixtures being installed."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a full set of signed and sealed plans including survey, site plan, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, irrigation plans, and landscape plans."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG FORMBOARD SURVEY",
+                "BLDG SOIL TREATMENT",
+                "BLDG SOIL COMPACTION",
+                "BLDG SLAB/REINFORCING",
+                "BLDG ELEVATION CERTIFICATE",
+                "BLDG COLUMNS/SHEAR WALL",
+                "BLDG ENGINEER REPORTS",
+                "BLDG TIE BEAMS",
+                "BLDG FRAMING",
+                "BLDG WALL INSULATION",
+                "BLDG DRYWALL - SCREW/NAIL",
+                "BLDG WALL SHEATHING",
+                "BLDG ROOF FRAMING",
+                "BLDG TRUSS",
+                "BLDG ROOF SHEATHING",
+                "BLDG LATH",
+                "BLDG CEILING INSULATION",
+                "BLDG WINDOW/DOOR FRAMING",
+                "BLDG WINDOW/DOORS",
+                "BLDG BLOWER DOOR TEST",
+                "BLDG FINAL SURVEY",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Roofing Inspections",
+              "inspections": [
+                "BLDG TIN TAG",
+                "BLDG MOP-IN PROGRESS",
+                "BLDG TILE/SHINGLE-IN PROGRESS",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Mechanical Inspections",
+              "inspections": [
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL FOUNDATION GROUND",
+                "EL ROUGH",
+                "EL SERVICE ROUGH",
+                "EL FINAL-ELECTRICAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P TOP OUT",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L PRE-CON MEETING",
+                "L TREE PROTECTION INSPECTION",
+                "L SITE/SOIL INSPECTION",
+                "L TREE/PLANT DELIVERY INSP",
+                "L SHRUB/SOD/GROUNDCOVER",
+                "L IRRIGATION WET TEST",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {"file": "swimming_pool_(new)",
+      "name": "Swimming Pool (New)",
+      "category": "Building",
+      "propertyType": ["Residential", "Commercial"],
+      "guidance": "The construction of a new swimming pool requires a permit.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            { "id": "app_building", "description": "Structural application required for pool construction" },
+            { "id": "app_plumbing" },
+            { "id": "app_electrical" },
+            { "id": "app_zoning" },
+            { "id": "app_landscape" }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Pool Safety Act Form",
+              "description": "Submit completed Residential Swimming Pool, Spa and Hot Tub Safety Act form."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Signed and sealed geotechnical/subsoil report and Special Inspector Form if required."
+            },
+            {
+              "type": "requirement",
+              "label": "Plans and Diagrams",
+              "description": "Provide site plan, electrical plan, pool plan, piping diagram, and construction details."
+            },
+            {
+              "type": "requirement",
+              "label": "Gas System Documentation",
+              "description": "If applicable, provide gas piping plans with isometric drawings, BTU loads, and manufacturer specifications for heaters or heat pumps."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Compliance",
+              "description": "Electrical plans must comply with NEC 680 requirements."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Pool Inspections",
+              "inspections": [
+                "BLDG SOIL COMPACTION",
+                "BLDG POOL STEEL",
+                "BLDG POOL BARRIER",
+                "BLDG ENGINEER REPORTS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (Pool/Spa)",
+              "inspections": [
+                "EL UNDERGROUND WIRING/PIPING",
+                "EL POOL LIGHT POTTING COMPOUND",
+                "EL POOL BONDING",
+                "EL POOL DECK BONDING",
+                "EL POOL EXIT ALARM",
+                "EL FINAL-ELECTRIC"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P POOL MAIN DRAIN",
+                "P POOL PERIMETER PIPING",
+                "P FINAL-PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
     {"file": "tankless_water_heater",
       "name": "Tankless Water Heater",
       "category": "Plumbing",
@@ -5075,9 +5195,8 @@
             },
             {
               "type": "requirement",
-              "label": "Manufacturer Cut Sheets",
-              "description": "Provide cut sheets showing the energy efficiency rating of the proposed water heater."
-            }
+              "label": "Manufacturer Specifications",
+              "description": "Provide manufacturer cut sheets including equipment specifications and a Uniform Energy Factor (UEF) rating of 0.92 or greater for the proposed water heater."            }
           ]
         },
         {
@@ -5104,7 +5223,10 @@
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            { 
+              "id": "app_plumbing",
+              "description": "State the type of piping material and size on the Plumbing Application."
+            }
           ]
         },
         {
@@ -5173,9 +5295,8 @@
             },
             {
               "type": "requirement",
-              "label": "Photos of Doors Adjacent to Catwalks or Egress Walkways",
-              "description": "If a door is located adjacent to a catwalk or required egress walkway, the door must not reduce the required width of the walkway by more than one-half when in any open position. If this condition may be affected, submit a photo of the existing door and walkway for review."
-            }
+              "label": "Egress Clearance Verification",
+              "description": "Any door that opens outward into the clear path of an egress balcony shall not reduce the required width of the means of egress by more than one-half (generally accepted as 22 inches of clear width) when opened to 90 degrees. If this condition may be affected, provide a photo of the existing door and walkway for review."            }
           ]
         },
         {
