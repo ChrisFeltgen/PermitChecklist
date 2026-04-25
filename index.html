@@ -327,16 +327,24 @@ function loadData() {
       state.permits = data.permits || [];
 
       const target = getTargetPermit();
+      let shouldScrollToContent = false;
+
       if (target) {
         const match = state.permits.find(p => p.file === target);
         if (match) {
           state.selectedPermit = match;
           state.selectedFile = match.file;
           state.selectedCategory = match.category;
+          shouldScrollToContent = true;
         }
       }
 
       renderAll();
+
+      if (shouldScrollToContent) {
+        scrollSelectedPermitIntoView("auto");
+        scrollToContentOnMobile("auto");
+      }
     });
 }
 
@@ -409,6 +417,33 @@ function closeMobileOptions() {
   if (window.matchMedia("(max-width: 767px)").matches) {
     setMobileOptionsOpen(false);
   }
+}
+
+function scrollToContentOnMobile(behavior = "smooth") {
+  if (!window.matchMedia("(max-width: 767px)").matches) return;
+
+  requestAnimationFrame(() => {
+    document.getElementById("content").scrollIntoView({
+      behavior,
+      block: "start"
+    });
+  });
+}
+
+function scrollSelectedPermitIntoView(behavior = "auto") {
+  requestAnimationFrame(() => {
+    const container = document.getElementById("permitList");
+    if (!container) return;
+
+    const selected = container.querySelector(".permit-button[aria-current='true']");
+    if (!selected) return;
+
+    const targetTop = selected.offsetTop - container.offsetTop - (container.clientHeight * 0.065);
+    container.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior
+    });
+  });
 }
 
 function getCategories(permit) {
@@ -504,6 +539,9 @@ function renderPermitList() {
     const property = (permit.propertyType || []).join(", ");
 
     btn.className = `permit-button w-full text-left rounded border px-3 py-3 md:py-2 transition-colors ${isSelected ? "city-blue-bg text-white" : "bg-white hover:bg-gray-100"}`;
+    if (isSelected) {
+      btn.setAttribute("aria-current", "true");
+    }
 
     btn.innerHTML = `
       <div class="font-medium leading-snug">${permit.name}</div>
@@ -523,15 +561,8 @@ function renderPermitList() {
       window.history.replaceState({}, "", url);
 
       renderAll();
-
-      if (window.matchMedia("(max-width: 767px)").matches) {
-        requestAnimationFrame(() => {
-          document.getElementById("content").scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        });
-      }
+      scrollSelectedPermitIntoView("smooth");
+      scrollToContentOnMobile("smooth");
     };
 
     container.appendChild(btn);
@@ -548,6 +579,8 @@ window.addEventListener("hashchange", () => {
     state.selectedFile = match.file;
     state.selectedCategory = match.category;
     renderAll();
+    scrollSelectedPermitIntoView("auto");
+    scrollToContentOnMobile("auto");
   }
 });
 
