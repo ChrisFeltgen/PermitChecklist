@@ -398,6 +398,12 @@ window.addEventListener("hashchange", () => {
   }
 });
 
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  const [year, month, day] = dateStr.split("-");
+  return `${month}/${day}/${year}`;
+}
+
 function renderContent() {
   const container = document.getElementById("content");
 
@@ -442,7 +448,18 @@ function renderContent() {
       <div class="print-divider"></div>
       </div>
 
-      <div class="mb-4 text-xl font-semibold">${data.name}<span class="print-title hidden"> - Permit Checklist</span></div>
+<div class="mb-4 flex justify-between items-end">
+  <div class="text-xl font-semibold">
+    ${data.name}
+    <span class="print-title hidden"> - Permit Checklist</span>
+  </div>
+
+  ${data.lastUpdated ? `
+    <div class="text-xs text-gray-500 italic">
+      Updated: ${formatDate(data.lastUpdated)}
+    </div>
+  ` : ""}
+</div>
     `;
 
   if (data.guidance) {

@@ -42,7 +42,7 @@
     },
     "app_engineering": {
       "name": "Engineering Permit Application",
-      "description": "",      
+      "description": "",
       "links": [
         {
           "label": "Engineering Permit Application",
@@ -56,7 +56,7 @@
       "links": [
         {
           "label": "Floodplain Permit Application",
-          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf" 
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf"
         }
       ]
     },
@@ -124,24 +124,62 @@
       "name": "Wind Load Calculations"
     }
   },
-
   "permits": [
-    {"file": "ac_change_out",
-      "lastupdatesd": "12,112.22",
+    {
+      "file": "ac_change_out",
+      "lastUpdated": "2026-04-25",
       "name": "A/C Change Out",
       "category": "Mechanical",
       "guidance": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
       "sections": [
         {
           "name": "Applications",
-          "items": [{ "id": "app_mechanical" }]
+          "items": [
+            {
+              "id": "app_mechanical"
+            }
+          ]
         },
         {
           "name": "Requirements",
           "items": [
-            { "type": "requirement", "label":"A/C Replacement Data Form", "description": "Unfiform Broward County form for replacing A/C Systems, and detailing Existing and New Unit specs.", "links": [{"label": "A/C Replacement Data Form", "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/AC-Replacement-Data-Form.pdf"}]},
-            { "type": "requirement", "label": "AHRI certificate", "description": "An AHRI Certificate is required to verify that HVAC equipment meets tested efficiency and performance ratings for code compliance.", "links": [{"label":"https://www.ahridirectory.org", "url":"https://www.ahridirectory.org/"}] },
-            { "type": "requirement", "label": "Attachments Details", "description": "Provide attachment details for outdoor equipment using one of the following: Florida Product Approval, Miami-Dade NOA, or signed and sealed engineered plans.", "links": [{"label":"Florida Product Approvals","url":"https://www.floridabuilding.org/pr/pr_app_srch.aspx"}, {"label":"Miami-Dade NOA", "url":"https://www.miamidade.gov/building/pc-search_app.asp"}] }
+            {
+              "type": "requirement",
+              "label": "A/C Replacement Data Form",
+              "description": "Unfiform Broward County form for replacing A/C Systems, and detailing Existing and New Unit specs.",
+              "links": [
+                {
+                  "label": "A/C Replacement Data Form",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/AC-Replacement-Data-Form.pdf"
+                }
+              ]
+            },
+            {
+              "type": "requirement",
+              "label": "AHRI certificate",
+              "description": "An AHRI Certificate is required to verify that HVAC equipment meets tested efficiency and performance ratings for code compliance.",
+              "links": [
+                {
+                  "label": "https://www.ahridirectory.org",
+                  "url": "https://www.ahridirectory.org/"
+                }
+              ]
+            },
+            {
+              "type": "requirement",
+              "label": "Attachments Details",
+              "description": "Provide attachment details for outdoor equipment using one of the following: Florida Product Approval, Miami-Dade NOA, or signed and sealed engineered plans.",
+              "links": [
+                {
+                  "label": "Florida Product Approvals",
+                  "url": "https://www.floridabuilding.org/pr/pr_app_srch.aspx"
+                },
+                {
+                  "label": "Miami-Dade NOA",
+                  "url": "https://www.miamidade.gov/building/pc-search_app.asp"
+                }
+              ]
+            }
           ]
         },
         {
@@ -159,24 +197,46 @@
         }
       ]
     },
-
-    {"file": "additions",
+    {
+      "file": "additions",
+      "lastUpdated": "2026-04-25",
       "name": "Additions",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The lateral or vertical extension, or increase in floor area or height of a structure, requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing", "description": "Required if plumbing work is included" },
-            { "id": "app_floodplain" },
-            { "id": "app_fire", "description": "Required for commercial projects only" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Required if plumbing work is included"
+            },
+            {
+              "id": "app_floodplain"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial projects only"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            }
           ]
         },
         {
@@ -337,21 +397,35 @@
         }
       ]
     },
-
-    {"file": "asphalt_restriping",
+    {
+      "file": "asphalt_restriping",
+      "lastUpdated": "2026-04-25",
       "name": "Asphalt & Restriping",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or repair of asphalt surfaces requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_engineering" },
-            { "id": "app_fire" },
-            { "id": "app_landscape" },
-            { "id": "app_zoning" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_landscape"
+            },
+            {
+              "id": "app_zoning"
+            }
           ]
         },
         {
@@ -420,19 +494,29 @@
         }
       ]
     },
-
-    {"file": "awning_canopy",
+    {
+      "file": "awning_canopy",
+      "lastUpdated": "2026-04-25",
       "name": "Awning / Canopy",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of an awning or canopy requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire" },
-            { "id": "app_zoning" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_zoning"
+            }
           ]
         },
         {
@@ -485,11 +569,15 @@
         }
       ]
     },
-
-    {"file": "backflow_preventer",
+    {
+      "file": "backflow_preventer",
+      "lastUpdated": "2026-04-25",
       "name": "Backflow Preventer",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a backflow preventer requires a Plumbing Permit.",
       "sections": [
         {
@@ -531,24 +619,45 @@
         }
       ]
     },
-
-    {"file": "building_shell",
+    {
+      "file": "building_shell",
+      "lastUpdated": "2026-04-25",
       "name": "Building Shell",
       "category": "Building",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The construction of a building shell requires a Building Permit. Separate permits are required for interior buildouts or tenant units.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical", "description": "If applicable" },
-            { "id": "app_plumbing", "description": "Required for irrigation systems" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" },
-            { "id": "app_fire" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical",
+              "description": "If applicable"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Required for irrigation systems"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            },
+            {
+              "id": "app_fire"
+            }
           ]
         },
         {
@@ -670,17 +779,23 @@
         }
       ]
     },
-
-    {"file": "burglar_alarm",
+    {
+      "file": "burglar_alarm",
+      "lastUpdated": "2026-04-25",
       "name": "Burglar Alarm (Hard Wired)",
       "category": "Electrical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of a hard wired burglar alarm system requires an Electrical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_electrical" }
+            {
+              "id": "app_electrical"
+            }
           ]
         },
         {
@@ -707,20 +822,31 @@
         }
       ]
     },
-
-    {"file": "carport_enclosure",
+    {
+      "file": "carport_enclosure",
+      "lastUpdated": "2026-04-25",
       "name": "Carport Enclosure",
       "category": "Building",
-      "propertyType": ["Residential"],
+      "propertyType": [
+        "Residential"
+      ],
       "guidance": "The enclosure of a carport or construction of a garage requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_zoning" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_zoning"
+            }
           ]
         },
         {
@@ -795,20 +921,32 @@
         }
       ]
     },
-
-    {"file": "cell_tower",
+    {
+      "file": "cell_tower",
+      "lastUpdated": "2026-04-25",
       "name": "Cell Tower",
       "category": "Building",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The installation, upgrade, or replacement of a cell tower requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_zoning" },
-            { "id": "app_fire", "description": "Required for commercial projects" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial projects"
+            }
           ]
         },
         {
@@ -881,8 +1019,9 @@
         }
       ]
     },
-
-    {"file": "change_of_use",
+    {
+      "file": "change_of_use",
+      "lastUpdated": "2026-04-25",
       "name": "Change of Use",
       "category": "Building",
       "propertyType": [
@@ -940,20 +1079,36 @@
         }
       ]
     },
-
-    {"file": "chickee_hut",
+    {
+      "file": "chickee_hut",
+      "lastUpdated": "2026-04-25",
       "name": "Chickee Hut",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a chickee hut requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building", "description": "Must be submitted by a member of a Native American Tribe" },
-            { "id": "app_zoning", "description": "Must be submitted by a member of a Native American Tribe" },
-            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" }
+            {
+              "id": "app_building",
+              "description": "Must be submitted by a member of a Native American Tribe"
+            },
+            {
+              "id": "app_zoning",
+              "description": "Must be submitted by a member of a Native American Tribe"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial and multi-family projects"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are affected or adjacent to work area"
+            }
           ]
         },
         {
@@ -1000,24 +1155,44 @@
         }
       ]
     },
-
-    {"file": "commercial_building",
+    {
+      "file": "commercial_building",
+      "lastUpdated": "2026-04-25",
       "name": "Commercial Building",
       "category": "Building",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The construction of a commercial building requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" },
-            { "id": "app_fire" }          ]
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            },
+            {
+              "id": "app_fire"
+            }
+          ]
         },
         {
           "name": "Requirements",
@@ -1220,22 +1395,37 @@
         }
       ]
     },
-
-    {"file": "commercial_refrigeration",
+    {
+      "file": "commercial_refrigeration",
+      "lastUpdated": "2026-04-25",
       "name": "Commercial Refrigeration",
       "category": "Mechanical",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The installation of commercial refrigeration systems requires a Mechanical Permit. Fire suppression is required for coolers over 400 sq. ft.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_building" },
-            { "id": "app_fire" },
-            { "id": "app_zoning" },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_zoning"
+            },
             {
               "type": "requirement",
               "label": "Broward County Environmental Approval",
@@ -1282,22 +1472,37 @@
         }
       ]
     },
-
-    {"file": "commercial_spray_booth",
+    {
+      "file": "commercial_spray_booth",
+      "lastUpdated": "2026-04-25",
       "name": "Commercial Spray Booth",
       "category": "Mechanical",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The installation of a commercial spray booth requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_building" },
-            { "id": "app_fire" },
-            { "id": "app_zoning" },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_zoning"
+            },
             {
               "type": "requirement",
               "label": "Broward County Environmental Approval",
@@ -1396,18 +1601,26 @@
         }
       ]
     },
-
-    {"file": "concrete_restoration",
+    {
+      "file": "concrete_restoration",
+      "lastUpdated": "2026-04-25",
       "name": "Concrete Restoration",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The restoration or repair of concrete on a building requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            },
             {
               "type": "requirement",
               "label": "Special Inspector Form",
@@ -1452,19 +1665,30 @@
         }
       ]
     },
-
-    {"file": "concrete_slab",
+    {
+      "file": "concrete_slab",
+      "lastUpdated": "2026-04-25",
       "name": "Concrete Slab",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of a concrete slab requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            }
           ]
         },
         {
@@ -1515,17 +1739,23 @@
         }
       ]
     },
-
-    {"file": "construction_temp_power",
+    {
+      "file": "construction_temp_power",
+      "lastUpdated": "2026-04-25",
       "name": "Construction Temporary Power",
       "category": "Electrical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "Providing temporary electrical power to a jobsite or trailer requires an Electrical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_electrical" }
+            {
+              "id": "app_electrical"
+            }
           ]
         },
         {
@@ -1558,22 +1788,37 @@
         }
       ]
     },
-
-    {"file": "cooling_tower",
+    {
+      "file": "cooling_tower",
+      "lastUpdated": "2026-04-25",
       "name": "Cooling Tower",
       "category": "Mechanical",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The installation, alteration, or major repair of a cooling tower requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_building" },
-            { "id": "app_fire" },
-            { "id": "app_zoning" },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_zoning"
+            },
             {
               "type": "requirement",
               "label": "Broward County Environmental Approval",
@@ -1658,23 +1903,42 @@
         }
       ]
     },
-
-    {"file": "demolition",
+    {
+      "file": "demolition",
+      "lastUpdated": "2026-04-25",
       "name": "Demolition",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The demolition of a structure requires a permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_zoning" },
-            { "id": "app_fire", "description": "Required for commercial projects with fire systems" },
-            { "id": "app_landscape" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial projects with fire systems"
+            },
+            {
+              "id": "app_landscape"
+            }
           ]
         },
         {
@@ -1780,21 +2044,37 @@
         }
       ]
     },
-
-    {"file": "dock",
+    {
+      "file": "dock",
+      "lastUpdated": "2026-04-25",
       "name": "Dock",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation, replacement, or major repair of a dock requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_engineering" },
-            { "id": "app_electrical" },
-            { "id": "app_zoning", "description": "Required if work encroaches property lines" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_zoning",
+              "description": "Required if work encroaches property lines"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            }
           ]
         },
         {
@@ -1883,20 +2163,32 @@
         }
       ]
     },
-
-    {"file": "driveway_patio",
+    {
+      "file": "driveway_patio",
+      "lastUpdated": "2026-04-25",
       "name": "Driveway / Patio",
       "category": "Building",
-      "propertyType": ["Residential"],
+      "propertyType": [
+        "Residential"
+      ],
       "guidance": "The installation, replacement, or major repair of a residential driveway or patio requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            }
           ]
         },
         {
@@ -1985,17 +2277,23 @@
         }
       ]
     },
-
-    {"file": "ductwork_changeout",
+    {
+      "file": "ductwork_changeout",
+      "lastUpdated": "2026-04-25",
       "name": "Ductwork Change Out",
       "category": "Mechanical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or alteration of mechanical ductwork requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_mechanical" }
+            {
+              "id": "app_mechanical"
+            }
           ]
         },
         {
@@ -2023,20 +2321,33 @@
         }
       ]
     },
-
-    {"file": "dumpster_enclosure",
+    {
+      "file": "dumpster_enclosure",
+      "lastUpdated": "2026-04-25",
       "name": "Dumpster Enclosure",
       "category": "Building",
-      "propertyType": ["Commercial", "Multi-Family"],
+      "propertyType": [
+        "Commercial",
+        "Multi-Family"
+      ],
       "guidance": "The installation of a dumpster enclosure requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_fire" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            }
           ]
         },
         {
@@ -2101,17 +2412,23 @@
         }
       ]
     },
-
-    {"file": "electrical_panel_change",
+    {
+      "file": "electrical_panel_change",
+      "lastUpdated": "2026-04-25",
       "name": "Electrical Panel Change",
       "category": "Electrical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The replacement of an electrical panel requires an Electrical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_electrical" }
+            {
+              "id": "app_electrical"
+            }
           ]
         },
         {
@@ -2138,11 +2455,15 @@
         }
       ]
     },
-
-    {"file": "electrical_service_turn_on",
+    {
+      "file": "electrical_service_turn_on",
+      "lastUpdated": "2026-04-25",
       "name": "Electrical Service Turn-On",
       "category": "Electrical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "A Service Turn-On Permit is required when power has been disconnected and an inspection is needed before restoration by the utility provider.",
       "sections": [
         {
@@ -2169,18 +2490,27 @@
         }
       ]
     },
-
-    {"file": "erosion_control",
+    {
+      "file": "erosion_control",
+      "lastUpdated": "2026-04-25",
       "name": "Erosion Control",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of erosion control devices requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire", "description": "Required for commercial projects (not required for single-family residences)" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial projects (not required for single-family residences)"
+            }
           ]
         },
         {
@@ -2220,21 +2550,37 @@
         }
       ]
     },
-
-    {"file": "fence",
+    {
+      "file": "fence",
+      "lastUpdated": "2026-04-25",
       "name": "Fence",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation, replacement, or major repair of a fence requires a Building Permit.",
       "sections": [
         {
           "name": "Applications & Forms",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_fire", "description": "Required for multi-family, condominium, and commercial projects" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "form_easement" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for multi-family, condominium, and commercial projects"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "form_easement"
+            }
           ]
         },
         {
@@ -2293,17 +2639,22 @@
         }
       ]
     },
-
-    {"file": "flooring_sound_barrier",
+    {
+      "file": "flooring_sound_barrier",
+      "lastUpdated": "2026-04-25",
       "name": "Flooring / Sound Barrier",
       "category": "Building",
-      "propertyType": ["Residential"],
+      "propertyType": [
+        "Residential"
+      ],
       "guidance": "A Flooring Permit is required for installation of new flooring in condominium units or similar dwellings located above another unit or service area. Ground floor units, single-family homes, and commercial spaces do not require a permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" }
+            {
+              "id": "app_building"
+            }
           ]
         },
         {
@@ -2341,23 +2692,41 @@
         }
       ]
     },
-
-    {"file": "foundation_only",
+    {
+      "file": "foundation_only",
+      "lastUpdated": "2026-04-25",
       "name": "Foundation Only",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of a foundation requires a Building Permit. This permit may be issued as a phased permit prior to full building approval.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_fire" },
-            { "id": "app_landscape" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_landscape"
+            },
             {
               "type": "requirement",
               "label": "Threshold Inspection & Special Inspector",
@@ -2447,17 +2816,23 @@
         }
       ]
     },
-
-    {"file": "gas_piping",
+    {
+      "file": "gas_piping",
+      "lastUpdated": "2026-04-25",
       "name": "Gas Piping",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of gas piping requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            {
+              "id": "app_plumbing"
+            }
           ]
         },
         {
@@ -2511,21 +2886,38 @@
         }
       ]
     },
-
-    {"file": "gazebo_pergola",
+    {
+      "file": "gazebo_pergola",
+      "lastUpdated": "2026-04-25",
       "name": "Gazebo / Pergola",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a gazebo or pergola requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_electrical", "description": "Required if electrical work is included" },
-            { "id": "app_fire", "description": "Required for commercial projects (not required for single-family residences)" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_electrical",
+              "description": "Required if electrical work is included"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial projects (not required for single-family residences)"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            }
           ]
         },
         {
@@ -2601,22 +2993,40 @@
         }
       ]
     },
-
-    {"file": "generator",
+    {
+      "file": "generator",
+      "lastUpdated": "2026-04-25",
       "name": "Generator",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a generator requires permits.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_plumbing" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape", "description": "Tree permit required if trees are adjacent to work area" },
-            { "id": "app_fire", "description": "Required for commercial generators" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Tree permit required if trees are adjacent to work area"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial generators"
+            },
             {
               "type": "requirement",
               "label": "Broward County Approvals",
@@ -2709,17 +3119,23 @@
         }
       ]
     },
-
-    {"file": "helical_piles",
+    {
+      "file": "helical_piles",
+      "lastUpdated": "2026-04-25",
       "name": "Helical Piles",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of helical piles for foundation support requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
+            {
+              "id": "app_building"
+            },
             {
               "type": "requirement",
               "label": "Special Inspector Form",
@@ -2759,21 +3175,34 @@
         }
       ]
     },
-
-    {"file": "hood_system",
+    {
+      "file": "hood_system",
+      "lastUpdated": "2026-04-25",
       "name": "Hood System",
       "category": "Mechanical",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The installation of a hood system requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_fire" },
-            { "id": "app_zoning" },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_zoning"
+            },
             {
               "type": "requirement",
               "label": "Broward County Approval",
@@ -2853,22 +3282,37 @@
         }
       ]
     },
-
-    {"file": "interior_buildout",
+    {
+      "file": "interior_buildout",
+      "lastUpdated": "2026-04-25",
       "name": "Interior Buildout",
       "category": "Building",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The interior buildout of a building shell requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_zoning" },
-            { "id": "app_fire" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire"
+            },
             {
               "type": "requirement",
               "label": "Floodplain Permit Application",
@@ -2981,17 +3425,23 @@
         }
       ]
     },
-
-    {"file": "irrigation_system",
+    {
+      "file": "irrigation_system",
+      "lastUpdated": "2026-04-25",
       "name": "Irrigation System",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of an irrigation system requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            {
+              "id": "app_plumbing"
+            }
           ]
         },
         {
@@ -3029,20 +3479,33 @@
         }
       ]
     },
-
-    {"file": "kitchen_bath_renovation",
+    {
+      "file": "kitchen_bath_renovation",
+      "lastUpdated": "2026-04-25",
       "name": "Kitchen / Bath Renovation",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation, alteration, or major repair of a kitchen or bathroom requires a permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_fire", "description": "Required for commercial and multi-family projects" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial and multi-family projects"
+            }
           ]
         },
         {
@@ -3132,19 +3595,29 @@
         }
       ]
     },
-
-    {"file": "light_poles",
+    {
+      "file": "light_poles",
+      "lastUpdated": "2026-04-25",
       "name": "Light Poles",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of lights and associated light poles requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_zoning" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_zoning"
+            }
           ]
         },
         {
@@ -3205,20 +3678,32 @@
         }
       ]
     },
-
-    {"file": "mini_split_system_new",
+    {
+      "file": "mini_split_system_new",
+      "lastUpdated": "2026-04-25",
       "name": "Mini-Split System (New)",
       "category": "Mechanical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of a new mini-split system requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_mechanical" },
-            { "id": "app_electrical" },
-            { "id": "app_floodplain" },
-            { "id": "app_zoning" }
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_floodplain"
+            },
+            {
+              "id": "app_zoning"
+            }
           ]
         },
         {
@@ -3276,22 +3761,37 @@
         }
       ]
     },
-
-    {"file": "mobile_home",
+    {
+      "file": "mobile_home",
+      "lastUpdated": "2026-04-25",
       "name": "Mobile Home",
       "category": "Building",
-      "propertyType": ["Residential"],
+      "propertyType": [
+        "Residential"
+      ],
       "guidance": "The installation of a mobile home requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            },
             {
               "type": "requirement",
               "label": "Floodplain Permit Application",
@@ -3379,19 +3879,29 @@
         }
       ]
     },
-
-    {"file": "pool_heater_commercial",
+    {
+      "file": "pool_heater_commercial",
+      "lastUpdated": "2026-04-25",
       "name": "Pool Heater (Commercial)",
       "category": "Plumbing",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a commercial pool heater requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_plumbing", "description": "Additional plumbing application required for gas heaters" }
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Additional plumbing application required for gas heaters"
+            }
           ]
         },
         {
@@ -3464,17 +3974,23 @@
         }
       ]
     },
-
-    {"file": "plumbing_tunnel_job",
+    {
+      "file": "plumbing_tunnel_job",
+      "lastUpdated": "2026-04-25",
       "name": "Plumbing Tunnel Job",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "Excavation below a foundation for pipe or drain replacement requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            {
+              "id": "app_plumbing"
+            }
           ]
         },
         {
@@ -3502,19 +4018,28 @@
         }
       ]
     },
-
-    {"file": "racking_system",
+    {
+      "file": "racking_system",
+      "lastUpdated": "2026-04-25",
       "name": "Racking System",
       "category": "Building",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "The installation of a racking system in a commercial building requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire" },
-            { "id": "app_electrical" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_electrical"
+            },
             {
               "type": "requirement",
               "label": "Broward County Approvals",
@@ -3570,24 +4095,35 @@
         }
       ]
     },
-
-    {"file": "reroof",
+    {
+      "file": "reroof",
+      "lastUpdated": "2026-04-25",
       "name": "Reroof",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation, replacement, or major repair of a roofing system requires a Building Permit. A permit is not required for minor repairs that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            },
             {
               "type": "requirement",
               "label": "HVHZ Permit Application",
               "description": "High Velocity Hurricane Zone Uniform Permit Application with required attachments.",
               "links": [
-                { "label" : "HVHZ Permit Application", "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/HVHZ-Application.pdf"}
+                {
+                  "label": "HVHZ Permit Application",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/HVHZ-Application.pdf"
+                }
               ]
             }
           ]
@@ -3671,23 +4207,32 @@
         }
       ]
     },
-
-    {"file": "reuse_connection",
+    {
+      "file": "reuse_connection",
+      "lastUpdated": "2026-04-25",
       "name": "Reuse Connection",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
-      "guidance": "The transfer of irrigation from potable water to the City’s reuse connection requires a Plumbing Permit.",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "guidance": "The transfer of irrigation from potable water to the City\u2019s reuse connection requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
+            {
+              "id": "app_plumbing"
+            },
             {
               "type": "requirement",
               "label": "Reuse Connection Application",
               "description": "Submit completed Reclaimed Water Connection Application/Permit and Hold Harmless Agreement:",
               "links": [
-                {"label": "Hold Harmless Agreement", "url": "https://cdn.pompanobeachfl.gov/city/pages/utilities/HOLD%20HARMLESS.pdf"}
+                {
+                  "label": "Hold Harmless Agreement",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/utilities/HOLD%20HARMLESS.pdf"
+                }
               ]
             }
           ]
@@ -3716,18 +4261,26 @@
         }
       ]
     },
-
-    {"file": "seawall",
+    {
+      "file": "seawall",
+      "lastUpdated": "2026-04-25",
       "name": "Seawall",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation, replacement, or major repair of a seawall requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_engineering" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_engineering"
+            }
           ]
         },
         {
@@ -3786,17 +4339,23 @@
         }
       ]
     },
-
-    {"file": "septic_to_sewer",
+    {
+      "file": "septic_to_sewer",
+      "lastUpdated": "2026-04-25",
       "name": "Septic to Sewer Conversion",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The conversion from a septic system to a municipal sewer connection requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" }
+            {
+              "id": "app_plumbing"
+            }
           ]
         },
         {
@@ -3808,20 +4367,20 @@
               "description": "Provide Broward County Environmental Review Approval Certificate."
             },
             {
-            "type": "requirement",
-            "label": "Broward Septic to Sewer Approval",
-            "description": "Provide Broward County Environmental Septic to Sewer Approval Certificate."
-          },
+              "type": "requirement",
+              "label": "Broward Septic to Sewer Approval",
+              "description": "Provide Broward County Environmental Septic to Sewer Approval Certificate."
+            },
             {
               "type": "requirement",
               "label": "Sewer Connection Drawing",
               "description": "Provide drawing showing sewer connection including 6-inch cleanout up to grade at sewer lateral if not already installed."
             },
-          {
-            "type": "requirement",
-            "label": "Septic Tank Abandonment",
-            "description": "Abandon existing septic tank in accordance with Broward County requirements."
-          }
+            {
+              "type": "requirement",
+              "label": "Septic Tank Abandonment",
+              "description": "Abandon existing septic tank in accordance with Broward County requirements."
+            }
           ]
         },
         {
@@ -3838,18 +4397,26 @@
         }
       ]
     },
-
-    {"file": "shutters",
+    {
+      "file": "shutters",
+      "lastUpdated": "2026-04-25",
       "name": "Shutters",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of shutters requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire"}
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            }
           ]
         },
         {
@@ -3894,8 +4461,8 @@
               "type": "inspection_group",
               "label": "Window/Door Inspections",
               "inspections": [
-                    "BLDG ATTACHMENT",
-                    "BLDG FINAL STRUCTURAL"
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
               ]
             },
             {
@@ -3909,19 +4476,29 @@
         }
       ]
     },
-
-   {"file": "sign",
+    {
+      "file": "sign",
+      "lastUpdated": "2026-04-25",
       "name": "Sign",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a sign requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_zoning" },
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_zoning"
+            },
             {
               "type": "requirement",
               "label": "Sign Code Compliance Application",
@@ -3988,23 +4565,44 @@
         }
       ]
     },
-
-    {"file": "site_work",
+    {
+      "file": "site_work",
+      "lastUpdated": "2026-04-25",
       "name": "Site Work",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "Site work associated with a building project requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building", "description": "Required for sub-surface enhancement work" },
-            { "id": "app_plumbing", "description": "Required for irrigation and on-site plumbing" },
-            { "id": "app_electrical", "description": "Required for site lighting" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" },
-            { "id": "app_fire" },
+            {
+              "id": "app_building",
+              "description": "Required for sub-surface enhancement work"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Required for irrigation and on-site plumbing"
+            },
+            {
+              "id": "app_electrical",
+              "description": "Required for site lighting"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            },
+            {
+              "id": "app_fire"
+            },
             {
               "type": "requirement",
               "label": "Utility Connection & Capital Recovery",
@@ -4124,20 +4722,34 @@
         }
       ]
     },
-
-    {"file": "solar_systems",
+    {
+      "file": "solar_systems",
+      "lastUpdated": "2026-04-25",
       "name": "Solar Systems (Photovoltaic)",
       "category": "Electrical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of solar (photovoltaic) systems requires applicable Building and Electrical permits.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building", "description": "Required for mounting panels" },
-            { "id": "app_electrical", "description": "Required for photovoltaic systems" },
-            { "id": "app_fire" },
-            { "id": "app_zoning" }
+            {
+              "id": "app_building",
+              "description": "Required for mounting panels"
+            },
+            {
+              "id": "app_electrical",
+              "description": "Required for photovoltaic systems"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_zoning"
+            }
           ]
         },
         {
@@ -4233,19 +4845,29 @@
         }
       ]
     },
-
-    {"file": "special_event",
+    {
+      "file": "special_event",
+      "lastUpdated": "2026-04-25",
       "name": "Special Event",
       "category": "Building",
-      "propertyType": ["Commercial"],
+      "propertyType": [
+        "Commercial"
+      ],
       "guidance": "An approved special event requires a permit to be issued.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building", "description": "Structural application required for temporary structures" },
-            { "id": "app_electrical" },
-            { "id": "app_fire" }
+            {
+              "id": "app_building",
+              "description": "Structural application required for temporary structures"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_fire"
+            }
           ]
         },
         {
@@ -4314,21 +4936,38 @@
         }
       ]
     },
-
-    {"file": "storage_shed",
+    {
+      "file": "storage_shed",
+      "lastUpdated": "2026-04-25",
       "name": "Storage Shed",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a storage shed requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_electrical", "description": "Required if electrical work is included" },
-            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_electrical",
+              "description": "Required if electrical work is included"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial and multi-family projects"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            }
           ]
         },
         {
@@ -4396,23 +5035,40 @@
         }
       ]
     },
-
-    {"file": "single_family_residence_new",
+    {
+      "file": "single_family_residence_new",
+      "lastUpdated": "2026-04-25",
       "name": "Single Family Residence (New)",
       "category": "Building",
-      "propertyType": ["Residential"],
+      "propertyType": [
+        "Residential"
+      ],
       "guidance": "The construction of a new single-family residence or duplex requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            }
           ]
         },
         {
@@ -4569,21 +5225,36 @@
         }
       ]
     },
-
-    {"file": "swimming_pool_(new)",
+    {
+      "file": "swimming_pool_(new)",
+      "lastUpdated": "2026-04-25",
       "name": "Swimming Pool (New)",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The construction of a new swimming pool requires a permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building", "description": "Structural application required for pool construction" },
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" }
+            {
+              "id": "app_building",
+              "description": "Structural application required for pool construction"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            }
           ]
         },
         {
@@ -4670,18 +5341,26 @@
         }
       ]
     },
-
-    {"file": "tankless_water_heater",
+    {
+      "file": "tankless_water_heater",
+      "lastUpdated": "2026-04-25",
       "name": "Tankless Water Heater",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "app_electrical" }
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            }
           ]
         },
         {
@@ -4733,20 +5412,34 @@
         }
       ]
     },
-
-    {"file": "temporary_construction_fence",
+    {
+      "file": "temporary_construction_fence",
+      "lastUpdated": "2026-04-25",
       "name": "Temporary Construction Fence",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of a temporary construction fence requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial and multi-family projects"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            }
           ]
         },
         {
@@ -4795,23 +5488,44 @@
         }
       ]
     },
-
-    {"file": "temporary_construction_trailer",
+    {
+      "file": "temporary_construction_trailer",
+      "lastUpdated": "2026-04-25",
       "name": "Temporary Construction / Sales Trailer",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation of a temporary construction or sales trailer requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_plumbing", "description": "Required if trailer includes restroom facilities" },
-            { "id": "app_zoning" },
-            { "id": "app_fire" },
-            { "id": "app_landscape", "description": "Required if trees are adjacent to the work area" },
-            { "id": "app_engineering", "description": "Required for erosion control (sales trailers)" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Required if trailer includes restroom facilities"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_engineering",
+              "description": "Required for erosion control (sales trailers)"
+            }
           ]
         },
         {
@@ -4905,22 +5619,42 @@
         }
       ]
     },
-
-    {"file": "tiki_hut",
+    {
+      "file": "tiki_hut",
+      "lastUpdated": "2026-04-25",
       "name": "Tiki Hut",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a tiki hut requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_zoning" },
-            { "id": "app_electrical", "description": "Required if electrical work is included" },
-            { "id": "app_plumbing", "description": "Required if plumbing work is included" },
-            { "id": "app_fire", "description": "Required for commercial and multi-family projects" },
-            { "id": "app_landscape", "description": "Required if trees are affected or adjacent to work area" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_electrical",
+              "description": "Required if electrical work is included"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Required if plumbing work is included"
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial and multi-family projects"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are affected or adjacent to work area"
+            }
           ]
         },
         {
@@ -4976,24 +5710,43 @@
         }
       ]
     },
-
-    {"file": "townhomes",
+    {
+      "file": "townhomes",
+      "lastUpdated": "2026-04-25",
       "name": "Townhomes (Site, Shell, and Units)",
       "category": "Building",
-      "propertyType": ["Residential"],
+      "propertyType": [
+        "Residential"
+      ],
       "guidance": "Townhome developments are permitted under a multi-permit structure including a Site Permit, Master Building Permit, and individual Unit Permits.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_mechanical" },
-            { "id": "app_plumbing" },
-            { "id": "app_engineering" },
-            { "id": "app_zoning" },
-            { "id": "app_landscape" },
-            { "id": "app_fire" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_engineering"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape"
+            },
+            {
+              "id": "app_fire"
+            }
           ]
         },
         {
@@ -5068,20 +5821,32 @@
         }
       ]
     },
-
-    {"file": "vehicle_charging_station",
+    {
+      "file": "vehicle_charging_station",
+      "lastUpdated": "2026-04-25",
       "name": "Vehicle Charging Station",
       "category": "Electrical",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a vehicle charging station requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_electrical" },
-            { "id": "app_zoning" },
-            { "id": "app_fire" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_fire"
+            }
           ]
         },
         {
@@ -5152,19 +5917,27 @@
         }
       ]
     },
-
-    {"file": "water_heater_changeout",
+    {
+      "file": "water_heater_changeout",
+      "lastUpdated": "2026-04-25",
       "name": "Water Heater Changeout",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of a water heater, whether commercial or residential, requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_plumbing" },
-            { "id": "app_electrical",
-              "description": "Only required when..." }
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical",
+              "description": "Only required when..."
+            }
           ]
         },
         {
@@ -5184,7 +5957,8 @@
             {
               "type": "requirement",
               "label": "Manufacturer Specifications",
-              "description": "Provide manufacturer cut sheets including equipment specifications and a Uniform Energy Factor (UEF) rating of 0.92 or greater for the proposed water heater."            }
+              "description": "Provide manufacturer cut sheets including equipment specifications and a Uniform Energy Factor (UEF) rating of 0.92 or greater for the proposed water heater."
+            }
           ]
         },
         {
@@ -5201,17 +5975,21 @@
         }
       ]
     },
-
-    {"file": "water_service",
+    {
+      "file": "water_service",
+      "lastUpdated": "2026-04-25",
       "name": "Water Service",
       "category": "Plumbing",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation or replacement of water service requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { 
+            {
               "id": "app_plumbing",
               "description": "State the type of piping material and size on the Plumbing Application."
             }
@@ -5231,18 +6009,26 @@
         }
       ]
     },
-
-    {"file": "window_door_changeouts",
+    {
+      "file": "window_door_changeouts",
+      "lastUpdated": "2026-04-25",
       "name": "Window & Door Changeouts",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
       "guidance": "The installation, replacement or major repair of any windows or doors requires a Building Permit. A permit is not required for replacement of components that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            }
           ]
         },
         {
@@ -5273,18 +6059,33 @@
               "type": "requirement",
               "label": "Product Approval Documents",
               "description": "Provide a current Florida Product Approval or Miami-Dade Notice of Acceptance (NOA) for each window or door product being installed. The selected product must be clearly identified within the approval document by circling or highlighting it.",
-              "links": [{"label":"Florida Product Approvals","url":"https://www.floridabuilding.org/pr/pr_app_srch.aspx"}, {"label":"Miami-Dade NOA", "url":"https://www.miamidade.gov/building/pc-search_app.asp"}]
+              "links": [
+                {
+                  "label": "Florida Product Approvals",
+                  "url": "https://www.floridabuilding.org/pr/pr_app_srch.aspx"
+                },
+                {
+                  "label": "Miami-Dade NOA",
+                  "url": "https://www.miamidade.gov/building/pc-search_app.asp"
+                }
+              ]
             },
             {
               "type": "requirement",
               "label": "Wind Load Requirements and Design Pressures",
               "description": "Provide documentation showing the required design pressures for each window and door opening.<br><br>For buildings with a mean roof height of 30 feet or less, submit a plan showing all openings and their design pressures. This may be based on the Broward County Fenestration Voluntary Wind Load Chart or supported by a signed and sealed document from a Florida Professional Engineer or Architect.<br><br>For buildings with a mean roof height greater than 30 feet, a site-specific design is required. This must be signed and sealed by a Florida Professional Engineer or Architect and must identify the location of all openings and the required design pressures for each opening. Generic charts or standard tables are not permitted.",
-              "links": [{"label":"Broward County Fenestration Voluntary Wind Load Chart", "url":"https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/resources/Fenestration-Wind-Load-and-Roof-Uplift-Chart.pdf"}]
+              "links": [
+                {
+                  "label": "Broward County Fenestration Voluntary Wind Load Chart",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/resources/Fenestration-Wind-Load-and-Roof-Uplift-Chart.pdf"
+                }
+              ]
             },
             {
               "type": "requirement",
               "label": "Egress Clearance Verification",
-              "description": "Any door that opens outward into the clear path of an egress balcony shall not reduce the required width of the means of egress by more than one-half (generally accepted as 22 inches of clear width) when opened to 90 degrees. If this condition may be affected, provide a photo of the existing door and walkway for review."            }
+              "description": "Any door that opens outward into the clear path of an egress balcony shall not reduce the required width of the means of egress by more than one-half (generally accepted as 22 inches of clear width) when opened to 90 degrees. If this condition may be affected, provide a photo of the existing door and walkway for review."
+            }
           ]
         },
         {
