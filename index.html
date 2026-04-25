@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Permit Application Checklists</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     /* Standard Style */
     .city-blue-bg {background-color:#2A768D;}
     .city-bg-blue-50 {background-color:rgba(42, 118, 141, 0.2);}
@@ -20,6 +25,53 @@
     /* Default (screen) */
     .no-print {
       display: block;
+    }
+
+    #content,
+    .check-item-content,
+    .permit-button,
+    .permit-meta {
+      min-width: 0;
+    }
+
+    #content a,
+    .check-item-content,
+    .permit-meta {
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 767px) {
+      .category-grid {
+        display: flex !important;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding-bottom: 0.25rem;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .category-grid button {
+        flex: 0 0 auto;
+        min-height: 44px;
+        white-space: nowrap;
+        scroll-snap-align: start;
+      }
+
+      .content-toolbar {
+        align-items: flex-start !important;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .content-toolbar .no-print {
+        min-height: 44px;
+        width: 100%;
+      }
+
+      .screen-title {
+        font-size: 1.25rem !important;
+        line-height: 1.3;
+      }
     }
 
     /* PRINT STYLES */
@@ -163,19 +215,20 @@
   </style>
 </head>
 
-<body class="bg-gray-50 p-6">
-  <main class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+<body class="bg-gray-50 p-3 sm:p-4 md:p-6">
+  <main class="app-shell max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
 
     <!-- LEFT PANEL -->
-    <div class="md:col-span-1">
+    <div class="filters-panel md:col-span-1 md:sticky md:top-6 self-start">
+      <div class="screen-title md:hidden mb-3 text-xl font-semibold leading-tight">Permit Application Checklists</div>
 
-      <div class="mb-4 flex gap-2">
-        <input id="searchInput" placeholder="Search permit type..." class="w-full rounded border p-2" />
-        <button id="clearSearch" class="rounded border bg-gray-100 px-3">x</button>
+      <div class="mb-3 sm:mb-4 flex gap-2">
+        <input id="searchInput" placeholder="Search permit type..." class="min-h-11 w-full rounded border p-2" />
+        <button id="clearSearch" aria-label="Clear search" class="min-h-11 rounded border bg-gray-100 px-3 text-sm">Clear</button>
       </div>
 
-      <div class="mb-4">
-        <select id="propertyTypeFilter" aria-label="Proptery Type Filter" class="w-full rounded border p-2 text-sm">
+      <div class="mb-3 sm:mb-4">
+        <select id="propertyTypeFilter" aria-label="Property Type Filter" class="min-h-11 w-full rounded border p-2 text-sm">
           <option value="All">All Property Types</option>
           <option value="Residential">Residential</option>
           <option value="Commercial">Commercial</option>
@@ -184,20 +237,20 @@
 
       <div id="categoryTabs" class="mb-4"></div>
 
-      <div id="permitList" class="space-y-1 max-h-[60vh] overflow-y-auto"></div>
+      <div id="permitList" class="space-y-2 md:space-y-1 max-h-64 md:max-h-[60vh] overflow-y-auto pr-1"></div>
 
     </div>
 
     <!-- RIGHT PANEL -->
-    <div class="md:col-span-3">
-      <div class="flex justify-between items-center mb-4">
-        <div class="screen-title text-2xl font-semibold">Permit Application Checklists</div>
+    <div class="md:col-span-3 min-w-0">
+      <div class="content-toolbar flex justify-between items-center mb-4">
+        <div class="screen-title hidden md:block text-2xl font-semibold">Permit Application Checklists</div>
         <button onclick="window.print()" class="no-print px-4 py-2 city-blue-bg text-white rounded text-sm">
           Print Checklist
         </button>
       </div>
 
-      <div id="content" class="rounded bg-white p-6 shadow"></div>
+      <div id="content" class="rounded bg-white p-4 sm:p-6 shadow"></div>
     </div>
 
   </main>
@@ -307,17 +360,17 @@ function renderCategoryTabs() {
   });
 
   const allBtn = document.createElement("button");
-  allBtn.className = `w-full mb-2 px-3 py-2 rounded border text-sm ${state.activeCategory === "All" ? "city-blue-bg text-white" : "bg-white"}`;
+  allBtn.className = `w-full min-h-11 mb-2 px-3 py-2 rounded border text-sm ${state.activeCategory === "All" ? "city-blue-bg text-white" : "bg-white"}`;
   allBtn.textContent = "All";
   allBtn.onclick = () => { state.activeCategory = "All"; renderAll(); };
   container.appendChild(allBtn);
 
   const grid = document.createElement("div");
-  grid.className = "grid grid-cols-2 gap-2";
+  grid.className = "category-grid grid grid-cols-2 gap-2";
 
   Array.from(categories).sort().forEach(cat => {
     const btn = document.createElement("button");
-    btn.className = `px-3 py-2 rounded border text-sm ${state.activeCategory === cat ? "city-blue-bg text-white" : "bg-white"}`;
+    btn.className = `min-h-11 px-3 py-2 rounded border text-sm ${state.activeCategory === cat ? "city-blue-bg text-white" : "bg-white"}`;
     btn.textContent = cat;
     btn.onclick = () => { state.activeCategory = cat; renderAll(); };
     grid.appendChild(btn);
@@ -356,15 +409,15 @@ function renderPermitList() {
     const btn = document.createElement("button");
     const isSelected = state.selectedFile === permit.file;
 
-    const category = permit.category;
+    const category = getCategories(permit).join(", ");
     const property = (permit.propertyType || []).join(", ");
 
-    btn.className = `w-full text-left rounded border px-3 py-2 ${isSelected ? "city-blue-bg text-white" : "hover:bg-gray-100"}`;
+    btn.className = `permit-button w-full text-left rounded border px-3 py-3 md:py-2 transition-colors ${isSelected ? "city-blue-bg text-white" : "bg-white hover:bg-gray-100"}`;
 
     btn.innerHTML = `
-      <div>${permit.name}</div>
-      <div class="text-xs ${isSelected ? "white-text" : "text-gray-500"}">
-        ${category}${property ? " • " + property : ""}
+      <div class="font-medium leading-snug">${permit.name}</div>
+      <div class="permit-meta text-xs mt-1 ${isSelected ? "text-white" : "text-gray-500"}">
+        ${category}${property ? " - " + property : ""}
       </div>
     `;
 
@@ -373,12 +426,21 @@ function renderPermitList() {
       state.selectedFile = permit.file;
       state.selectedCategory = permit.category;
 
-      // 🔥 UPDATE URL
+      // Update URL.
       const url = new URL(window.location);
       url.searchParams.set("permit", permit.file);
       window.history.replaceState({}, "", url);
 
       renderAll();
+
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        requestAnimationFrame(() => {
+          document.getElementById("content").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        });
+      }
     };
 
     container.appendChild(btn);
@@ -448,14 +510,14 @@ function renderContent() {
       <div class="print-divider"></div>
       </div>
 
-<div class="mb-4 flex justify-between items-end">
-  <div class="text-xl font-semibold">
+<div class="permit-heading mb-4 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-1 sm:gap-4">
+  <div class="text-lg sm:text-xl font-semibold leading-snug">
     ${data.name}
     <span class="print-title hidden"> - Permit Checklist</span>
   </div>
 
   ${data.lastUpdated ? `
-    <div class="text-xs text-gray-500 italic">
+    <div class="text-xs text-gray-500 italic shrink-0">
       Updated: ${formatDate(data.lastUpdated)}
     </div>
   ` : ""}
@@ -472,7 +534,7 @@ function renderContent() {
   }
 
   data.sections.forEach(section => {
-    html += `<div class="mb-6 border rounded-lg p-4 bg-gray-50">`;
+    html += `<div class="section-card mb-4 sm:mb-6 border rounded-lg p-3 sm:p-4 bg-gray-50">`;
 
     let firstItem = true;
 
@@ -485,7 +547,7 @@ section.items.forEach(item => {
 
   if (item.type === "inspection_group") {
     blockHtml = `
-      <div class="mb-4 p-4 border rounded bg-white">
+      <div class="inspection-group mb-3 sm:mb-4 p-3 sm:p-4 border rounded bg-white">
         <div class="font-semibold mb-2">${item.label}</div>
         <ol class="list-decimal ml-5 space-y-1 text-sm">
           ${item.inspections.map(i => `<li>${i}</li>`).join("")}
@@ -509,9 +571,9 @@ section.items.forEach(item => {
     }
 
     blockHtml = `
-      <div class="flex items-start gap-3 p-3 mb-2 border rounded bg-white">
-        <input type="checkbox" class="mt-1 w-4 h-4" />
-        <div>
+      <div class="check-item flex items-start gap-3 p-3 mb-2 border rounded bg-white">
+        <input type="checkbox" class="mt-1 w-4 h-4 shrink-0" />
+        <div class="check-item-content">
           <div class="font-medium">${name}</div>
           ${description ? `<div class="text-sm text-gray-500 mt-1">${description}</div>` : ""}
           ${links.length ? `

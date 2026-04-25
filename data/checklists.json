@@ -1,8 +1,8 @@
 {
-  "library": {
+"library": {
     "app_building": {
       "name": "Building Permit Application",
-      "description": "",
+      "description": "Required for most construction-related permits involving structural work, site improvements, or general building scope. This application captures project details, ownership information, contractor information, and overall scope of work.",
       "links": [
         {
           "label": "Building Permit Application",
@@ -12,7 +12,7 @@
     },
     "app_electrical": {
       "name": "Electrical Permit Application",
-      "description": "",
+      "description": "Required for permits involving electrical work, including new installations, modifications, repairs, or service changes. This application documents system details, load information, and contractor information.",
       "links": [
         {
           "label": "Electrical Permit Application",
@@ -22,7 +22,7 @@
     },
     "app_mechanical": {
       "name": "Mechanical Permit Application",
-      "description": "",
+      "description": "Required for permits involving mechanical systems such as HVAC equipment, ventilation, and refrigeration. This application includes system details, equipment specifications, and contractor information.",
       "links": [
         {
           "label": "Mechanical Permit Application",
@@ -32,7 +32,7 @@
     },
     "app_plumbing": {
       "name": "Plumbing Permit Application",
-      "description": "",
+      "description": "Required for permits involving plumbing systems, including water, sewer, gas, and irrigation. This application captures system scope, fixture details, and contractor information.",
       "links": [
         {
           "label": "Plumbing Permit Application",
@@ -42,7 +42,7 @@
     },
     "app_engineering": {
       "name": "Engineering Permit Application",
-      "description": "",
+      "description": "Required for permits involving civil or site-related work such as paving, drainage, utilities, and right-of-way improvements. This application includes project scope, engineering details, and contractor information.",
       "links": [
         {
           "label": "Engineering Permit Application",
@@ -52,7 +52,7 @@
     },
     "app_floodplain": {
       "name": "Floodplain Permit Application",
-      "description": "TO BE ENTERED",
+      "description": "Required for projects located within or affecting a designated flood zone. This application is used to evaluate compliance with floodplain management regulations, including elevation, drainage, and flood protection requirements.",
       "links": [
         {
           "label": "Floodplain Permit Application",
@@ -72,7 +72,7 @@
     },
     "app_landscape": {
       "name": "Tree Permit Application",
-      "description": "",
+      "description": "Required when proposed work impacts trees, including removal, relocation, or protection. This application documents tree disposition and ensures compliance with landscaping and environmental regulations.",
       "links": [
         {
           "label": "Tree Permit Application",
@@ -82,46 +82,13 @@
     },
     "app_zoning": {
       "name": "Zoning Compliance Application",
-      "description": "",
+      "description": "Required to verify that the proposed work complies with zoning regulations, including use, setbacks, height, lot coverage, and site layout. This application is typically required for most permits prior to approval.",
       "links": [
         {
           "label": "Zoning Compliance Application",
           "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Zoning-Compliance-Application.pdf"
         }
       ]
-    },
-    "doc_noc": {
-      "name": "Notice of Commencement",
-      "description": "Required for projects exceeding $5,000"
-    },
-    "form_easement": {
-      "name": "Easement Agreements",
-      "description": "Required when proposed work is located within a utility or drainage easement.<br><br>A completed Easement Agreement must be signed by each utility provider with facilities in the easement. To obtain signatures, send the agreement, a property survey, and a sketch of the proposed work to each utility for review. Contact information for each provider is included within the form.",
-      "links": [
-        {
-          "label": "Easment Agreement Form",
-          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Easement-Agreement.pdf"
-        }
-      ]
-    },
-    "plan_structural": {
-      "name": "Structural Plans"
-    },
-    "plan_product_approvals": {
-      "name": "Product Approvals",
-      "links": [
-        {
-          "label": "Florida Product Approval",
-          "url": "https://www.floridabuilding.org"
-        },
-        {
-          "label": "Miami-Dade NOA",
-          "url": "https://www.miamidade.gov"
-        }
-      ]
-    },
-    "tech_wind_load": {
-      "name": "Wind Load Calculations"
     }
   },
   "permits": [
