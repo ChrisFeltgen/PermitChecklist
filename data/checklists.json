@@ -885,24 +885,26 @@
     {"file": "change_of_use",
       "name": "Change of Use",
       "category": "Building",
-      "propertyType": ["Residential", "Commercial"],
-      "guidance": "A Change of Use permit is required when Planning and Zoning determines that the use of a building or unit has changed.",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "guidance": "A Change of Use permit is required when Planning and Zoning determines that the use or occupancy of a building or tenant space has changed. This process allows the Building Department to verify that the existing construction, layout, and life safety systems comply with current code requirements for the proposed use prior to issuing a new Certificate of Occupancy.<br><br>A Change of Use permit may only be issued when NO construction work is required. If alterations are necessary to meet the requirements of the new occupancy, a standard building permit must be obtained instead.",
       "sections": [
         {
           "name": "Applications",
           "items": [
-            { "id": "app_building" },
-            { "id": "app_fire" }
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Certificate of Occupancy Change Form",
-              "description": "Submit a completed Building Change of Certificate of Occupancy form."
-            },
             {
               "type": "requirement",
               "label": "Life Safety Plan",
@@ -912,16 +914,6 @@
               "type": "requirement",
               "label": "Floor Plan",
               "description": "Provide a floor plan showing existing and proposed conditions."
-            },
-            {
-              "type": "requirement",
-              "label": "Construction Plans",
-              "description": "Submit signed and sealed construction plans for any proposed alterations."
-            },
-            {
-              "type": "requirement",
-              "label": "Trade Permit Applications",
-              "description": "Submit separate permit applications for mechanical, electrical, and plumbing work if applicable."
             }
           ]
         },
@@ -941,10 +933,6 @@
               "type": "inspection_group",
               "label": "Fire Inspections",
               "inspections": [
-                "FP FIRE SPRINKLER ROUGH",
-                "FP FIRE ALARM ROUGH",
-                "FP FIRE SPRINKLER FINAL",
-                "FP FIRE ALARM FINAL",
                 "FP FIRE DEPARTMENT FINAL"
               ]
             }
