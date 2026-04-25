@@ -60,6 +60,12 @@
     padding-top: 0 !important;
   }
 
+  .print-divider {
+    border-top: 1px solid #000;
+    height: 0;
+    margin-top: 8px;
+  }
+
   #content > div h2 {
     font-size: 13px;
     margin-bottom: 6px !important;
@@ -109,6 +115,7 @@
     display: block;
     page-break-after: avoid;
     break-after: avoid;
+    border-bottom: 1px solid #000 !important;
   }
 
   .screen-title {
@@ -432,6 +439,7 @@ function renderContent() {
       <div class="text-2xl font-semibold">
         <span class="screen-title">Permit Application Checklists</span>
       </div>
+      <div class="print-divider"></div>
       </div>
 
       <div class="mb-4 text-xl font-semibold">${data.name}<span class="print-title hidden"> - Permit Checklist</span></div>
