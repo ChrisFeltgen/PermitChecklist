@@ -148,7 +148,16 @@
 
 <script>
 
-const DATA_FILE = "data/checklists.json";
+
+// Data File (Development vs Production)
+const isLocal =
+  window.location.hostname === "127.0.0.1" ||
+  window.location.hostname === "localhost";
+const DATA_FILE = isLocal
+  ? "data/checklists.json"
+  : "../../../../assets/json/checklists.json";
+// Data File (Development vs Production)
+
 
 let state = {
   library: {},
