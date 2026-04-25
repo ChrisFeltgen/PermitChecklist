@@ -43,11 +43,66 @@
   .p-4 { padding: 8px !important; }
   .p-3 { padding: 6px !important; }
 
-  h2 {
+  #content > div {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 14px !important;
+    border-top: 1px solid #999;
+    padding-top: 8px !important;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  #content > div:first-child {
+    border-top: none;
+    padding-top: 0 !important;
+  }
+
+  #content > div h2 {
     font-size: 13px;
     margin-bottom: 6px !important;
     break-after: avoid;
     page-break-after: avoid;
+  }
+
+  #content > div h2 + * {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  .section {
+    margin-top: 10px !important;
+  }
+
+  .section.applications,
+  .section.requirements,
+  .section.inspections {
+    margin-top: 18px !important;
+  }
+
+  .section-start {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  #content .flex,
+  #content .border.rounded.bg-white {
+    background: none !important;
+    border: none !important;
+    padding: 4px 0 !important;
+    margin-bottom: 6px !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  #content .flex {
+    gap: 6px !important;
+  }
+
+  #content .flex > div {
+    margin: 0 !important;
   }
 
   .print-header {
@@ -82,12 +137,6 @@
     margin-bottom: 0 !important;
     padding: 0 !important;
     box-shadow: none !important;
-  }
-
-  #content .flex,
-  #content .border.rounded.bg-white {
-    break-inside: avoid;
-    page-break-inside: avoid;
   }
 
   p, li {
@@ -148,16 +197,14 @@
 
 <script>
 
-
-// Data File (Development vs Production)
+// Data File (Development vs Production) //
 const isLocal =
   window.location.hostname === "127.0.0.1" ||
   window.location.hostname === "localhost";
 const DATA_FILE = isLocal
   ? "data/checklists.json"
   : "../../../../assets/json/checklists.json";
-// Data File (Development vs Production)
-
+// Data File (Development vs Production) //
 
 let state = {
   library: {},
@@ -400,51 +447,66 @@ function renderContent() {
   }
 
   data.sections.forEach(section => {
-    html += `<div class="mb-6 border rounded-lg p-4 bg-gray-50">
+    html += `<div class="mb-6 border rounded-lg p-4 bg-gray-50">`;
+
+    let firstItem = true;
+
+    html += `<div class="section-start">
       <h2 class="font-semibold mb-3">${section.name}</h2>`;
 
-    section.items.forEach(item => {
-      if (item.type === "inspection_group") {
-        html += `
-          <div class="mb-4 p-4 border rounded bg-white">
-            <div class="font-semibold mb-2">${item.label}</div>
-            <ol class="list-decimal ml-5 space-y-1 text-sm">
-              ${item.inspections.map(i => `<li>${i}</li>`).join("")}
-            </ol>
-          </div>
-        `;
-        return;
-      }
-      let name = "";
-      let description = "";
-      let links = [];
+section.items.forEach(item => {
 
-      if (item.type === "requirement") {
-        name = item.label || item.value || "";
-        description = item.description || "";
-        links = item.links || [];
-      } else {
-        const req = state.library[item.id] || {};
-        name = req.name || item.id || "";
-        description = item.description || req.description || "";
-        links = item.links || req.links || [];
-      }
+  let blockHtml = "";
 
-      html += `
-        <div class="flex items-start gap-3 p-3 mb-2 border rounded bg-white">
-          <input type="checkbox" class="mt-1 w-4 h-4" />
-          <div>
-            <div class="font-medium">${name}</div>
-            ${description ? `<div class="text-sm text-gray-500 mt-1">${description}</div>` : ""}
-            ${links.length ? `
-              <div class="mt-1 text-sm">
-                ${links.map(l => `<a href="${l.url}" target="_blank" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
-              </div>
-            ` : ""}
-          </div>
+  if (item.type === "inspection_group") {
+    blockHtml = `
+      <div class="mb-4 p-4 border rounded bg-white">
+        <div class="font-semibold mb-2">${item.label}</div>
+        <ol class="list-decimal ml-5 space-y-1 text-sm">
+          ${item.inspections.map(i => `<li>${i}</li>`).join("")}
+        </ol>
+      </div>
+    `;
+  } else {
+    let name = "";
+    let description = "";
+    let links = [];
+
+    if (item.type === "requirement") {
+      name = item.label || item.value || "";
+      description = item.description || "";
+      links = item.links || [];
+    } else {
+      const req = state.library[item.id] || {};
+      name = req.name || item.id || "";
+      description = item.description || req.description || "";
+      links = item.links || req.links || [];
+    }
+
+    blockHtml = `
+      <div class="flex items-start gap-3 p-3 mb-2 border rounded bg-white">
+        <input type="checkbox" class="mt-1 w-4 h-4" />
+        <div>
+          <div class="font-medium">${name}</div>
+          ${description ? `<div class="text-sm text-gray-500 mt-1">${description}</div>` : ""}
+          ${links.length ? `
+            <div class="mt-1 text-sm">
+              ${links.map(l => `<a href="${l.url}" target="_blank" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
+            </div>
+          ` : ""}
         </div>
-      `;
-    });
+      </div>
+    `;
+  }
+
+  if (firstItem) {
+    html += blockHtml + `</div>`; // closes .section-start
+    firstItem = false;
+  } else {
+    html += blockHtml;
+  }
+
+});
 
     html += `</div>`;
   });
