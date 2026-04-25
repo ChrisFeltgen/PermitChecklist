@@ -27,6 +27,10 @@
       display: block;
     }
 
+    #printChecklist[hidden] {
+      display: none !important;
+    }
+
     #content,
     .check-item-content,
     .permit-button,
@@ -41,20 +45,28 @@
     }
 
     @media (max-width: 767px) {
+      .filters-panel:not(.options-open) #permitListHeader {
+        display: none;
+      }
+
+      .filters-panel.options-open #mobilePermitInlineLabel {
+        display: none;
+      }
+
+      .filters-panel.options-open #mobilePermitControls {
+        justify-content: flex-end;
+      }
+
       .category-grid {
-        display: flex !important;
+        display: grid !important;
         gap: 0.5rem;
-        overflow-x: auto;
-        padding-bottom: 0.25rem;
-        scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .category-grid button {
-        flex: 0 0 auto;
         min-height: 44px;
-        white-space: nowrap;
-        scroll-snap-align: start;
+        width: 100%;
+        white-space: normal;
       }
 
       .content-toolbar {
@@ -181,6 +193,10 @@
   .no-print,
   #searchInput,
   #clearSearch,
+  #toggleMoreOptions,
+  #mobilePermitControls,
+  #permitListHeader,
+  #moreOptionsPanel,
   #propertyTypeFilter,
   #categoryTabs,
   #permitList {
@@ -227,17 +243,28 @@
         <button id="clearSearch" aria-label="Clear search" class="min-h-11 rounded border bg-gray-100 px-3 text-sm">Clear</button>
       </div>
 
-      <div class="mb-3 sm:mb-4">
-        <select id="propertyTypeFilter" aria-label="Property Type Filter" class="min-h-11 w-full rounded border p-2 text-sm">
-          <option value="All">All Property Types</option>
-          <option value="Residential">Residential</option>
-          <option value="Commercial">Commercial</option>
-        </select>
+      <div id="mobilePermitControls" class="mb-3 flex items-center justify-between gap-3 md:hidden">
+        <div id="mobilePermitInlineLabel" class="text-base font-semibold text-gray-700">Select Permit Type:</div>
+        <button id="toggleMoreOptions" type="button" aria-controls="moreOptionsPanel" aria-expanded="false" class="min-h-10 shrink-0 rounded border bg-white px-3 text-sm font-medium text-gray-700 md:hidden">
+          More Options
+        </button>
       </div>
 
-      <div id="categoryTabs" class="mb-4"></div>
+      <div id="moreOptionsPanel" class="hidden md:block mb-4 rounded border bg-white p-3 md:rounded-none md:border-0 md:bg-transparent md:p-0">
+        <div class="mb-3 sm:mb-4">
+          <select id="propertyTypeFilter" aria-label="Property Type Filter" class="min-h-11 w-full rounded border p-2 text-sm">
+            <option value="All">All Property Types</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+          </select>
+        </div>
 
-      <div id="permitList" class="space-y-2 md:space-y-1 max-h-64 md:max-h-[60vh] overflow-y-auto pr-1"></div>
+        <div id="categoryTabs"></div>
+      </div>
+
+      <div id="permitListHeader" class="mb-2 text-base font-semibold text-gray-700">Select Permit Type:</div>
+
+      <div id="permitList" class="space-y-2 md:space-y-1 max-h-[30rem] md:max-h-[60vh] overflow-y-auto pr-1"></div>
 
     </div>
 
@@ -245,7 +272,7 @@
     <div class="md:col-span-3 min-w-0">
       <div class="content-toolbar flex justify-between items-center mb-4">
         <div class="screen-title hidden md:block text-2xl font-semibold">Permit Application Checklists</div>
-        <button onclick="window.print()" class="no-print px-4 py-2 city-blue-bg text-white rounded text-sm">
+        <button id="printChecklist" onclick="window.print()" hidden class="no-print px-4 py-2 city-blue-bg text-white rounded text-sm">
           Print Checklist
         </button>
       </div>
@@ -289,6 +316,7 @@ function init() {
   loadData();
   bindSearch();
   bindPropertyFilter();
+  bindMobileOptions();
 }
 
 function loadData() {
@@ -325,7 +353,16 @@ function bindSearch() {
     input.value = "";
     state.activeCategory = "All";
     state.selectedPermit = null;
+    state.selectedFile = null;
+    state.selectedCategory = null;
+
+    const url = new URL(window.location);
+    url.searchParams.delete("permit");
+    url.hash = "";
+    window.history.replaceState({}, "", url);
+
     renderAll();
+    closeMobileOptions();
   });
 }
 
@@ -333,7 +370,45 @@ function bindPropertyFilter() {
   document.getElementById("propertyTypeFilter").addEventListener("change", (e) => {
     state.propertyType = e.target.value;
     renderPermitList();
+    closeMobileOptions();
   });
+}
+
+function bindMobileOptions() {
+  const button = document.getElementById("toggleMoreOptions");
+  if (!button) return;
+
+  button.addEventListener("click", () => {
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    setMobileOptionsOpen(!isOpen);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      setMobileOptionsOpen(false);
+    }
+  });
+}
+
+function setMobileOptionsOpen(isOpen) {
+  const button = document.getElementById("toggleMoreOptions");
+  const panel = document.getElementById("moreOptionsPanel");
+  if (!button || !panel) return;
+
+  button.setAttribute("aria-expanded", String(isOpen));
+  button.textContent = isOpen ? "Hide Options" : "More Options";
+  panel.classList.toggle("hidden", !isOpen);
+
+  const filtersPanel = panel.closest(".filters-panel");
+  if (filtersPanel) {
+    filtersPanel.classList.toggle("options-open", isOpen);
+  }
+}
+
+function closeMobileOptions() {
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    setMobileOptionsOpen(false);
+  }
 }
 
 function getCategories(permit) {
@@ -345,7 +420,15 @@ function getCategories(permit) {
 function renderAll() {
   renderCategoryTabs();
   renderPermitList();
+  renderPrintButton();
   renderContent();
+}
+
+function renderPrintButton() {
+  const button = document.getElementById("printChecklist");
+  if (!button) return;
+
+  button.hidden = !state.selectedPermit;
 }
 
 function renderCategoryTabs() {
@@ -362,7 +445,11 @@ function renderCategoryTabs() {
   const allBtn = document.createElement("button");
   allBtn.className = `w-full min-h-11 mb-2 px-3 py-2 rounded border text-sm ${state.activeCategory === "All" ? "city-blue-bg text-white" : "bg-white"}`;
   allBtn.textContent = "All";
-  allBtn.onclick = () => { state.activeCategory = "All"; renderAll(); };
+  allBtn.onclick = () => {
+    state.activeCategory = "All";
+    renderAll();
+    closeMobileOptions();
+  };
   container.appendChild(allBtn);
 
   const grid = document.createElement("div");
@@ -372,7 +459,11 @@ function renderCategoryTabs() {
     const btn = document.createElement("button");
     btn.className = `min-h-11 px-3 py-2 rounded border text-sm ${state.activeCategory === cat ? "city-blue-bg text-white" : "bg-white"}`;
     btn.textContent = cat;
-    btn.onclick = () => { state.activeCategory = cat; renderAll(); };
+    btn.onclick = () => {
+      state.activeCategory = cat;
+      renderAll();
+      closeMobileOptions();
+    };
     grid.appendChild(btn);
   });
 
@@ -472,9 +563,9 @@ function renderContent() {
   if (!state.selectedPermit) {
     container.innerHTML = `
       <div class="text-gray-600">
-        <div class="text-lg font-semibold mb-2">Select a Permit</div>
-        <p>Select a permit from the list to view application requirements and checklist details.</p>
-        <p class="mt-2 text-sm text-gray-500">Use search or filters to locate a specific permit type.</p>
+        <div class="text-lg font-semibold mb-2">Choose a Permit Type</div>
+        <p>Use the Select Permit Type list to open a checklist with application requirements, documents, and inspection details.</p>
+        <p class="mt-2 text-sm text-gray-500">Search by the name of the permit type, or use More Options to filter down by property type and permit group.</p>
       </div>
     `;
     return;
