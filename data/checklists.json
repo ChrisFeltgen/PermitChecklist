@@ -99,11 +99,20 @@
           "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Easement-Agreement.pdf"
         }
       ]
+    },
+    "form_special_inspector": {
+      "name": "Special Inspector Form",
+      "description": "Required when a project involves threshold buildings or requires special inspections per Florida Statute 553.79 and Broward County amendments.<br><br>A Special Inspector is a licensed professional (Engineer or Architect) responsible for performing independent inspections of critical structural elements to ensure compliance with approved plans and applicable building codes. The inspector provides oversight, submits inspection reports, and certifies that the work meets code requirements.",
+      "links": [
+        {
+          "label": "Special Inspector Form",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Special-Inspector-Form.pdf"
+        }
+      ]
     }
   },
   "permits": [
-    {
-      "file": "ac_change_out",
+    {"file": "ac_change_out",
       "lastUpdated": "2026-04-25",
       "name": "A/C Change Out",
       "category": "Mechanical",
@@ -174,8 +183,7 @@
         }
       ]
     },
-    {
-      "file": "additions",
+    {"file": "additions",
       "lastUpdated": "2026-04-25",
       "name": "Additions",
       "category": "Building",
@@ -185,87 +193,101 @@
       ],
       "whenPermitRequired": "The lateral or vertical extension, or increase in floor area or height of a structure, requires a Building Permit.",
       "sections": [
-        {
-          "name": "Applications",
-          "items": [
-            {
-              "id": "app_building"
-            },
-            {
-              "id": "app_floodplain"
-            },
-            {
-              "id": "app_electrical"
-            },
-            {
-              "id": "app_mechanical"
-            },
-            {
-              "id": "app_plumbing",
-              "description": "Required if plumbing work is included"
-            },
-            {
-              "id": "app_fire",
-              "description": "Required for commercial projects only"
-            },
-            {
-              "id": "app_landscape"
-            },
-            {
-              "id": "app_zoning"
-            }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Broward County Approvals (Commercial)",
-              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval are required for commercial projects."
-            },
-            {
-              "type": "requirement",
-              "label": "Product Approvals",
-              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
-            },
-            {
-              "type": "requirement",
-              "label": "Energy & HVAC Documentation",
-              "description": "Provide energy calculations, Manual J heat load calculations, AHRI certificates, and tie-down attachment details."
-            },
-            {
-              "type": "requirement",
-              "label": "Truss Engineering",
-              "description": "Signed and sealed truss engineering shop drawings reviewed by the design professional."
-            },
-            {
-              "type": "requirement",
-              "label": "Geotechnical Report",
-              "description": "Signed and sealed geotechnical/subsurface report with foundation design recommendations."
-            },
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Required when applicable per Florida Statute 553.79 and Broward County amendments."
-            },
-            {
-              "type": "requirement",
-              "label": "Equipment & Fixture Specifications",
-              "description": "Manufacturer cut sheets for all equipment and fixtures being installed."
-            }
-          ]
-        },
-        {
-          "name": "Plans",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Complete Plan Set",
-              "description": "Submit a full set of signed and sealed plans including survey, site plan, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, and landscape plans."
-            }
-          ]
-        },
+  {
+    "name": "Applications & Forms",
+    "items": [
+      {
+        "id": "app_building",
+        "description": "Submit Broward County Uniform Permit Application (Building Box Checked). Separate applications may be required for windows/doors/shutters and roofing."
+      },
+      {
+        "type": "requirement",
+        "label": "HVHZ Roofing Application",
+        "description": "Required for roofing work. Submit High Velocity Hurricane Zone (HVHZ) Permit Application.",
+        "links": [
+          { "label": "HVHZ Application", "url": "TBD_URL" }
+        ]
+      },
+      {
+        "id": "app_floodplain",
+        "description": "Submit Broward County Uniform Permit Application (Other Box Checked) for floodplain review."
+      },
+      {
+        "id": "app_electrical",
+        "description": "Separate applications may be required for low voltage (data/cable) and burglar alarm systems."
+      },
+      {
+        "id": "app_mechanical"
+      },
+      {
+        "id": "app_plumbing",
+        "description": "Required if plumbing work is included."
+      },
+      {
+        "id": "app_fire"
+      },
+      {
+        "id": "app_zoning"
+      },
+      {
+        "id": "app_landscape",
+        "description": "Required if trees are impacted. Tree protection plan and details may be required."
+      },
+      {
+        "id": "form_special_inspector"
+      }
+    ]
+  },
+  {
+    "name": "Requirements",
+    "items": [
+      {
+        "type": "requirement",
+        "label": "Broward County Approvals (Commercial)",
+        "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval required. Submit through Broward ePermits OneStop."
+      },
+      {
+        "type": "requirement",
+        "label": "Product Approvals",
+        "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems. Must be reviewed and approved by the design professional."
+      },
+      {
+        "type": "requirement",
+        "label": "Energy & HVAC Documentation",
+        "description": "Provide energy calculations, Manual J heat loads, AHRI certificates, and tie-down attachment details."
+      },
+      {
+        "type": "requirement",
+        "label": "Truss Engineering",
+        "description": "Submit signed and sealed truss engineering shop drawings reviewed by the design professional."
+      },
+      {
+        "type": "requirement",
+        "label": "Geotechnical Report",
+        "description": "Submit signed and sealed geotechnical/subsurface report with foundation design recommendations."
+      },
+      {
+        "type": "requirement",
+        "label": "Equipment & Fixture Specifications",
+        "description": "Provide manufacturer cut sheets for all equipment and fixtures being installed."
+      }
+    ]
+  },
+  {
+    "name": "Plans",
+    "items": [
+      {
+        "type": "requirement",
+        "label": "Complete Plan Set",
+        "description": "Submit a full set of signed and sealed plans including survey, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, and landscape plans."
+      },
+      {
+        "type": "requirement",
+        "label": "Tree Protection Plan (If Applicable)",
+        "description": "Provide tree protection plan and details when trees are located adjacent to the work area."
+      }
+    ]
+  },
         {
           "name": "Inspections",
           "items": [
@@ -374,8 +396,7 @@
         }
       ]
     },
-    {
-      "file": "asphalt_restriping",
+    {"file": "asphalt_restriping",
       "lastUpdated": "2026-04-25",
       "name": "Asphalt & Restriping",
       "category": "Building",
@@ -471,8 +492,7 @@
         }
       ]
     },
-    {
-      "file": "awning_canopy",
+    {"file": "awning_canopy",
       "lastUpdated": "2026-04-25",
       "name": "Awning / Canopy",
       "category": "Building",
@@ -546,8 +566,7 @@
         }
       ]
     },
-    {
-      "file": "backflow_preventer",
+    {"file": "backflow_preventer",
       "lastUpdated": "2026-04-25",
       "name": "Backflow Preventer",
       "category": "Plumbing",
@@ -596,8 +615,7 @@
         }
       ]
     },
-    {
-      "file": "building_shell",
+    {"file": "building_shell",
       "lastUpdated": "2026-04-25",
       "name": "Building Shell",
       "category": "Building",
@@ -756,8 +774,7 @@
         }
       ]
     },
-    {
-      "file": "burglar_alarm",
+    {"file": "burglar_alarm",
       "lastUpdated": "2026-04-25",
       "name": "Burglar Alarm (Hard Wired)",
       "category": "Electrical",
@@ -799,8 +816,7 @@
         }
       ]
     },
-    {
-      "file": "carport_enclosure",
+    {"file": "carport_enclosure",
       "lastUpdated": "2026-04-25",
       "name": "Carport Enclosure",
       "category": "Building",
@@ -898,8 +914,7 @@
         }
       ]
     },
-    {
-      "file": "cell_tower",
+    {"file": "cell_tower",
       "lastUpdated": "2026-04-25",
       "name": "Cell Tower",
       "category": "Building",
@@ -996,8 +1011,7 @@
         }
       ]
     },
-    {
-      "file": "change_of_use",
+    {"file": "change_of_use",
       "lastUpdated": "2026-04-25",
       "name": "Change of Use",
       "category": "Building",
@@ -1056,8 +1070,7 @@
         }
       ]
     },
-    {
-      "file": "commercial_building",
+    {"file": "commercial_building",
       "lastUpdated": "2026-04-25",
       "name": "Commercial Building",
       "category": "Building",
@@ -1296,8 +1309,7 @@
         }
       ]
     },
-    {
-      "file": "commercial_refrigeration",
+    {"file": "commercial_refrigeration",
       "lastUpdated": "2026-04-25",
       "name": "Commercial Refrigeration",
       "category": "Mechanical",
@@ -1373,8 +1385,7 @@
         }
       ]
     },
-    {
-      "file": "commercial_spray_booth",
+    {"file": "commercial_spray_booth",
       "lastUpdated": "2026-04-25",
       "name": "Commercial Spray Booth",
       "category": "Mechanical",
@@ -1502,8 +1513,7 @@
         }
       ]
     },
-    {
-      "file": "concrete_restoration",
+    {"file": "concrete_restoration",
       "lastUpdated": "2026-04-25",
       "name": "Concrete Restoration",
       "category": "Building",
@@ -1523,9 +1533,7 @@
               "id": "app_fire"
             },
             {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Submit completed Special Inspector Form."
+              "id": "form_special_inspector"
             }
           ]
         },
@@ -1566,8 +1574,7 @@
         }
       ]
     },
-    {
-      "file": "concrete_slab",
+    {"file": "concrete_slab",
       "lastUpdated": "2026-04-25",
       "name": "Concrete Slab",
       "category": "Building",
@@ -1640,8 +1647,7 @@
         }
       ]
     },
-    {
-      "file": "construction_temp_power",
+    {"file": "construction_temp_power",
       "lastUpdated": "2026-04-25",
       "name": "Construction Temporary Power",
       "category": "Electrical",
@@ -1689,8 +1695,7 @@
         }
       ]
     },
-    {
-      "file": "cooling_tower",
+    {"file": "cooling_tower",
       "lastUpdated": "2026-04-25",
       "name": "Cooling Tower",
       "category": "Mechanical",
@@ -1804,8 +1809,7 @@
         }
       ]
     },
-    {
-      "file": "demolition",
+    {"file": "demolition",
       "lastUpdated": "2026-04-25",
       "name": "Demolition",
       "category": "Building",
@@ -1945,8 +1949,7 @@
         }
       ]
     },
-    {
-      "file": "dock",
+    {"file": "dock",
       "lastUpdated": "2026-04-25",
       "name": "Dock",
       "category": "Building",
@@ -2064,8 +2067,7 @@
         }
       ]
     },
-    {
-      "file": "driveway_patio",
+    {"file": "driveway_patio",
       "lastUpdated": "2026-04-25",
       "name": "Driveway / Patio",
       "category": "Building",
@@ -2178,8 +2180,7 @@
         }
       ]
     },
-    {
-      "file": "ductwork_changeout",
+    {"file": "ductwork_changeout",
       "lastUpdated": "2026-04-25",
       "name": "Ductwork Change Out",
       "category": "Mechanical",
@@ -2222,8 +2223,7 @@
         }
       ]
     },
-    {
-      "file": "dumpster_enclosure",
+    {"file": "dumpster_enclosure",
       "lastUpdated": "2026-04-25",
       "name": "Dumpster Enclosure",
       "category": "Building",
@@ -2313,8 +2313,7 @@
         }
       ]
     },
-    {
-      "file": "electrical_panel_change",
+    {"file": "electrical_panel_change",
       "lastUpdated": "2026-04-25",
       "name": "Electrical Panel Change",
       "category": "Electrical",
@@ -2356,8 +2355,7 @@
         }
       ]
     },
-    {
-      "file": "electrical_service_turn_on",
+    {"file": "electrical_service_turn_on",
       "lastUpdated": "2026-04-25",
       "name": "Electrical Service Turn-On",
       "category": "Electrical",
@@ -2391,8 +2389,7 @@
         }
       ]
     },
-    {
-      "file": "erosion_control",
+    {"file": "erosion_control",
       "lastUpdated": "2026-04-25",
       "name": "Erosion Control",
       "category": "Building",
@@ -2451,8 +2448,7 @@
         }
       ]
     },
-    {
-      "file": "fence",
+    {"file": "fence",
       "lastUpdated": "2026-04-25",
       "name": "Fence",
       "category": "Building",
@@ -2540,8 +2536,7 @@
         }
       ]
     },
-    {
-      "file": "flooring_sound_barrier",
+    {"file": "flooring_sound_barrier",
       "lastUpdated": "2026-04-25",
       "name": "Flooring / Sound Barrier",
       "category": "Building",
@@ -2593,8 +2588,7 @@
         }
       ]
     },
-    {
-      "file": "foundation_only",
+    {"file": "foundation_only",
       "lastUpdated": "2026-04-25",
       "name": "Foundation Only",
       "category": "Building",
@@ -2717,8 +2711,7 @@
         }
       ]
     },
-    {
-      "file": "gas_piping",
+    {"file": "gas_piping",
       "lastUpdated": "2026-04-25",
       "name": "Gas Piping",
       "category": "Plumbing",
@@ -2787,8 +2780,7 @@
         }
       ]
     },
-    {
-      "file": "gazebo_pergola",
+    {"file": "gazebo_pergola",
       "lastUpdated": "2026-04-25",
       "name": "Gazebo / Pergola",
       "category": "Building",
@@ -2894,8 +2886,7 @@
         }
       ]
     },
-    {
-      "file": "generator",
+    {"file": "generator",
       "lastUpdated": "2026-04-25",
       "name": "Generator",
       "category": "Building",
@@ -3020,8 +3011,7 @@
         }
       ]
     },
-    {
-      "file": "helical_piles",
+    {"file": "helical_piles",
       "lastUpdated": "2026-04-25",
       "name": "Helical Piles",
       "category": "Building",
@@ -3076,8 +3066,7 @@
         }
       ]
     },
-    {
-      "file": "hood_system",
+    {"file": "hood_system",
       "lastUpdated": "2026-04-25",
       "name": "Hood System",
       "category": "Mechanical",
@@ -3183,8 +3172,7 @@
         }
       ]
     },
-    {
-      "file": "interior_buildout",
+    {"file": "interior_buildout",
       "lastUpdated": "2026-04-25",
       "name": "Interior Buildout",
       "category": "Building",
@@ -3326,8 +3314,7 @@
         }
       ]
     },
-    {
-      "file": "irrigation_system",
+    {"file": "irrigation_system",
       "lastUpdated": "2026-04-25",
       "name": "Irrigation System",
       "category": "Plumbing",
@@ -3380,8 +3367,7 @@
         }
       ]
     },
-    {
-      "file": "kitchen_bath_renovation",
+    {"file": "kitchen_bath_renovation",
       "lastUpdated": "2026-04-25",
       "name": "Kitchen / Bath Renovation",
       "category": "Building",
@@ -3496,8 +3482,7 @@
         }
       ]
     },
-    {
-      "file": "light_poles",
+    {"file": "light_poles",
       "lastUpdated": "2026-04-25",
       "name": "Light Poles",
       "category": "Building",
@@ -3579,8 +3564,7 @@
         }
       ]
     },
-    {
-      "file": "mini_split_system_new",
+    {"file": "mini_split_system_new",
       "lastUpdated": "2026-04-25",
       "name": "Mini-Split System (New)",
       "category": "Mechanical",
@@ -3662,8 +3646,7 @@
         }
       ]
     },
-    {
-      "file": "mobile_home",
+    {"file": "mobile_home",
       "lastUpdated": "2026-04-25",
       "name": "Mobile Home",
       "category": "Building",
@@ -3780,8 +3763,7 @@
         }
       ]
     },
-    {
-      "file": "pool_heater_commercial",
+    {"file": "pool_heater_commercial",
       "lastUpdated": "2026-04-25",
       "name": "Pool Heater (Commercial)",
       "category": "Plumbing",
@@ -3875,8 +3857,7 @@
         }
       ]
     },
-    {
-      "file": "plumbing_tunnel_job",
+    {"file": "plumbing_tunnel_job",
       "lastUpdated": "2026-04-25",
       "name": "Plumbing Tunnel Job",
       "category": "Plumbing",
@@ -3919,8 +3900,7 @@
         }
       ]
     },
-    {
-      "file": "racking_system",
+    {"file": "racking_system",
       "lastUpdated": "2026-04-25",
       "name": "Racking System",
       "category": "Building",
@@ -3996,8 +3976,7 @@
         }
       ]
     },
-    {
-      "file": "reroof",
+    {"file": "reroof",
       "lastUpdated": "2026-04-25",
       "name": "Reroof",
       "category": "Building",
@@ -4108,8 +4087,7 @@
         }
       ]
     },
-    {
-      "file": "reuse_connection",
+    {"file": "reuse_connection",
       "lastUpdated": "2026-04-25",
       "name": "Reuse Connection",
       "category": "Plumbing",
@@ -4162,8 +4140,7 @@
         }
       ]
     },
-    {
-      "file": "seawall",
+    {"file": "seawall",
       "lastUpdated": "2026-04-25",
       "name": "Seawall",
       "category": "Building",
@@ -4240,8 +4217,7 @@
         }
       ]
     },
-    {
-      "file": "septic_to_sewer",
+    {"file": "septic_to_sewer",
       "lastUpdated": "2026-04-25",
       "name": "Septic to Sewer Conversion",
       "category": "Plumbing",
@@ -4298,8 +4274,7 @@
         }
       ]
     },
-    {
-      "file": "shutters",
+    {"file": "shutters",
       "lastUpdated": "2026-04-25",
       "name": "Shutters",
       "category": "Building",
@@ -4377,8 +4352,7 @@
         }
       ]
     },
-    {
-      "file": "sign",
+    {"file": "sign",
       "lastUpdated": "2026-04-25",
       "name": "Sign",
       "category": "Building",
@@ -4395,7 +4369,8 @@
               "id": "app_building"
             },
             {
-              "id": "app_electrical"
+              "id": "app_electrical",
+              "description": "Required if the sign is illuminated or has electrical components."
             },
             {
               "id": "app_zoning"
@@ -4403,7 +4378,13 @@
             {
               "type": "requirement",
               "label": "Sign Code Compliance Application",
-              "description": "Submit completed Sign Code Compliance Permit Application."
+              "description": "Submit a completed Sign Code Compliance Permit Application.",
+              "links": [
+                {
+                  "label": "Sign Code Compliance Application",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Sign-Code-Compliance-Permit.pdf"
+                }
+              ]
             }
           ]
         },
@@ -4466,8 +4447,7 @@
         }
       ]
     },
-    {
-      "file": "site_work",
+    {"file": "site_work",
       "lastUpdated": "2026-04-25",
       "name": "Site Work",
       "category": "Building",
@@ -4623,8 +4603,7 @@
         }
       ]
     },
-    {
-      "file": "solar_systems",
+    {"file": "solar_systems",
       "lastUpdated": "2026-04-25",
       "name": "Solar Systems (Photovoltaic)",
       "category": "Electrical",
@@ -4650,17 +4629,15 @@
             },
             {
               "id": "app_zoning"
+            },
+            { 
+              "id": "form_special_inspector"
             }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Required when attachment details involve truss anchors or when otherwise applicable."
-            },
             {
               "type": "requirement",
               "label": "FSEC Approval or Engineered Plans",
@@ -4746,8 +4723,7 @@
         }
       ]
     },
-    {
-      "file": "special_event",
+    {"file": "special_event",
       "lastUpdated": "2026-04-25",
       "name": "Special Event",
       "category": "Building",
@@ -4837,8 +4813,7 @@
         }
       ]
     },
-    {
-      "file": "storage_shed",
+    {"file": "storage_shed",
       "lastUpdated": "2026-04-25",
       "name": "Storage Shed",
       "category": "Building",
@@ -4859,12 +4834,10 @@
               "description": "Required if electrical work is included"
             },
             {
-              "id": "app_fire",
-              "description": "Required for commercial and multi-family projects"
+              "id": "app_fire"
             },
             {
-              "id": "app_landscape",
-              "description": "Required if trees are adjacent to the work area"
+              "id": "app_landscape"
             },
             {
               "id": "app_zoning"
@@ -4936,8 +4909,7 @@
         }
       ]
     },
-    {
-      "file": "single_family_residence_new",
+    {"file": "single_family_residence_new",
       "lastUpdated": "2026-04-25",
       "name": "Single Family Residence (New)",
       "category": "Building",
@@ -4969,6 +4941,9 @@
             },
             {
               "id": "app_zoning"
+            },
+            {
+              "id": "form_special_inspector"
             }
           ]
         },
@@ -4993,7 +4968,17 @@
             {
               "type": "requirement",
               "label": "Product Approvals",
-              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
+              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional.",
+              "links": [
+                {
+                  "label": "Florida Product Approvals",
+                  "url": "https://www.floridabuilding.org/pr/pr_app_srch.aspx"
+                },
+                {
+                  "label": "Miami-Dade NOA",
+                  "url": "https://www.miamidade.gov/building/pc-search_app.asp"
+                }
+              ]
             },
             {
               "type": "requirement",
@@ -5009,11 +4994,6 @@
               "type": "requirement",
               "label": "Geotechnical Report",
               "description": "Signed and sealed geotechnical/subsurface report with foundation design recommendations."
-            },
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Required when applicable per Florida Statute 553.79 and Broward County amendments."
             },
             {
               "type": "requirement",
@@ -5126,8 +5106,7 @@
         }
       ]
     },
-    {
-      "file": "swimming_pool_(new)",
+    {"file": "swimming_pool_(new)",
       "lastUpdated": "2026-04-25",
       "name": "Swimming Pool (New)",
       "category": "Building",
@@ -5242,8 +5221,7 @@
         }
       ]
     },
-    {
-      "file": "tankless_water_heater",
+    {"file": "tankless_water_heater",
       "lastUpdated": "2026-04-25",
       "name": "Tankless Water Heater",
       "category": "Plumbing",
@@ -5313,8 +5291,7 @@
         }
       ]
     },
-    {
-      "file": "temporary_construction_fence",
+    {"file": "temporary_construction_fence",
       "lastUpdated": "2026-04-25",
       "name": "Temporary Construction Fence",
       "category": "Building",
@@ -5389,8 +5366,7 @@
         }
       ]
     },
-    {
-      "file": "temporary_construction_trailer",
+    {"file": "temporary_construction_trailer",
       "lastUpdated": "2026-04-25",
       "name": "Temporary Construction / Sales Trailer",
       "category": "Building",
@@ -5520,8 +5496,7 @@
         }
       ]
     },
-    {
-      "file": "tiki_hut",
+    {"file": "tiki_hut",
       "lastUpdated": "2026-04-25",
       "name": "Tiki / Chickee Hut",
       "category": "Building",
@@ -5620,8 +5595,7 @@
         }
       ]
     },
-    {
-      "file": "townhomes",
+    {"file": "townhomes",
       "lastUpdated": "2026-04-25",
       "name": "Townhomes (Site, Shell, and Units)",
       "category": "Building",
@@ -5731,8 +5705,7 @@
         }
       ]
     },
-    {
-      "file": "vehicle_charging_station",
+    {"file": "vehicle_charging_station",
       "lastUpdated": "2026-04-25",
       "name": "Vehicle Charging Station",
       "category": "Electrical",
@@ -5827,8 +5800,7 @@
         }
       ]
     },
-    {
-      "file": "water_heater_changeout",
+    {"file": "water_heater_changeout",
       "lastUpdated": "2026-04-25",
       "name": "Water Heater Changeout",
       "category": "Plumbing",
@@ -5842,11 +5814,11 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_electrical",
-              "description": "Only required when..."
+              "id": "app_plumbing"
             },
             {
-              "id": "app_plumbing"
+              "id": "app_electrical",
+              "description": "Only required when electrical work is associated with the water heater installation (e.g., new circuit, disconnect, wiring modifications, or conversion from gas to electric)."
             }
           ]
         },
@@ -5885,8 +5857,7 @@
         }
       ]
     },
-    {
-      "file": "water_service",
+    {"file": "water_service",
       "lastUpdated": "2026-04-25",
       "name": "Water Service",
       "category": "Plumbing",
@@ -5919,8 +5890,7 @@
         }
       ]
     },
-    {
-      "file": "window_door_changeouts",
+    {"file": "window_door_changeouts",
       "lastUpdated": "2026-04-25",
       "name": "Window & Door Changeouts",
       "category": "Building",
@@ -5931,13 +5901,24 @@
       "whenPermitRequired": "The installation, replacement or major repair of any windows or doors requires a Building Permit. A permit is not required for replacement of components that do not affect approval or safety.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building"
             },
             {
               "id": "app_fire"
+            },
+            {
+              "type": "requirement",
+              "label": "Retrofit Window & Door Schedule",
+              "description": "Provide a detailed schedule identifying each window and door opening included in the permit. The schedule must document the size, type, location, and applicable product approval information for every opening to demonstrate compliance with required wind pressures and installation requirements.",
+              "links": [
+                {
+                  "label": "Broward County Uniform Retrofit Window & Door Schedule",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Retrofit-Window-and-Door-Schedule.pdf"
+                }
+              ]
             }
           ]
         },
@@ -5948,17 +5929,6 @@
               "type": "requirement",
               "label": "HOA / Condo Association Approval",
               "description": "Provide association approval letter if applicable."
-            },
-            {
-              "type": "requirement",
-              "label": "Retrofit Window & Door Schedule",
-              "description": "Provide opening schedule showing size, type, and location of all windows and doors.",
-              "links": [
-                {
-                  "label": "Broward County Uniform Retrofit Window & Door Schedule",
-                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Retrofit-Window-and-Door-Schedule.pdf"
-                }
-              ]
             },
             {
               "type": "requirement",
@@ -5983,7 +5953,7 @@
             {
               "type": "requirement",
               "label": "Wind Load Requirements and Design Pressures",
-              "description": "Provide documentation showing the required design pressures for each window and door opening.<br><br>For buildings with a mean roof height of 30 feet or less, submit a plan showing all openings and their design pressures. This may be based on the Broward County Fenestration Voluntary Wind Load Chart or supported by a signed and sealed document from a Florida Professional Engineer or Architect.<br><br>For buildings with a mean roof height greater than 30 feet, a site-specific design is required. This must be signed and sealed by a Florida Professional Engineer or Architect and must identify the location of all openings and the required design pressures for each opening. Generic charts or standard tables are not permitted.",
+              "description": "Provide documentation identifying the required design pressures for each window and door opening.<br><br>For structures with a mean roof height greater than 30 feet, site-specific design pressures are required. These must be prepared, signed, and sealed by a Florida Professional Engineer or Architect. Use of the voluntary chart or other standard tables is not permitted.<br><br>For structures with a mean roof height of 30 feet or less, required design pressures may be determined using the Broward County Fenestration Voluntary Wind Load Chart in lieu of site-specific engineering, or may be provided by a signed and sealed document from a Florida Professional Engineer or Architect.",
               "links": [
                 {
                   "label": "Broward County Fenestration Voluntary Wind Load Chart",
@@ -5993,9 +5963,8 @@
             },
             {
               "type": "requirement",
-              "label": "Egress Clearance Verification",
-              "description": "Any door that opens outward into the clear path of an egress balcony shall not reduce the required width of the means of egress by more than one-half (generally accepted as 22 inches of clear width) when opened to 90 degrees. If this condition may be affected, provide a photo of the existing door and walkway for review."
-            }
+              "label": "Egress Clearance Verification (Photos)",
+              "description": "Doors that swing outward onto an egress balcony or walkway must not reduce the required exit width by more than one-half when opened (typically at least 22 inches of clear width must remain when the door is open 90 degrees).<br><br>If this condition may be impacted, provide a photo showing the existing door and walkway for review."            }
           ]
         },
         {
