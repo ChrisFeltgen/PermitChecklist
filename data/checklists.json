@@ -1,5 +1,5 @@
 {
-"library": {
+  "library": {
     "app_building": {
       "name": "Building Permit Application",
       "description": "Required for most construction-related permits involving structural work, site improvements, or general building scope. This application captures project details, ownership information, contractor information, and overall scope of work.",
@@ -87,6 +87,16 @@
         {
           "label": "Zoning Compliance Application",
           "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Zoning-Compliance-Application.pdf"
+        }
+      ]
+    },
+    "form_easement": {
+      "name": "Easement Agreements",
+      "description": "Required when proposed work is located within a utility or drainage easement.<br><br>A completed Easement Agreement must be signed by each utility provider with facilities in the easement. To obtain signatures, send the agreement, a property survey, and a sketch of the proposed work to each utility for review. Contact information for each provider is included within the form.",
+      "links": [
+        {
+          "label": "Easement Agreement Form",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Easement-Agreement.pdf"
         }
       ]
     }
@@ -182,6 +192,9 @@
               "id": "app_building"
             },
             {
+              "id": "app_floodplain"
+            },
+            {
               "id": "app_electrical"
             },
             {
@@ -192,17 +205,14 @@
               "description": "Required if plumbing work is included"
             },
             {
-              "id": "app_floodplain"
-            },
-            {
               "id": "app_fire",
               "description": "Required for commercial projects only"
             },
             {
-              "id": "app_zoning"
+              "id": "app_landscape"
             },
             {
-              "id": "app_landscape"
+              "id": "app_zoning"
             }
           ]
         },
@@ -617,13 +627,13 @@
               "id": "app_engineering"
             },
             {
-              "id": "app_zoning"
+              "id": "app_fire"
             },
             {
               "id": "app_landscape"
             },
             {
-              "id": "app_fire"
+              "id": "app_zoning"
             }
           ]
         },
@@ -908,11 +918,11 @@
               "id": "app_electrical"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_fire",
               "description": "Required for commercial projects"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -1075,13 +1085,13 @@
               "id": "app_engineering"
             },
             {
-              "id": "app_zoning"
+              "id": "app_fire"
             },
             {
               "id": "app_landscape"
             },
             {
-              "id": "app_fire"
+              "id": "app_zoning"
             }
           ]
         },
@@ -1300,16 +1310,16 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_mechanical"
-            },
-            {
-              "id": "app_plumbing"
+              "id": "app_building"
             },
             {
               "id": "app_electrical"
             },
             {
-              "id": "app_building"
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
             },
             {
               "id": "app_fire"
@@ -1377,16 +1387,16 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_mechanical"
-            },
-            {
-              "id": "app_plumbing"
+              "id": "app_building"
             },
             {
               "id": "app_electrical"
             },
             {
-              "id": "app_building"
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
             },
             {
               "id": "app_fire"
@@ -1574,11 +1584,11 @@
               "id": "app_building"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -1693,16 +1703,16 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_mechanical"
-            },
-            {
-              "id": "app_plumbing"
+              "id": "app_building"
             },
             {
               "id": "app_electrical"
             },
             {
-              "id": "app_building"
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing"
             },
             {
               "id": "app_fire"
@@ -1812,16 +1822,13 @@
               "id": "app_building"
             },
             {
-              "id": "app_plumbing"
-            },
-            {
               "id": "app_electrical"
             },
             {
               "id": "app_mechanical"
             },
             {
-              "id": "app_zoning"
+              "id": "app_plumbing"
             },
             {
               "id": "app_fire",
@@ -1829,6 +1836,9 @@
             },
             {
               "id": "app_landscape"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -1953,18 +1963,18 @@
               "id": "app_building"
             },
             {
-              "id": "app_engineering"
-            },
-            {
               "id": "app_electrical"
             },
             {
-              "id": "app_zoning",
-              "description": "Required if work encroaches property lines"
+              "id": "app_engineering"
             },
             {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning",
+              "description": "Required if work encroaches property lines"
             }
           ]
         },
@@ -2074,11 +2084,11 @@
               "id": "app_engineering"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -2230,14 +2240,14 @@
               "id": "app_building"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_fire"
             },
             {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -2459,15 +2469,15 @@
               "id": "app_building"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_fire",
               "description": "Required for multi-family, condominium, and commercial projects"
             },
             {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning"
             },
             {
               "id": "form_easement"
@@ -2601,22 +2611,22 @@
               "id": "app_building"
             },
             {
-              "id": "app_plumbing"
-            },
-            {
               "id": "app_electrical"
             },
             {
-              "id": "app_engineering"
+              "id": "app_plumbing"
             },
             {
-              "id": "app_zoning"
+              "id": "app_engineering"
             },
             {
               "id": "app_fire"
             },
             {
               "id": "app_landscape"
+            },
+            {
+              "id": "app_zoning"
             },
             {
               "type": "requirement",
@@ -2795,9 +2805,6 @@
               "id": "app_building"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_electrical",
               "description": "Required if electrical work is included"
             },
@@ -2808,6 +2815,9 @@
             {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -2908,15 +2918,15 @@
               "id": "app_plumbing"
             },
             {
-              "id": "app_zoning"
+              "id": "app_fire",
+              "description": "Required for commercial generators"
             },
             {
               "id": "app_landscape",
               "description": "Tree permit required if trees are adjacent to work area"
             },
             {
-              "id": "app_fire",
-              "description": "Required for commercial generators"
+              "id": "app_zoning"
             },
             {
               "type": "requirement",
@@ -3080,13 +3090,13 @@
           "name": "Applications",
           "items": [
             {
+              "id": "app_electrical"
+            },
+            {
               "id": "app_mechanical"
             },
             {
               "id": "app_plumbing"
-            },
-            {
-              "id": "app_electrical"
             },
             {
               "id": "app_fire"
@@ -3190,7 +3200,9 @@
               "id": "app_building"
             },
             {
-              "id": "app_plumbing"
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
             },
             {
               "id": "app_electrical"
@@ -3199,15 +3211,13 @@
               "id": "app_mechanical"
             },
             {
-              "id": "app_zoning"
+              "id": "app_plumbing"
             },
             {
               "id": "app_fire"
             },
             {
-              "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+              "id": "app_zoning"
             },
             {
               "type": "requirement",
@@ -3388,10 +3398,10 @@
               "id": "app_building"
             },
             {
-              "id": "app_plumbing"
+              "id": "app_electrical"
             },
             {
-              "id": "app_electrical"
+              "id": "app_plumbing"
             },
             {
               "id": "app_fire",
@@ -3584,13 +3594,13 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_mechanical"
+              "id": "app_floodplain"
             },
             {
               "id": "app_electrical"
             },
             {
-              "id": "app_floodplain"
+              "id": "app_mechanical"
             },
             {
               "id": "app_zoning"
@@ -3669,7 +3679,9 @@
               "id": "app_building"
             },
             {
-              "id": "app_plumbing"
+              "type": "requirement",
+              "label": "Floodplain Permit Application",
+              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
             },
             {
               "id": "app_electrical"
@@ -3678,15 +3690,13 @@
               "id": "app_mechanical"
             },
             {
-              "id": "app_zoning"
+              "id": "app_plumbing"
             },
             {
               "id": "app_landscape"
             },
             {
-              "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+              "id": "app_zoning"
             }
           ]
         },
@@ -3784,10 +3794,10 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_plumbing"
+              "id": "app_electrical"
             },
             {
-              "id": "app_electrical"
+              "id": "app_plumbing"
             },
             {
               "id": "app_plumbing",
@@ -3926,10 +3936,10 @@
               "id": "app_building"
             },
             {
-              "id": "app_fire"
+              "id": "app_electrical"
             },
             {
-              "id": "app_electrical"
+              "id": "app_fire"
             },
             {
               "type": "requirement",
@@ -4107,7 +4117,7 @@
         "Residential",
         "Commercial"
       ],
-      "whenPermitRequired": "The transfer of irrigation from potable water to the City\u2019s reuse connection requires a Plumbing Permit.",
+      "whenPermitRequired": "The transfer of irrigation from potable water to the City’s reuse connection requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -4475,24 +4485,24 @@
               "description": "Required for sub-surface enhancement work"
             },
             {
-              "id": "app_plumbing",
-              "description": "Required for irrigation and on-site plumbing"
-            },
-            {
               "id": "app_electrical",
               "description": "Required for site lighting"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Required for irrigation and on-site plumbing"
             },
             {
               "id": "app_engineering"
             },
             {
-              "id": "app_zoning"
+              "id": "app_fire"
             },
             {
               "id": "app_landscape"
             },
             {
-              "id": "app_fire"
+              "id": "app_zoning"
             },
             {
               "type": "requirement",
@@ -4845,9 +4855,6 @@
               "id": "app_building"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_electrical",
               "description": "Required if electrical work is included"
             },
@@ -4858,6 +4865,9 @@
             {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -4955,10 +4965,10 @@
               "id": "app_engineering"
             },
             {
-              "id": "app_zoning"
+              "id": "app_landscape"
             },
             {
-              "id": "app_landscape"
+              "id": "app_zoning"
             }
           ]
         },
@@ -5135,16 +5145,16 @@
               "description": "Structural application required for pool construction"
             },
             {
-              "id": "app_plumbing"
-            },
-            {
               "id": "app_electrical"
             },
             {
-              "id": "app_zoning"
+              "id": "app_plumbing"
             },
             {
               "id": "app_landscape"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -5247,10 +5257,10 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_plumbing"
+              "id": "app_electrical"
             },
             {
-              "id": "app_electrical"
+              "id": "app_plumbing"
             }
           ]
         },
@@ -5321,15 +5331,15 @@
               "id": "app_building"
             },
             {
-              "id": "app_zoning"
-            },
-            {
               "id": "app_fire",
               "description": "Required for commercial and multi-family projects"
             },
             {
               "id": "app_landscape",
               "description": "Required if trees are adjacent to the work area"
+            },
+            {
+              "id": "app_zoning"
             }
           ]
         },
@@ -5404,7 +5414,8 @@
               "description": "Required if trailer includes restroom facilities"
             },
             {
-              "id": "app_zoning"
+              "id": "app_engineering",
+              "description": "Required for erosion control (sales trailers)"
             },
             {
               "id": "app_fire"
@@ -5414,8 +5425,7 @@
               "description": "Required if trees are adjacent to the work area"
             },
             {
-              "id": "app_engineering",
-              "description": "Required for erosion control (sales trailers)"
+              "id": "app_zoning"
             }
           ]
         },
@@ -5531,10 +5541,6 @@
               "description": "Required for tiki huts and for chickee huts unless the chickee hut is constructed by a member of the Seminole Tribe and qualifies for the Building Permit exemption."
             },
             {
-              "id": "app_zoning",
-              "description": "Required for all tiki and chickee huts, including chickee huts exempt from the Building Permit requirement."
-            },
-            {
               "id": "app_electrical",
               "description": "Required if electrical work is included"
             },
@@ -5549,6 +5555,10 @@
             {
               "id": "app_landscape",
               "description": "Required if trees are affected or adjacent to work area"
+            },
+            {
+              "id": "app_zoning",
+              "description": "Required for all tiki and chickee huts, including chickee huts exempt from the Building Permit requirement."
             }
           ]
         },
@@ -5639,13 +5649,13 @@
               "id": "app_engineering"
             },
             {
-              "id": "app_zoning"
+              "id": "app_fire"
             },
             {
               "id": "app_landscape"
             },
             {
-              "id": "app_fire"
+              "id": "app_zoning"
             }
           ]
         },
@@ -5742,10 +5752,10 @@
               "id": "app_electrical"
             },
             {
-              "id": "app_zoning"
+              "id": "app_fire"
             },
             {
-              "id": "app_fire"
+              "id": "app_zoning"
             }
           ]
         },
@@ -5832,11 +5842,11 @@
           "name": "Applications",
           "items": [
             {
-              "id": "app_plumbing"
-            },
-            {
               "id": "app_electrical",
               "description": "Only required when..."
+            },
+            {
+              "id": "app_plumbing"
             }
           ]
         },
