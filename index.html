@@ -433,6 +433,17 @@ function scrollToContentOnMobile(behavior = "smooth") {
   });
 }
 
+function scrollToContentOnDesktop(behavior = "smooth") {
+  if (!window.matchMedia("(min-width: 768px)").matches) return;
+
+  requestAnimationFrame(() => {
+    window.scrollTo({
+      top: 0,
+      behavior,
+    });
+  });
+}
+
 function scrollSelectedPermitIntoView(behavior = "auto") {
   requestAnimationFrame(() => {
     const container = document.getElementById("permitList");
@@ -566,6 +577,7 @@ function renderPermitList() {
       renderAll();
       scrollSelectedPermitIntoView("smooth");
       scrollToContentOnMobile("smooth");
+      scrollToContentOnDesktop("smooth");
     };
 
     container.appendChild(btn);
@@ -584,6 +596,7 @@ window.addEventListener("hashchange", () => {
     renderAll();
     scrollSelectedPermitIntoView("auto");
     scrollToContentOnMobile("auto");
+    scrollToContentOnDesktop("auto");
   }
 });
 
