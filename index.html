@@ -16,6 +16,9 @@
     .city-bg-blue-50 {background-color:rgba(42, 118, 141, 0.2);}
     .city-blue-border {border-color:#2A768D;}
     .city-blue-text {color:#2A768D;}
+    .hint-bg {background-color:rgba(22, 163, 74, 0.12);}
+    .hint-border {border-color:#16A34A;}
+    .hint-text {color:#166534;}
 
     /* Hide print header in browser */
     .print-header {
@@ -648,11 +651,23 @@ function renderContent() {
 </div>
     `;
 
-  if (data.guidance) {
+  const whenPermitRequired = data.whenPermitRequired;
+  const hint = data.hint;
+
+  if (whenPermitRequired) {
     html += `
       <div class="mb-4 p-4 rounded border-l-4 city-blue-border city-bg-blue-50 text-sm text-gray-700">
         <div class="font-semibold city-blue-text mb-1">When do I need a Permit?</div>
-        <div>${data.guidance}</div>
+        <div>${whenPermitRequired}</div>
+      </div>
+    `;
+  }
+
+  if (hint) {
+    html += `
+      <div class="mb-4 p-4 rounded border-l-4 hint-border hint-bg text-sm text-gray-700">
+        <div class="font-semibold hint-text mb-1">Hint</div>
+        <div>${hint}</div>
       </div>
     `;
   }

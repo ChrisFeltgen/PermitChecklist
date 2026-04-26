@@ -97,7 +97,7 @@
       "lastUpdated": "2026-04-25",
       "name": "A/C Change Out",
       "category": "Mechanical",
-      "guidance": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
+      "whenPermitRequired": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
       "sections": [
         {
           "name": "Applications",
@@ -173,7 +173,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The lateral or vertical extension, or increase in floor area or height of a structure, requires a Building Permit.",
+      "whenPermitRequired": "The lateral or vertical extension, or increase in floor area or height of a structure, requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -373,7 +373,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or repair of asphalt surfaces requires a Building Permit.",
+      "whenPermitRequired": "The installation or repair of asphalt surfaces requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -470,7 +470,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of an awning or canopy requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
+      "whenPermitRequired": "The installation or replacement of an awning or canopy requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
@@ -545,7 +545,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a backflow preventer requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of a backflow preventer requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -594,7 +594,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The construction of a building shell requires a Building Permit. Separate permits are required for interior buildouts or tenant units.",
+      "whenPermitRequired": "The construction of a building shell requires a Building Permit. Separate permits are required for interior buildouts or tenant units.",
       "sections": [
         {
           "name": "Applications",
@@ -755,7 +755,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of a hard wired burglar alarm system requires an Electrical Permit.",
+      "whenPermitRequired": "The installation of a hard wired burglar alarm system requires an Electrical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -797,7 +797,7 @@
       "propertyType": [
         "Residential"
       ],
-      "guidance": "The enclosure of a carport or construction of a garage requires a Building Permit.",
+      "whenPermitRequired": "The enclosure of a carport or construction of a garage requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -896,7 +896,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The installation, upgrade, or replacement of a cell tower requires a Building Permit.",
+      "whenPermitRequired": "The installation, upgrade, or replacement of a cell tower requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -995,7 +995,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "A Change of Use permit is required when Planning and Zoning determines that the use or occupancy of a building or tenant space has changed. This process allows the Building Department to verify that the existing construction, layout, and life safety systems comply with current code requirements for the proposed use prior to issuing a new Certificate of Occupancy.<br><br>A Change of Use permit may only be issued when NO construction work is required. If alterations are necessary to meet the requirements of the new occupancy, a standard building permit must be obtained instead.",
+      "whenPermitRequired": "A Change of Use permit is required when Planning and Zoning determines that the use or occupancy of a building or tenant space has changed. This process allows the Building Department to verify that the existing construction, layout, and life safety systems comply with current code requirements for the proposed use prior to issuing a new Certificate of Occupancy.<br><br>A Change of Use permit may only be issued when NO construction work is required. If alterations are necessary to meet the requirements of the new occupancy, a standard building permit must be obtained instead.",
       "sections": [
         {
           "name": "Applications",
@@ -1055,7 +1055,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a chickee hut requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of a chickee hut requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -1130,7 +1130,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The construction of a commercial building requires a Building Permit.",
+      "whenPermitRequired": "The construction of a commercial building requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -1370,7 +1370,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The installation of commercial refrigeration systems requires a Mechanical Permit. Fire suppression is required for coolers over 400 sq. ft.",
+      "whenPermitRequired": "The installation of commercial refrigeration systems requires a Mechanical Permit. Fire suppression is required for coolers over 400 sq. ft.",
       "sections": [
         {
           "name": "Applications",
@@ -1447,7 +1447,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The installation of a commercial spray booth requires a Mechanical Permit.",
+      "whenPermitRequired": "The installation of a commercial spray booth requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -1577,7 +1577,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The restoration or repair of concrete on a building requires a Building Permit.",
+      "whenPermitRequired": "The restoration or repair of concrete on a building requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -1641,7 +1641,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of a concrete slab requires a Building Permit.",
+      "whenPermitRequired": "The installation of a concrete slab requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -1715,7 +1715,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "Providing temporary electrical power to a jobsite or trailer requires an Electrical Permit.",
+      "whenPermitRequired": "Providing temporary electrical power to a jobsite or trailer requires an Electrical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -1763,7 +1763,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The installation, alteration, or major repair of a cooling tower requires a Mechanical Permit.",
+      "whenPermitRequired": "The installation, alteration, or major repair of a cooling tower requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -1879,7 +1879,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The demolition of a structure requires a permit.",
+      "whenPermitRequired": "The demolition of a structure requires a permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2020,7 +2020,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation, replacement, or major repair of a dock requires a Building Permit.",
+      "whenPermitRequired": "The installation, replacement, or major repair of a dock requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2138,7 +2138,7 @@
       "propertyType": [
         "Residential"
       ],
-      "guidance": "The installation, replacement, or major repair of a residential driveway or patio requires a Building Permit.",
+      "whenPermitRequired": "The installation, replacement, or major repair of a residential driveway or patio requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2253,7 +2253,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or alteration of mechanical ductwork requires a Mechanical Permit.",
+      "whenPermitRequired": "The installation or alteration of mechanical ductwork requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2297,7 +2297,7 @@
         "Commercial",
         "Multi-Family"
       ],
-      "guidance": "The installation of a dumpster enclosure requires a Building Permit.",
+      "whenPermitRequired": "The installation of a dumpster enclosure requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2388,7 +2388,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The replacement of an electrical panel requires an Electrical Permit.",
+      "whenPermitRequired": "The replacement of an electrical panel requires an Electrical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2431,7 +2431,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "A Service Turn-On Permit is required when power has been disconnected and an inspection is needed before restoration by the utility provider.",
+      "whenPermitRequired": "A Service Turn-On Permit is required when power has been disconnected and an inspection is needed before restoration by the utility provider.",
       "sections": [
         {
           "name": "Applications",
@@ -2466,7 +2466,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of erosion control devices requires a Building Permit.",
+      "whenPermitRequired": "The installation of erosion control devices requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2526,7 +2526,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation, replacement, or major repair of a fence requires a Building Permit.",
+      "whenPermitRequired": "The installation, replacement, or major repair of a fence requires a Building Permit.",
       "sections": [
         {
           "name": "Applications & Forms",
@@ -2614,7 +2614,7 @@
       "propertyType": [
         "Residential"
       ],
-      "guidance": "A Flooring Permit is required for installation of new flooring in condominium units or similar dwellings located above another unit or service area. Ground floor units, single-family homes, and commercial spaces do not require a permit.",
+      "whenPermitRequired": "A Flooring Permit is required for installation of new flooring in condominium units or similar dwellings located above another unit or service area. Ground floor units, single-family homes, and commercial spaces do not require a permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2668,7 +2668,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of a foundation requires a Building Permit. This permit may be issued as a phased permit prior to full building approval.",
+      "whenPermitRequired": "The installation of a foundation requires a Building Permit. This permit may be issued as a phased permit prior to full building approval.",
       "sections": [
         {
           "name": "Applications",
@@ -2792,7 +2792,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of gas piping requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of gas piping requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2862,7 +2862,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a gazebo or pergola requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of a gazebo or pergola requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2969,7 +2969,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a generator requires permits.",
+      "whenPermitRequired": "The installation or replacement of a generator requires permits.",
       "sections": [
         {
           "name": "Applications",
@@ -3095,7 +3095,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of helical piles for foundation support requires a Building Permit.",
+      "whenPermitRequired": "The installation of helical piles for foundation support requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3150,7 +3150,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The installation of a hood system requires a Mechanical Permit.",
+      "whenPermitRequired": "The installation of a hood system requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3257,7 +3257,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The interior buildout of a building shell requires a Building Permit.",
+      "whenPermitRequired": "The interior buildout of a building shell requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3401,7 +3401,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of an irrigation system requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of an irrigation system requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3455,7 +3455,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation, alteration, or major repair of a kitchen or bathroom requires a permit.",
+      "whenPermitRequired": "The installation, alteration, or major repair of a kitchen or bathroom requires a permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3571,7 +3571,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of lights and associated light poles requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of lights and associated light poles requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3654,7 +3654,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of a new mini-split system requires a Mechanical Permit.",
+      "whenPermitRequired": "The installation of a new mini-split system requires a Mechanical Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3736,7 +3736,7 @@
       "propertyType": [
         "Residential"
       ],
-      "guidance": "The installation of a mobile home requires a Building Permit.",
+      "whenPermitRequired": "The installation of a mobile home requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3854,7 +3854,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a commercial pool heater requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of a commercial pool heater requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3950,7 +3950,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "Excavation below a foundation for pipe or drain replacement requires a Plumbing Permit.",
+      "whenPermitRequired": "Excavation below a foundation for pipe or drain replacement requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -3993,7 +3993,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "The installation of a racking system in a commercial building requires a Building Permit.",
+      "whenPermitRequired": "The installation of a racking system in a commercial building requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -4071,7 +4071,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation, replacement, or major repair of a roofing system requires a Building Permit. A permit is not required for minor repairs that do not affect approval or safety.",
+      "whenPermitRequired": "The installation, replacement, or major repair of a roofing system requires a Building Permit. A permit is not required for minor repairs that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
@@ -4183,7 +4183,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The transfer of irrigation from potable water to the City\u2019s reuse connection requires a Plumbing Permit.",
+      "whenPermitRequired": "The transfer of irrigation from potable water to the City\u2019s reuse connection requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -4237,7 +4237,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation, replacement, or major repair of a seawall requires a Building Permit.",
+      "whenPermitRequired": "The installation, replacement, or major repair of a seawall requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -4315,7 +4315,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The conversion from a septic system to a municipal sewer connection requires a Plumbing Permit.",
+      "whenPermitRequired": "The conversion from a septic system to a municipal sewer connection requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -4373,7 +4373,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of shutters requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
+      "whenPermitRequired": "The installation or replacement of shutters requires a Building Permit. A permit is not required for minor part replacements that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
@@ -4452,7 +4452,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a sign requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of a sign requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -4541,7 +4541,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "Site work associated with a building project requires a Building Permit.",
+      "whenPermitRequired": "Site work associated with a building project requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -4698,7 +4698,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of solar (photovoltaic) systems requires applicable Building and Electrical permits.",
+      "whenPermitRequired": "The installation of solar (photovoltaic) systems requires applicable Building and Electrical permits.",
       "sections": [
         {
           "name": "Applications",
@@ -4820,7 +4820,7 @@
       "propertyType": [
         "Commercial"
       ],
-      "guidance": "An approved special event requires a permit to be issued.",
+      "whenPermitRequired": "An approved special event requires a permit to be issued.",
       "sections": [
         {
           "name": "Applications",
@@ -4912,7 +4912,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a storage shed requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of a storage shed requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5010,7 +5010,7 @@
       "propertyType": [
         "Residential"
       ],
-      "guidance": "The construction of a new single-family residence or duplex requires a Building Permit.",
+      "whenPermitRequired": "The construction of a new single-family residence or duplex requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5201,7 +5201,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The construction of a new swimming pool requires a permit.",
+      "whenPermitRequired": "The construction of a new swimming pool requires a permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5317,7 +5317,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5388,7 +5388,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of a temporary construction fence requires a Building Permit.",
+      "whenPermitRequired": "The installation of a temporary construction fence requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5464,7 +5464,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation of a temporary construction or sales trailer requires a Building Permit.",
+      "whenPermitRequired": "The installation of a temporary construction or sales trailer requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5595,7 +5595,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a tiki hut requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of a tiki hut requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5685,7 +5685,7 @@
       "propertyType": [
         "Residential"
       ],
-      "guidance": "Townhome developments are permitted under a multi-permit structure including a Site Permit, Master Building Permit, and individual Unit Permits.",
+      "whenPermitRequired": "Townhome developments are permitted under a multi-permit structure including a Site Permit, Master Building Permit, and individual Unit Permits.",
       "sections": [
         {
           "name": "Applications",
@@ -5797,7 +5797,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a vehicle charging station requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of a vehicle charging station requires a Building Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5893,7 +5893,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of a water heater, whether commercial or residential, requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of a water heater, whether commercial or residential, requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5951,7 +5951,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation or replacement of water service requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of water service requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5985,7 +5985,7 @@
         "Residential",
         "Commercial"
       ],
-      "guidance": "The installation, replacement or major repair of any windows or doors requires a Building Permit. A permit is not required for replacement of components that do not affect approval or safety.",
+      "whenPermitRequired": "The installation, replacement or major repair of any windows or doors requires a Building Permit. A permit is not required for replacement of components that do not affect approval or safety.",
       "sections": [
         {
           "name": "Applications",
