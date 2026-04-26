@@ -27,7 +27,8 @@ The app is fully data-driven:
 - **Library** → Reusable items (applications, requirements, notices like NOC)  
 - **Permits** → Organized into sections (Applications, Requirements, Plans, Inspections)
 - `whenPermitRequired` controls the "When do I need a Permit?" callout for a permit.
-- `hint` is optional and adds a standalone Hint callout for extra information.
+- `hintTitle` is optional and changes the standalone Hint callout title.
+- `hint` is optional and adds body text to the standalone Hint callout.
 
 ---
 

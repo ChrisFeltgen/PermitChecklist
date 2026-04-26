@@ -665,6 +665,7 @@ function renderContent() {
     `;
 
   const whenPermitRequired = data.whenPermitRequired;
+  const hintTitle = data.hintTitle || "Hint";
   const hint = data.hint;
 
   if (whenPermitRequired) {
@@ -676,11 +677,11 @@ function renderContent() {
     `;
   }
 
-  if (hint) {
+  if (data.hintTitle || hint) {
     html += `
       <div class="mb-4 p-4 rounded border-l-4 hint-border hint-bg text-sm text-gray-700">
-        <div class="font-semibold hint-text mb-1">Hint</div>
-        <div>${hint}</div>
+        <div class="font-semibold hint-text ${hint ? "mb-1" : ""}">${hintTitle}</div>
+        ${hint ? `<div>${hint}</div>` : ""}
       </div>
     `;
   }

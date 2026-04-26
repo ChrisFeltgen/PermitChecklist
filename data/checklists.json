@@ -1047,82 +1047,6 @@
       ]
     },
     {
-      "file": "chickee_hut",
-      "lastUpdated": "2026-04-25",
-      "name": "Chickee Hut",
-      "category": "Building",
-      "propertyType": [
-        "Residential",
-        "Commercial"
-      ],
-      "whenPermitRequired": "The installation or replacement of a chickee hut requires a Building Permit.",
-      "sections": [
-        {
-          "name": "Applications",
-          "items": [
-            {
-              "id": "app_building",
-              "description": "Must be submitted by a member of a Native American Tribe"
-            },
-            {
-              "id": "app_zoning",
-              "description": "Must be submitted by a member of a Native American Tribe"
-            },
-            {
-              "id": "app_fire",
-              "description": "Required for commercial and multi-family projects"
-            },
-            {
-              "id": "app_landscape",
-              "description": "Required if trees are affected or adjacent to work area"
-            }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Tribal Identification",
-              "description": "Provide identification verifying installer is a member of a Native American Tribe."
-            },
-            {
-              "type": "requirement",
-              "label": "Survey or Site Plan",
-              "description": "Provide survey or site plan showing the location and dimensions of the chickee hut."
-            }
-          ]
-        },
-        {
-          "name": "Inspections",
-          "items": [
-            {
-              "type": "inspection_group",
-              "label": "Zoning Inspections",
-              "inspections": [
-                "Z ZONING FINAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Tree Inspections (If applicable)",
-              "inspections": [
-                "L TREE PROTECTION INSPECTION",
-                "L FINAL LANDSCAPE"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Fire Inspections (If applicable)",
-              "inspections": [
-                "FIRE DEPARTMENT FINAL"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "file": "commercial_building",
       "lastUpdated": "2026-04-25",
       "name": "Commercial Building",
@@ -5589,22 +5513,26 @@
     {
       "file": "tiki_hut",
       "lastUpdated": "2026-04-25",
-      "name": "Tiki Hut",
+      "name": "Tiki / Chickee Hut",
       "category": "Building",
       "propertyType": [
         "Residential",
         "Commercial"
       ],
-      "whenPermitRequired": "The installation or replacement of a tiki hut requires a Building Permit.",
+      "whenPermitRequired": "The installation or replacement of a tiki or chickee hut requires a Building Permit unless the chickee hut is constructed by a member of the Seminole Tribe and qualifies for the Building Permit exemption.",
+      "hintTitle": "Chickee Hut Exemption",
+      "hint": "A chickee hut constructed by a member of the Seminole Tribe is exempt from the Building Permit requirement. Zoning Compliance is still required.",
       "sections": [
         {
           "name": "Applications",
           "items": [
             {
-              "id": "app_building"
+              "id": "app_building",
+              "description": "Required for tiki huts and for chickee huts unless the chickee hut is constructed by a member of the Seminole Tribe and qualifies for the Building Permit exemption."
             },
             {
-              "id": "app_zoning"
+              "id": "app_zoning",
+              "description": "Required for all tiki and chickee huts, including chickee huts exempt from the Building Permit requirement."
             },
             {
               "id": "app_electrical",
@@ -5630,7 +5558,12 @@
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
-              "description": "Provide survey or site plan showing the location and dimensions of the tiki hut."
+              "description": "Provide survey or site plan showing the location and dimensions of the tiki or chickee hut."
+            },
+            {
+              "type": "requirement",
+              "label": "Tribal Identification",
+              "description": "Required only when claiming the Seminole Tribe Building Permit exemption for a chickee hut."
             },
             {
               "type": "requirement",
@@ -5644,7 +5577,7 @@
           "items": [
             {
               "type": "inspection_group",
-              "label": "Building Inspections",
+              "label": "Building Inspections (If Building Permit is required)",
               "inspections": [
                 "BLDG FOOTINGS",
                 "BLDG ATTACHMENT",
