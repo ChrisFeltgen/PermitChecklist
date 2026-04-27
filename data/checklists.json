@@ -148,7 +148,7 @@
   "permits": [
     {
       "file": "ac_change_out",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "A/C Change Out",
       "category": "Mechanical",
       "whenPermitRequired": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
@@ -220,7 +220,7 @@
     },
     {
       "file": "additions",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Additions",
       "category": "Building",
       "propertyType": [
@@ -437,7 +437,7 @@
     },
     {
       "file": "asphalt_restriping",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Asphalt & Restriping",
       "category": "Building",
       "propertyType": [
@@ -540,7 +540,7 @@
     },
     {
       "file": "awning_canopy",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Awning / Canopy",
       "category": "Building",
       "propertyType": [
@@ -615,7 +615,7 @@
     },
     {
       "file": "backflow_preventer",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Backflow Preventer",
       "category": "Plumbing",
       "propertyType": [
@@ -665,7 +665,7 @@
     },
     {
       "file": "building_shell",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Building Shell",
       "category": "Building",
       "propertyType": [
@@ -819,7 +819,7 @@
     },
     {
       "file": "burglar_alarm",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Burglar Alarm (Hard Wired)",
       "category": "Electrical",
       "propertyType": [
@@ -862,7 +862,7 @@
     },
     {
       "file": "carport_enclosure",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Carport Enclosure",
       "category": "Building",
       "propertyType": [
@@ -961,7 +961,7 @@
     },
     {
       "file": "cell_tower",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Cell Tower",
       "category": "Building",
       "propertyType": [
@@ -1050,7 +1050,7 @@
     },
     {
       "file": "change_of_use",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Change of Use",
       "category": "Building",
       "propertyType": [
@@ -1110,7 +1110,7 @@
     },
     {
       "file": "commercial_building",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Commercial Building",
       "category": "Building",
       "propertyType": [
@@ -1350,7 +1350,7 @@
     },
     {
       "file": "commercial_refrigeration",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Commercial Refrigeration",
       "category": "Mechanical",
       "propertyType": [
@@ -1427,7 +1427,7 @@
     },
     {
       "file": "commercial_spray_booth",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Commercial Spray Booth",
       "category": "Mechanical",
       "propertyType": [
@@ -1556,7 +1556,7 @@
     },
     {
       "file": "concrete_restoration",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Concrete Restoration",
       "category": "Building",
       "propertyType": [
@@ -1618,7 +1618,7 @@
     },
     {
       "file": "concrete_slab",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Concrete Slab",
       "category": "Building",
       "propertyType": [
@@ -1692,7 +1692,7 @@
     },
     {
       "file": "construction_temp_power",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Construction Temporary Power",
       "category": "Electrical",
       "propertyType": [
@@ -1741,7 +1741,7 @@
     },
     {
       "file": "cooling_tower",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Cooling Tower",
       "category": "Mechanical",
       "propertyType": [
@@ -1856,7 +1856,7 @@
     },
     {
       "file": "demolition",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Demolition",
       "category": "Building",
       "propertyType": [
@@ -1997,7 +1997,7 @@
     },
     {
       "file": "dock",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Dock",
       "category": "Building",
       "propertyType": [
@@ -2116,7 +2116,7 @@
     },
     {
       "file": "driveway_patio",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Driveway / Patio",
       "category": "Building",
       "propertyType": [
@@ -2230,7 +2230,7 @@
     },
     {
       "file": "ductwork_changeout",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Ductwork Change Out",
       "category": "Mechanical",
       "propertyType": [
@@ -2274,7 +2274,7 @@
     },
     {
       "file": "dumpster_enclosure",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Dumpster Enclosure",
       "category": "Building",
       "propertyType": [
@@ -2365,7 +2365,7 @@
     },
     {
       "file": "electrical_panel_change",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Electrical Panel Change",
       "category": "Electrical",
       "propertyType": [
@@ -2408,7 +2408,7 @@
     },
     {
       "file": "electrical_service_turn_on",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Electrical Service Turn-On",
       "category": "Electrical",
       "propertyType": [
@@ -2443,7 +2443,7 @@
     },
     {
       "file": "erosion_control",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Erosion Control",
       "category": "Building",
       "propertyType": [
@@ -2503,7 +2503,7 @@
     },
     {
       "file": "fence",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Fence",
       "category": "Building",
       "propertyType": [
@@ -2592,7 +2592,7 @@
     },
     {
       "file": "flooring_sound_barrier",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Flooring / Sound Barrier",
       "category": "Building",
       "propertyType": [
@@ -2645,7 +2645,7 @@
     },
     {
       "file": "foundation_only",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Foundation Only",
       "category": "Building",
       "propertyType": [
@@ -2769,7 +2769,7 @@
     },
     {
       "file": "gas_piping",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Gas Piping",
       "category": "Plumbing",
       "propertyType": [
@@ -2839,7 +2839,7 @@
     },
     {
       "file": "gazebo_pergola",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Gazebo / Pergola",
       "category": "Building",
       "propertyType": [
@@ -2946,7 +2946,7 @@
     },
     {
       "file": "generator",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Generator",
       "category": "Building",
       "propertyType": [
@@ -3072,7 +3072,7 @@
     },
     {
       "file": "helical_piles",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Helical Piles",
       "category": "Building",
       "propertyType": [
@@ -3128,7 +3128,7 @@
     },
     {
       "file": "hood_system",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Hood System",
       "category": "Mechanical",
       "propertyType": [
@@ -3235,7 +3235,7 @@
     },
     {
       "file": "interior_buildout",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Interior Buildout",
       "category": "Building",
       "propertyType": [
@@ -3378,7 +3378,7 @@
     },
     {
       "file": "irrigation_system",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Irrigation System",
       "category": "Plumbing",
       "propertyType": [
@@ -3432,7 +3432,7 @@
     },
     {
       "file": "kitchen_bath_renovation",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Kitchen / Bath Renovation",
       "category": "Building",
       "propertyType": [
@@ -3548,7 +3548,7 @@
     },
     {
       "file": "light_poles",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Light Poles",
       "category": "Building",
       "propertyType": [
@@ -3631,7 +3631,7 @@
     },
     {
       "file": "mini_split_system_new",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Mini-Split System (New)",
       "category": "Mechanical",
       "propertyType": [
@@ -3714,7 +3714,7 @@
     },
     {
       "file": "mobile_home",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Mobile Home",
       "category": "Building",
       "propertyType": [
@@ -3830,7 +3830,7 @@
     },
     {
       "file": "pool_heater_commercial",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Pool Heater (Commercial)",
       "category": "Plumbing",
       "propertyType": [
@@ -3925,7 +3925,7 @@
     },
     {
       "file": "plumbing_tunnel_job",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Plumbing Tunnel Job",
       "category": "Plumbing",
       "propertyType": [
@@ -3969,7 +3969,7 @@
     },
     {
       "file": "racking_system",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Racking System",
       "category": "Building",
       "propertyType": [
@@ -4046,7 +4046,7 @@
     },
     {
       "file": "reroof",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Reroof",
       "category": "Building",
       "propertyType": [
@@ -4158,7 +4158,7 @@
     },
     {
       "file": "reuse_connection",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Reuse Connection",
       "category": "Plumbing",
       "propertyType": [
@@ -4212,7 +4212,7 @@
     },
     {
       "file": "seawall",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Seawall",
       "category": "Building",
       "propertyType": [
@@ -4290,7 +4290,7 @@
     },
     {
       "file": "septic_to_sewer",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Septic to Sewer Conversion",
       "category": "Plumbing",
       "propertyType": [
@@ -4348,7 +4348,7 @@
     },
     {
       "file": "shutters",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Shutters",
       "category": "Building",
       "propertyType": [
@@ -4427,7 +4427,7 @@
     },
     {
       "file": "sign",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Sign",
       "category": "Building",
       "propertyType": [
@@ -4523,7 +4523,7 @@
     },
     {
       "file": "site_work",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Site Work",
       "category": "Building",
       "propertyType": [
@@ -4680,7 +4680,7 @@
     },
     {
       "file": "solar_systems",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Solar Systems (Photovoltaic)",
       "category": "Electrical",
       "propertyType": [
@@ -4801,7 +4801,7 @@
     },
     {
       "file": "special_event",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Special Event",
       "category": "Building",
       "propertyType": [
@@ -4892,7 +4892,7 @@
     },
     {
       "file": "storage_shed",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Storage Shed",
       "category": "Building",
       "propertyType": [
@@ -4989,7 +4989,7 @@
     },
     {
       "file": "single_family_residence_new",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Single Family Residence (New)",
       "category": "Building",
       "propertyType": [
@@ -5187,7 +5187,7 @@
     },
     {
       "file": "swimming_pool_(new)",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Swimming Pool (New)",
       "category": "Building",
       "propertyType": [
@@ -5307,7 +5307,7 @@
     },
     {
       "file": "tankless_water_heater",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Tankless Water Heater",
       "category": "Plumbing",
       "propertyType": [
@@ -5384,7 +5384,7 @@
     },
     {
       "file": "temporary_construction_fence",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Temporary Construction Fence",
       "category": "Building",
       "propertyType": [
@@ -5460,7 +5460,7 @@
     },
     {
       "file": "temporary_construction_trailer",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Temporary Construction / Sales Trailer",
       "category": "Building",
       "propertyType": [
@@ -5591,7 +5591,7 @@
     },
 {
   "file": "tiki_hut",
-  "lastUpdated": "2026-04-25",
+  "lastUpdated": "2026-04-27",
   "name": "Tiki Hut / Chickee Hut",
   "category": "Building",
   "propertyType": [
@@ -5726,7 +5726,7 @@
 },
     {
       "file": "townhomes",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Townhomes (Site, Shell, and Units)",
       "category": "Building",
       "propertyType": [
@@ -5837,7 +5837,7 @@
     },
     {
       "file": "vehicle_charging_station",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Vehicle Charging Station",
       "category": "Electrical",
       "propertyType": [
@@ -5933,7 +5933,7 @@
     },
     {
       "file": "water_heater_changeout",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Water Heater Changeout",
       "category": "Plumbing",
       "propertyType": [
@@ -5998,7 +5998,7 @@
     },
     {
       "file": "window_door_changeouts",
-      "lastUpdated": "2026-04-25",
+      "lastUpdated": "2026-04-27",
       "name": "Window & Door Changeouts",
       "category": "Building",
       "propertyType": [
