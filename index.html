@@ -718,7 +718,7 @@ section.items.forEach(item => {
       links = item.links || [];
     } else {
       const req = state.library[item.id] || {};
-      name = req.name || item.id || "";
+      name = item.label || item.value || req.name || item.id || "";
       description = item.description || req.description || "";
       links = item.links || req.links || [];
     }

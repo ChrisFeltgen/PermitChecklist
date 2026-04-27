@@ -90,6 +90,16 @@
         }
       ]
     },
+    "app_HVHZ": {
+      "name": "High Velocity Hurricane Zone (HVHZ) Permit Application",
+      "description": "Required for roofing work within the High Velocity Hurricane Zone. This application captures project details, scope of work, and contractor information specific to roofing permits.",
+      "links": [
+        {
+          "label": "HVHZ Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/HVHZ-Application.pdf"
+        }
+      ]
+    },
     "form_easement": {
       "name": "Easement Agreements",
       "description": "Required when proposed work is located within a utility or drainage easement.<br><br>A completed Easement Agreement must be signed by each utility provider with facilities in the easement. To obtain signatures, send the agreement, a property survey, and a sketch of the proposed work to each utility for review. Contact information for each provider is included within the form.",
@@ -109,10 +119,35 @@
           "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Special-Inspector-Form.pdf"
         }
       ]
+    },
+    "form_capital_recovery": {
+      "name": "Utility Connection & Capital Recovery Fee Application",
+      "description": "Used to purchase water meters and sewer connections. This application is required for new utility connections and calculates the necessary capital recovery fees for infrastructure improvements.",
+      "links": [
+        {
+          "label": "Utility Connection & Capital Recovery Fee Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Utility-Connection-and-Capital-Recovery.pdf"
+        }
+      ]
+    },
+    "req_product_approvals": {
+      "name": "Product Approvals",
+      "description": "Miami-Dade Notice of Acceptance (NOA) or Florida Product Approval is required for certain products such as windows, doors, shutters, garage doors, roofing systems, and other components. These approvals verify that the products meet specific performance criteria for wind resistance, impact resistance, and other code requirements.<br><br>Approved products must be reviewed and approved by the design professional as part of the permit application process. Documentation should include the product approval number, applicable test standards, and a description of the product's intended use.",
+      "links": [
+        {
+          "label": "Florida Product Approvals",
+          "url": "https://www.floridabuilding.org/pr/pr_app_srch.aspx"
+        },
+        {
+          "label": "Miami-Dade NOA",
+          "url": "https://www.miamidade.gov/building/pc-search_app.asp"
+        }
+      ]
     }
   },
   "permits": [
-    {"file": "ac_change_out",
+    {
+      "file": "ac_change_out",
       "lastUpdated": "2026-04-25",
       "name": "A/C Change Out",
       "category": "Mechanical",
@@ -175,15 +210,16 @@
               "type": "inspection_group",
               "label": "Mechanical Inspections",
               "inspections": [
-                "ROUGH",
-                "FINAL"
+                "M ROUGH",
+                "M FINAL-MECHANICAL"
               ]
             }
           ]
         }
       ]
     },
-    {"file": "additions",
+    {
+      "file": "additions",
       "lastUpdated": "2026-04-25",
       "name": "Additions",
       "category": "Building",
@@ -193,101 +229,104 @@
       ],
       "whenPermitRequired": "The lateral or vertical extension, or increase in floor area or height of a structure, requires a Building Permit.",
       "sections": [
-  {
-    "name": "Applications & Forms",
-    "items": [
-      {
-        "id": "app_building",
-        "description": "Submit Broward County Uniform Permit Application (Building Box Checked). Separate applications may be required for windows/doors/shutters and roofing."
-      },
-      {
-        "type": "requirement",
-        "label": "HVHZ Roofing Application",
-        "description": "Required for roofing work. Submit High Velocity Hurricane Zone (HVHZ) Permit Application.",
-        "links": [
-          { "label": "HVHZ Application", "url": "TBD_URL" }
-        ]
-      },
-      {
-        "id": "app_floodplain",
-        "description": "Submit Broward County Uniform Permit Application (Other Box Checked) for floodplain review."
-      },
-      {
-        "id": "app_electrical",
-        "description": "Separate applications may be required for low voltage (data/cable) and burglar alarm systems."
-      },
-      {
-        "id": "app_mechanical"
-      },
-      {
-        "id": "app_plumbing",
-        "description": "Required if plumbing work is included."
-      },
-      {
-        "id": "app_fire"
-      },
-      {
-        "id": "app_zoning"
-      },
-      {
-        "id": "app_landscape",
-        "description": "Required if trees are impacted. Tree protection plan and details may be required."
-      },
-      {
-        "id": "form_special_inspector"
-      }
-    ]
-  },
-  {
-    "name": "Requirements",
-    "items": [
-      {
-        "type": "requirement",
-        "label": "Broward County Approvals (Commercial)",
-        "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval required. Submit through Broward ePermits OneStop."
-      },
-      {
-        "type": "requirement",
-        "label": "Product Approvals",
-        "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems. Must be reviewed and approved by the design professional."
-      },
-      {
-        "type": "requirement",
-        "label": "Energy & HVAC Documentation",
-        "description": "Provide energy calculations, Manual J heat loads, AHRI certificates, and tie-down attachment details."
-      },
-      {
-        "type": "requirement",
-        "label": "Truss Engineering",
-        "description": "Submit signed and sealed truss engineering shop drawings reviewed by the design professional."
-      },
-      {
-        "type": "requirement",
-        "label": "Geotechnical Report",
-        "description": "Submit signed and sealed geotechnical/subsurface report with foundation design recommendations."
-      },
-      {
-        "type": "requirement",
-        "label": "Equipment & Fixture Specifications",
-        "description": "Provide manufacturer cut sheets for all equipment and fixtures being installed."
-      }
-    ]
-  },
-  {
-    "name": "Plans",
-    "items": [
-      {
-        "type": "requirement",
-        "label": "Complete Plan Set",
-        "description": "Submit a full set of signed and sealed plans including survey, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, and landscape plans."
-      },
-      {
-        "type": "requirement",
-        "label": "Tree Protection Plan (If Applicable)",
-        "description": "Provide tree protection plan and details when trees are located adjacent to the work area."
-      }
-    ]
-  },
+        {
+          "name": "Applications & Forms",
+          "items": [
+            {
+              "id": "app_building",
+              "description": "Submit Broward County Uniform Permit Application (Building Box Checked). Separate applications may be required for windows/doors/shutters and roofing."
+            },
+            {
+              "type": "requirement",
+              "label": "HVHZ Roofing Application",
+              "description": "Required for roofing work. Submit High Velocity Hurricane Zone (HVHZ) Permit Application.",
+              "links": [
+                {
+                  "label": "HVHZ Application",
+                  "url": "TBD_URL"
+                }
+              ]
+            },
+            {
+              "id": "app_floodplain",
+              "description": "Submit Broward County Uniform Permit Application (Other Box Checked) for floodplain review."
+            },
+            {
+              "id": "app_electrical",
+              "description": "Separate applications may be required for low voltage (data/cable) and burglar alarm systems."
+            },
+            {
+              "id": "app_mechanical"
+            },
+            {
+              "id": "app_plumbing",
+              "description": "Required if plumbing work is included."
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_zoning"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are impacted. Tree protection plan and details may be required."
+            },
+            {
+              "id": "form_special_inspector"
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Broward County Approvals (Commercial)",
+              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval required. Submit through Broward ePermits OneStop."
+            },
+            {
+              "id": "req_product_approvals",
+              "label": "Product Approvals",
+              "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems. Must be reviewed and approved by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Energy & HVAC Documentation",
+              "description": "Provide energy calculations, Manual J heat loads, AHRI certificates, and tie-down attachment details."
+            },
+            {
+              "type": "requirement",
+              "label": "Truss Engineering",
+              "description": "Submit signed and sealed truss engineering shop drawings reviewed by the design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Geotechnical Report",
+              "description": "Submit signed and sealed geotechnical/subsurface report with foundation design recommendations."
+            },
+            {
+              "type": "requirement",
+              "label": "Equipment & Fixture Specifications",
+              "description": "Provide manufacturer cut sheets for all equipment and fixtures being installed."
+            }
+          ]
+        },
+        {
+          "name": "Plans",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Complete Plan Set",
+              "description": "Submit a full set of signed and sealed plans including survey, floor plans, foundation plans, elevations, sections, structural details, window/door schedules, HVAC plans, electrical plans, riser diagrams, plumbing plans, isometrics, and landscape plans."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Protection Plan (If Applicable)",
+              "description": "Provide tree protection plan and details when trees are located adjacent to the work area."
+            }
+          ]
+        },
         {
           "name": "Inspections",
           "items": [
@@ -396,7 +435,8 @@
         }
       ]
     },
-    {"file": "asphalt_restriping",
+    {
+      "file": "asphalt_restriping",
       "lastUpdated": "2026-04-25",
       "name": "Asphalt & Restriping",
       "category": "Building",
@@ -442,7 +482,13 @@
             {
               "type": "requirement",
               "label": "Engineering Standard Details",
-              "description": "Provide applicable engineering standard details for the proposed paving and striping work."
+              "description": "Provide applicable engineering standard details for the proposed paving and striping work.",
+              "links": [
+                {
+                  "label": "Pompano Beach Engineering Standard Details",
+                  "url": "https://www.pompanobeachfl.gov/government/engineering/standard-details"
+                }
+              ]
             },
             {
               "type": "requirement",
@@ -492,7 +538,8 @@
         }
       ]
     },
-    {"file": "awning_canopy",
+    {
+      "file": "awning_canopy",
       "lastUpdated": "2026-04-25",
       "name": "Awning / Canopy",
       "category": "Building",
@@ -525,7 +572,7 @@
               "description": "Provide documentation showing the awning or canopy material meets flame resistance requirements."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals or Engineered Plans",
               "description": "Provide Miami-Dade NOA, Florida Product Approval, or signed and sealed construction plans detailing the scope of work."
             },
@@ -566,7 +613,8 @@
         }
       ]
     },
-    {"file": "backflow_preventer",
+    {
+      "file": "backflow_preventer",
       "lastUpdated": "2026-04-25",
       "name": "Backflow Preventer",
       "category": "Plumbing",
@@ -615,7 +663,8 @@
         }
       ]
     },
-    {"file": "building_shell",
+    {
+      "file": "building_shell",
       "lastUpdated": "2026-04-25",
       "name": "Building Shell",
       "category": "Building",
@@ -625,17 +674,20 @@
       "whenPermitRequired": "The construction of a building shell requires a Building Permit. Separate permits are required for interior buildouts or tenant units.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications & Forms",
           "items": [
             {
               "id": "app_building"
+            },
+            {
+              "id": "app_floodplain"
             },
             {
               "id": "app_electrical"
             },
             {
               "id": "app_mechanical",
-              "description": "If applicable"
+              "description": "If applicable."
             },
             {
               "id": "app_plumbing",
@@ -652,6 +704,12 @@
             },
             {
               "id": "app_zoning"
+            },
+            {
+              "id": "form_special_inspector"
+            },
+            {
+              "id": "form_capital_recovery"
             }
           ]
         },
@@ -660,21 +718,11 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
-            },
-            {
-              "type": "requirement",
-              "label": "Utility Connection & Capital Recovery",
-              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
-            },
-            {
-              "type": "requirement",
               "label": "Broward County Approvals",
               "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional."
             },
@@ -692,11 +740,6 @@
               "type": "requirement",
               "label": "Geotechnical Report",
               "description": "Signed and sealed geotechnical/subsurface report for foundation design recommendations."
-            },
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Threshold and/or special inspector form required when applicable per Florida Statute 553.79 and Broward County amendments."
             },
             {
               "type": "requirement",
@@ -774,7 +817,8 @@
         }
       ]
     },
-    {"file": "burglar_alarm",
+    {
+      "file": "burglar_alarm",
       "lastUpdated": "2026-04-25",
       "name": "Burglar Alarm (Hard Wired)",
       "category": "Electrical",
@@ -816,7 +860,8 @@
         }
       ]
     },
-    {"file": "carport_enclosure",
+    {
+      "file": "carport_enclosure",
       "lastUpdated": "2026-04-25",
       "name": "Carport Enclosure",
       "category": "Building",
@@ -846,7 +891,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Provide Miami-Dade NOA or Florida Product Approval with all elements identified."
             },
@@ -914,7 +959,8 @@
         }
       ]
     },
-    {"file": "cell_tower",
+    {
+      "file": "cell_tower",
       "lastUpdated": "2026-04-25",
       "name": "Cell Tower",
       "category": "Building",
@@ -930,6 +976,9 @@
               "id": "app_building"
             },
             {
+              "id": "app_floodplain"
+            },
+            {
               "id": "app_electrical"
             },
             {
@@ -938,6 +987,9 @@
             },
             {
               "id": "app_zoning"
+            },
+            {
+              "id": "form_special_inspector"
             }
           ]
         },
@@ -946,28 +998,13 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
-            },
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Required for inspections in accordance with Florida Statutes and local amendments."
+              "label": "Complete Plan Set",
+              "description": "Submit a complete set of plans including site plan, elevations, mounting details, electrical plans, and equipment grounding details."
             },
             {
               "type": "requirement",
               "label": "Structural Analysis",
               "description": "Provide structural analysis and calculations for the tower."
-            }
-          ]
-        },
-        {
-          "name": "Plans",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Complete Plan Set",
-              "description": "Submit a complete set of plans including site plan, elevations, mounting details, electrical plans, and equipment grounding details."
             }
           ]
         },
@@ -1011,7 +1048,8 @@
         }
       ]
     },
-    {"file": "change_of_use",
+    {
+      "file": "change_of_use",
       "lastUpdated": "2026-04-25",
       "name": "Change of Use",
       "category": "Building",
@@ -1070,7 +1108,8 @@
         }
       ]
     },
-    {"file": "commercial_building",
+    {
+      "file": "commercial_building",
       "lastUpdated": "2026-04-25",
       "name": "Commercial Building",
       "category": "Building",
@@ -1132,7 +1171,7 @@
               "description": "Survey showing crown of road elevations, flood zone designation, finished floor elevations, and coastal construction line where applicable."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Miami-Dade NOA or Florida Product Approval for all applicable systems, including supporting documentation, installation manuals, and calculations."
             },
@@ -1309,7 +1348,8 @@
         }
       ]
     },
-    {"file": "commercial_refrigeration",
+    {
+      "file": "commercial_refrigeration",
       "lastUpdated": "2026-04-25",
       "name": "Commercial Refrigeration",
       "category": "Mechanical",
@@ -1385,7 +1425,8 @@
         }
       ]
     },
-    {"file": "commercial_spray_booth",
+    {
+      "file": "commercial_spray_booth",
       "lastUpdated": "2026-04-25",
       "name": "Commercial Spray Booth",
       "category": "Mechanical",
@@ -1513,7 +1554,8 @@
         }
       ]
     },
-    {"file": "concrete_restoration",
+    {
+      "file": "concrete_restoration",
       "lastUpdated": "2026-04-25",
       "name": "Concrete Restoration",
       "category": "Building",
@@ -1574,7 +1616,8 @@
         }
       ]
     },
-    {"file": "concrete_slab",
+    {
+      "file": "concrete_slab",
       "lastUpdated": "2026-04-25",
       "name": "Concrete Slab",
       "category": "Building",
@@ -1647,7 +1690,8 @@
         }
       ]
     },
-    {"file": "construction_temp_power",
+    {
+      "file": "construction_temp_power",
       "lastUpdated": "2026-04-25",
       "name": "Construction Temporary Power",
       "category": "Electrical",
@@ -1695,7 +1739,8 @@
         }
       ]
     },
-    {"file": "cooling_tower",
+    {
+      "file": "cooling_tower",
       "lastUpdated": "2026-04-25",
       "name": "Cooling Tower",
       "category": "Mechanical",
@@ -1809,7 +1854,8 @@
         }
       ]
     },
-    {"file": "demolition",
+    {
+      "file": "demolition",
       "lastUpdated": "2026-04-25",
       "name": "Demolition",
       "category": "Building",
@@ -1949,7 +1995,8 @@
         }
       ]
     },
-    {"file": "dock",
+    {
+      "file": "dock",
       "lastUpdated": "2026-04-25",
       "name": "Dock",
       "category": "Building",
@@ -2067,7 +2114,8 @@
         }
       ]
     },
-    {"file": "driveway_patio",
+    {
+      "file": "driveway_patio",
       "lastUpdated": "2026-04-25",
       "name": "Driveway / Patio",
       "category": "Building",
@@ -2180,7 +2228,8 @@
         }
       ]
     },
-    {"file": "ductwork_changeout",
+    {
+      "file": "ductwork_changeout",
       "lastUpdated": "2026-04-25",
       "name": "Ductwork Change Out",
       "category": "Mechanical",
@@ -2223,7 +2272,8 @@
         }
       ]
     },
-    {"file": "dumpster_enclosure",
+    {
+      "file": "dumpster_enclosure",
       "lastUpdated": "2026-04-25",
       "name": "Dumpster Enclosure",
       "category": "Building",
@@ -2313,7 +2363,8 @@
         }
       ]
     },
-    {"file": "electrical_panel_change",
+    {
+      "file": "electrical_panel_change",
       "lastUpdated": "2026-04-25",
       "name": "Electrical Panel Change",
       "category": "Electrical",
@@ -2355,7 +2406,8 @@
         }
       ]
     },
-    {"file": "electrical_service_turn_on",
+    {
+      "file": "electrical_service_turn_on",
       "lastUpdated": "2026-04-25",
       "name": "Electrical Service Turn-On",
       "category": "Electrical",
@@ -2389,7 +2441,8 @@
         }
       ]
     },
-    {"file": "erosion_control",
+    {
+      "file": "erosion_control",
       "lastUpdated": "2026-04-25",
       "name": "Erosion Control",
       "category": "Building",
@@ -2448,7 +2501,8 @@
         }
       ]
     },
-    {"file": "fence",
+    {
+      "file": "fence",
       "lastUpdated": "2026-04-25",
       "name": "Fence",
       "category": "Building",
@@ -2484,7 +2538,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approval or Engineered Details",
               "description": "Required for fence materials other than standard 6-foot chain link or wood."
             },
@@ -2536,7 +2590,8 @@
         }
       ]
     },
-    {"file": "flooring_sound_barrier",
+    {
+      "file": "flooring_sound_barrier",
       "lastUpdated": "2026-04-25",
       "name": "Flooring / Sound Barrier",
       "category": "Building",
@@ -2588,7 +2643,8 @@
         }
       ]
     },
-    {"file": "foundation_only",
+    {
+      "file": "foundation_only",
       "lastUpdated": "2026-04-25",
       "name": "Foundation Only",
       "category": "Building",
@@ -2711,7 +2767,8 @@
         }
       ]
     },
-    {"file": "gas_piping",
+    {
+      "file": "gas_piping",
       "lastUpdated": "2026-04-25",
       "name": "Gas Piping",
       "category": "Plumbing",
@@ -2780,7 +2837,8 @@
         }
       ]
     },
-    {"file": "gazebo_pergola",
+    {
+      "file": "gazebo_pergola",
       "lastUpdated": "2026-04-25",
       "name": "Gazebo / Pergola",
       "category": "Building",
@@ -2822,7 +2880,7 @@
               "description": "Provide survey or site plan showing the location and dimensions of the structure."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approval or Engineered Plans",
               "description": "Provide Miami-Dade NOA, Florida Product Approval, or signed and sealed construction plans."
             },
@@ -2886,7 +2944,8 @@
         }
       ]
     },
-    {"file": "generator",
+    {
+      "file": "generator",
       "lastUpdated": "2026-04-25",
       "name": "Generator",
       "category": "Building",
@@ -3011,7 +3070,8 @@
         }
       ]
     },
-    {"file": "helical_piles",
+    {
+      "file": "helical_piles",
       "lastUpdated": "2026-04-25",
       "name": "Helical Piles",
       "category": "Building",
@@ -3066,7 +3126,8 @@
         }
       ]
     },
-    {"file": "hood_system",
+    {
+      "file": "hood_system",
       "lastUpdated": "2026-04-25",
       "name": "Hood System",
       "category": "Mechanical",
@@ -3172,7 +3233,8 @@
         }
       ]
     },
-    {"file": "interior_buildout",
+    {
+      "file": "interior_buildout",
       "lastUpdated": "2026-04-25",
       "name": "Interior Buildout",
       "category": "Building",
@@ -3228,7 +3290,7 @@
               "description": "Submit floor plans, life safety plans, mechanical, electrical, and plumbing plans, riser diagrams, isometrics, fire sprinkler and fire alarm drawings, and all supporting details."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Provide Miami-Dade NOA, Florida Product Approvals, manufacturer specifications, installation manuals, calculations, and supporting documentation."
             }
@@ -3314,7 +3376,8 @@
         }
       ]
     },
-    {"file": "irrigation_system",
+    {
+      "file": "irrigation_system",
       "lastUpdated": "2026-04-25",
       "name": "Irrigation System",
       "category": "Plumbing",
@@ -3367,7 +3430,8 @@
         }
       ]
     },
-    {"file": "kitchen_bath_renovation",
+    {
+      "file": "kitchen_bath_renovation",
       "lastUpdated": "2026-04-25",
       "name": "Kitchen / Bath Renovation",
       "category": "Building",
@@ -3482,7 +3546,8 @@
         }
       ]
     },
-    {"file": "light_poles",
+    {
+      "file": "light_poles",
       "lastUpdated": "2026-04-25",
       "name": "Light Poles",
       "category": "Building",
@@ -3564,7 +3629,8 @@
         }
       ]
     },
-    {"file": "mini_split_system_new",
+    {
+      "file": "mini_split_system_new",
       "lastUpdated": "2026-04-25",
       "name": "Mini-Split System (New)",
       "category": "Mechanical",
@@ -3646,7 +3712,8 @@
         }
       ]
     },
-    {"file": "mobile_home",
+    {
+      "file": "mobile_home",
       "lastUpdated": "2026-04-25",
       "name": "Mobile Home",
       "category": "Building",
@@ -3662,9 +3729,7 @@
               "id": "app_building"
             },
             {
-              "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+              "id": "app_floodplain"
             },
             {
               "id": "app_electrical"
@@ -3702,7 +3767,7 @@
               "description": "Provide foundation design including tie-down system and minimum elevation requirements in NAVD where applicable."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals & Equipment Attachment",
               "description": "Provide Florida Product Approval or Miami-Dade NOA for exposed mechanical equipment and tie-down details."
             },
@@ -3763,7 +3828,8 @@
         }
       ]
     },
-    {"file": "pool_heater_commercial",
+    {
+      "file": "pool_heater_commercial",
       "lastUpdated": "2026-04-25",
       "name": "Pool Heater (Commercial)",
       "category": "Plumbing",
@@ -3857,7 +3923,8 @@
         }
       ]
     },
-    {"file": "plumbing_tunnel_job",
+    {
+      "file": "plumbing_tunnel_job",
       "lastUpdated": "2026-04-25",
       "name": "Plumbing Tunnel Job",
       "category": "Plumbing",
@@ -3900,7 +3967,8 @@
         }
       ]
     },
-    {"file": "racking_system",
+    {
+      "file": "racking_system",
       "lastUpdated": "2026-04-25",
       "name": "Racking System",
       "category": "Building",
@@ -3976,7 +4044,8 @@
         }
       ]
     },
-    {"file": "reroof",
+    {
+      "file": "reroof",
       "lastUpdated": "2026-04-25",
       "name": "Reroof",
       "category": "Building",
@@ -4012,7 +4081,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Miami-Dade NOA or Florida Product Approval for roofing materials, underlayments, fasteners, adhesives, and Fire Directory listing pages."
             },
@@ -4087,7 +4156,8 @@
         }
       ]
     },
-    {"file": "reuse_connection",
+    {
+      "file": "reuse_connection",
       "lastUpdated": "2026-04-25",
       "name": "Reuse Connection",
       "category": "Plumbing",
@@ -4140,7 +4210,8 @@
         }
       ]
     },
-    {"file": "seawall",
+    {
+      "file": "seawall",
       "lastUpdated": "2026-04-25",
       "name": "Seawall",
       "category": "Building",
@@ -4217,7 +4288,8 @@
         }
       ]
     },
-    {"file": "septic_to_sewer",
+    {
+      "file": "septic_to_sewer",
       "lastUpdated": "2026-04-25",
       "name": "Septic to Sewer Conversion",
       "category": "Plumbing",
@@ -4274,7 +4346,8 @@
         }
       ]
     },
-    {"file": "shutters",
+    {
+      "file": "shutters",
       "lastUpdated": "2026-04-25",
       "name": "Shutters",
       "category": "Building",
@@ -4299,7 +4372,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approval",
               "description": "Provide Miami-Dade NOA or Florida Product Approval with all elements identified."
             },
@@ -4352,7 +4425,8 @@
         }
       ]
     },
-    {"file": "sign",
+    {
+      "file": "sign",
       "lastUpdated": "2026-04-25",
       "name": "Sign",
       "category": "Building",
@@ -4363,7 +4437,7 @@
       "whenPermitRequired": "The installation or replacement of a sign requires a Building Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building"
@@ -4447,7 +4521,8 @@
         }
       ]
     },
-    {"file": "site_work",
+    {
+      "file": "site_work",
       "lastUpdated": "2026-04-25",
       "name": "Site Work",
       "category": "Building",
@@ -4603,7 +4678,8 @@
         }
       ]
     },
-    {"file": "solar_systems",
+    {
+      "file": "solar_systems",
       "lastUpdated": "2026-04-25",
       "name": "Solar Systems (Photovoltaic)",
       "category": "Electrical",
@@ -4630,7 +4706,7 @@
             {
               "id": "app_zoning"
             },
-            { 
+            {
               "id": "form_special_inspector"
             }
           ]
@@ -4723,7 +4799,8 @@
         }
       ]
     },
-    {"file": "special_event",
+    {
+      "file": "special_event",
       "lastUpdated": "2026-04-25",
       "name": "Special Event",
       "category": "Building",
@@ -4813,7 +4890,8 @@
         }
       ]
     },
-    {"file": "storage_shed",
+    {
+      "file": "storage_shed",
       "lastUpdated": "2026-04-25",
       "name": "Storage Shed",
       "category": "Building",
@@ -4853,7 +4931,7 @@
               "description": "Provide survey or site plan showing the location and dimensions of the storage shed."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approval or Engineered Plans",
               "description": "Provide Miami-Dade NOA, Florida Product Approval, or signed and sealed construction plans."
             },
@@ -4909,7 +4987,8 @@
         }
       ]
     },
-    {"file": "single_family_residence_new",
+    {
+      "file": "single_family_residence_new",
       "lastUpdated": "2026-04-25",
       "name": "Single Family Residence (New)",
       "category": "Building",
@@ -4966,7 +5045,7 @@
               "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Miami-Dade NOA or Florida Product Approval for windows, doors, shutters, garage doors, mullions, and roofing systems, reviewed and approved by the design professional.",
               "links": [
@@ -5106,7 +5185,8 @@
         }
       ]
     },
-    {"file": "swimming_pool_(new)",
+    {
+      "file": "swimming_pool_(new)",
       "lastUpdated": "2026-04-25",
       "name": "Swimming Pool (New)",
       "category": "Building",
@@ -5117,7 +5197,7 @@
       "whenPermitRequired": "The construction of a new swimming pool requires a permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building",
@@ -5130,10 +5210,24 @@
               "id": "app_plumbing"
             },
             {
+              "id": "app_fire"
+            },
+            {
               "id": "app_landscape"
             },
             {
               "id": "app_zoning"
+            },
+            {
+              "type": "requirement",
+              "label": "Pool Safety Compliance",
+              "description": "Submit completed Residential Swimming Pool, Spa and Hot Tub Safety Act form.",
+              "links": [
+                {
+                  "label": "Pool Safety Compliance Form",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Residential-Swimming-Pool-Spa-Hot-Tub-Safety-Act-Form.pdf"
+                }
+              ]
             }
           ]
         },
@@ -5142,8 +5236,8 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Pool Safety Act Form",
-              "description": "Submit completed Residential Swimming Pool, Spa and Hot Tub Safety Act form."
+              "label": "Plans and Diagrams",
+              "description": "Provide site plan, electrical plan, pool plan, piping diagram, and construction details."
             },
             {
               "type": "requirement",
@@ -5152,18 +5246,8 @@
             },
             {
               "type": "requirement",
-              "label": "Plans and Diagrams",
-              "description": "Provide site plan, electrical plan, pool plan, piping diagram, and construction details."
-            },
-            {
-              "type": "requirement",
               "label": "Gas System Documentation",
               "description": "If applicable, provide gas piping plans with isometric drawings, BTU loads, and manufacturer specifications for heaters or heat pumps."
-            },
-            {
-              "type": "requirement",
-              "label": "Electrical Compliance",
-              "description": "Electrical plans must comply with NEC 680 requirements."
             }
           ]
         },
@@ -5221,7 +5305,8 @@
         }
       ]
     },
-    {"file": "tankless_water_heater",
+    {
+      "file": "tankless_water_heater",
       "lastUpdated": "2026-04-25",
       "name": "Tankless Water Heater",
       "category": "Plumbing",
@@ -5232,24 +5317,30 @@
       "whenPermitRequired": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
+            {
+              "id": "app_plumbing"
+            },
             {
               "id": "app_electrical"
             },
             {
-              "id": "app_plumbing"
+              "type": "requirement",
+              "label": "Water Heater Replacement Data Form",
+              "description": "Submit completed Broward County Dwelling Unit Water Heater Replacement Data Form.",
+              "links": [
+                {
+                  "label": "Water Heater Replacement Data Form",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Water-Heater-Replacement-Form.pdf"
+                }
+              ]
             }
           ]
         },
         {
           "name": "Requirements",
           "items": [
-            {
-              "type": "requirement",
-              "label": "Water Heater Replacement Data Form",
-              "description": "Submit completed Broward County Dwelling Unit Water Heater Replacement Data Form."
-            },
             {
               "type": "requirement",
               "label": "Gas Piping Plans",
@@ -5291,7 +5382,8 @@
         }
       ]
     },
-    {"file": "temporary_construction_fence",
+    {
+      "file": "temporary_construction_fence",
       "lastUpdated": "2026-04-25",
       "name": "Temporary Construction Fence",
       "category": "Building",
@@ -5366,7 +5458,8 @@
         }
       ]
     },
-    {"file": "temporary_construction_trailer",
+    {
+      "file": "temporary_construction_trailer",
       "lastUpdated": "2026-04-25",
       "name": "Temporary Construction / Sales Trailer",
       "category": "Building",
@@ -5434,7 +5527,7 @@
               "description": "Provide installation instructions, anchoring details, electrical riser diagrams, and finish floor elevation details."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Provide Florida Product Approval or Miami-Dade NOA for anchoring, mechanical equipment, and (for sales trailers) windows, doors, storefronts, and shutters."
             },
@@ -5496,106 +5589,143 @@
         }
       ]
     },
-    {"file": "tiki_hut",
-      "lastUpdated": "2026-04-25",
-      "name": "Tiki / Chickee Hut",
-      "category": "Building",
-      "propertyType": [
-        "Residential",
-        "Commercial"
-      ],
-      "whenPermitRequired": "The installation or replacement of a tiki or chickee hut requires a Building Permit unless the chickee hut is constructed by a member of the Seminole Tribe and qualifies for the Building Permit exemption.",
-      "hintTitle": "Chickee Hut Exemption",
-      "hint": "A chickee hut constructed by a member of the Seminole Tribe is exempt from the Building Permit requirement. Zoning Compliance is still required.",
-      "sections": [
+{
+  "file": "tiki_hut",
+  "lastUpdated": "2026-04-25",
+  "name": "Tiki Hut / Chickee Hut",
+  "category": "Building",
+  "propertyType": [
+    "Residential",
+    "Commercial"
+  ],
+  "whenPermitRequired": "The installation or replacement of a tiki or chickee hut requires a Building Permit.<br><br>Chickees constructed by a member of the Seminole Tribe or Miccosukee Tribe may be exempt only if they meet the statutory definition of a chickee (open-sided wood construction with a thatched roof and no electrical, plumbing, or other non-wood features). Zoning Compliance is still required.",
+  "hintTitle": "Chickee Hut Exemption",
+  "hint": "A chickee constructed by a member of the Seminole Tribe or Miccosukee Tribe is exempt from the Building Permit requirement only if it is an open-sided wood structure with a thatched roof and does not include electrical, plumbing, or other non-wood features.<br><br>Zoning Compliance is still required.",
+  "sections": [
+    {
+      "name": "Applications",
+      "items": [
         {
-          "name": "Applications",
-          "items": [
-            {
-              "id": "app_building",
-              "description": "Required for tiki huts and for chickee huts unless the chickee hut is constructed by a member of the Seminole Tribe and qualifies for the Building Permit exemption."
-            },
-            {
-              "id": "app_electrical",
-              "description": "Required if electrical work is included"
-            },
-            {
-              "id": "app_plumbing",
-              "description": "Required if plumbing work is included"
-            },
-            {
-              "id": "app_fire",
-              "description": "Required for commercial and multi-family projects"
-            },
-            {
-              "id": "app_landscape",
-              "description": "Required if trees are affected or adjacent to work area"
-            },
-            {
-              "id": "app_zoning",
-              "description": "Required for all tiki and chickee huts, including chickee huts exempt from the Building Permit requirement."
-            }
-          ]
+          "id": "app_building",
+          "description": "Application is required for all tiki and chickee huts for review purposes. However, a Building Permit will not be issued if the chickee hut qualifies for the Seminole or Miccosukee Tribe exemption."
         },
         {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Survey or Site Plan",
-              "description": "Provide survey or site plan showing the location and dimensions of the tiki or chickee hut."
-            },
-            {
-              "type": "requirement",
-              "label": "Tribal Identification",
-              "description": "Required only when claiming the Seminole Tribe Building Permit exemption for a chickee hut."
-            },
-            {
-              "type": "requirement",
-              "label": "Electrical Plans",
-              "description": "Provide electrical plan and riser diagram if electrical work is included."
-            }
-          ]
+          "id": "app_zoning",
+          "description": "Required for all tiki and chickee huts, including those exempt from the Building Permit requirement."
         },
         {
-          "name": "Inspections",
-          "items": [
-            {
-              "type": "inspection_group",
-              "label": "Building Inspections (If Building Permit is required)",
-              "inspections": [
-                "BLDG FOOTINGS",
-                "BLDG ATTACHMENT",
-                "BLDG FINAL STRUCTURAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Zoning Inspections",
-              "inspections": [
-                "Z ZONING FINAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Tree Inspections (If applicable)",
-              "inspections": [
-                "L TREE PROTECTION INSPECTION",
-                "L FINAL LANDSCAPE"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Fire Inspections (If applicable)",
-              "inspections": [
-                "FIRE DEPARTMENT FINAL"
-              ]
-            }
-          ]
+          "id": "app_electrical",
+          "label": "Electrical Permit Application <i>(If applicable)</i>",
+          "description": "Only required if electrical work is included.<br><strong>Note:</strong> Chickee huts with electrical work do not qualify for the Building Permit exemption."
+        },
+        {
+          "id": "app_plumbing",
+          "label": "Plumbing Permit Application <i>(If applicable)</i>",
+          "description": "Only required if plumbing work is included.<br><strong>Note:</strong> Chickee huts with plumbing do not qualify for the Building Permit exemption."
+        },
+        {
+          "id": "app_fire"
+        },
+        {
+          "id": "app_landscape",
+          "description": "Only required if trees are affected or adjacent to the work area."
         }
       ]
     },
-    {"file": "townhomes",
+    {
+      "name": "Requirements - Chickee Huts",
+      "items": [
+        {
+          "type": "requirement",
+          "label": "Tribal Identification",
+          "description": "Required only when claiming the Seminole or Miccosukee Tribe exemption for a chickee hut."
+        },
+        {
+          "type": "requirement",
+          "label": "Survey or Site Plan",
+          "description": "Provide a survey or site plan showing the location and dimensions of the proposed structure."
+        },
+        {
+          "type": "requirement",
+          "label": "Construction Criteria",
+          "description": "To qualify for exemption, the chickee hut must be an open-sided wood structure with a thatched roof and must not include electrical, plumbing, gas, or other non-wood features."
+        }
+      ]
+    },
+    {
+      "name": "Requirements - Tiki Huts (and Non-Exempt Chickee Huts)",
+      "items": [
+        {
+          "type": "requirement",
+          "label": "Survey or Site Plan",
+          "description": "Provide a survey or site plan showing the location and dimensions of the proposed structure."
+        },
+        {
+          "type": "requirement",
+          "label": "Engineered Plans",
+          "description": "Provide signed and sealed construction documents prepared by a design professional."
+        },
+        {
+          "type": "requirement",
+          "label": "Plumbing, Gas, and Electrical Plans",
+          "description": "Provide plumbing, gas, and electrical plans if those systems are included in the project."
+        }
+      ]
+    },
+    {
+      "name": "Inspections",
+      "items": [
+        {
+          "type": "inspection_group",
+          "label": "Building Inspections (Required if Building Permit is issued)",
+          "inspections": [
+            "BLDG FOOTINGS",
+            "BLDG ATTACHMENT",
+            "BLDG FINAL STRUCTURAL"
+          ]
+        },
+        {
+          "type": "inspection_group",
+          "label": "Zoning Inspections (Required)",
+          "inspections": [
+            "Z ZONING FINAL"
+          ]
+        },
+        {
+          "type": "inspection_group",
+          "label": "Plumbing Inspections (Only if applicable)",
+          "inspections": [
+            "P FINAL PLUMBING"
+          ]
+        },
+        {
+          "type": "inspection_group",
+          "label": "Electrical Inspections (Only if applicable)",
+          "inspections": [
+            "E FINAL"
+          ]
+        },
+        {
+          "type": "inspection_group",
+          "label": "Tree Inspections (Only if applicable)",
+          "inspections": [
+            "L TREE PROTECTION INSPECTION",
+            "L FINAL LANDSCAPE"
+          ]
+        },
+        {
+          "type": "inspection_group",
+          "label": "Fire Inspections (Only if applicable)",
+          "inspections": [
+            "FIRE DEPARTMENT FINAL"
+          ]
+        }
+      ]
+    }
+  ]
+},
+    {
+      "file": "townhomes",
       "lastUpdated": "2026-04-25",
       "name": "Townhomes (Site, Shell, and Units)",
       "category": "Building",
@@ -5677,7 +5807,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Provide Miami-Dade NOA or Florida Product Approvals for roofing, windows, doors, and other structural components."
             },
@@ -5705,7 +5835,8 @@
         }
       ]
     },
-    {"file": "vehicle_charging_station",
+    {
+      "file": "vehicle_charging_station",
       "lastUpdated": "2026-04-25",
       "name": "Vehicle Charging Station",
       "category": "Electrical",
@@ -5800,7 +5931,8 @@
         }
       ]
     },
-    {"file": "water_heater_changeout",
+    {
+      "file": "water_heater_changeout",
       "lastUpdated": "2026-04-25",
       "name": "Water Heater Changeout",
       "category": "Plumbing",
@@ -5808,23 +5940,18 @@
         "Residential",
         "Commercial"
       ],
-      "whenPermitRequired": "The installation or replacement of a water heater, whether commercial or residential, requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of a water heater requires a Plumbing Permit. Most standard replacements do not require an Electrical Permit unless electrical work is included.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications & Forms",
           "items": [
             {
               "id": "app_plumbing"
             },
             {
               "id": "app_electrical",
-              "description": "Only required when electrical work is associated with the water heater installation (e.g., new circuit, disconnect, wiring modifications, or conversion from gas to electric)."
-            }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
+              "description": "Not typically required for standard water heater replacements. Only required when electrical work is included (e.g., new circuit, disconnect, wiring modifications, or conversion from gas to electric)."
+            },
             {
               "type": "requirement",
               "label": "Water Heater Replacement Data Form",
@@ -5832,10 +5959,15 @@
               "links": [
                 {
                   "label": "Water Heater Replacement Data Form",
-                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Dwelling-Unit-Water-Heater-Replacement-Data-Form.pdf"
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Water-Heater-Replacement-Form.pdf"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
             {
               "type": "requirement",
               "label": "Manufacturer Specifications",
@@ -5848,49 +5980,24 @@
           "items": [
             {
               "type": "inspection_group",
-              "label": "Plumbing Inspections",
+              "label": "Plumbing Inspections (Required)",
               "inspections": [
-                "P FINAL PLUMBING"
+                "P FINAL-PLUMBING"
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {"file": "water_service",
-      "lastUpdated": "2026-04-25",
-      "name": "Water Service",
-      "category": "Plumbing",
-      "propertyType": [
-        "Residential",
-        "Commercial"
-      ],
-      "whenPermitRequired": "The installation or replacement of water service requires a Plumbing Permit.",
-      "sections": [
-        {
-          "name": "Applications",
-          "items": [
-            {
-              "id": "app_plumbing",
-              "description": "State the type of piping material and size on the Plumbing Application."
-            }
-          ]
-        },
-        {
-          "name": "Inspections",
-          "items": [
+            },
             {
               "type": "inspection_group",
-              "label": "Plumbing Inspections",
+              "label": "Electrical Inspections (Only if Electrical Work is Performed)",
               "inspections": [
-                "P FINAL PLUMBING"
+                "EL FINAL-ELECTRIC"
               ]
             }
           ]
         }
       ]
     },
-    {"file": "window_door_changeouts",
+    {
+      "file": "window_door_changeouts",
       "lastUpdated": "2026-04-25",
       "name": "Window & Door Changeouts",
       "category": "Building",
@@ -5936,7 +6043,7 @@
               "description": "Submit a plan or drawing showing the location, size, and type of each window or door. A marked-up floor plan or a clear sketch is acceptable, provided the information is legible."
             },
             {
-              "type": "requirement",
+              "id": "req_product_approvals",
               "label": "Product Approval Documents",
               "description": "Provide a current Florida Product Approval or Miami-Dade Notice of Acceptance (NOA) for each window or door product being installed. The selected product must be clearly identified within the approval document by circling or highlighting it.",
               "links": [
@@ -5964,7 +6071,8 @@
             {
               "type": "requirement",
               "label": "Egress Clearance Verification (Photos)",
-              "description": "Doors that swing outward onto an egress balcony or walkway must not reduce the required exit width by more than one-half when opened (typically at least 22 inches of clear width must remain when the door is open 90 degrees).<br><br>If this condition may be impacted, provide a photo showing the existing door and walkway for review."            }
+              "description": "Doors that swing outward onto an egress balcony or walkway must not reduce the required exit width by more than one-half when opened (typically at least 22 inches of clear width must remain when the door is open 90 degrees).<br><br>If this condition may be impacted, provide a photo showing the existing door and walkway for review."
+            }
           ]
         },
         {

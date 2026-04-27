@@ -224,6 +224,8 @@ Use this when the item already exists in `library`.
 Available fields:
 
 - `id` - Required. Key from the `library` object.
+- `label` - Optional. Overrides the library item's name for this permit only.
+- `value` - Optional. Same as `label` if you prefer that field name.
 - `description` - Optional. Overrides the library item's description for this permit only.
 - `links` - Optional. Overrides the library item's links for this permit only.
 
