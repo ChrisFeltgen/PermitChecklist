@@ -174,9 +174,9 @@
   },
   "permits": [
     {
-      "file": "ac_change_out",
-      "lastUpdated": "2026-04-27",
-      "name": "A/C Change Out",
+      "file": "ac_changeout",
+      "lastUpdated": "2026-04-28",
+      "name": "A/C Changeout",
       "category": "Mechanical",
       "whenPermitRequired": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
       "sections": [
@@ -1127,19 +1127,22 @@
     },
     {
       "file": "commercial_building",
-      "lastUpdated": "2026-04-27",
-      "name": "Commercial Building",
+      "lastUpdated": "2026-04-28",
+      "name": "Commercial Building (New)",
       "category": "Building",
       "propertyType": [
         "Commercial"
       ],
-      "whenPermitRequired": "The construction of a commercial building requires a Building Permit.",
+      "whenPermitRequired": "The construction of a new commercial building requires a Building Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building"
+            },
+            {
+              "id": "app_floodplain"
             },
             {
               "id": "app_electrical"
@@ -1161,6 +1164,12 @@
             },
             {
               "id": "app_zoning"
+            },
+            {
+              "id": "form_capital_recovery"
+            },
+            {
+              "id": "form_special_inspector"
             }
           ]
         },
@@ -1168,17 +1177,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
-            },
-            {
-              "id": "form_capital_recovery"
-            },
-            {
-              "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            "id": "req_Broward_DER"
             },
             {
               "type": "requirement",
@@ -1187,7 +1186,6 @@
             },
             {
               "id": "req_product_approvals",
-              "label": "Product Approvals",
               "description": "Miami-Dade NOA or Florida Product Approval for all applicable systems, including supporting documentation, installation manuals, and calculations."
             },
             {
@@ -1204,11 +1202,6 @@
               "type": "requirement",
               "label": "Geotechnical Report",
               "description": "Signed and sealed geotechnical/subsurface report for foundation design recommendations."
-            },
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Threshold and/or special inspector form required when applicable per Florida Statute 553.79 and Broward County amendments."
             }
           ]
         },
@@ -2243,7 +2236,7 @@
     {
       "file": "ductwork_changeout",
       "lastUpdated": "2026-04-27",
-      "name": "Ductwork Change Out",
+      "name": "Ductwork Changeout",
       "category": "Mechanical",
       "propertyType": [
         "Residential",
@@ -2376,9 +2369,9 @@
       ]
     },
     {
-      "file": "electrical_panel_change",
-      "lastUpdated": "2026-04-27",
-      "name": "Electrical Panel Change",
+      "file": "electrical_panel_replacement",
+      "lastUpdated": "2026-04-28",
+      "name": "Electrical Panel Replacement",
       "category": "Electrical",
       "propertyType": [
         "Residential",
@@ -2420,14 +2413,14 @@
     },
     {
       "file": "electrical_service_turn_on",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Electrical Service Turn-On",
       "category": "Electrical",
       "propertyType": [
         "Residential",
         "Commercial"
       ],
-      "whenPermitRequired": "A Service Turn-On Permit is required when power has been disconnected and an inspection is needed before restoration by the utility provider.",
+      "whenPermitRequired": "A Service Turn-On Permit is required when power has been disconnected and Florida Power & Light (FPL) requests an inspection before restoring service.<br><br>This is a one-time inspection. If everything is safe, the inspector will release power to FPL; if repairs are needed, a separate repair permit with an additional fee will be required.",
       "sections": [
         {
           "name": "Applications",
@@ -2435,7 +2428,13 @@
             {
               "type": "requirement",
               "label": "Electrical Service Turn-On Request Form",
-              "description": "Submit completed Electrical Service Turn-On Request Form."
+              "description": "Submit completed Electrical Service Turn-On Request Form.",
+              "links": [
+                {
+                  "label": "Electrical Service Turn-On Request Form",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Electric-Service-Turn-On.pdf"
+                }
+              ]
             }
           ]
         },
@@ -2604,13 +2603,13 @@
     },
     {
       "file": "flooring_sound_barrier",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Flooring / Sound Barrier",
       "category": "Building",
       "propertyType": [
         "Residential"
       ],
-      "whenPermitRequired": "A Flooring Permit is required for installation of new flooring in condominium units or similar dwellings located above another unit or service area. Ground floor units, single-family homes, and commercial spaces do not require a permit.",
+      "whenPermitRequired": "A Flooring Permit is required when installing new flooring in condominium units or similar dwellings located above another dwelling unit or a public/service area.<br><br>Ground floor units, single-family residences, and commercial spaces do not require a permit.",
       "sections": [
         {
           "name": "Applications",
@@ -2624,9 +2623,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "Condo Association Approval",
-              "description": "Letter from the condominium association approving the proposed work."
+              "id": "req_hoa_approval"
             },
             {
               "type": "requirement",
@@ -2636,8 +2633,7 @@
             {
               "type": "requirement",
               "label": "Acoustic Test Report",
-              "description": "Provide sound transmission/acoustic report demonstrating STC and IIC ratings of 50 or greater and matching actual site conditions."
-            }
+              "description": "Submit a laboratory sound transmission/acoustic test report confirming the flooring assembly (including underlayment) meets minimum STC and IIC ratings of 50. Manufacturer product data sheets, brochures, or retail listings are not acceptable. The report must reflect actual site conditions, including slab thickness and ceiling assembly."            }
           ]
         },
         {
@@ -2657,7 +2653,7 @@
     },
     {
       "file": "foundation_only",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Foundation Only",
       "category": "Building",
       "propertyType": [
@@ -2689,16 +2685,6 @@
             },
             {
               "id": "app_zoning"
-            },
-            {
-              "type": "requirement",
-              "label": "Threshold Inspection & Special Inspector",
-              "description": "Submit Threshold Inspection Application and Special Building Inspector Form signed and sealed by a licensed architect or engineer."
-            },
-            {
-              "type": "requirement",
-              "label": "Broward County & Agency Approvals",
-              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and any applicable state or federal approvals (including FAA if cranes are used)."
             }
           ]
         },
@@ -2717,8 +2703,8 @@
             },
             {
               "type": "requirement",
-              "label": "Full Plan Set",
-              "description": "Provide civil plans, site plans, elevations, foundation plans, structural plans and calculations, mechanical plans, landscape plans, and tree disposition plans."
+              "label": "Foundation Plan Set",
+              "description": "Provide a site plan, foundation plans, and other supporting plans for elements related to the foundation."
             },
             {
               "type": "requirement",
@@ -2734,6 +2720,12 @@
               "type": "requirement",
               "label": "Phased Permit Acknowledgment",
               "description": "Foundation-only permits are issued at applicant risk prior to full building approval. Additional corrections may be required to meet code."
+            },
+            {
+              "id": "req_Broward_DER"
+            },
+            {
+              "id": "form_special_inspector"
             }
           ]
         },
@@ -2958,7 +2950,7 @@
     },
     {
       "file": "generator",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Generator",
       "category": "Building",
       "propertyType": [
@@ -2989,17 +2981,15 @@
             },
             {
               "id": "app_zoning"
-            },
-            {
-              "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Required for commercial generators including Planning and Development Management Division approval and Transportation Concurrency Certificate."
             }
           ]
         },
         {
           "name": "Requirements",
           "items": [
+            {
+              "id": "req_Broward_DER"
+            },
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
@@ -3084,7 +3074,7 @@
     },
     {
       "file": "helical_piles",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Helical Piles",
       "category": "Building",
       "propertyType": [
@@ -3098,11 +3088,6 @@
           "items": [
             {
               "id": "app_building"
-            },
-            {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Submit signed, sealed, and dated Special Building Inspector Form from a licensed architect or engineer."
             }
           ]
         },
@@ -3118,7 +3103,8 @@
               "type": "requirement",
               "label": "Structural Plans",
               "description": "Provide structural plans detailing the scope of work."
-            }
+            },
+            { "id": "form_special_inspector"}
           ]
         },
         {
@@ -3140,7 +3126,7 @@
     },
     {
       "file": "hood_system",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Hood System",
       "category": "Mechanical",
       "propertyType": [
@@ -3165,17 +3151,15 @@
             },
             {
               "id": "app_zoning"
-            },
-            {
-              "type": "requirement",
-              "label": "Broward County Approval",
-              "description": "Planning and Development Management Division (P.D.M.D.) approval required."
             }
           ]
         },
         {
           "name": "Requirements",
           "items": [
+            {
+              "id": "req_Broward_DER"
+            },
             {
               "type": "requirement",
               "label": "Engineered Plans",
@@ -3247,7 +3231,7 @@
     },
     {
       "file": "interior_buildout",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Interior Buildout",
       "category": "Building",
       "propertyType": [
@@ -3288,7 +3272,7 @@
           ]
         },
         {
-          "name": "Plans",
+          "name": "Requirements",
           "items": [
             {
               "type": "requirement",
@@ -3299,7 +3283,8 @@
               "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Provide Miami-Dade NOA, Florida Product Approvals, manufacturer specifications, installation manuals, calculations, and supporting documentation."
-            }
+            },
+            {"id": "req_Broward_DER"}
           ]
         },
         {
@@ -5305,83 +5290,6 @@
       ]
     },
     {
-      "file": "tankless_water_heater",
-      "lastUpdated": "2026-04-27",
-      "name": "Tankless Water Heater",
-      "category": "Plumbing",
-      "propertyType": [
-        "Residential",
-        "Commercial"
-      ],
-      "whenPermitRequired": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
-      "sections": [
-        {
-          "name": "Applications and Forms",
-          "items": [
-            {
-              "id": "app_plumbing"
-            },
-            {
-              "id": "app_electrical"
-            },
-            {
-              "type": "requirement",
-              "label": "Water Heater Replacement Data Form",
-              "description": "Submit completed Broward County Dwelling Unit Water Heater Replacement Data Form.",
-              "links": [
-                {
-                  "label": "Water Heater Replacement Data Form",
-                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Water-Heater-Replacement-Form.pdf"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Gas Piping Plans",
-              "description": "Provide plan and isometric drawings showing gas piping layout, total developed length, BTU loads, materials, and connection points in compliance with FBC Fuel Gas."
-            },
-            {
-              "type": "requirement",
-              "label": "Manufacturer Specifications",
-              "description": "Provide specification sheets and installation instructions showing third-party certification compliance."
-            },
-            {
-              "type": "requirement",
-              "label": "Electrical Riser Diagram",
-              "description": "Provide riser diagram showing service size, circuitry, conductor sizes, panel schedule, and grounding system."
-            }
-          ]
-        },
-        {
-          "name": "Inspections",
-          "items": [
-            {
-              "type": "inspection_group",
-              "label": "Plumbing Inspections",
-              "inspections": [
-                "P GAS ROUGH",
-                "P FINAL PLUMBING"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Electrical Inspections",
-              "inspections": [
-                "EL ROUGH",
-                "EL SERVICE ROUGH",
-                "EL FINAL-ELECTRICAL"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "file": "temporary_construction_fence",
       "lastUpdated": "2026-04-27",
       "name": "Temporary Construction Fence",
@@ -5725,7 +5633,7 @@
 },
     {
       "file": "townhomes",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Townhomes (Site, Shell, and Units)",
       "category": "Building",
       "propertyType": [
@@ -5806,6 +5714,9 @@
           "name": "Requirements",
           "items": [
             {
+              "id": "req_Broward_DER"
+            },
+            {
               "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Provide Miami-Dade NOA or Florida Product Approvals for roofing, windows, doors, and other structural components."
@@ -5819,11 +5730,6 @@
               "type": "requirement",
               "label": "Geotechnical Report",
               "description": "Provide geotechnical/subsurface report for foundation design."
-            },
-            {
-              "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Environmental Review, Transportation Concurrency, and Surface Water Management approvals."
             },
             {
               "type": "requirement",
@@ -5930,7 +5836,7 @@
     },
     {
       "file": "water_heater_changeout",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Water Heater Changeout",
       "category": "Plumbing",
       "propertyType": [
@@ -5987,6 +5893,83 @@
               "label": "Electrical Inspections (Only if Electrical Work is Performed)",
               "inspections": [
                 "EL FINAL-ELECTRIC"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "water_heater_tankless",
+      "lastUpdated": "2026-04-28",
+      "name": "Water Heater (Tankless)",
+      "category": "Plumbing",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "whenPermitRequired": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Applications and Forms",
+          "items": [
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "id": "app_electrical"
+            },
+            {
+              "type": "requirement",
+              "label": "Water Heater Replacement Data Form",
+              "description": "Submit completed Broward County Dwelling Unit Water Heater Replacement Data Form.",
+              "links": [
+                {
+                  "label": "Water Heater Replacement Data Form",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Water-Heater-Replacement-Form.pdf"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Gas Piping Plans",
+              "description": "Provide plan and isometric drawings showing gas piping layout, total developed length, BTU loads, materials, and connection points in compliance with FBC Fuel Gas."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer Specifications",
+              "description": "Provide specification sheets and installation instructions showing third-party certification compliance."
+            },
+            {
+              "type": "requirement",
+              "label": "Electrical Riser Diagram",
+              "description": "Provide riser diagram showing service size, circuitry, conductor sizes, panel schedule, and grounding system."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P GAS ROUGH",
+                "P FINAL PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections",
+              "inspections": [
+                "EL ROUGH",
+                "EL SERVICE ROUGH",
+                "EL FINAL-ELECTRICAL"
               ]
             }
           ]
