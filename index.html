@@ -298,9 +298,19 @@
       max-height: 30rem;
     }
 
+    #permitList,
+    #checklistPanel {
+      overscroll-behavior-y: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
     @media (min-width: 768px) {
       #permitList {
         max-height: calc(100dvh - 16rem);
+      }
+
+      #checklistPanel {
+        overflow-y: auto;
       }
     }
 
@@ -520,6 +530,11 @@
     display: block !important;
   }
 
+  #checklistPanel {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
   #content {
     margin-top: 10px;
     margin-bottom: 0 !important;
@@ -634,7 +649,7 @@
     </div>
 
     <!-- RIGHT PANEL -->
-    <div class="md:col-span-3 min-w-0">
+    <div id="checklistPanel" class="md:col-span-3 min-w-0">
       <div class="content-toolbar flex justify-between items-center mb-4">
         <div class="screen-title hidden md:block text-2xl font-semibold">Permit Application Checklists</div>
         <button id="printChecklist" onclick="window.print()" hidden class="no-print px-4 py-2 city-blue-bg text-white rounded text-sm">
@@ -743,7 +758,7 @@ function bindPropertyFilter() {
   document.getElementById("propertyTypeFilter").addEventListener("change", (e) => {
     state.propertyType = e.target.value;
     renderPermitList();
-    syncPermitListHeight();
+    syncScrollablePanelHeights();
   });
 }
 
@@ -771,12 +786,17 @@ function setPermitOptionsOpen(isOpen) {
     filtersPanel.classList.toggle("options-open", isOpen);
   }
 
-  syncPermitListHeight();
+  syncScrollablePanelHeights();
 }
 
 function bindPermitListSizing() {
-  window.addEventListener("resize", syncPermitListHeight);
-  window.addEventListener("scroll", syncPermitListHeight, { passive: true });
+  window.addEventListener("resize", syncScrollablePanelHeights);
+  window.addEventListener("scroll", syncScrollablePanelHeights, { passive: true });
+}
+
+function syncScrollablePanelHeights() {
+  syncPermitListHeight();
+  syncChecklistHeight();
 }
 
 function syncPermitListHeight() {
@@ -795,6 +815,32 @@ function syncPermitListHeight() {
 
     list.style.maxHeight = `${Math.max(0, availableHeight)}px`;
   });
+}
+
+function syncChecklistHeight() {
+  const panel = document.getElementById("checklistPanel");
+  if (!panel) return;
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    panel.style.maxHeight = "";
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    const bottomGap = 24;
+    const panelTop = panel.getBoundingClientRect().top;
+    const availableHeight = window.innerHeight - panelTop - bottomGap;
+
+    panel.style.maxHeight = `${Math.max(0, availableHeight)}px`;
+  });
+}
+
+function resetChecklistScroll() {
+  const panel = document.getElementById("checklistPanel");
+  const content = document.getElementById("content");
+
+  if (panel) panel.scrollTop = 0;
+  if (content) content.scrollTop = 0;
 }
 
 function scrollToContentOnMobile(behavior = "smooth") {
@@ -846,7 +892,7 @@ function renderAll() {
   renderPermitList();
   renderPrintButton();
   renderContent();
-  syncPermitListHeight();
+  syncScrollablePanelHeights();
 }
 
 function renderPrintButton() {
@@ -1011,6 +1057,7 @@ function renderContent() {
         </button>
       </div>
     `;
+    resetChecklistScroll();
     return;
   }
 
@@ -1161,6 +1208,7 @@ if (data.noticeOfCommencement) {
   `;
 
   container.innerHTML = html;
+  resetChecklistScroll();
 }
 
 </script>
