@@ -1156,9 +1156,7 @@
               "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
             },
             {
-              "type": "requirement",
-              "label": "Utility Connection & Capital Recovery",
-              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
+              "id": "form_capital_recovery"
             },
             {
               "type": "requirement",
@@ -2042,8 +2040,7 @@
               "description": "Provide contract or detailed cost breakdown for the proposed work."
             },
             {
-              "type": "requirement",
-              "label": "Special Inspector Form",
+              "id": "form_special_inspector",
               "description": "Required if pile installation is utilized."
             },
             {
@@ -3250,9 +3247,7 @@
               "id": "app_building"
             },
             {
-              "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
+              "id":"app_floodplain"
             },
             {
               "id": "app_electrical"
@@ -3270,14 +3265,10 @@
               "id": "app_zoning"
             },
             {
-              "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Environmental Review, Planning & Redevelopment approval, and Transportation Concurrency Certificate."
+              "id": "req_product_approvals"
             },
             {
-              "type": "requirement",
-              "label": "Utility Connection & Capital Recovery",
-              "description": "Required if applicable."
+              "id": "form_capital_recovery"
             }
           ]
         },
@@ -4246,9 +4237,7 @@
               "description": "Provide contract or detailed cost breakdown for the proposed work."
             },
             {
-              "type": "requirement",
-              "label": "Special Inspector Form",
-              "description": "Required if pile installation is utilized."
+              "id": "form_special_inspector"
             },
             {
               "type": "requirement",
@@ -4560,9 +4549,7 @@
               "id": "app_zoning"
             },
             {
-              "type": "requirement",
-              "label": "Utility Connection & Capital Recovery",
-              "description": "Submit completed Utility Connection and Capital Recovery Fee Application."
+              "id": "form_capital_recovery"
             }
           ]
         },
