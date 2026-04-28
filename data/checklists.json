@@ -130,6 +130,33 @@
         }
       ]
     },
+    "req_asbestos": {
+      "name": "Broward County Asbestos Certificate",
+      "description": "Submit a Broward County Asbestos Certificate (Certificate of Submittal) confirming compliance with asbestos requirements. A Statement of Responsibilities Regarding Asbestos (SRRA) must be submitted to Broward County for all demolition and renovation projects. The City requires the resulting Certificate of Submittal for permit issuance.<br><br>Residential buildings with four (4) or fewer dwelling units are exempt from asbestos regulations and fees; however, an SRRA must still be submitted to the County to obtain the required Certificate of Submittal.",      "links": [
+        {
+          "label": "Broward ePermits - Apply for an Asbestos Certificate",
+          "url": "https://www.broward.org/ePermits/Search/Pages/ePermitDetails.aspx?epermit=3"
+        },
+        {
+          "label": "Asbestos Certificate Information",
+          "url": "https://www.broward.org/ePermits/Pages/AsbestosCertificate.aspx"
+        }
+      ]
+    },
+    "req_Broward_DER" : {
+      "name": "Broward County Department of Environmental Review (DER) Approvals",
+      "description": "Submit Broward County Department of Environmental Review (DER) Certificate of Approval verifying environmental review compliance. DER applies to projects involving new construction, site work, land disturbance, drainage, or potential impacts to protected environmental features.",
+      "links": [
+        {
+          "label": "Broward ePermits - Development and Environmental Review Approval",
+          "url": "https://www.broward.org/ePermits/Search/Pages/ePermitDetails.aspx?epermit=7"
+        }
+      ]
+    },
+    "req_hoa_approval": {
+      "name": "HOA / Condo Approval Letter",
+      "description": "Required when work is performed on a property governed by a Homeowners Association (HOA) or condominium association. Submit a letter confirming the association has reviewed and approved the proposed work."
+    },
     "req_product_approvals": {
       "name": "Product Approvals",
       "description": "Miami-Dade Notice of Acceptance (NOA) or Florida Product Approval is required for certain products such as windows, doors, shutters, garage doors, roofing systems, and other components. These approvals verify that the products meet specific performance criteria for wind resistance, impact resistance, and other code requirements.<br><br>Approved products must be reviewed and approved by the design professional as part of the permit application process. Documentation should include the product approval number, applicable test standards, and a description of the product's intended use.",
@@ -220,7 +247,7 @@
     },
     {
       "file": "additions",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Additions",
       "category": "Building",
       "propertyType": [
@@ -235,17 +262,6 @@
             {
               "id": "app_building",
               "description": "Submit Broward County Uniform Permit Application (Building Box Checked). Separate applications may be required for windows/doors/shutters and roofing."
-            },
-            {
-              "type": "requirement",
-              "label": "HVHZ Roofing Application",
-              "description": "Required for roofing work. Submit High Velocity Hurricane Zone (HVHZ) Permit Application.",
-              "links": [
-                {
-                  "label": "HVHZ Application",
-                  "url": "TBD_URL"
-                }
-              ]
             },
             {
               "id": "app_floodplain",
@@ -266,11 +282,14 @@
               "id": "app_fire"
             },
             {
+              "id": "app_landscape",
+              "description": "Required if trees are impacted. Tree protection plan and details may be required."
+            },
+            {
               "id": "app_zoning"
             },
             {
-              "id": "app_landscape",
-              "description": "Required if trees are impacted. Tree protection plan and details may be required."
+              "id": "app_HVHZ"
             },
             {
               "id": "form_special_inspector"
@@ -281,9 +300,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "Broward County Approvals (Commercial)",
-              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval required. Submit through Broward ePermits OneStop."
+              "id": "req_Broward_DER"
             },
             {
               "id": "req_product_approvals",
@@ -1856,7 +1873,7 @@
     },
     {
       "file": "demolition",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Demolition",
       "category": "Building",
       "propertyType": [
@@ -1896,9 +1913,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "Asbestos Acknowledgment Form",
-              "description": "Submit Broward County Statement of Responsibilities Regarding Asbestos Form."
+              "id": "req_asbestos"
             },
             {
               "type": "requirement",
@@ -4046,7 +4061,7 @@
     },
     {
       "file": "reroof",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Reroof",
       "category": "Building",
       "propertyType": [
@@ -4056,7 +4071,7 @@
       "whenPermitRequired": "The installation, replacement, or major repair of a roofing system requires a Building Permit. A permit is not required for minor repairs that do not affect approval or safety.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building"
@@ -4074,6 +4089,28 @@
                   "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/HVHZ-Application.pdf"
                 }
               ]
+            },
+            {
+              "type": "requirement",
+              "label": "Roofing Affidavit for Wind Mitigation",
+              "description": "Required for single-family homes and duplexes.<br><br>Affidavit for Roofing permits to confirm roof-to-wall connections meet required safety standards and that any necessary upgrades will be completed by a licensed contractor.",
+              "links": [
+                {
+                  "label": "Roofing Affidavit for Wind Mitigation",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Roofing-Affidavit.pdf"
+                }
+              ]
+            },
+            {
+              "type": "requirement",
+              "label": "Rooftop Equipment Affidavit",
+              "description": "Affidavit required with reroofing permits to identify rooftop equipment (such as A/C units, solar panels, or vents) and confirm that any removal, reinstallation, or upgrades will meet current code requirements and permitting rules.",
+              "links": [
+                {
+                  "label": "Rooftop Equipment Affidavit",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Rooftop-Mounted-Equipment-Affidavit-Policy-22-03.pdf"
+                }
+              ]
             }
           ]
         },
@@ -4081,54 +4118,31 @@
           "name": "Requirements",
           "items": [
             {
+              "id": "req_hoa_approval"
+            },
+            {
               "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Miami-Dade NOA or Florida Product Approval for roofing materials, underlayments, fasteners, adhesives, and Fire Directory listing pages."
             },
             {
-              "type": "requirement",
-              "label": "Asbestos Certificate",
-              "description": "Broward County Asbestos Certificate of Submittal."
+              "id": "req_asbestos"
             },
             {
               "type": "requirement",
               "label": "Site Plan",
-              "description": "Required for multi-family, condominium, and commercial projects. Must show staging areas, fire access, and equipment locations."
+              "description": "Required for all multi-family, condominium, and commercial roofing projects.<br><br>Provide a site plan showing the location of dumpsters, equipment staging areas, and fire access features, including building exits and fire lanes. If a tar kettle is used, the plan must also show the kettle location, LPG cylinders, and fire extinguishers. Kettles must be operated outdoors, attended at all times, and cannot block exits or access routes."
             },
             {
               "type": "requirement",
               "label": "Wind Load Verification",
-              "description": "Provide wind load compliance using prescriptive charts or engineer-sealed calculations depending on project type."
-            },
-            {
-              "type": "requirement",
-              "label": "Roofing Affidavit for Wind Mitigation",
-              "description": "Required for single-family and duplex structures confirming roof-to-wall compliance."
-            },
-            {
-              "type": "requirement",
-              "label": "Rooftop Equipment Affidavit",
-              "description": "Required when rooftop-mounted equipment is present."
-            },
-            {
-              "type": "requirement",
-              "label": "Insulation Attachment Calculations",
-              "description": "Required when installing insulation boards to demonstrate fastening and uplift compliance."
-            },
-            {
-              "type": "requirement",
-              "label": "Withdrawal Resistance Test",
-              "description": "Required when verifying deck or fastener pull-out strength."
-            },
-            {
-              "type": "requirement",
-              "label": "Moisture Survey Report",
-              "description": "Required for roof recover or renovation projects to confirm substrate condition."
-            },
-            {
-              "type": "requirement",
-              "label": "HOA/Condo Authorization Letter",
-              "description": "Required when work is performed on properties governed by an HOA or condominium association."
+              "description": "Submit wind load verification demonstrating compliance with required design pressures for the proposed roofing system.<br><br>One- and two-family dwellings or townhomes may use the Fenestration Wind Load and Roof Uplift Chart, while multi-family, commercial, or non-prescriptive projects must provide engineer-sealed wind pressure calculations.",
+              "links": [
+                {
+                  "label": "Fenestration Wind Load and Roof Uplift Chart",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/resources/Fenestration-Wind-Load-and-Roof-Uplift-Chart.pdf"
+                }
+              ]
             }
           ]
         },
@@ -4348,7 +4362,7 @@
     },
     {
       "file": "shutters",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Shutters",
       "category": "Building",
       "propertyType": [
@@ -4372,6 +4386,9 @@
           "name": "Requirements",
           "items": [
             {
+              "id": "req_hoa_approval"
+            },
+            {
               "id": "req_product_approvals",
               "label": "Product Approval",
               "description": "Provide Miami-Dade NOA or Florida Product Approval with all elements identified."
@@ -4380,11 +4397,6 @@
               "type": "requirement",
               "label": "Plan Showing Installation",
               "description": "Provide plan showing location, size, and type of shutters."
-            },
-            {
-              "type": "requirement",
-              "label": "Association Approval",
-              "description": "Required for condominium or HOA projects."
             },
             {
               "type": "requirement",
@@ -5591,16 +5603,16 @@
     },
 {
   "file": "tiki_hut",
-  "lastUpdated": "2026-04-27",
+  "lastUpdated": "2026-04-28",
   "name": "Tiki Hut / Chickee Hut",
   "category": "Building",
   "propertyType": [
     "Residential",
     "Commercial"
   ],
-  "whenPermitRequired": "The installation or replacement of a tiki or chickee hut requires a Building Permit.<br><br>Chickees constructed by a member of the Seminole Tribe or Miccosukee Tribe may be exempt only if they meet the statutory definition of a chickee (open-sided wood construction with a thatched roof and no electrical, plumbing, or other non-wood features). Zoning Compliance is still required.",
+  "whenPermitRequired": "A permit is required for the installation or replacement of a tiki or chickee hut. Chickees may be exempt from building permit requirements if they meet the criteria outlined below.<br><br>Zoning compliance is still required in all cases.",
   "hintTitle": "Chickee Hut Exemption",
-  "hint": "A chickee constructed by a member of the Seminole Tribe or Miccosukee Tribe is exempt from the Building Permit requirement only if it is an open-sided wood structure with a thatched roof and does not include electrical, plumbing, or other non-wood features.<br><br>Zoning Compliance is still required.",
+  "hint": "Chickees constructed by a member of the Seminole Tribe or Miccosukee Tribe are exempt from building permit requirements only if they meet the statutory definition: an open-sided wood structure with a thatched roof and no electrical, plumbing, or other non-wood features.",
   "sections": [
     {
       "name": "Applications",
@@ -5837,7 +5849,7 @@
     },
     {
       "file": "vehicle_charging_station",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Vehicle Charging Station",
       "category": "Electrical",
       "propertyType": [
@@ -5867,9 +5879,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "HOA/Condo Approval",
-              "description": "Required if the installation is within a condominium or homeowners association."
+              "id": "req_hoa_approval"
             },
             {
               "type": "requirement",
@@ -5998,7 +6008,7 @@
     },
     {
       "file": "window_door_changeouts",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-28",
       "name": "Window & Door Changeouts",
       "category": "Building",
       "propertyType": [
@@ -6033,9 +6043,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "HOA / Condo Association Approval",
-              "description": "Provide association approval letter if applicable."
+              "id": "req_hoa_approval"
             },
             {
               "type": "requirement",
