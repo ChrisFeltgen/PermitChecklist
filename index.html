@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Permit Application Checklists</title>
-  <link href="assets/css/tailwind.css" rel="stylesheet">
+  <link href="https://legacy.pompanobeachfl.gov/assets/css/03_page_specific/internal/tailwind.css" rel="stylesheet">
 
   <style>
     * {
@@ -19,6 +19,244 @@
     .hint-bg {background-color:rgba(22, 163, 74, 0.12);}
     .hint-border {border-color:#16A34A;}
     .hint-text {color:#166534;}
+
+    :root {
+      --city-blue: #2A768D;
+      --city-green: #66A785;
+      --city-ink: #1f2933;
+    }
+
+    .show-on-focus {
+      position: fixed;
+      top: -10em;
+      left: 1rem;
+      z-index: 999;
+      background: #fff;
+      color: var(--city-ink);
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      outline: 2px solid transparent;
+    }
+
+    .show-on-focus:focus {
+      top: 1rem;
+      outline-color: #ffb715;
+    }
+
+    .city-site-header {
+      position: relative;
+      z-index: 20;
+      background: #fff;
+      border-bottom: 1px solid #d7e2e6;
+      box-shadow: 0 2px 10px rgba(31, 41, 51, 0.08);
+    }
+
+    .city-site-header__main {
+      min-height: 96px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.2rem 3% 0.45rem;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .city-brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      color: #111827;
+      text-decoration: none;
+      background: #fff;
+    }
+
+    .city-brand:hover,
+    .city-brand:focus-visible {
+      color: var(--city-blue);
+    }
+
+    .city-brand__logo {
+      width: auto;
+      height: 82px;
+      flex: 0 0 auto;
+      padding: 0.35rem 1.25rem 0.35rem 0;
+    }
+
+    .city-brand__divider {
+      width: 3px;
+      height: 68px;
+      flex: 0 0 auto;
+      background: var(--city-blue);
+    }
+
+    .city-brand__welcome {
+      padding-left: 1.25rem;
+      line-height: 1.03;
+      font-size: clamp(1.85rem, 3vw, 2.85rem);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .city-brand__welcome span {
+      display: block;
+      font-weight: 400;
+    }
+
+    .city-brand__welcome strong {
+      display: block;
+      font-weight: 700;
+    }
+
+    .city-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.15rem;
+      margin-left: auto;
+    }
+
+    .city-nav a,
+    .mobile-menu__panel a {
+      color: #111827;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.08rem;
+    }
+
+    .city-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 96px;
+      padding: 0 0.7rem;
+      font-size: 0.98rem;
+    }
+
+    .city-nav a:hover,
+    .city-nav a:focus-visible,
+    .mobile-menu__panel a:hover,
+    .mobile-menu__panel a:focus-visible {
+      color: var(--city-blue);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: relative;
+      align-self: center;
+    }
+
+    .mobile-menu summary {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      list-style: none;
+      border: 1px solid #cbd5dc;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu__label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .mobile-menu__icon,
+    .mobile-menu__icon::before,
+    .mobile-menu__icon::after {
+      display: block;
+      width: 21px;
+      height: 2px;
+      background: #111827;
+      content: "";
+    }
+
+    .mobile-menu__icon {
+      position: relative;
+    }
+
+    .mobile-menu__icon::before,
+    .mobile-menu__icon::after {
+      position: absolute;
+      left: 0;
+    }
+
+    .mobile-menu__icon::before {
+      top: -7px;
+    }
+
+    .mobile-menu__icon::after {
+      top: 7px;
+    }
+
+    .mobile-menu__panel {
+      position: absolute;
+      top: calc(100% + 0.65rem);
+      right: 0;
+      width: min(18rem, calc(100vw - 2rem));
+      padding: 0.35rem 0;
+      border: 1px solid #d7e2e6;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 14px 34px rgba(31, 41, 51, 0.16);
+    }
+
+    .mobile-menu__panel a {
+      display: block;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid #edf2f4;
+      font-size: 0.9rem;
+    }
+
+    .mobile-menu__panel a:last-child {
+      border-bottom: 0;
+    }
+
+    .city-dept-bar {
+      background: var(--city-blue);
+      color: #fff;
+    }
+
+    .city-dept-bar__inner {
+      max-width: 1280px;
+      min-height: 40px;
+      margin: 0 auto;
+      padding: 0 3%;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02rem;
+    }
+
+    .city-dept-bar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .city-dept-bar a:hover,
+    .city-dept-bar a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .city-dept-bar__separator {
+      opacity: 0.75;
+    }
 
     /* Hide print header in browser */
     .print-header {
@@ -47,19 +285,26 @@
       overflow-wrap: anywhere;
     }
 
+    .filters-panel:not(.options-open) #permitListHeader {
+      display: none;
+    }
+
+    .filters-panel {
+      min-height: 0;
+    }
+
+    #permitList {
+      min-height: 0;
+      max-height: 30rem;
+    }
+
+    @media (min-width: 768px) {
+      #permitList {
+        max-height: calc(100dvh - 16rem);
+      }
+    }
+
     @media (max-width: 767px) {
-      .filters-panel:not(.options-open) #permitListHeader {
-        display: none;
-      }
-
-      .filters-panel.options-open #mobilePermitInlineLabel {
-        display: none;
-      }
-
-      .filters-panel.options-open #mobilePermitControls {
-        justify-content: flex-end;
-      }
-
       .category-grid {
         display: grid !important;
         gap: 0.5rem;
@@ -86,6 +331,67 @@
       .screen-title {
         font-size: 1.25rem !important;
         line-height: 1.3;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .city-nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .city-site-header__main {
+        min-height: 64px;
+        padding: 0.2rem 0.75rem 0.4rem;
+        gap: 0.5rem;
+      }
+
+      .city-brand__logo {
+        height: 54px;
+        padding: 0.25rem 0.6rem 0.25rem 0;
+      }
+
+      .city-brand__divider {
+        height: 42px;
+        width: 2px;
+      }
+
+      .city-brand__welcome {
+        padding-left: 0.6rem;
+        font-size: clamp(1.05rem, 4.6vw, 1.45rem);
+      }
+
+      .city-dept-bar__inner {
+        min-height: 34px;
+        padding: 0 0.75rem;
+        gap: 0.45rem;
+        font-size: 0.78rem;
+      }
+
+      .mobile-menu summary {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .city-brand__divider,
+      .city-brand__welcome {
+        display: none;
+      }
+
+      .city-brand__logo {
+        height: 50px;
+        padding-right: 0;
+      }
+
+      .city-dept-bar__inner {
+        justify-content: flex-start;
       }
     }
 
@@ -201,7 +507,7 @@
   #searchInput,
   #clearSearch,
   #toggleMoreOptions,
-  #mobilePermitControls,
+  #permitOptionsControls,
   #permitListHeader,
   #moreOptionsPanel,
   #propertyTypeFilter,
@@ -243,9 +549,56 @@
   </style>
 </head>
 
-<body class="bg-gray-50 p-3 sm:p-4 md:p-6">
-  <main class="app-shell max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+<body class="bg-gray-50">
+<header class="city-site-header no-print">
+  <a class="show-on-focus" href="#content">Skip to Content</a>
 
+  <div class="city-site-header__main">
+    <a class="city-brand" href="https://www.pompanobeachfl.gov/" aria-label="City of Pompano Beach home">
+      <img
+        src="https://www.pompanobeachfl.gov/pompanobeachfl/assets/images/sitewide/COPB_Logo.png"
+        alt="City of Pompano Beach Logo"
+        class="city-brand__logo"
+      />
+      <span class="city-brand__divider" aria-hidden="true"></span>
+      <span class="city-brand__welcome">
+        <span>Welcome to</span>
+        <strong>Pompano Beach</strong>
+      </span>
+    </a>
+
+    <nav class="city-nav" aria-label="City navigation">
+      <a href="https://www.pompanobeachfl.gov/government">Government</a>
+      <a href="https://www.pompanobeachfl.gov/residents">Residents</a>
+      <a href="https://www.visitpompanobeach.com/">Visitors</a>
+      <a href="https://www.pompanobeachfl.gov/business">Business</a>
+      <a href="https://www.pompanobeachfl.gov/search">Search</a>
+    </nav>
+
+    <details class="mobile-menu">
+      <summary aria-label="Toggle navigation">
+        <span class="mobile-menu__label">Menu</span>
+        <span class="mobile-menu__icon" aria-hidden="true"></span>
+      </summary>
+      <nav class="mobile-menu__panel" aria-label="Mobile city navigation">
+        <a href="https://www.pompanobeachfl.gov/government">Government</a>
+        <a href="https://www.pompanobeachfl.gov/residents">Residents</a>
+        <a href="https://www.visitpompanobeach.com/">Visitors</a>
+        <a href="https://www.pompanobeachfl.gov/business">Business</a>
+        <a href="https://www.pompanobeachfl.gov/search">Search</a>
+      </nav>
+    </details>
+  </div>
+
+  <div class="city-dept-bar" aria-label="Building Department breadcrumb">
+    <div class="city-dept-bar__inner">
+      <a href="https://www.pompanobeachfl.gov/government/building-inspections">Building Department</a>
+      <span class="city-dept-bar__separator" aria-hidden="true">/</span>
+      <span>Permit Checklists</span>
+    </div>
+  </div>
+</header>
+<main class="app-shell max-w-7xl mx-auto p-3 sm:p-4 md:p-6 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
     <!-- LEFT PANEL -->
     <div class="filters-panel md:col-span-1 md:sticky md:top-6 self-start">
       <div class="screen-title md:hidden mb-3 text-xl font-semibold leading-tight">Permit Application Checklists</div>
@@ -255,14 +608,14 @@
         <button id="clearSearch" aria-label="Clear search" class="min-h-11 rounded border bg-gray-100 px-3 text-sm">Clear</button>
       </div>
 
-      <div id="mobilePermitControls" class="mb-3 flex items-center justify-between gap-3 md:hidden">
-        <div id="mobilePermitInlineLabel" class="text-base font-semibold text-gray-700">Select Permit Type:</div>
-        <button id="toggleMoreOptions" type="button" aria-controls="moreOptionsPanel" aria-expanded="false" class="min-h-10 shrink-0 rounded border bg-white px-3 text-sm font-medium text-gray-700 md:hidden">
+      <div id="permitOptionsControls" class="mb-3 flex items-center justify-between gap-3">
+        <div id="permitInlineLabel" class="text-base font-semibold text-gray-700">Select Permit Type:</div>
+        <button id="toggleMoreOptions" type="button" aria-controls="moreOptionsPanel" aria-expanded="false" class="min-h-10 shrink-0 rounded border bg-white px-3 text-sm font-medium text-gray-700">
           More Options
         </button>
       </div>
 
-      <div id="moreOptionsPanel" class="hidden md:block mb-4 rounded border bg-white p-3 md:rounded-none md:border-0 md:bg-transparent md:p-0">
+      <div id="moreOptionsPanel" class="hidden mb-4 rounded border bg-white p-3">
         <div class="mb-3 sm:mb-4">
           <select id="propertyTypeFilter" aria-label="Property Type Filter" class="min-h-11 w-full rounded border p-2 text-sm">
             <option value="All">All Property Types</option>
@@ -276,7 +629,7 @@
 
       <div id="permitListHeader" class="mb-2 text-base font-semibold text-gray-700">Select Permit Type:</div>
 
-      <div id="permitList" class="space-y-2 md:space-y-1 max-h-[30rem] md:max-h-[60vh] overflow-y-auto pr-1"></div>
+      <div id="permitList" class="space-y-2 md:space-y-1 overflow-y-auto pr-1"></div>
 
     </div>
 
@@ -328,7 +681,8 @@ function init() {
   loadData();
   bindSearch();
   bindPropertyFilter();
-  bindMobileOptions();
+  bindPermitOptions();
+  bindPermitListSizing();
 }
 
 function loadData() {
@@ -382,7 +736,6 @@ function bindSearch() {
     window.history.replaceState({}, "", url);
 
     renderAll();
-    closeMobileOptions();
   });
 }
 
@@ -390,27 +743,21 @@ function bindPropertyFilter() {
   document.getElementById("propertyTypeFilter").addEventListener("change", (e) => {
     state.propertyType = e.target.value;
     renderPermitList();
-    closeMobileOptions();
+    syncPermitListHeight();
   });
 }
 
-function bindMobileOptions() {
+function bindPermitOptions() {
   const button = document.getElementById("toggleMoreOptions");
   if (!button) return;
 
   button.addEventListener("click", () => {
     const isOpen = button.getAttribute("aria-expanded") === "true";
-    setMobileOptionsOpen(!isOpen);
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      setMobileOptionsOpen(false);
-    }
+    setPermitOptionsOpen(!isOpen);
   });
 }
 
-function setMobileOptionsOpen(isOpen) {
+function setPermitOptionsOpen(isOpen) {
   const button = document.getElementById("toggleMoreOptions");
   const panel = document.getElementById("moreOptionsPanel");
   if (!button || !panel) return;
@@ -423,12 +770,31 @@ function setMobileOptionsOpen(isOpen) {
   if (filtersPanel) {
     filtersPanel.classList.toggle("options-open", isOpen);
   }
+
+  syncPermitListHeight();
 }
 
-function closeMobileOptions() {
+function bindPermitListSizing() {
+  window.addEventListener("resize", syncPermitListHeight);
+  window.addEventListener("scroll", syncPermitListHeight, { passive: true });
+}
+
+function syncPermitListHeight() {
+  const list = document.getElementById("permitList");
+  if (!list) return;
+
   if (window.matchMedia("(max-width: 767px)").matches) {
-    setMobileOptionsOpen(false);
+    list.style.maxHeight = "";
+    return;
   }
+
+  requestAnimationFrame(() => {
+    const bottomGap = 24;
+    const listTop = list.getBoundingClientRect().top;
+    const availableHeight = window.innerHeight - listTop - bottomGap;
+
+    list.style.maxHeight = `${Math.max(0, availableHeight)}px`;
+  });
 }
 
 function scrollToContentOnMobile(behavior = "smooth") {
@@ -480,6 +846,7 @@ function renderAll() {
   renderPermitList();
   renderPrintButton();
   renderContent();
+  syncPermitListHeight();
 }
 
 function renderPrintButton() {
@@ -506,7 +873,6 @@ function renderCategoryTabs() {
   allBtn.onclick = () => {
     state.activeCategory = "All";
     renderAll();
-    closeMobileOptions();
   };
   container.appendChild(allBtn);
 
@@ -520,7 +886,6 @@ function renderCategoryTabs() {
     btn.onclick = () => {
       state.activeCategory = cat;
       renderAll();
-      closeMobileOptions();
     };
     grid.appendChild(btn);
   });
