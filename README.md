@@ -102,6 +102,7 @@ Available library item fields:
 - `name` - Display name for the reusable item.
 - `description` - Optional supporting text.
 - `links` - Optional array of link objects.
+- `variant` - Optional display style. Use `notice` for a yellow notice-style requirement box.
 
 ## Link Objects
 
@@ -134,7 +135,40 @@ Available permit fields:
 - `hintTitle` - Optional. Title for a standalone green hint callout. If provided without `hint`, a title-only hint box is shown.
 - `hint` - Optional. Body text for the standalone green hint callout. If provided without `hintTitle`, the title defaults to `Hint`.
 - `noticeOfCommencement` - Optional. Text for a yellow Notice of Commencement callout near the bottom of the checklist.
+- `noticeOfCommencementRequired` - Optional. Set to `false` to completely hide the Notice of Commencement box for a permit. Defaults to `true`.
+- `noticeOfCommencementRequirementId` - Optional. Library item ID for the automatic Notice of Commencement box. Defaults to `req_notice_of_commencement`; use `req_notice_of_commencement_hvac_15000` for repair or replacement of an existing heating or air-conditioning system.
 - `sections` - Required. Array of checklist sections.
+
+## Notice of Commencement Options
+
+By default, every selected permit shows the standard Notice of Commencement box after the permit sections. Most permits do not need any extra field:
+
+```json
+{
+  "file": "sample_permit",
+  "name": "Sample Permit"
+}
+```
+
+Use the HVAC `$15,000` version for repair or replacement of an existing heating or air-conditioning system:
+
+```json
+{
+  "file": "ac_changeout",
+  "noticeOfCommencementRequirementId": "req_notice_of_commencement_hvac_15000"
+}
+```
+
+If a permit should not show any Notice of Commencement box, disable it explicitly:
+
+```json
+{
+  "file": "sample_permit_without_noc",
+  "noticeOfCommencementRequired": false
+}
+```
+
+No current permits use the disabled option.
 
 ## Permit Structure
 
@@ -228,6 +262,7 @@ Available fields:
 - `value` - Optional. Same as `label` if you prefer that field name.
 - `description` - Optional. Overrides the library item's description for this permit only.
 - `links` - Optional. Overrides the library item's links for this permit only.
+- `variant` - Optional. Overrides the library item's display style for this permit only.
 
 If the `id` is not found in `library`, the app displays the raw `id` as the item name.
 

@@ -289,6 +289,16 @@
       font-weight: 500;
     }
 
+    .special-requirement--notice {
+      background: #fffbeb;
+      border-color: #fbbf24;
+      border-left: 4px solid #f59e0b;
+    }
+
+    .special-requirement--notice .special-requirement__title {
+      color: #92400e;
+    }
+
     .filters-panel:not(.options-open) #permitListHeader {
       display: none;
     }
@@ -702,6 +712,7 @@ function init() {
   bindPropertyFilter();
   bindPermitOptions();
   bindPermitListSizing();
+  bindEmptySpaceChecklistScrolling();
 }
 
 function loadData() {
@@ -796,6 +807,58 @@ function setPermitOptionsOpen(isOpen) {
 function bindPermitListSizing() {
   window.addEventListener("resize", syncScrollablePanelHeights);
   window.addEventListener("scroll", syncScrollablePanelHeights, { passive: true });
+}
+
+function bindEmptySpaceChecklistScrolling() {
+  document.addEventListener("wheel", routeWheelToChecklistFromEmptySpace, { passive: false });
+}
+
+function routeWheelToChecklistFromEmptySpace(event) {
+  if (!window.matchMedia("(min-width: 768px)").matches) return;
+  if (event.ctrlKey) return;
+
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+
+  if (target.closest("#permitList, #checklistPanel")) return;
+  if (target.closest("input, select, textarea, button, a, summary")) return;
+
+  const appShell = document.querySelector(".app-shell");
+  const checklistPanel = document.getElementById("checklistPanel");
+  if (!appShell || !checklistPanel) return;
+
+  const shellRect = appShell.getBoundingClientRect();
+  const isBesideAppContent =
+    event.clientY >= shellRect.top &&
+    event.clientY <= shellRect.bottom;
+
+  if (!isBesideAppContent || checklistPanel.scrollHeight <= checklistPanel.clientHeight) {
+    return;
+  }
+
+  const deltaY = normalizeWheelDelta(event, checklistPanel);
+  if (!deltaY) return;
+
+  const maxScrollTop = checklistPanel.scrollHeight - checklistPanel.clientHeight;
+  const nextScrollTop = Math.max(
+    0,
+    Math.min(maxScrollTop, checklistPanel.scrollTop + deltaY)
+  );
+
+  checklistPanel.scrollTop = nextScrollTop;
+  event.preventDefault();
+}
+
+function normalizeWheelDelta(event, scrollContainer) {
+  if (event.deltaMode === WheelEvent.DOM_DELTA_LINE) {
+    return event.deltaY * 16;
+  }
+
+  if (event.deltaMode === WheelEvent.DOM_DELTA_PAGE) {
+    return event.deltaY * scrollContainer.clientHeight;
+  }
+
+  return event.deltaY;
 }
 
 function syncScrollablePanelHeights() {
@@ -1030,6 +1093,52 @@ function formatDate(dateStr) {
   return `${month}/${day}/${year}`;
 }
 
+function renderRequirementItem(item) {
+  let name = "";
+  let description = "";
+  let links = [];
+  let variant = item.variant || "";
+
+  if (item.type === "requirement") {
+    name = item.label || item.value || "";
+    description = item.description || "";
+    links = item.links || [];
+  } else {
+    const req = state.library[item.id] || {};
+    name = item.label || item.value || req.name || item.id || "";
+    description = item.description || req.description || "";
+    links = item.links || req.links || [];
+    variant = item.variant || req.variant || "";
+  }
+
+  const isNotice = variant === "notice";
+  const itemClasses = [
+    "check-item flex items-start gap-3 p-3 mb-2 border rounded",
+    isNotice ? "special-requirement--notice" : "bg-white"
+  ].join(" ");
+  const titleClasses = isNotice
+    ? "special-requirement__title font-semibold"
+    : "font-medium";
+  const descriptionClasses = isNotice
+    ? "text-sm text-gray-700 mt-1"
+    : "text-sm text-gray-500 mt-1";
+
+  return `
+    <div class="${itemClasses}">
+      <input type="checkbox" class="mt-1 w-4 h-4 shrink-0" />
+      <div class="check-item-content">
+        <div class="${titleClasses}">${name}</div>
+        ${description ? `<div class="${descriptionClasses}">${description}</div>` : ""}
+        ${links.length ? `
+          <div class="mt-1 text-sm">
+            ${links.map(l => `<a href="${l.url}" target="_blank" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
+          </div>
+        ` : ""}
+      </div>
+    </div>
+  `;
+}
+
 function renderContent() {
   const container = document.getElementById("content");
 
@@ -1153,35 +1262,7 @@ section.items.forEach(item => {
       </div>
     `;
   } else {
-    let name = "";
-    let description = "";
-    let links = [];
-
-    if (item.type === "requirement") {
-      name = item.label || item.value || "";
-      description = item.description || "";
-      links = item.links || [];
-    } else {
-      const req = state.library[item.id] || {};
-      name = item.label || item.value || req.name || item.id || "";
-      description = item.description || req.description || "";
-      links = item.links || req.links || [];
-    }
-
-    blockHtml = `
-      <div class="check-item flex items-start gap-3 p-3 mb-2 border rounded bg-white">
-        <input type="checkbox" class="mt-1 w-4 h-4 shrink-0" />
-        <div class="check-item-content">
-          <div class="font-medium">${name}</div>
-          ${description ? `<div class="text-sm text-gray-500 mt-1">${description}</div>` : ""}
-          ${links.length ? `
-            <div class="mt-1 text-sm">
-              ${links.map(l => `<a href="${l.url}" target="_blank" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
-            </div>
-          ` : ""}
-        </div>
-      </div>
-    `;
+    blockHtml = renderRequirementItem(item);
   }
 
   if (firstItem) {
@@ -1196,13 +1277,25 @@ section.items.forEach(item => {
     html += `</div>`;
   });
 
-if (data.noticeOfCommencement) {
-  html += `
-    <div class="mt-8 p-4 border-l-4 border-yellow-500 bg-yellow-50 text-sm text-gray-700 rounded">
-      <div class="font-semibold text-yellow-700 mb-1">Notice of Commencement</div>
-      <div>${data.noticeOfCommencement}</div>
-    </div>
-  `;
+const shouldShowNoticeOfCommencement =
+  data.noticeOfCommencementRequired !== false;
+
+if (shouldShowNoticeOfCommencement) {
+  const noticeOfCommencementRequirementId =
+    data.noticeOfCommencementRequirementId || "req_notice_of_commencement";
+
+  if (state.library[noticeOfCommencementRequirementId]) {
+    html += renderRequirementItem({ id: noticeOfCommencementRequirementId });
+  }
+
+  if (data.noticeOfCommencement) {
+    html += `
+      <div class="mt-8 p-4 border-l-4 border-yellow-500 bg-yellow-50 text-sm text-gray-700 rounded">
+        <div class="font-semibold text-yellow-700 mb-1">Notice of Commencement</div>
+        <div>${data.noticeOfCommencement}</div>
+      </div>
+    `;
+  }
 }
 
   html += `

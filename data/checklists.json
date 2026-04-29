@@ -132,7 +132,8 @@
     },
     "req_asbestos": {
       "name": "Broward County Asbestos Certificate",
-      "description": "Submit a Broward County Asbestos Certificate (Certificate of Submittal) confirming compliance with asbestos requirements. A Statement of Responsibilities Regarding Asbestos (SRRA) must be submitted to Broward County for all demolition and renovation projects. The City requires the resulting Certificate of Submittal for permit issuance.<br><br>Residential buildings with four (4) or fewer dwelling units are exempt from asbestos regulations and fees; however, an SRRA must still be submitted to the County to obtain the required Certificate of Submittal.",      "links": [
+      "description": "Submit a Broward County Asbestos Certificate (Certificate of Submittal) confirming compliance with asbestos requirements. A Statement of Responsibilities Regarding Asbestos (SRRA) must be submitted to Broward County for all demolition and renovation projects. The City requires the resulting Certificate of Submittal for permit issuance.<br><br>Residential buildings with four (4) or fewer dwelling units are exempt from asbestos regulations and fees; however, an SRRA must still be submitted to the County to obtain the required Certificate of Submittal.",
+      "links": [
         {
           "label": "Broward ePermits - Apply for an Asbestos Certificate",
           "url": "https://www.broward.org/ePermits/Search/Pages/ePermitDetails.aspx?epermit=3"
@@ -143,13 +144,35 @@
         }
       ]
     },
-    "req_Broward_DER" : {
+    "req_Broward_DER": {
       "name": "Broward County Department of Environmental Review (DER) Approvals",
       "description": "Submit Broward County Department of Environmental Review (DER) Certificate of Approval verifying environmental review compliance. DER applies to projects involving new construction, site work, land disturbance, drainage, or potential impacts to protected environmental features.",
       "links": [
         {
           "label": "Broward ePermits - Development and Environmental Review Approval",
           "url": "https://www.broward.org/ePermits/Search/Pages/ePermitDetails.aspx?epermit=7"
+        }
+      ]
+    },
+    "req_notice_of_commencement": {
+      "name": "Notice of Commencement",
+      "variant": "notice",
+      "description": "Per Florida Statutes Section 713.13, a Notice of Commencement (NOC) is required for most construction projects over $5,000 and must be recorded with Broward County before submitting it to the City.<br><br>You may include a copy with your permit application; however, <strong>a recorded NOC is required prior to your first inspection.</strong>",
+      "links": [
+        {
+          "label": "Broward County Notice of Commencement",
+          "url": "https://www.broward.org/ePermits/Pages/NoticeOfCommencement.aspx"
+        }
+      ]
+    },
+    "req_notice_of_commencement_hvac_15000": {
+      "name": "Notice of Commencement",
+      "variant": "notice",
+      "description": "A Notice of Commencement (NOC) is required for heating or air-conditioning system replacements with a project value of $15,000 or more. The NOC must be recorded with Broward County before submitting it to the City.<br><br>Per Florida Statutes Section 713.13, a NOC is not required for projects valued under $15,000.<br><br>You may upload a copy with your permit application; however, <strong>a recorded NOC is required prior to your first inspection.</strong>",
+      "links": [
+        {
+          "label": "Broward County Notice of Commencement",
+          "url": "https://www.broward.org/ePermits/Pages/NoticeOfCommencement.aspx"
         }
       ]
     },
@@ -179,6 +202,7 @@
       "name": "A/C Changeout",
       "category": "Mechanical",
       "whenPermitRequired": "A Mechanical Permit is required for the installation, alteration, or major repair of any residential or commercial air conditioning system, but not for minor part replacements that do not affect approval or safety; this list applies to system changeouts (replacements) only and not to the addition of new units.",
+      "noticeOfCommencementRequirementId": "req_notice_of_commencement_hvac_15000",
       "sections": [
         {
           "name": "Applications",
@@ -1177,7 +1201,7 @@
           "name": "Requirements",
           "items": [
             {
-            "id": "req_Broward_DER"
+              "id": "req_Broward_DER"
             },
             {
               "type": "requirement",
@@ -2633,7 +2657,8 @@
             {
               "type": "requirement",
               "label": "Acoustic Test Report",
-              "description": "Submit a laboratory sound transmission/acoustic test report confirming the flooring assembly (including underlayment) meets minimum STC and IIC ratings of 50. Manufacturer product data sheets, brochures, or retail listings are not acceptable. The report must reflect actual site conditions, including slab thickness and ceiling assembly."            }
+              "description": "Submit a laboratory sound transmission/acoustic test report confirming the flooring assembly (including underlayment) meets minimum STC and IIC ratings of 50. Manufacturer product data sheets, brochures, or retail listings are not acceptable. The report must reflect actual site conditions, including slab thickness and ceiling assembly."
+            }
           ]
         },
         {
@@ -3104,7 +3129,9 @@
               "label": "Structural Plans",
               "description": "Provide structural plans detailing the scope of work."
             },
-            { "id": "form_special_inspector"}
+            {
+              "id": "form_special_inspector"
+            }
           ]
         },
         {
@@ -3246,7 +3273,7 @@
               "id": "app_building"
             },
             {
-              "id":"app_floodplain"
+              "id": "app_floodplain"
             },
             {
               "id": "app_electrical"
@@ -3284,7 +3311,9 @@
               "label": "Product Approvals",
               "description": "Provide Miami-Dade NOA, Florida Product Approvals, manufacturer specifications, installation manuals, calculations, and supporting documentation."
             },
-            {"id": "req_Broward_DER"}
+            {
+              "id": "req_Broward_DER"
+            }
           ]
         },
         {
@@ -5496,141 +5525,141 @@
         }
       ]
     },
-{
-  "file": "tiki_hut",
-  "lastUpdated": "2026-04-28",
-  "name": "Tiki Hut / Chickee Hut",
-  "category": "Building",
-  "propertyType": [
-    "Residential",
-    "Commercial"
-  ],
-  "whenPermitRequired": "A permit is required for the installation or replacement of a tiki or chickee hut. Chickees may be exempt from building permit requirements if they meet the criteria outlined below.<br><br>Zoning compliance is still required in all cases.",
-  "hintTitle": "Chickee Hut Exemption",
-  "hint": "Chickees constructed by a member of the Seminole Tribe or Miccosukee Tribe are exempt from building permit requirements only if they meet the statutory definition: an open-sided wood structure with a thatched roof and no electrical, plumbing, or other non-wood features.",
-  "sections": [
     {
-      "name": "Applications",
-      "items": [
+      "file": "tiki_hut",
+      "lastUpdated": "2026-04-28",
+      "name": "Tiki Hut / Chickee Hut",
+      "category": "Building",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "whenPermitRequired": "A permit is required for the installation or replacement of a tiki or chickee hut. Chickees may be exempt from building permit requirements if they meet the criteria outlined below.<br><br>Zoning compliance is still required in all cases.",
+      "hintTitle": "Chickee Hut Exemption",
+      "hint": "Chickees constructed by a member of the Seminole Tribe or Miccosukee Tribe are exempt from building permit requirements only if they meet the statutory definition: an open-sided wood structure with a thatched roof and no electrical, plumbing, or other non-wood features.",
+      "sections": [
         {
-          "id": "app_building",
-          "description": "Application is required for all tiki and chickee huts for review purposes. However, a Building Permit will not be issued if the chickee hut qualifies for the Seminole or Miccosukee Tribe exemption."
+          "name": "Applications",
+          "items": [
+            {
+              "id": "app_building",
+              "description": "Application is required for all tiki and chickee huts for review purposes. However, a Building Permit will not be issued if the chickee hut qualifies for the Seminole or Miccosukee Tribe exemption."
+            },
+            {
+              "id": "app_zoning",
+              "description": "Required for all tiki and chickee huts, including those exempt from the Building Permit requirement."
+            },
+            {
+              "id": "app_electrical",
+              "label": "Electrical Permit Application <i>(If applicable)</i>",
+              "description": "Only required if electrical work is included.<br><strong>Note:</strong> Chickee huts with electrical work do not qualify for the Building Permit exemption."
+            },
+            {
+              "id": "app_plumbing",
+              "label": "Plumbing Permit Application <i>(If applicable)</i>",
+              "description": "Only required if plumbing work is included.<br><strong>Note:</strong> Chickee huts with plumbing do not qualify for the Building Permit exemption."
+            },
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Only required if trees are affected or adjacent to the work area."
+            }
+          ]
         },
         {
-          "id": "app_zoning",
-          "description": "Required for all tiki and chickee huts, including those exempt from the Building Permit requirement."
+          "name": "Requirements - Chickee Huts",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Tribal Identification",
+              "description": "Required only when claiming the Seminole or Miccosukee Tribe exemption for a chickee hut."
+            },
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide a survey or site plan showing the location and dimensions of the proposed structure."
+            },
+            {
+              "type": "requirement",
+              "label": "Construction Criteria",
+              "description": "To qualify for exemption, the chickee hut must be an open-sided wood structure with a thatched roof and must not include electrical, plumbing, gas, or other non-wood features."
+            }
+          ]
         },
         {
-          "id": "app_electrical",
-          "label": "Electrical Permit Application <i>(If applicable)</i>",
-          "description": "Only required if electrical work is included.<br><strong>Note:</strong> Chickee huts with electrical work do not qualify for the Building Permit exemption."
+          "name": "Requirements - Tiki Huts (and Non-Exempt Chickee Huts)",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide a survey or site plan showing the location and dimensions of the proposed structure."
+            },
+            {
+              "type": "requirement",
+              "label": "Engineered Plans",
+              "description": "Provide signed and sealed construction documents prepared by a design professional."
+            },
+            {
+              "type": "requirement",
+              "label": "Plumbing, Gas, and Electrical Plans",
+              "description": "Provide plumbing, gas, and electrical plans if those systems are included in the project."
+            }
+          ]
         },
         {
-          "id": "app_plumbing",
-          "label": "Plumbing Permit Application <i>(If applicable)</i>",
-          "description": "Only required if plumbing work is included.<br><strong>Note:</strong> Chickee huts with plumbing do not qualify for the Building Permit exemption."
-        },
-        {
-          "id": "app_fire"
-        },
-        {
-          "id": "app_landscape",
-          "description": "Only required if trees are affected or adjacent to the work area."
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections (Required if Building Permit is issued)",
+              "inspections": [
+                "BLDG FOOTINGS",
+                "BLDG ATTACHMENT",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections (Required)",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections (Only if applicable)",
+              "inspections": [
+                "P FINAL PLUMBING"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Electrical Inspections (Only if applicable)",
+              "inspections": [
+                "E FINAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (Only if applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections (Only if applicable)",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
         }
       ]
     },
-    {
-      "name": "Requirements - Chickee Huts",
-      "items": [
-        {
-          "type": "requirement",
-          "label": "Tribal Identification",
-          "description": "Required only when claiming the Seminole or Miccosukee Tribe exemption for a chickee hut."
-        },
-        {
-          "type": "requirement",
-          "label": "Survey or Site Plan",
-          "description": "Provide a survey or site plan showing the location and dimensions of the proposed structure."
-        },
-        {
-          "type": "requirement",
-          "label": "Construction Criteria",
-          "description": "To qualify for exemption, the chickee hut must be an open-sided wood structure with a thatched roof and must not include electrical, plumbing, gas, or other non-wood features."
-        }
-      ]
-    },
-    {
-      "name": "Requirements - Tiki Huts (and Non-Exempt Chickee Huts)",
-      "items": [
-        {
-          "type": "requirement",
-          "label": "Survey or Site Plan",
-          "description": "Provide a survey or site plan showing the location and dimensions of the proposed structure."
-        },
-        {
-          "type": "requirement",
-          "label": "Engineered Plans",
-          "description": "Provide signed and sealed construction documents prepared by a design professional."
-        },
-        {
-          "type": "requirement",
-          "label": "Plumbing, Gas, and Electrical Plans",
-          "description": "Provide plumbing, gas, and electrical plans if those systems are included in the project."
-        }
-      ]
-    },
-    {
-      "name": "Inspections",
-      "items": [
-        {
-          "type": "inspection_group",
-          "label": "Building Inspections (Required if Building Permit is issued)",
-          "inspections": [
-            "BLDG FOOTINGS",
-            "BLDG ATTACHMENT",
-            "BLDG FINAL STRUCTURAL"
-          ]
-        },
-        {
-          "type": "inspection_group",
-          "label": "Zoning Inspections (Required)",
-          "inspections": [
-            "Z ZONING FINAL"
-          ]
-        },
-        {
-          "type": "inspection_group",
-          "label": "Plumbing Inspections (Only if applicable)",
-          "inspections": [
-            "P FINAL PLUMBING"
-          ]
-        },
-        {
-          "type": "inspection_group",
-          "label": "Electrical Inspections (Only if applicable)",
-          "inspections": [
-            "E FINAL"
-          ]
-        },
-        {
-          "type": "inspection_group",
-          "label": "Tree Inspections (Only if applicable)",
-          "inspections": [
-            "L TREE PROTECTION INSPECTION",
-            "L FINAL LANDSCAPE"
-          ]
-        },
-        {
-          "type": "inspection_group",
-          "label": "Fire Inspections (Only if applicable)",
-          "inspections": [
-            "FIRE DEPARTMENT FINAL"
-          ]
-        }
-      ]
-    }
-  ]
-},
     {
       "file": "townhomes",
       "lastUpdated": "2026-04-28",
