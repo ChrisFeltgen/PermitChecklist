@@ -655,6 +655,69 @@
       ]
     },
     {
+      "file": "balcony_enclosure",
+      "lastUpdated": "2026-04-29",
+      "name": "Balcony Enclosure",
+      "category": "Building",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "whenPermitRequired": "The enclosure of an existing balcony requires a Building Permit. Fire review is required for condominium, multi-family, and commercial projects.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "id": "req_hoa_approval"
+            },
+            {
+              "type": "requirement",
+              "label": "Balcony Enclosure Plans",
+              "description": "Provide plans showing the existing balcony and proposed enclosure, including dimensions, materials, structural attachment details, glazing or opening information, and any impacts to egress or life-safety systems."
+            },
+            {
+              "id": "req_product_approvals",
+              "label": "Product Approval Documents",
+              "description": "Provide current Florida Product Approval or Miami-Dade Notice of Acceptance (NOA) documents for enclosure components such as windows, doors, shutters, or other exterior opening products."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FRAMING",
+                "BLDG WINDOW/DOORS",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "file": "backflow_preventer",
       "lastUpdated": "2026-04-27",
       "name": "Backflow Preventer",
@@ -2027,7 +2090,7 @@
     },
     {
       "file": "dock",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-29",
       "name": "Dock",
       "category": "Building",
       "propertyType": [
@@ -2037,7 +2100,7 @@
       "whenPermitRequired": "The installation, replacement, or major repair of a dock requires a Building Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building"
@@ -2053,8 +2116,10 @@
               "description": "Required if trees are adjacent to the work area"
             },
             {
-              "id": "app_zoning",
-              "description": "Required if work encroaches property lines"
+              "id": "app_zoning"
+            },
+            {
+              "id": "form_special_inspector"
             }
           ]
         },
@@ -2070,10 +2135,6 @@
               "type": "requirement",
               "label": "Contract or Schedule of Values",
               "description": "Provide contract or detailed cost breakdown for the proposed work."
-            },
-            {
-              "id": "form_special_inspector",
-              "description": "Required if pile installation is utilized."
             },
             {
               "type": "requirement",
@@ -2137,6 +2198,69 @@
               "inspections": [
                 "L TREE PROTECTION INSPECTION",
                 "L FINAL LANDSCAPE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "door_infill",
+      "lastUpdated": "2026-04-29",
+      "name": "Door Infill",
+      "category": "Building",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "whenPermitRequired": "The infill of an existing door opening requires a Building Permit. Fire review is required for condominium, multi-family, and commercial projects.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            {
+              "id": "app_building"
+            },
+            {
+              "id": "app_fire"
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "id": "req_hoa_approval"
+            },
+            {
+              "type": "requirement",
+              "label": "Door Infill Plans",
+              "description": "Provide plans showing the existing door opening and proposed infill, including wall construction, framing, finish materials, structural attachment details, and any impacts to egress or life-safety systems."
+            },
+            {
+              "type": "requirement",
+              "label": "Fire-Rated Assembly Details",
+              "description": "If the door opening is located in a rated wall, corridor, separation wall, or other fire-resistance-rated assembly, provide details showing how the required rating will be maintained."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Building Inspections",
+              "inspections": [
+                "BLDG FRAMING",
+                "BLDG DRYWALL-SCREW/NAIL",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Fire Inspections",
+              "inspections": [
+                "FIRE DEPARTMENT FINAL"
               ]
             }
           ]
@@ -4184,7 +4308,7 @@
         "Residential",
         "Commercial"
       ],
-      "whenPermitRequired": "The transfer of irrigation from potable water to the City’s reuse connection requires a Plumbing Permit.",
+      "whenPermitRequired": "The transfer of irrigation from potable water to the City's reuse connection requires a Plumbing Permit.",
       "sections": [
         {
           "name": "Applications",
@@ -5764,6 +5888,59 @@
               "type": "requirement",
               "label": "Administrative Documents",
               "description": "Include development orders, easement agreements, utility easements, engineering schedule of values, and signature affidavits."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tub_to_shower_conversion",
+      "lastUpdated": "2026-04-29",
+      "name": "Tub to Shower Conversion",
+      "category": "Plumbing",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "whenPermitRequired": "A Plumbing Permit is required when converting an existing bathtub to a shower.",
+      "sections": [
+        {
+          "name": "Applications",
+          "items": [
+            {
+              "id": "app_plumbing"
+            }
+          ]
+        },
+        {
+          "name": "Requirements",
+          "items": [
+            {
+              "id": "req_hoa_approval"
+            },
+            {
+              "type": "requirement",
+              "label": "Fire Rating Between Floor/Ceiling",
+              "description": "Penetrations of floor/ceiling assemblies are required to have a fire-resistive rating and must be protected in accordance with the Florida Building Code. FBC P 307.3<br><br>Submit the manufacturer's UL-listed installation cut sheet for the assembly being used. The manufacturer's installation assembly cut sheet must also be on site for inspection. The detail must show the tub box void, which is approximately 12 inches by 8 inches.<br><br>If cast iron or copper is used for drainage piping, state that on the plans. A firestop detail will not be required when cast iron or copper drainage piping is used."
+            },
+            {
+              "type": "requirement",
+              "label": "Plumbing Scope or Plans",
+              "description": "Provide plans or a clear scope of work showing the tub-to-shower conversion, fixture location, drainage piping, water piping, and shower pan or receptor details."
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Plumbing Inspections",
+              "inspections": [
+                "P PLUMBING ROUGH",
+                "P TOP OUT",
+                "P FINAL-PLUMBING"
+              ]
             }
           ]
         }
