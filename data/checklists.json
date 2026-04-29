@@ -1713,7 +1713,7 @@
     },
     {
       "file": "concrete_slab",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-29",
       "name": "Concrete Slab",
       "category": "Building",
       "propertyType": [
@@ -1753,7 +1753,13 @@
             {
               "type": "requirement",
               "label": "Residential Lot Coverage Worksheet",
-              "description": "Submit Residential Lot Coverage Worksheet."
+              "description": "This worksheet is used to calculate lot coverage for a residential property by comparing the total lot area to the square footage of the home and other covered or impervious areas, ensuring the property complies with maximum lot coverage limits under zoning regulations.",
+              "links" : [
+                {
+                  "label": "Residential Lot Coverage Sheet",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/planning_zoning/lot_coverage.pdf"
+                }
+              ]
             },
             {
               "type": "requirement",
@@ -3121,8 +3127,7 @@
               "id": "app_plumbing"
             },
             {
-              "id": "app_fire",
-              "description": "Required for commercial generators"
+              "id": "app_fire"
             },
             {
               "id": "app_landscape",
@@ -3974,7 +3979,7 @@
     },
     {
       "file": "pool_heater_commercial",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-29",
       "name": "Pool Heater (Commercial)",
       "category": "Plumbing",
       "propertyType": [
@@ -4031,9 +4036,7 @@
               "description": "For commercial pools with 33 or more units, provide Broward County Health Department review comments/approval letter. For 32 units or less, provide exemption letter."
             },
             {
-              "type": "requirement",
-              "label": "DPEP Approval",
-              "description": "Development Permit Engineering Program (DPEP) approval is required."
+              "id": "req_Broward_DER"
             }
           ]
         },
