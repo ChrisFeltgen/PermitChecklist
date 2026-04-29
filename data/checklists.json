@@ -4135,17 +4135,15 @@
             },
             {
               "id": "app_fire"
-            },
-            {
-              "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Environmental Review, Planning & Redevelopment approval, and Transportation Concurrency Certificate (if applicable)."
             }
           ]
         },
         {
           "name": "Requirements",
           "items": [
+            {
+              "id": "req_Broward_DER" 
+            },
             {
               "type": "requirement",
               "label": "Construction Floor Plans",
@@ -4368,13 +4366,16 @@
       "whenPermitRequired": "The installation, replacement, or major repair of a seawall requires a Building Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building"
             },
             {
               "id": "app_engineering"
+            },
+            {
+              "id": "form_special_inspector"
             }
           ]
         },
@@ -4390,9 +4391,6 @@
               "type": "requirement",
               "label": "Contract or Schedule of Values",
               "description": "Provide contract or detailed cost breakdown for the proposed work."
-            },
-            {
-              "id": "form_special_inspector"
             },
             {
               "type": "requirement",
@@ -4434,7 +4432,7 @@
     },
     {
       "file": "septic_to_sewer",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-29",
       "name": "Septic to Sewer Conversion",
       "category": "Plumbing",
       "propertyType": [
@@ -4455,9 +4453,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "Broward Environmental Review Approval",
-              "description": "Provide Broward County Environmental Review Approval Certificate."
+              "id": "req_Broward_DER"
             },
             {
               "type": "requirement",
@@ -4675,7 +4671,7 @@
       "whenPermitRequired": "Site work associated with a building project requires a Building Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building",
@@ -4830,7 +4826,7 @@
       "whenPermitRequired": "The installation of solar (photovoltaic) systems requires applicable Building and Electrical permits.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building",
