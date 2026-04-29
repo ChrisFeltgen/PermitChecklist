@@ -272,6 +272,13 @@
       display: none !important;
     }
 
+    button:not(:disabled),
+    summary,
+    a[href],
+    [role="button"]:not([aria-disabled="true"]) {
+      cursor: pointer;
+    }
+
     #content,
     .check-item-content,
     .permit-button,
