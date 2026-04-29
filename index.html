@@ -285,6 +285,10 @@
       overflow-wrap: anywhere;
     }
 
+    .permit-button__name {
+      font-weight: 500;
+    }
+
     .filters-panel:not(.options-open) #permitListHeader {
       display: none;
     }
@@ -978,7 +982,7 @@ function renderPermitList() {
     }
 
     btn.innerHTML = `
-      <div class="font-medium leading-snug">${permit.name}</div>
+      <div class="permit-button__name leading-snug">${permit.name}</div>
       <div class="permit-meta text-xs mt-1 ${isSelected ? "text-white" : "text-gray-500"}">
         ${category}${property ? " - " + property : ""}
       </div>
