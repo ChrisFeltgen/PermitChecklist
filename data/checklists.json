@@ -5125,7 +5125,7 @@
     },
     {
       "file": "single_family_residence_new",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-04-29",
       "name": "Single Family Residence (New)",
       "category": "Building",
       "propertyType": [
@@ -5134,7 +5134,7 @@
       "whenPermitRequired": "The construction of a new single-family residence or duplex requires a Building Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Applications and Forms",
           "items": [
             {
               "id": "app_building"
@@ -5152,6 +5152,9 @@
               "id": "app_engineering"
             },
             {
+              "id": "app_floodplain"
+            },
+            {
               "id": "app_landscape"
             },
             {
@@ -5159,6 +5162,9 @@
             },
             {
               "id": "form_special_inspector"
+            },
+            {
+              "id": "form_capital_recovery"
             }
           ]
         },
@@ -5166,19 +5172,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
-            },
-            {
-              "type": "requirement",
-              "label": "Utility Connection & Capital Recovery",
-              "description": "Submit a completed Utility Connection and Capital Recovery Fee Application."
-            },
-            {
-              "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+              "id": "req_Broward_DER"
             },
             {
               "id": "req_product_approvals",
@@ -5542,11 +5536,10 @@
               "description": "Required if trailer includes restroom facilities"
             },
             {
-              "id": "app_engineering",
-              "description": "Required for erosion control (sales trailers)"
+              "id": "app_fire"
             },
             {
-              "id": "app_fire"
+              "id": "app_floodplain"
             },
             {
               "id": "app_landscape",
@@ -5562,18 +5555,11 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Floodplain Permit Application",
-              "description": "Broward County Uniform Permit Application with 'Other' box checked for floodplain review."
-            },
-            {
-              "type": "requirement",
               "label": "Zoning Board Approval",
               "description": "Temporary Permit Approval from the Zoning Board of Appeals and Development Order signed by the Zoning Director (for sales trailers)."
             },
             {
-              "type": "requirement",
-              "label": "Broward County Approvals",
-              "description": "Environmental Review, Planning & Redevelopment approval, and Transportation Concurrency Certificate."
+             "id": "req_Broward_DER"
             },
             {
               "type": "requirement",
