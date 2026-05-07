@@ -62,7 +62,7 @@
     },
     "app_fire": {
       "name": "Fire Plan Review Application",
-      "description": "Required for projects in Multi-Family Buildings, Commericial, and Condominiums.",
+      "description": "Required for projects in Multi-Family Buildings, Commercial, and Condominiums.",
       "links": [
         {
           "label": "Fire Plan Review Application",
@@ -218,7 +218,7 @@
             {
               "type": "requirement",
               "label": "A/C Replacement Data Form",
-              "description": "Unfiform Broward County form for replacing A/C Systems, and detailing Existing and New Unit specs.",
+              "description": "Uniform Broward County form for replacing A/C Systems, and detailing Existing and New Unit specs.",
               "links": [
                 {
                   "label": "A/C Replacement Data Form",
@@ -4924,7 +4924,7 @@
               "type": "inspection_group",
               "label": "Electrical Inspections (Photovoltaic)",
               "inspections": [
-                "EL PHOTOVOLATIC RAIL BOND",
+                "EL PHOTOVOLTAIC RAIL BOND",
                 "EL SERVICE ROUGH",
                 "EL FINAL"
               ]
