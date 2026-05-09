@@ -307,6 +307,40 @@
       color: #92400e;
     }
 
+    .smart-refine-panel {
+      border-color: #cbd5dc;
+    }
+
+    .smart-refine__summary {
+      color: #4b5563;
+    }
+
+    .check-item--not-required,
+    .inspection-group--not-required {
+      background: #f8fafc;
+      border-style: dashed;
+      opacity: 0.82;
+    }
+
+    .check-item--not-required input[type="checkbox"] {
+      visibility: hidden;
+    }
+
+    .not-required-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.72rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: 0.25rem 0.5rem;
+      text-transform: uppercase;
+    }
+
     .filters-panel:not(.options-open) #permitListHeader {
       display: none;
     }
@@ -535,6 +569,27 @@
     display: inline !important;
   }
 
+  .smart-refine-panel[data-has-answers="false"] {
+    display: none !important;
+  }
+
+  .smart-refine-panel {
+    background: none !important;
+    border: 1px solid #999 !important;
+    margin-bottom: 10px !important;
+    padding: 6px !important;
+  }
+
+  .smart-refine__controls {
+    display: none !important;
+  }
+
+  .not-required-badge {
+    border: 1px solid #999 !important;
+    background: none !important;
+    color: #444 !important;
+  }
+
   .no-print,
   #searchInput,
   #clearSearch,
@@ -699,6 +754,10 @@ const DATA_FILE = isLocal
 let state = {
   library: {},
   permits: [],
+  smartQuestions: [],
+  smartRules: {},
+  smartAnswers: {},
+  smartDisplayMode: "hide",
   selectedPermit: null,
   selectedFile: null,
   selectedCategory: null,
@@ -730,6 +789,8 @@ function loadData() {
     .then(data => {
       state.library = data.library || {};
       state.permits = data.permits || [];
+      state.smartQuestions = data.smartQuestions || [];
+      state.smartRules = data.smartRules || {};
 
       const target = getTargetPermit();
       let shouldScrollToContent = false;
@@ -1102,6 +1163,246 @@ function formatDate(dateStr) {
   return `${month}/${day}/${year}`;
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function getSmartQuestion(questionId) {
+  return state.smartQuestions.find(question => question.id === questionId) || null;
+}
+
+function getAnswerLabel(questionId, answerValue) {
+  const question = getSmartQuestion(questionId);
+  const option = question?.options?.find(item => item.value === answerValue);
+  return option?.label || answerValue;
+}
+
+function hasActiveSmartAnswers() {
+  return Object.values(state.smartAnswers).some(Boolean);
+}
+
+function getActiveAnswerSummary() {
+  return state.smartQuestions
+    .map(question => {
+      const answer = state.smartAnswers[question.id];
+      if (!answer) return null;
+
+      const label = question.label || question.prompt || question.id;
+      return `${label}: ${getAnswerLabel(question.id, answer)}`;
+    })
+    .filter(Boolean);
+}
+
+function resolveSmartRule(rule) {
+  if (!rule) return null;
+  if (typeof rule === "string") return state.smartRules[rule] || null;
+  return rule;
+}
+
+function getLibraryItem(item) {
+  return item.id ? state.library[item.id] || {} : {};
+}
+
+function getRequirementSmartRule(item) {
+  const libraryItem = getLibraryItem(item);
+  return resolveSmartRule(item.requiredWhen || libraryItem.requiredWhen);
+}
+
+function getRequirementNotRequiredText(item, rule) {
+  const libraryItem = getLibraryItem(item);
+  const customText = item.notRequiredText || libraryItem.notRequiredText;
+
+  if (customText) return customText;
+
+  const ruleSummary = Object.entries(rule)
+    .map(([questionId, allowedValues]) => {
+      const question = getSmartQuestion(questionId);
+      const values = Array.isArray(allowedValues) ? allowedValues : [allowedValues];
+      const labels = values.map(value => getAnswerLabel(questionId, value)).join(", ");
+      return `${question?.label || questionId}: ${labels}`;
+    })
+    .join("; ");
+
+  return `Based on your answers, this item is not required. It is required when ${ruleSummary}.`;
+}
+
+function evaluateSmartRule(rule) {
+  let hasUnansweredRuleQuestion = false;
+
+  for (const [questionId, allowedValues] of Object.entries(rule)) {
+    const answer = state.smartAnswers[questionId];
+
+    if (!answer) {
+      hasUnansweredRuleQuestion = true;
+      continue;
+    }
+
+    const values = Array.isArray(allowedValues) ? allowedValues : [allowedValues];
+    if (!values.includes(answer)) return false;
+  }
+
+  return hasUnansweredRuleQuestion ? null : true;
+}
+
+function getRequirementSmartStatus(item) {
+  const rule = getRequirementSmartRule(item);
+
+  if (!rule || !hasActiveSmartAnswers()) {
+    return {
+      isNotRequired: false,
+      reason: ""
+    };
+  }
+
+  const ruleResult = evaluateSmartRule(rule);
+
+  if (ruleResult !== false) {
+    return {
+      isNotRequired: false,
+      reason: ""
+    };
+  }
+
+  return {
+    isNotRequired: true,
+    reason: getRequirementNotRequiredText(item, rule)
+  };
+}
+
+function getPermitSmartStats(permit) {
+  const stats = {
+    notRequired: 0
+  };
+
+  if (!permit || !hasActiveSmartAnswers()) return stats;
+
+  const countItem = item => {
+    if (getRequirementSmartStatus(item).isNotRequired) {
+      stats.notRequired += 1;
+    }
+  };
+
+  (permit.sections || []).forEach(section => {
+    (section.items || []).forEach(item => {
+      countItem(item);
+    });
+  });
+
+  if (permit.noticeOfCommencementRequired !== false) {
+    const noticeOfCommencementRequirementId =
+      permit.noticeOfCommencementRequirementId || "req_notice_of_commencement";
+
+    if (state.library[noticeOfCommencementRequirementId]) {
+      countItem({ id: noticeOfCommencementRequirementId });
+    }
+  }
+
+  return stats;
+}
+
+function renderSmartRefinementPanel(permit) {
+  if (!state.smartQuestions.length) return "";
+
+  const hasAnswers = hasActiveSmartAnswers();
+  const answerSummary = getActiveAnswerSummary();
+  const smartStats = getPermitSmartStats(permit);
+  const hiddenText = state.smartDisplayMode === "hide"
+    ? `${smartStats.notRequired} item${smartStats.notRequired === 1 ? "" : "s"} hidden`
+    : `${smartStats.notRequired} item${smartStats.notRequired === 1 ? "" : "s"} marked not required`;
+  const summaryText = hasAnswers
+    ? `Refined for ${answerSummary.map(escapeHtml).join("; ")}. ${hiddenText}.`
+    : "Full checklist is showing. Answer a project question to tailor the required items.";
+
+  const questionControls = state.smartQuestions.map(question => {
+    const selectedAnswer = state.smartAnswers[question.id] || "";
+    const label = question.label || question.prompt || question.id;
+    const emptyLabel = question.emptyLabel || "Show full checklist";
+    const options = (question.options || []).map(option => `
+      <option value="${escapeHtml(option.value)}" ${selectedAnswer === option.value ? "selected" : ""}>
+        ${escapeHtml(option.label)}
+      </option>
+    `).join("");
+
+    return `
+      <label class="block min-w-0">
+        <span class="mb-1 block text-xs font-semibold uppercase text-gray-500">${escapeHtml(label)}</span>
+        <select data-smart-question="${escapeHtml(question.id)}" class="min-h-11 w-full rounded border p-2 text-sm">
+          <option value="">${escapeHtml(emptyLabel)}</option>
+          ${options}
+        </select>
+      </label>
+    `;
+  }).join("");
+
+  return `
+    <div id="smartRefinePanel" class="smart-refine-panel mb-4 rounded border bg-white p-3 sm:p-4" data-has-answers="${hasAnswers ? "true" : "false"}">
+      <div class="smart-refine__controls grid grid-cols-1 gap-3 md:grid-cols-3 md:items-end">
+        ${questionControls}
+
+        <label class="block min-w-0">
+          <span class="mb-1 block text-xs font-semibold uppercase text-gray-500">Display</span>
+          <select id="smartDisplayMode" class="min-h-11 w-full rounded border p-2 text-sm" ${hasAnswers ? "" : "disabled"}>
+            <option value="hide" ${state.smartDisplayMode === "hide" ? "selected" : ""}>Hide not required</option>
+            <option value="mark" ${state.smartDisplayMode === "mark" ? "selected" : ""}>Show not required</option>
+          </select>
+        </label>
+
+        <button id="resetSmartAnswers" type="button" class="min-h-11 rounded border bg-gray-100 px-3 text-sm font-medium text-gray-700" ${hasAnswers ? "" : "disabled"}>
+          Reset
+        </button>
+      </div>
+
+      <div class="smart-refine__summary mt-3 text-sm">
+        ${summaryText}
+      </div>
+    </div>
+  `;
+}
+
+function bindSmartChecklistControls() {
+  const panel = document.getElementById("smartRefinePanel");
+  if (!panel) return;
+
+  panel.querySelectorAll("[data-smart-question]").forEach(select => {
+    select.addEventListener("change", event => {
+      const questionId = event.currentTarget.getAttribute("data-smart-question");
+      const answer = event.currentTarget.value;
+
+      if (answer) {
+        state.smartAnswers[questionId] = answer;
+      } else {
+        delete state.smartAnswers[questionId];
+      }
+
+      renderContent({ resetScroll: false });
+      syncScrollablePanelHeights();
+    });
+  });
+
+  const displayMode = document.getElementById("smartDisplayMode");
+  if (displayMode) {
+    displayMode.addEventListener("change", event => {
+      state.smartDisplayMode = event.currentTarget.value;
+      renderContent({ resetScroll: false });
+      syncScrollablePanelHeights();
+    });
+  }
+
+  const resetButton = document.getElementById("resetSmartAnswers");
+  if (resetButton) {
+    resetButton.addEventListener("click", () => {
+      state.smartAnswers = {};
+      renderContent({ resetScroll: false });
+      syncScrollablePanelHeights();
+    });
+  }
+}
+
 function renderRequirementItem(item) {
   let name = "";
   let description = "";
@@ -1120,10 +1421,16 @@ function renderRequirementItem(item) {
     variant = item.variant || req.variant || "";
   }
 
+  const smartStatus = getRequirementSmartStatus(item);
+  if (smartStatus.isNotRequired && state.smartDisplayMode === "hide") {
+    return "";
+  }
+
   const isNotice = variant === "notice";
   const itemClasses = [
     "check-item flex items-start gap-3 p-3 mb-2 border rounded",
-    isNotice ? "special-requirement--notice" : "bg-white"
+    isNotice ? "special-requirement--notice" : "bg-white",
+    smartStatus.isNotRequired ? "check-item--not-required" : ""
   ].join(" ");
   const titleClasses = isNotice
     ? "special-requirement__title font-semibold"
@@ -1134,9 +1441,11 @@ function renderRequirementItem(item) {
 
   return `
     <div class="${itemClasses}">
-      <input type="checkbox" class="mt-1 w-4 h-4 shrink-0" />
+      <input type="checkbox" class="mt-1 w-4 h-4 shrink-0" ${smartStatus.isNotRequired ? "disabled aria-hidden=\"true\"" : ""} />
       <div class="check-item-content">
+        ${smartStatus.isNotRequired ? `<div class="mb-1"><span class="not-required-badge">Not required</span></div>` : ""}
         <div class="${titleClasses}">${name}</div>
+        ${smartStatus.isNotRequired && smartStatus.reason ? `<div class="text-sm text-gray-500 mt-1">${smartStatus.reason}</div>` : ""}
         ${description ? `<div class="${descriptionClasses}">${description}</div>` : ""}
         ${links.length ? `
           <div class="mt-1 text-sm">
@@ -1148,8 +1457,32 @@ function renderRequirementItem(item) {
   `;
 }
 
-function renderContent() {
+function renderInspectionGroup(item) {
+  const smartStatus = getRequirementSmartStatus(item);
+  if (smartStatus.isNotRequired && state.smartDisplayMode === "hide") {
+    return "";
+  }
+
+  const groupClasses = [
+    "inspection-group mb-3 sm:mb-4 p-3 sm:p-4 border rounded bg-white",
+    smartStatus.isNotRequired ? "inspection-group--not-required" : ""
+  ].join(" ");
+
+  return `
+    <div class="${groupClasses}">
+      ${smartStatus.isNotRequired ? `<div class="mb-2"><span class="not-required-badge">Not required</span></div>` : ""}
+      <div class="font-semibold mb-2">${item.label}</div>
+      ${smartStatus.isNotRequired && smartStatus.reason ? `<div class="text-sm text-gray-500 mb-2">${smartStatus.reason}</div>` : ""}
+      <ol class="list-decimal ml-5 space-y-1 text-sm">
+        ${(item.inspections || []).map(i => `<li>${i}</li>`).join("")}
+      </ol>
+    </div>
+  `;
+}
+
+function renderContent(options = {}) {
   const container = document.getElementById("content");
+  const shouldResetScroll = options.resetScroll !== false;
 
   if (!state.selectedPermit) {
     container.innerHTML = `
@@ -1179,7 +1512,7 @@ function renderContent() {
         </button>
       </div>
     `;
-    resetChecklistScroll();
+    if (shouldResetScroll) resetChecklistScroll();
     return;
   }
 
@@ -1227,6 +1560,8 @@ function renderContent() {
 </div>
     `;
 
+  html += renderSmartRefinementPanel(data);
+
   const whenPermitRequired = data.whenPermitRequired;
   const hintTitle = data.hintTitle || "Hint";
   const hint = data.hint;
@@ -1249,40 +1584,21 @@ function renderContent() {
     `;
   }
 
-  data.sections.forEach(section => {
+  (data.sections || []).forEach(section => {
+    const itemBlocks = (section.items || [])
+      .map(item => item.type === "inspection_group"
+        ? renderInspectionGroup(item)
+        : renderRequirementItem(item))
+      .filter(Boolean);
+
+    if (!itemBlocks.length) return;
+
     html += `<div class="section-card mb-4 sm:mb-6 border rounded-lg p-3 sm:p-4 bg-gray-50">`;
-
-    let firstItem = true;
-
     html += `<div class="section-start">
-      <h2 class="font-semibold mb-3">${section.name}</h2>`;
-
-section.items.forEach(item => {
-
-  let blockHtml = "";
-
-  if (item.type === "inspection_group") {
-    blockHtml = `
-      <div class="inspection-group mb-3 sm:mb-4 p-3 sm:p-4 border rounded bg-white">
-        <div class="font-semibold mb-2">${item.label}</div>
-        <ol class="list-decimal ml-5 space-y-1 text-sm">
-          ${item.inspections.map(i => `<li>${i}</li>`).join("")}
-        </ol>
-      </div>
-    `;
-  } else {
-    blockHtml = renderRequirementItem(item);
-  }
-
-  if (firstItem) {
-    html += blockHtml + `</div>`; // closes .section-start
-    firstItem = false;
-  } else {
-    html += blockHtml;
-  }
-
-});
-
+      <h2 class="font-semibold mb-3">${section.name}</h2>
+      ${itemBlocks[0]}
+    </div>`;
+    html += itemBlocks.slice(1).join("");
     html += `</div>`;
   });
 
@@ -1314,7 +1630,8 @@ if (shouldShowNoticeOfCommencement) {
   `;
 
   container.innerHTML = html;
-  resetChecklistScroll();
+  bindSmartChecklistControls();
+  if (shouldResetScroll) resetChecklistScroll();
 }
 
 </script>

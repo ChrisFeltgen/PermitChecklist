@@ -1,4 +1,55 @@
 {
+  "smartQuestions": [
+    {
+      "id": "propertyType",
+      "label": "Property Type",
+      "prompt": "What type of property is this?",
+      "emptyLabel": "Show full checklist",
+      "options": [
+        {
+          "value": "single_family",
+          "label": "Single Family"
+        },
+        {
+          "value": "two_family",
+          "label": "Two-Family / Duplex"
+        },
+        {
+          "value": "townhouse",
+          "label": "Townhouse"
+        },
+        {
+          "value": "multi_family",
+          "label": "Multi-Family"
+        },
+        {
+          "value": "condo",
+          "label": "Condo"
+        },
+        {
+          "value": "commercial",
+          "label": "Commercial"
+        }
+      ]
+    }
+  ],
+  "smartRules": {
+    "firePlanReviewPropertyTypes": {
+      "propertyType": [
+        "multi_family",
+        "condo",
+        "commercial"
+      ]
+    },
+    "hoaCondoApprovalPropertyTypes": {
+      "propertyType": [
+        "two_family",
+        "townhouse",
+        "multi_family",
+        "condo"
+      ]
+    }
+  },
   "library": {
     "app_building": {
       "name": "Building Permit Application",
@@ -63,6 +114,8 @@
     "app_fire": {
       "name": "Fire Plan Review Application",
       "description": "Required for projects in Multi-Family Buildings, Commercial, and Condominiums.",
+      "requiredWhen": "firePlanReviewPropertyTypes",
+      "notRequiredText": "Fire plan review is only required for Multi-Family, Commercial, and Condo projects.",
       "links": [
         {
           "label": "Fire Plan Review Application",
@@ -178,7 +231,9 @@
     },
     "req_hoa_approval": {
       "name": "HOA / Condo Approval Letter",
-      "description": "Required when work is performed on a property governed by a Homeowners Association (HOA) or condominium association. Submit a letter confirming the association has reviewed and approved the proposed work."
+      "description": "Required when work is performed on a property governed by a Homeowners Association (HOA) or condominium association. Submit a letter confirming the association has reviewed and approved the proposed work.",
+      "requiredWhen": "hoaCondoApprovalPropertyTypes",
+      "notRequiredText": "HOA / Condo approval is not required for Single Family or Commercial projects."
     },
     "req_product_approvals": {
       "name": "Product Approvals",

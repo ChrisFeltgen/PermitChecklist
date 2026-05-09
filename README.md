@@ -18,6 +18,7 @@ The first screen is the working checklist interface, not a landing page.
 - Property Type filters by `propertyType` values such as `Residential`, `Commercial`, and `Multi-Family`.
 - Category buttons are generated from each permit's `category` value. Current categories include `Building`, `Electrical`, `Mechanical`, and `Plumbing`.
 - Selecting a permit updates the URL with `?permit=<file>`, renders the checklist, and shows the Print Checklist button.
+- Selected checklists include a smart refinement panel. The full checklist is shown first; answering a project question can hide items that are not required or show them with a "Not required" badge.
 - Direct links also support hash navigation with `#<file>`.
 - On desktop, selecting a new permit scrolls the page back to the absolute top so the header and Print Checklist button are visible.
 
@@ -50,6 +51,7 @@ Printing uses the browser's native print dialog and print-specific CSS:
 - A print header with City of Pompano Beach branding is shown.
 - Checklist cards are simplified for paper.
 - Checkboxes remain visible for printed use.
+- If the checklist is refined, the printed version follows the selected display mode and includes the refinement summary.
 - Links are printed as plain black text.
 - Sections are styled to reduce awkward page breaks where possible.
 
@@ -64,15 +66,19 @@ If the production deployment stores the JSON somewhere else, update `DATA_FILE` 
 
 ## JSON Overview
 
-The JSON file has two top-level objects:
+The JSON file has these top-level objects:
 
 ```json
 {
+  "smartQuestions": [],
+  "smartRules": {},
   "library": {},
   "permits": []
 }
 ```
 
+- `smartQuestions` stores optional questions shown in the refinement panel.
+- `smartRules` stores named conditions that requirements can reference.
 - `library` stores reusable checklist items, usually application forms.
 - `permits` stores each permit type shown in the interface.
 
@@ -103,6 +109,8 @@ Available library item fields:
 - `description` - Optional supporting text.
 - `links` - Optional array of link objects.
 - `variant` - Optional display style. Use `notice` for a yellow notice-style requirement box.
+- `requiredWhen` - Optional smart rule name or inline condition object. If the answered conditions do not match, the item is not required.
+- `notRequiredText` - Optional explanation shown when the item is marked not required.
 
 ## Link Objects
 
@@ -119,6 +127,52 @@ Available link fields:
 
 - `label` - Text shown to the user.
 - `url` - Link target. External links open in a new tab.
+
+## Smart Checklist Rules
+
+Smart refinement is optional. Until the user answers a question, the app shows the full checklist.
+
+Questions are defined in `smartQuestions`:
+
+```json
+{
+  "id": "propertyType",
+  "label": "Property Type",
+  "emptyLabel": "Show full checklist",
+  "options": [
+    {
+      "value": "single_family",
+      "label": "Single Family"
+    }
+  ]
+}
+```
+
+Reusable rule sets are defined in `smartRules`:
+
+```json
+{
+  "firePlanReviewPropertyTypes": {
+    "propertyType": [
+      "multi_family",
+      "condo",
+      "commercial"
+    ]
+  }
+}
+```
+
+Add `requiredWhen` to a library item, requirement item, or inspection group when that item is only required for certain answers. `requiredWhen` may be a named rule from `smartRules` or an inline object using question IDs.
+
+```json
+{
+  "id": "app_fire",
+  "requiredWhen": "firePlanReviewPropertyTypes",
+  "notRequiredText": "Fire plan review is only required for Multi-Family, Commercial, and Condo projects."
+}
+```
+
+When answered conditions do not match, the item can be hidden or displayed with a "Not required" badge. If a rule depends on a question that has not been answered, the item remains visible.
 
 ## Permit Fields
 
@@ -263,6 +317,8 @@ Available fields:
 - `description` - Optional. Overrides the library item's description for this permit only.
 - `links` - Optional. Overrides the library item's links for this permit only.
 - `variant` - Optional. Overrides the library item's display style for this permit only.
+- `requiredWhen` - Optional. Overrides or adds smart rule logic for this reference only.
+- `notRequiredText` - Optional. Overrides the not-required explanation for this reference only.
 
 If the `id` is not found in `library`, the app displays the raw `id` as the item name.
 
@@ -291,6 +347,8 @@ Available fields:
 - `value` - Optional fallback display name if `label` is not used.
 - `description` - Optional supporting text.
 - `links` - Optional array of link objects.
+- `requiredWhen` - Optional smart rule name or inline condition object.
+- `notRequiredText` - Optional explanation shown when the item is marked not required.
 
 ### Inspection Group Item
 
@@ -312,6 +370,8 @@ Available fields:
 - `type` - Required. Must be `inspection_group`.
 - `label` - Required. Heading for the inspection group.
 - `inspections` - Required. Array of inspection names.
+- `requiredWhen` - Optional smart rule name or inline condition object.
+- `notRequiredText` - Optional explanation shown when the inspection group is marked not required.
 
 ## Adding A New Permit
 
@@ -320,8 +380,9 @@ Available fields:
 3. Give it a unique `file` value. This becomes the direct-link key.
 4. Add `name`, `category`, optional `propertyType`, and any callout fields.
 5. Add sections with items.
-6. Validate that `data/checklists.json` is still valid JSON.
-7. Open the page locally and confirm the permit appears in search, filters, details, and print preview.
+6. Add `requiredWhen` rules to any item that only applies to certain smart-question answers.
+7. Validate that `data/checklists.json` is still valid JSON.
+8. Open the page locally and confirm the permit appears in search, filters, details, smart refinement, and print preview.
 
 ## Editing Existing Permits
 
@@ -329,7 +390,7 @@ Available fields:
 - Use `lastUpdated` when content changes are meaningful to users.
 - Prefer library items for repeated applications and forms.
 - Use permit-specific `description` overrides when the same library item needs different wording in one checklist.
-- Avoid duplicate permit entries for nearly identical scopes; combine them with `whenPermitRequired`, `hintTitle`, `hint`, and conditional descriptions where possible.
+- Avoid duplicate permit entries for nearly identical scopes; combine them with `whenPermitRequired`, `hintTitle`, `hint`, and smart rules where possible.
 
 ## Filtering Rules
 
