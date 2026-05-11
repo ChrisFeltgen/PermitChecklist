@@ -297,6 +297,15 @@
       font-weight: 500;
     }
 
+    .permit-button {
+      border-color: #e2e8f0;
+      font-size: 0.92rem;
+    }
+
+    .permit-button:not([aria-current="true"]) {
+      color: #334155;
+    }
+
     .permit-button--deprioritized {
       opacity: 0.58;
     }
@@ -320,17 +329,17 @@
       border-radius: 999px;
       background: #f8fafc;
       color: #475569;
-      font-size: 0.68rem;
+      font-size: 0.6rem;
       font-weight: 700;
       line-height: 1;
-      padding: 0.23rem 0.45rem;
+      padding: 0.2rem 0.38rem;
       text-transform: uppercase;
     }
 
     .permit-badge--project {
-      border-color: rgba(42, 118, 141, 0.24);
-      background: rgba(42, 118, 141, 0.09);
-      color: var(--city-blue);
+      border-color: var(--city-blue);
+      background: var(--city-blue);
+      color: #fff;
     }
 
     .permit-button[aria-current="true"] .permit-badge {
@@ -367,6 +376,58 @@
     .project-discovery-button--selected:hover,
     .project-discovery-button--selected:focus-visible {
       color: #fff;
+    }
+
+    .property-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .property-choice-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .property-choice-button {
+      min-height: 3rem;
+      border: 1px solid #cbd5dc;
+      border-bottom: 3px solid var(--city-blue);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--city-ink);
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .property-choice-button:hover,
+    .property-choice-button:focus-visible {
+      border-color: var(--city-blue);
+      color: var(--city-blue);
+      outline: none;
+    }
+
+    .property-choice-button--selected {
+      border-color: var(--city-blue);
+      background: var(--city-blue);
+      color: #fff;
+    }
+
+    .property-choice-button--selected:hover,
+    .property-choice-button--selected:focus-visible {
+      color: #fff;
+    }
+
+    .results-note {
+      border: 1px solid #d7e2e6;
+      border-radius: 4px;
+      background: #f8fafc;
+      color: #475569;
+      font-size: 0.78rem;
+      padding: 0.55rem 0.65rem;
     }
 
     .landing-step {
@@ -612,7 +673,7 @@
 
     #permitList {
       min-height: 0;
-      max-height: 30rem;
+      max-height: 22rem;
     }
 
     #permitList,
@@ -623,7 +684,7 @@
 
     @media (min-width: 768px) {
       #permitList {
-        max-height: calc(100dvh - 16rem);
+        max-height: calc(100dvh - 18rem);
       }
 
       #checklistPanel {
@@ -632,6 +693,14 @@
     }
 
     @media (max-width: 767px) {
+      .filters-panel {
+        order: 2;
+      }
+
+      #checklistPanel {
+        order: 1;
+      }
+
       .category-grid {
         display: grid !important;
         gap: 0.5rem;
@@ -962,21 +1031,26 @@
         <input id="searchInput" placeholder="Search projects..." class="min-h-11 w-full rounded border p-2" />
         <button id="clearSearch" aria-label="Clear search" class="min-h-11 rounded border bg-gray-100 px-3 text-sm">Clear</button>
       </div>
+      <div class="-mt-2 mb-3 text-xs text-gray-500">Search by project: fence, windows, seawall, kitchen remodel...</div>
 
       <div id="permitOptionsControls" class="mb-3 flex items-center justify-between gap-3">
         <div id="permitInlineLabel" class="text-base font-semibold text-gray-700">Find a Project:</div>
         <button id="toggleMoreOptions" type="button" aria-controls="moreOptionsPanel" aria-expanded="false" class="min-h-10 shrink-0 rounded border bg-white px-3 text-sm font-medium text-gray-700">
-          More Options
+          Project Filters
         </button>
       </div>
 
       <div id="moreOptionsPanel" class="hidden mb-4 rounded border bg-white p-3">
         <div class="mb-3 sm:mb-4">
-          <label for="propertyTypeFilter" class="mb-1 block text-xs font-semibold uppercase text-gray-500">Prioritize by Applicability</label>
+          <label for="propertyTypeFilter" class="mb-1 block text-xs font-semibold uppercase text-gray-500">Property Type</label>
           <select id="propertyTypeFilter" aria-label="Property Type Filter" class="themed-select">
-            <option value="All">Show All Projects</option>
-            <option value="Residential">Prioritize Residential</option>
-            <option value="Commercial">Prioritize Commercial</option>
+            <option value="All">All Property Types</option>
+            <option value="single_family">Single Family</option>
+            <option value="two_family">Two-Family / Duplex</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="multi_family">Multi-Family</option>
+            <option value="condo">Condo</option>
+            <option value="commercial">Commercial</option>
           </select>
         </div>
 
@@ -1023,6 +1097,24 @@ const COMMON_PROJECTS = [
   { label: "Pool", file: "swimming_pool_(new)" },
   { label: "Generator", file: "generator" },
   { label: "Seawall", file: "seawall" }
+];
+
+const RESIDENTIAL_RECOMMENDED_PROJECTS = [
+  { label: "A/C Changeout", file: "ac_changeout" },
+  { label: "Windows & Doors", file: "window_door_changeouts" },
+  { label: "Fence", file: "fence" },
+  { label: "Roof", file: "reroof" },
+  { label: "Pool", file: "swimming_pool_(new)" },
+  { label: "Generator", file: "generator" }
+];
+
+const COMMERCIAL_RECOMMENDED_PROJECTS = [
+  { label: "A/C Changeout", file: "ac_changeout" },
+  { label: "Interior Buildout", file: "interior_buildout" },
+  { label: "Change of Use", file: "change_of_use" },
+  { label: "Hood System", file: "hood_system" },
+  { label: "Sign", file: "sign" },
+  { label: "Commercial Refrigeration", file: "commercial_refrigeration" }
 ];
 
 const PROJECT_TYPE_GROUPS = [
@@ -1100,6 +1192,7 @@ const PERMIT_KEYWORDS = {
   dock: ["boat dock", "waterfront", "marine"],
   fence: ["fencing", "gate", "privacy fence"],
   generator: ["standby generator", "backup power"],
+  kitchen_bath_renovation: ["kitchen remodel", "bathroom remodel", "bath remodel"],
   reroof: ["roof", "roofing", "re-roof"],
   seawall: ["sea wall", "waterfront", "shoreline", "bulkhead"],
   shutters: ["hurricane shutters", "storm protection"],
@@ -1123,7 +1216,8 @@ let state = {
   selectedFile: null,
   selectedCategory: null,
   activeProjectType: "All",
-  propertyType: "All"
+  propertyType: "All",
+  showAllPermits: true
 };
 
 function getTargetPermit() {
@@ -1182,12 +1276,14 @@ function bindSearch() {
 
   input.addEventListener("input", () => {
     state.activeProjectType = "All";
+    state.showAllPermits = true;
     renderAll();
   });
 
   clearBtn.addEventListener("click", () => {
     input.value = "";
     state.activeProjectType = "All";
+    state.showAllPermits = true;
     state.selectedPermit = null;
     state.selectedFile = null;
     state.selectedCategory = null;
@@ -1205,7 +1301,14 @@ function bindSearch() {
 function bindPropertyFilter() {
   document.getElementById("propertyTypeFilter").addEventListener("change", (e) => {
     state.propertyType = e.target.value;
+    state.showAllPermits = true;
+    if (state.propertyType === "All") {
+      delete state.smartAnswers.propertyType;
+    } else {
+      state.smartAnswers.propertyType = state.propertyType;
+    }
     renderPermitList();
+    renderContent({ resetScroll: false });
     syncScrollablePanelHeights();
   });
 }
@@ -1226,7 +1329,7 @@ function setPermitOptionsOpen(isOpen) {
   if (!button || !panel) return;
 
   button.setAttribute("aria-expanded", String(isOpen));
-  button.textContent = isOpen ? "Hide Options" : "More Options";
+  button.textContent = isOpen ? "Hide Filters" : "Project Filters";
   panel.classList.toggle("hidden", !isOpen);
 
   const filtersPanel = panel.closest(".filters-panel");
@@ -1388,6 +1491,14 @@ function getCategories(permit) {
 }
 
 function getProjectTypes(permit) {
+  if (permit.projectType) {
+    const projectTypes = Array.isArray(permit.projectType)
+      ? permit.projectType
+      : [permit.projectType];
+
+    return projectTypes.filter(Boolean);
+  }
+
   const categories = getCategories(permit);
   const projectTypes = PROJECT_TYPE_GROUPS
     .filter(group => {
@@ -1401,19 +1512,28 @@ function getProjectTypes(permit) {
 }
 
 function getPreferredPropertyGroup() {
-  if (state.propertyType !== "All") return state.propertyType;
+  const normalizePropertyGroup = value => {
+    const residentialValues = [
+      "single_family",
+      "two_family",
+      "townhouse",
+      "multi_family",
+      "condo",
+      "Residential"
+    ];
+
+    if (value === "commercial" || value === "Commercial") return "Commercial";
+    if (residentialValues.includes(value)) return "Residential";
+    return "All";
+  };
+
+  const selectedPropertyGroup = normalizePropertyGroup(state.propertyType);
+  if (selectedPropertyGroup !== "All") return selectedPropertyGroup;
 
   const propertyAnswer = state.smartAnswers.propertyType;
-  const residentialAnswers = [
-    "single_family",
-    "two_family",
-    "townhouse",
-    "multi_family",
-    "condo"
-  ];
+  const answerPropertyGroup = normalizePropertyGroup(propertyAnswer);
 
-  if (propertyAnswer === "commercial") return "Commercial";
-  if (residentialAnswers.includes(propertyAnswer)) return "Residential";
+  if (answerPropertyGroup !== "All") return answerPropertyGroup;
 
   return "All";
 }
@@ -1453,11 +1573,35 @@ function selectPermit(permit, behavior = "smooth") {
   scrollToContentOnDesktop(behavior);
 }
 
-function selectPermitByFile(file, behavior = "smooth") {
-  const permit = state.permits.find(item => item.file === file);
-  if (permit) {
-    selectPermit(permit, behavior);
+function getProjectShortcutPermits(projects) {
+  return projects
+    .map(project => {
+      const permit = state.permits.find(item => item.file === project.file);
+      return permit ? { ...project, permit } : null;
+    })
+    .filter(Boolean);
+}
+
+function getRecommendedProjects() {
+  const preferredProperty = getPreferredPropertyGroup();
+
+  if (preferredProperty === "Commercial") {
+    return getProjectShortcutPermits(COMMERCIAL_RECOMMENDED_PROJECTS);
   }
+
+  if (preferredProperty === "Residential") {
+    return getProjectShortcutPermits(RESIDENTIAL_RECOMMENDED_PROJECTS);
+  }
+
+  return getProjectShortcutPermits(COMMON_PROJECTS);
+}
+
+function getPermitListMode(filter) {
+  if (filter) return "search";
+  if (state.activeProjectType !== "All") return "project";
+  if (state.showAllPermits) return "all";
+  if (state.selectedPermit) return "related";
+  return "suggested";
 }
 
 function renderAll() {
@@ -1489,6 +1633,7 @@ function renderCategoryTabs() {
   allBtn.textContent = "All Projects";
   allBtn.onclick = () => {
     state.activeProjectType = "All";
+    state.showAllPermits = true;
     renderAll();
   };
   container.appendChild(allBtn);
@@ -1502,6 +1647,7 @@ function renderCategoryTabs() {
     btn.textContent = group.label;
     btn.onclick = () => {
       state.activeProjectType = group.label;
+      state.showAllPermits = true;
       renderAll();
     };
     grid.appendChild(btn);
@@ -1512,11 +1658,39 @@ function renderCategoryTabs() {
 
 function renderPermitList() {
   const container = document.getElementById("permitList");
+  const header = document.getElementById("permitListHeader");
   const filter = document.getElementById("searchInput").value.trim().toLowerCase();
+  const mode = getPermitListMode(filter);
 
   container.innerHTML = "";
 
-  const filtered = state.permits
+  if (header) {
+    if (mode === "suggested") {
+      header.textContent = "Suggested Projects:";
+    } else if (mode === "search") {
+      header.textContent = "Search Results:";
+    } else if (mode === "project") {
+      header.textContent = `${state.activeProjectType} Projects:`;
+    } else if (mode === "related") {
+      header.textContent = "Related Projects:";
+    } else {
+      header.textContent = "All Projects:";
+    }
+  }
+
+  let permits = state.permits;
+  if (mode === "suggested") {
+    const recommendedFiles = new Set(getRecommendedProjects().map(project => project.file));
+    permits = state.permits.filter(permit => recommendedFiles.has(permit.file));
+  } else if (mode === "related" && state.selectedPermit) {
+    const selectedProjectTypes = getProjectTypes(state.selectedPermit);
+    permits = state.permits.filter(permit =>
+      permit.file === state.selectedPermit.file ||
+      getProjectTypes(permit).some(projectType => selectedProjectTypes.includes(projectType))
+    );
+  }
+
+  const filtered = permits
     .map((permit, index) => ({
       permit,
       index,
@@ -1544,6 +1718,48 @@ function renderPermitList() {
     return;
   }
 
+  if (mode === "suggested") {
+    const note = document.createElement("div");
+    note.className = "results-note mb-2";
+    note.innerHTML = `
+      <div class="font-semibold text-gray-700">Recommended starting points</div>
+      <div class="mt-1">Use the guided options in the main panel, or browse the full permit catalog.</div>
+      <button id="browseAllPermits" type="button" class="mt-2 rounded border bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700">
+        Browse All Permits
+      </button>
+    `;
+    container.appendChild(note);
+
+    const browseAll = note.querySelector("#browseAllPermits");
+    browseAll.addEventListener("click", () => {
+      state.showAllPermits = true;
+      renderPermitList();
+      syncScrollablePanelHeights();
+    });
+  } else if (mode === "project") {
+    const note = document.createElement("div");
+    note.className = "results-note mb-2";
+    note.textContent = `Showing ${state.activeProjectType.toLowerCase()} project matches.`;
+    container.appendChild(note);
+  } else if (mode === "related") {
+    const note = document.createElement("div");
+    note.className = "results-note mb-2";
+    note.innerHTML = `
+      <div>Showing projects related to the selected checklist.</div>
+      <button id="browseAllPermits" type="button" class="mt-2 rounded border bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700">
+        Browse All Permits
+      </button>
+    `;
+    container.appendChild(note);
+
+    const browseAll = note.querySelector("#browseAllPermits");
+    browseAll.addEventListener("click", () => {
+      state.showAllPermits = true;
+      renderPermitList();
+      syncScrollablePanelHeights();
+    });
+  }
+
   filtered.forEach(({ permit, matchesPreferredProperty }) => {
     const btn = document.createElement("button");
     const isSelected = state.selectedFile === permit.file;
@@ -1551,12 +1767,9 @@ function renderPermitList() {
     const projectBadges = getProjectTypes(permit).slice(0, 2).map(projectType => `
       <span class="permit-badge permit-badge--project">${escapeHtml(projectType)}</span>
     `).join("");
-    const propertyBadges = (permit.propertyType || []).map(propertyType => `
-      <span class="permit-badge">${escapeHtml(propertyType)}</span>
-    `).join("");
 
     btn.className = [
-      "permit-button w-full text-left rounded border px-3 py-3 md:py-2 transition-colors",
+      "permit-button w-full text-left rounded border px-2.5 py-2 transition-colors",
       isSelected ? "city-blue-bg text-white" : "bg-white hover:bg-gray-100",
       !matchesPreferredProperty && !isSelected ? "permit-button--deprioritized" : ""
     ].filter(Boolean).join(" ");
@@ -1567,10 +1780,10 @@ function renderPermitList() {
     btn.innerHTML = `
       <div class="permit-button__name leading-snug">${escapeHtml(permit.name)}</div>
       <div class="permit-meta text-xs mt-1 ${isSelected ? "text-white" : "text-gray-500"}">
-        <div class="permit-badges mt-2">
-          ${projectBadges}${propertyBadges}
+        <div class="permit-badges mt-1">
+          ${projectBadges}
         </div>
-        ${!matchesPreferredProperty ? `<div class="mt-2">Still available for edge cases or mixed-use projects.</div>` : ""}
+        ${!matchesPreferredProperty ? `<div class="mt-1">Also available</div>` : ""}
       </div>
     `;
 
@@ -1653,6 +1866,27 @@ function renderSmartQuestionControl(question, options = {}) {
     </option>
   `).join("");
 
+  if (options.prominent && question.id === "propertyType") {
+    const optionButtons = (question.options || []).map(option => {
+      const isSelected = selectedAnswer === option.value;
+      return `
+        <button type="button" class="property-choice-button ${isSelected ? "property-choice-button--selected" : ""}" data-smart-question="${escapeHtml(question.id)}" data-smart-answer="${escapeHtml(option.value)}" aria-pressed="${isSelected ? "true" : "false"}">
+          ${escapeHtml(option.label)}
+        </button>
+      `;
+    }).join("");
+
+    return `
+      <div class="welcome-question-card block min-w-0 p-3">
+        <div class="mb-1 text-base font-semibold city-blue-text">${escapeHtml(prompt)}</div>
+        <div class="mb-3 text-sm text-gray-600">${escapeHtml(label)}</div>
+        <div class="property-choice-grid">
+          ${optionButtons}
+        </div>
+      </div>
+    `;
+  }
+
   if (options.prominent) {
     return `
       <label class="welcome-question-card block min-w-0 p-3">
@@ -1688,6 +1922,14 @@ function setSmartAnswer(questionId, answer) {
     state.smartAnswers[questionId] = answer;
   } else {
     delete state.smartAnswers[questionId];
+  }
+
+  if (questionId === "propertyType") {
+    state.propertyType = answer || "All";
+    const propertyTypeFilter = document.getElementById("propertyTypeFilter");
+    if (propertyTypeFilter) {
+      propertyTypeFilter.value = state.propertyType;
+    }
   }
 }
 
@@ -1728,10 +1970,19 @@ function bindSmartQuestionMenuDismissal() {
 }
 
 function bindSmartAnswerControls(container) {
-  container.querySelectorAll("[data-smart-question]").forEach(select => {
+  container.querySelectorAll("select[data-smart-question]").forEach(select => {
     select.addEventListener("change", event => {
       const questionId = event.currentTarget.getAttribute("data-smart-question");
       setSmartAnswer(questionId, event.currentTarget.value);
+      refreshSmartAnswerViews();
+    });
+  });
+
+  container.querySelectorAll("[data-smart-answer]").forEach(button => {
+    button.addEventListener("click", event => {
+      const questionId = event.currentTarget.getAttribute("data-smart-question");
+      const answer = event.currentTarget.getAttribute("data-smart-answer");
+      setSmartAnswer(questionId, state.smartAnswers[questionId] === answer ? "" : answer);
       refreshSmartAnswerViews();
     });
   });
@@ -2042,19 +2293,16 @@ function renderWelcomeQuestionPanel() {
 }
 
 function renderProjectDiscoveryPanel() {
-  const commonProjectButtons = COMMON_PROJECTS
-    .filter(project => state.permits.some(permit => permit.file === project.file))
-    .map(project => `
-      <button type="button" class="project-discovery-button min-h-11 px-3 py-2 text-sm font-medium" data-common-project="${escapeHtml(project.file)}">
-        ${escapeHtml(project.label)}
-      </button>
-    `).join("");
+  const activeProjectCount = state.activeProjectType === "All"
+    ? 0
+    : state.permits.filter(permit => getProjectTypes(permit).includes(state.activeProjectType)).length;
 
   const projectTypeButtons = PROJECT_TYPE_GROUPS.map(group => {
     const isSelected = state.activeProjectType === group.label;
     return `
       <button type="button" class="project-discovery-button ${isSelected ? "project-discovery-button--selected" : ""} min-h-11 px-3 py-2 text-sm font-medium" data-project-type="${escapeHtml(group.label)}" aria-pressed="${isSelected ? "true" : "false"}">
         ${escapeHtml(group.label)}
+        ${isSelected ? `<span class="mt-1 block text-xs font-normal">Selected</span>` : ""}
       </button>
     `;
   }).join("");
@@ -2065,7 +2313,7 @@ function renderProjectDiscoveryPanel() {
         <span class="landing-step__number" aria-hidden="true">2</span>
         <div>
           <div class="text-lg font-semibold city-blue-text">What are you working on?</div>
-          <p class="mt-1 text-sm text-gray-700">Browse by project type, then choose a common project shortcut or use search.</p>
+          <p class="mt-1 text-sm text-gray-700">Browse by project type or use search to narrow the project results.</p>
         </div>
       </div>
 
@@ -2074,29 +2322,22 @@ function renderProjectDiscoveryPanel() {
         <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
           ${projectTypeButtons}
         </div>
-      </div>
-
-      <div>
-        <div class="mb-2 text-xs font-semibold uppercase text-gray-500">Popular Projects</div>
-        <div class="grid grid-cols-2 gap-2 lg:grid-cols-3">
-          ${commonProjectButtons}
-        </div>
+        ${state.activeProjectType !== "All" ? `
+          <div class="mt-3 results-note">
+            Showing ${escapeHtml(state.activeProjectType)} projects (${activeProjectCount} match${activeProjectCount === 1 ? "" : "es"}). Select it again to clear the filter.
+          </div>
+        ` : ""}
       </div>
     </div>
   `;
 }
 
 function bindProjectDiscoveryControls() {
-  document.querySelectorAll("[data-common-project]").forEach(button => {
-    button.addEventListener("click", event => {
-      selectPermitByFile(event.currentTarget.getAttribute("data-common-project"));
-    });
-  });
-
   document.querySelectorAll("[data-project-type]").forEach(button => {
     button.addEventListener("click", event => {
       const projectType = event.currentTarget.getAttribute("data-project-type");
       state.activeProjectType = state.activeProjectType === projectType ? "All" : projectType;
+      state.showAllPermits = true;
       renderAll();
       setPermitOptionsOpen(false);
       scrollSelectedPermitIntoView("smooth");
@@ -2126,11 +2367,10 @@ function renderContent(options = {}) {
     container.innerHTML = `
       <div class="mb-4 rounded border bg-gray-50 p-3 sm:p-4 text-sm text-gray-600">
         <div class="text-lg font-semibold mb-2 text-gray-800">Prepare Your Checklist</div>
-        <p>Choose the property type first, then find the project that best matches the work.</p>
-        <ol class="mt-3 list-decimal ml-5 space-y-1">
-          <li>Choose the property type and any other project details you know.</li>
-          <li>Browse by project type, choose a popular project, or search for the work.</li>
-          <li>Your answers will be applied to every checklist you open, and you can update them from the checklist at any time.</li>
+        <ol class="list-decimal ml-5 space-y-1">
+          <li>Select property type.</li>
+          <li>Browse by project type or search.</li>
+          <li>Open a checklist.</li>
         </ol>
       </div>
 
