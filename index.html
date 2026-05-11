@@ -297,6 +297,110 @@
       font-weight: 500;
     }
 
+    .permit-button--deprioritized {
+      opacity: 0.58;
+    }
+
+    .permit-button--deprioritized:hover,
+    .permit-button--deprioritized:focus-visible {
+      opacity: 1;
+    }
+
+    .permit-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .permit-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border: 1px solid #d7e2e6;
+      border-radius: 999px;
+      background: #f8fafc;
+      color: #475569;
+      font-size: 0.68rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: 0.23rem 0.45rem;
+      text-transform: uppercase;
+    }
+
+    .permit-badge--project {
+      border-color: rgba(42, 118, 141, 0.24);
+      background: rgba(42, 118, 141, 0.09);
+      color: var(--city-blue);
+    }
+
+    .permit-button[aria-current="true"] .permit-badge {
+      border-color: rgba(255, 255, 255, 0.48);
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+    }
+
+    .project-discovery-button {
+      border: 1px solid #cbd5dc;
+      border-bottom: 3px solid var(--city-blue);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--city-ink);
+      text-align: left;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+    }
+
+    .project-discovery-button:hover,
+    .project-discovery-button:focus-visible {
+      border-color: var(--city-blue);
+      box-shadow: 0 4px 14px rgba(31, 41, 51, 0.12);
+      color: var(--city-blue);
+      outline: none;
+    }
+
+    .project-discovery-button--selected {
+      border-color: var(--city-blue);
+      background: var(--city-blue);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(31, 41, 51, 0.14);
+    }
+
+    .project-discovery-button--selected:hover,
+    .project-discovery-button--selected:focus-visible {
+      color: #fff;
+    }
+
+    .landing-step {
+      border: 1px solid #d7e2e6;
+      border-radius: 6px;
+      background: #fff;
+      padding: 1rem;
+    }
+
+    .landing-step--primary {
+      border-color: rgba(42, 118, 141, 0.55);
+      background: rgba(42, 118, 141, 0.08);
+    }
+
+    .landing-step__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .landing-step__number {
+      display: inline-grid;
+      place-items: center;
+      width: 1.75rem;
+      height: 1.75rem;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: var(--city-blue);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
     .special-requirement--notice {
       background: #fffbeb;
       border-color: #fbbf24;
@@ -309,10 +413,160 @@
 
     .smart-refine-panel {
       border-color: #cbd5dc;
+      overflow: visible;
+      position: relative;
     }
 
     .smart-refine__summary {
       color: #4b5563;
+    }
+
+    .smart-refine__toggle {
+      border: 1px solid var(--city-blue);
+      border-bottom: 3px solid var(--city-blue);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--city-blue);
+      font-weight: 700;
+    }
+
+    .smart-refine__toggle:focus {
+      outline: 3px solid rgba(42, 118, 141, 0.28);
+      outline-offset: 2px;
+    }
+
+    .smart-refine__menu {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      right: 0;
+      z-index: 40;
+      border: 1px solid #cbd5dc;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 18px 42px rgba(31, 41, 51, 0.2);
+    }
+
+    .display-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      min-height: 2.75rem;
+      border: 1px solid #cbd5dc;
+      border-bottom: 3px solid var(--city-blue);
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      padding: 0.55rem 0.75rem;
+    }
+
+    .display-toggle__text {
+      color: var(--city-ink);
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+
+    .display-toggle__input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .display-toggle__track {
+      position: relative;
+      width: 2.8rem;
+      height: 1.5rem;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: #cbd5e1;
+      transition: background-color 0.2s ease;
+    }
+
+    .display-toggle__track::after {
+      content: "";
+      position: absolute;
+      top: 0.18rem;
+      left: 0.18rem;
+      width: 1.14rem;
+      height: 1.14rem;
+      border-radius: 999px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(31, 41, 51, 0.24);
+      transition: transform 0.2s ease;
+    }
+
+    .display-toggle__input:checked + .display-toggle__track {
+      background: var(--city-blue);
+    }
+
+    .display-toggle__input:checked + .display-toggle__track::after {
+      transform: translateX(1.3rem);
+    }
+
+    .display-toggle:focus-within {
+      outline: 3px solid rgba(42, 118, 141, 0.28);
+      outline-offset: 2px;
+    }
+
+    .display-toggle--disabled {
+      cursor: not-allowed;
+      opacity: 0.65;
+    }
+
+    .welcome-question-card {
+      border: 1px solid rgba(42, 118, 141, 0.45);
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(31, 41, 51, 0.12);
+    }
+
+    .themed-select {
+      appearance: none;
+      -webkit-appearance: none;
+      display: block;
+      width: 100%;
+      min-height: 2.75rem;
+      border: 1px solid #64748b;
+      border-bottom: 3px solid var(--city-blue);
+      border-radius: 4px;
+      background-color: #fff;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='white' d='M1.41 0 6 4.58 10.59 0 12 1.41 6 7.41 0 1.41z'/%3E%3C/svg%3E"),
+        linear-gradient(to right, var(--city-blue), var(--city-blue)),
+        linear-gradient(#fff, #f8fafc);
+      background-position:
+        calc(100% - 1.25rem) 50%,
+        100% 0,
+        0 0;
+      background-repeat: no-repeat;
+      background-size:
+        0.75rem 0.5rem,
+        2.5rem 100%,
+        100% 100%;
+      color: var(--city-ink);
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 400;
+      padding: 0.6rem 3.5rem 0.6rem 0.75rem;
+      box-shadow: inset 0 1px 2px rgba(31, 41, 51, 0.08);
+    }
+
+    .themed-select:focus {
+      outline: 3px solid rgba(42, 118, 141, 0.28);
+      outline-offset: 2px;
+    }
+
+    .themed-select:disabled {
+      cursor: not-allowed;
+      opacity: 0.65;
+    }
+
+    .welcome-question-select {
+      min-height: 3rem;
+      font-size: 1rem;
     }
 
     .check-item--not-required,
@@ -339,6 +593,13 @@
       line-height: 1;
       padding: 0.25rem 0.5rem;
       text-transform: uppercase;
+    }
+
+    .not-required-title {
+      color: #64748b;
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+      text-decoration-color: #94a3b8;
     }
 
     .filters-panel:not(.options-open) #permitListHeader {
@@ -580,7 +841,9 @@
     padding: 6px !important;
   }
 
-  .smart-refine__controls {
+  .smart-refine__controls,
+  .smart-refine__menu,
+  .smart-refine__toggle {
     display: none !important;
   }
 
@@ -696,12 +959,12 @@
       <div class="screen-title md:hidden mb-3 text-xl font-semibold leading-tight">Permit Application Checklists</div>
 
       <div class="mb-3 sm:mb-4 flex gap-2">
-        <input id="searchInput" placeholder="Search permit type..." class="min-h-11 w-full rounded border p-2" />
+        <input id="searchInput" placeholder="Search projects..." class="min-h-11 w-full rounded border p-2" />
         <button id="clearSearch" aria-label="Clear search" class="min-h-11 rounded border bg-gray-100 px-3 text-sm">Clear</button>
       </div>
 
       <div id="permitOptionsControls" class="mb-3 flex items-center justify-between gap-3">
-        <div id="permitInlineLabel" class="text-base font-semibold text-gray-700">Select Permit Type:</div>
+        <div id="permitInlineLabel" class="text-base font-semibold text-gray-700">Find a Project:</div>
         <button id="toggleMoreOptions" type="button" aria-controls="moreOptionsPanel" aria-expanded="false" class="min-h-10 shrink-0 rounded border bg-white px-3 text-sm font-medium text-gray-700">
           More Options
         </button>
@@ -709,17 +972,18 @@
 
       <div id="moreOptionsPanel" class="hidden mb-4 rounded border bg-white p-3">
         <div class="mb-3 sm:mb-4">
-          <select id="propertyTypeFilter" aria-label="Property Type Filter" class="min-h-11 w-full rounded border p-2 text-sm">
-            <option value="All">All Property Types</option>
-            <option value="Residential">Residential</option>
-            <option value="Commercial">Commercial</option>
+          <label for="propertyTypeFilter" class="mb-1 block text-xs font-semibold uppercase text-gray-500">Prioritize by Applicability</label>
+          <select id="propertyTypeFilter" aria-label="Property Type Filter" class="themed-select">
+            <option value="All">Show All Projects</option>
+            <option value="Residential">Prioritize Residential</option>
+            <option value="Commercial">Prioritize Commercial</option>
           </select>
         </div>
 
         <div id="categoryTabs"></div>
       </div>
 
-      <div id="permitListHeader" class="mb-2 text-base font-semibold text-gray-700">Select Permit Type:</div>
+      <div id="permitListHeader" class="mb-2 text-base font-semibold text-gray-700">Project Results:</div>
 
       <div id="permitList" class="space-y-2 md:space-y-1 overflow-y-auto pr-1"></div>
 
@@ -751,6 +1015,102 @@ const DATA_FILE = isLocal
   : "../../../../assets/json/checklists.json";
 // Data File (Development vs Production) //
 
+const COMMON_PROJECTS = [
+  { label: "A/C Changeout", file: "ac_changeout" },
+  { label: "Windows & Doors", file: "window_door_changeouts" },
+  { label: "Fence", file: "fence" },
+  { label: "Roof", file: "reroof" },
+  { label: "Pool", file: "swimming_pool_(new)" },
+  { label: "Generator", file: "generator" },
+  { label: "Seawall", file: "seawall" }
+];
+
+const PROJECT_TYPE_GROUPS = [
+  {
+    label: "Exterior",
+    files: [
+      "awning_canopy",
+      "door_infill",
+      "fence",
+      "gazebo_pergola",
+      "reroof",
+      "shutters",
+      "sign",
+      "storage_shed",
+      "tiki_hut",
+      "window_door_changeouts"
+    ]
+  },
+  {
+    label: "Interior",
+    files: [
+      "flooring_sound_barrier",
+      "interior_buildout",
+      "kitchen_bath_renovation",
+      "tub_to_shower_conversion"
+    ]
+  },
+  {
+    label: "Waterfront",
+    files: [
+      "dock",
+      "seawall"
+    ]
+  },
+  {
+    label: "Site Work",
+    files: [
+      "asphalt_restriping",
+      "concrete_slab",
+      "driveway_patio",
+      "dumpster_enclosure",
+      "erosion_control",
+      "light_poles",
+      "site_work"
+    ]
+  },
+  {
+    label: "New Construction",
+    files: [
+      "additions",
+      "building_shell",
+      "commercial_building",
+      "foundation_only",
+      "mobile_home",
+      "single_family_residence_new",
+      "townhomes"
+    ]
+  },
+  {
+    label: "Mechanical",
+    categories: ["Mechanical"]
+  },
+  {
+    label: "Electrical",
+    categories: ["Electrical"]
+  },
+  {
+    label: "Plumbing",
+    categories: ["Plumbing"]
+  }
+];
+
+const PERMIT_KEYWORDS = {
+  ac_changeout: ["air conditioner", "a/c", "hvac", "change out"],
+  dock: ["boat dock", "waterfront", "marine"],
+  fence: ["fencing", "gate", "privacy fence"],
+  generator: ["standby generator", "backup power"],
+  reroof: ["roof", "roofing", "re-roof"],
+  seawall: ["sea wall", "waterfront", "shoreline", "bulkhead"],
+  shutters: ["hurricane shutters", "storm protection"],
+  swimming_pool_new: ["pool"],
+  "swimming_pool_(new)": ["pool", "spa"],
+  vehicle_charging_station: ["ev charger", "electric vehicle", "charging station"],
+  water_heater_changeout: ["water heater", "tank"],
+  water_heater_tankless: ["tankless", "water heater"],
+  window_door_changeouts: ["windows", "doors", "impact windows", "impact doors", "glazing"]
+};
+
 let state = {
   library: {},
   permits: [],
@@ -758,10 +1118,11 @@ let state = {
   smartRules: {},
   smartAnswers: {},
   smartDisplayMode: "hide",
+  smartQuestionMenuOpen: false,
   selectedPermit: null,
   selectedFile: null,
   selectedCategory: null,
-  activeCategory: "All",
+  activeProjectType: "All",
   propertyType: "All"
 };
 
@@ -781,6 +1142,7 @@ function init() {
   bindPermitOptions();
   bindPermitListSizing();
   bindEmptySpaceChecklistScrolling();
+  bindSmartQuestionMenuDismissal();
 }
 
 function loadData() {
@@ -819,16 +1181,17 @@ function bindSearch() {
   const clearBtn = document.getElementById("clearSearch");
 
   input.addEventListener("input", () => {
-    state.activeCategory = "All";
+    state.activeProjectType = "All";
     renderAll();
   });
 
   clearBtn.addEventListener("click", () => {
     input.value = "";
-    state.activeCategory = "All";
+    state.activeProjectType = "All";
     state.selectedPermit = null;
     state.selectedFile = null;
     state.selectedCategory = null;
+    state.smartQuestionMenuOpen = false;
 
     const url = new URL(window.location);
     url.searchParams.delete("permit");
@@ -1024,6 +1387,79 @@ function getCategories(permit) {
     : [permit.category || "Other"];
 }
 
+function getProjectTypes(permit) {
+  const categories = getCategories(permit);
+  const projectTypes = PROJECT_TYPE_GROUPS
+    .filter(group => {
+      const matchesFile = (group.files || []).includes(permit.file);
+      const matchesCategory = (group.categories || []).some(category => categories.includes(category));
+      return matchesFile || matchesCategory;
+    })
+    .map(group => group.label);
+
+  return Array.from(new Set(projectTypes.length ? projectTypes : categories));
+}
+
+function getPreferredPropertyGroup() {
+  if (state.propertyType !== "All") return state.propertyType;
+
+  const propertyAnswer = state.smartAnswers.propertyType;
+  const residentialAnswers = [
+    "single_family",
+    "two_family",
+    "townhouse",
+    "multi_family",
+    "condo"
+  ];
+
+  if (propertyAnswer === "commercial") return "Commercial";
+  if (residentialAnswers.includes(propertyAnswer)) return "Residential";
+
+  return "All";
+}
+
+function permitMatchesPreferredProperty(permit) {
+  const preferredProperty = getPreferredPropertyGroup();
+  const permitPropertyTypes = permit.propertyType || [];
+
+  if (preferredProperty === "All" || !permitPropertyTypes.length) return true;
+  return permitPropertyTypes.includes(preferredProperty);
+}
+
+function getPermitSearchText(permit) {
+  return [
+    permit.name,
+    permit.file,
+    ...getCategories(permit),
+    ...getProjectTypes(permit),
+    ...(permit.propertyType || []),
+    ...(PERMIT_KEYWORDS[permit.file] || [])
+  ].join(" ").toLowerCase();
+}
+
+function selectPermit(permit, behavior = "smooth") {
+  state.selectedPermit = permit;
+  state.selectedFile = permit.file;
+  state.selectedCategory = permit.category;
+  state.smartQuestionMenuOpen = false;
+
+  const url = new URL(window.location);
+  url.searchParams.set("permit", permit.file);
+  window.history.replaceState({}, "", url);
+
+  renderAll();
+  scrollSelectedPermitIntoView(behavior);
+  scrollToContentOnMobile(behavior);
+  scrollToContentOnDesktop(behavior);
+}
+
+function selectPermitByFile(file, behavior = "smooth") {
+  const permit = state.permits.find(item => item.file === file);
+  if (permit) {
+    selectPermit(permit, behavior);
+  }
+}
+
 function renderAll() {
   renderCategoryTabs();
   renderPermitList();
@@ -1043,18 +1479,16 @@ function renderCategoryTabs() {
   const container = document.getElementById("categoryTabs");
   container.innerHTML = "";
 
-  const categories = new Set();
-  state.permits.forEach(p => {
-    getCategories(p).forEach(c => {
-      if (c) categories.add(c.trim());
-    });
-  });
+  const heading = document.createElement("div");
+  heading.className = "mb-2 text-xs font-semibold uppercase text-gray-500";
+  heading.textContent = "Browse by Project Type";
+  container.appendChild(heading);
 
   const allBtn = document.createElement("button");
-  allBtn.className = `w-full min-h-11 mb-2 px-3 py-2 rounded border text-sm ${state.activeCategory === "All" ? "city-blue-bg text-white" : "bg-white"}`;
-  allBtn.textContent = "All";
+  allBtn.className = `w-full min-h-11 mb-2 px-3 py-2 rounded border text-sm ${state.activeProjectType === "All" ? "city-blue-bg text-white" : "bg-white"}`;
+  allBtn.textContent = "All Projects";
   allBtn.onclick = () => {
-    state.activeCategory = "All";
+    state.activeProjectType = "All";
     renderAll();
   };
   container.appendChild(allBtn);
@@ -1062,12 +1496,12 @@ function renderCategoryTabs() {
   const grid = document.createElement("div");
   grid.className = "category-grid grid grid-cols-2 gap-2";
 
-  Array.from(categories).sort().forEach(cat => {
+  PROJECT_TYPE_GROUPS.forEach(group => {
     const btn = document.createElement("button");
-    btn.className = `min-h-11 px-3 py-2 rounded border text-sm ${state.activeCategory === cat ? "city-blue-bg text-white" : "bg-white"}`;
-    btn.textContent = cat;
+    btn.className = `min-h-11 px-3 py-2 rounded border text-sm ${state.activeProjectType === group.label ? "city-blue-bg text-white" : "bg-white"}`;
+    btn.textContent = group.label;
     btn.onclick = () => {
-      state.activeCategory = cat;
+      state.activeProjectType = group.label;
       renderAll();
     };
     grid.appendChild(btn);
@@ -1078,63 +1512,70 @@ function renderCategoryTabs() {
 
 function renderPermitList() {
   const container = document.getElementById("permitList");
-  const filter = document.getElementById("searchInput").value.toLowerCase();
+  const filter = document.getElementById("searchInput").value.trim().toLowerCase();
 
   container.innerHTML = "";
 
-  const filtered = state.permits.filter(p => {
-    const matchesSearch = p.name.toLowerCase().includes(filter);
+  const filtered = state.permits
+    .map((permit, index) => ({
+      permit,
+      index,
+      matchesPreferredProperty: permitMatchesPreferredProperty(permit)
+    }))
+    .filter(({ permit }) => {
+      const matchesSearch = !filter || getPermitSearchText(permit).includes(filter);
 
-    const matchesCategory =
-      state.activeCategory === "All" ||
-      getCategories(p).includes(state.activeCategory);
+      const matchesProjectType =
+        state.activeProjectType === "All" ||
+        getProjectTypes(permit).includes(state.activeProjectType);
 
-    const matchesProperty =
-      state.propertyType === "All" ||
-      !p.propertyType ||
-      p.propertyType.includes(state.propertyType);
+      return matchesSearch && matchesProjectType;
+    })
+    .sort((a, b) => {
+      if (a.matchesPreferredProperty !== b.matchesPreferredProperty) {
+        return a.matchesPreferredProperty ? -1 : 1;
+      }
 
-    return matchesSearch && matchesCategory && matchesProperty;
-  });
+      return a.index - b.index;
+    });
 
   if (!filtered.length) {
     container.innerHTML = `<div class="text-gray-500 text-center">No results</div>`;
     return;
   }
 
-  filtered.forEach(permit => {
+  filtered.forEach(({ permit, matchesPreferredProperty }) => {
     const btn = document.createElement("button");
     const isSelected = state.selectedFile === permit.file;
 
-    const category = getCategories(permit).join(", ");
-    const property = (permit.propertyType || []).join(", ");
+    const projectBadges = getProjectTypes(permit).slice(0, 2).map(projectType => `
+      <span class="permit-badge permit-badge--project">${escapeHtml(projectType)}</span>
+    `).join("");
+    const propertyBadges = (permit.propertyType || []).map(propertyType => `
+      <span class="permit-badge">${escapeHtml(propertyType)}</span>
+    `).join("");
 
-    btn.className = `permit-button w-full text-left rounded border px-3 py-3 md:py-2 transition-colors ${isSelected ? "city-blue-bg text-white" : "bg-white hover:bg-gray-100"}`;
+    btn.className = [
+      "permit-button w-full text-left rounded border px-3 py-3 md:py-2 transition-colors",
+      isSelected ? "city-blue-bg text-white" : "bg-white hover:bg-gray-100",
+      !matchesPreferredProperty && !isSelected ? "permit-button--deprioritized" : ""
+    ].filter(Boolean).join(" ");
     if (isSelected) {
       btn.setAttribute("aria-current", "true");
     }
 
     btn.innerHTML = `
-      <div class="permit-button__name leading-snug">${permit.name}</div>
+      <div class="permit-button__name leading-snug">${escapeHtml(permit.name)}</div>
       <div class="permit-meta text-xs mt-1 ${isSelected ? "text-white" : "text-gray-500"}">
-        ${category}${property ? " - " + property : ""}
+        <div class="permit-badges mt-2">
+          ${projectBadges}${propertyBadges}
+        </div>
+        ${!matchesPreferredProperty ? `<div class="mt-2">Still available for edge cases or mixed-use projects.</div>` : ""}
       </div>
     `;
 
     btn.onclick = () => {
-      state.selectedPermit = permit;
-      state.selectedFile = permit.file;
-      state.selectedCategory = permit.category;
-
-      // Update URL.
-      const url = new URL(window.location);
-      url.searchParams.set("permit", permit.file);
-      window.history.replaceState({}, "", url);
-
-      renderAll();
-      scrollSelectedPermitIntoView("smooth");
-      scrollToContentOnMobile("smooth");
-      scrollToContentOnDesktop("smooth");
+      selectPermit(permit);
     };
 
     container.appendChild(btn);
@@ -1150,6 +1591,7 @@ window.addEventListener("hashchange", () => {
     state.selectedPermit = match;
     state.selectedFile = match.file;
     state.selectedCategory = match.category;
+    state.smartQuestionMenuOpen = false;
     renderAll();
     scrollSelectedPermitIntoView("auto");
     scrollToContentOnMobile("auto");
@@ -1196,6 +1638,103 @@ function getActiveAnswerSummary() {
       return `${label}: ${getAnswerLabel(question.id, answer)}`;
     })
     .filter(Boolean);
+}
+
+function renderSmartQuestionControl(question, options = {}) {
+  const selectedAnswer = state.smartAnswers[question.id] || "";
+  const label = question.label || question.prompt || question.id;
+  const prompt = question.prompt || `Select ${label}`;
+  const emptyLabel = options.useSetupPlaceholder
+    ? `Select ${label}`
+    : question.emptyLabel || "Show full checklist";
+  const answerOptions = (question.options || []).map(option => `
+    <option value="${escapeHtml(option.value)}" ${selectedAnswer === option.value ? "selected" : ""}>
+      ${escapeHtml(option.label)}
+    </option>
+  `).join("");
+
+  if (options.prominent) {
+    return `
+      <label class="welcome-question-card block min-w-0 p-3">
+        <span class="mb-1 block text-base font-semibold city-blue-text">${escapeHtml(prompt)}</span>
+        <span class="mb-3 block text-sm text-gray-600">${escapeHtml(label)}</span>
+        <select data-smart-question="${escapeHtml(question.id)}" class="themed-select welcome-question-select">
+          <option value="">${escapeHtml(emptyLabel)}</option>
+          ${answerOptions}
+        </select>
+      </label>
+    `;
+  }
+
+  return `
+    <label class="block min-w-0">
+      <span class="mb-1 block text-xs font-semibold uppercase text-gray-500">${escapeHtml(label)}</span>
+      <select data-smart-question="${escapeHtml(question.id)}" class="themed-select">
+        <option value="">${escapeHtml(emptyLabel)}</option>
+        ${answerOptions}
+      </select>
+    </label>
+  `;
+}
+
+function renderSmartQuestionControls(options = {}) {
+  return state.smartQuestions
+    .map(question => renderSmartQuestionControl(question, options))
+    .join("");
+}
+
+function setSmartAnswer(questionId, answer) {
+  if (answer) {
+    state.smartAnswers[questionId] = answer;
+  } else {
+    delete state.smartAnswers[questionId];
+  }
+}
+
+function refreshSmartAnswerViews() {
+  renderPermitList();
+  renderContent({ resetScroll: false });
+  syncScrollablePanelHeights();
+}
+
+function clearSmartAnswers() {
+  state.smartAnswers = {};
+  refreshSmartAnswerViews();
+}
+
+function closeSmartQuestionMenu() {
+  if (!state.smartQuestionMenuOpen) return;
+
+  state.smartQuestionMenuOpen = false;
+  renderContent({ resetScroll: false });
+  syncScrollablePanelHeights();
+}
+
+function bindSmartQuestionMenuDismissal() {
+  document.addEventListener("click", event => {
+    if (!state.smartQuestionMenuOpen) return;
+
+    const panel = document.getElementById("smartRefinePanel");
+    if (panel && panel.contains(event.target)) return;
+
+    closeSmartQuestionMenu();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeSmartQuestionMenu();
+    }
+  });
+}
+
+function bindSmartAnswerControls(container) {
+  container.querySelectorAll("[data-smart-question]").forEach(select => {
+    select.addEventListener("change", event => {
+      const questionId = event.currentTarget.getAttribute("data-smart-question");
+      setSmartAnswer(questionId, event.currentTarget.value);
+      refreshSmartAnswerViews();
+    });
+  });
 }
 
 function resolveSmartRule(rule) {
@@ -1317,49 +1856,45 @@ function renderSmartRefinementPanel(permit) {
   const summaryText = hasAnswers
     ? `Refined for ${answerSummary.map(escapeHtml).join("; ")}. ${hiddenText}.`
     : "Full checklist is showing. Answer a project question to tailor the required items.";
-
-  const questionControls = state.smartQuestions.map(question => {
-    const selectedAnswer = state.smartAnswers[question.id] || "";
-    const label = question.label || question.prompt || question.id;
-    const emptyLabel = question.emptyLabel || "Show full checklist";
-    const options = (question.options || []).map(option => `
-      <option value="${escapeHtml(option.value)}" ${selectedAnswer === option.value ? "selected" : ""}>
-        ${escapeHtml(option.label)}
-      </option>
-    `).join("");
-
-    return `
-      <label class="block min-w-0">
-        <span class="mb-1 block text-xs font-semibold uppercase text-gray-500">${escapeHtml(label)}</span>
-        <select data-smart-question="${escapeHtml(question.id)}" class="min-h-11 w-full rounded border p-2 text-sm">
-          <option value="">${escapeHtml(emptyLabel)}</option>
-          ${options}
-        </select>
-      </label>
-    `;
-  }).join("");
+  const menuOpen = state.smartQuestionMenuOpen;
+  const toggleText = hasAnswers ? "Edit Project Answers" : "Answer Project Questions";
 
   return `
     <div id="smartRefinePanel" class="smart-refine-panel mb-4 rounded border bg-white p-3 sm:p-4" data-has-answers="${hasAnswers ? "true" : "false"}">
-      <div class="smart-refine__controls grid grid-cols-1 gap-3 md:grid-cols-3 md:items-end">
-        ${questionControls}
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="min-w-0">
+          <div class="text-sm font-semibold text-gray-700">Project Questions</div>
+          <div class="smart-refine__summary mt-1 text-sm">
+            ${summaryText}
+          </div>
+        </div>
 
-        <label class="block min-w-0">
-          <span class="mb-1 block text-xs font-semibold uppercase text-gray-500">Display</span>
-          <select id="smartDisplayMode" class="min-h-11 w-full rounded border p-2 text-sm" ${hasAnswers ? "" : "disabled"}>
-            <option value="hide" ${state.smartDisplayMode === "hide" ? "selected" : ""}>Hide not required</option>
-            <option value="mark" ${state.smartDisplayMode === "mark" ? "selected" : ""}>Show not required</option>
-          </select>
-        </label>
-
-        <button id="resetSmartAnswers" type="button" class="min-h-11 rounded border bg-gray-100 px-3 text-sm font-medium text-gray-700" ${hasAnswers ? "" : "disabled"}>
-          Reset
+        <button id="toggleSmartQuestions" type="button" aria-controls="smartQuestionMenu" aria-expanded="${menuOpen ? "true" : "false"}" class="smart-refine__toggle min-h-10 shrink-0 px-3 py-2 text-sm">
+          ${toggleText}
+          <span class="ml-2 text-xs" aria-hidden="true">${menuOpen ? "&#9650;" : "&#9660;"}</span>
         </button>
       </div>
 
-      <div class="smart-refine__summary mt-3 text-sm">
-        ${summaryText}
-      </div>
+      ${menuOpen ? `
+        <div id="smartQuestionMenu" class="smart-refine__menu p-3 sm:p-4" role="dialog" aria-label="Project questions">
+          <div class="smart-refine__controls grid grid-cols-1 gap-3 md:grid-cols-3 md:items-end">
+            ${renderSmartQuestionControls()}
+
+            <label class="block min-w-0">
+              <span class="mb-1 block text-xs font-semibold uppercase text-gray-500">Display</span>
+              <span class="display-toggle ${hasAnswers ? "" : "display-toggle--disabled"}">
+                <span class="display-toggle__text">Show not required items</span>
+                <input id="smartDisplayMode" type="checkbox" class="display-toggle__input" ${state.smartDisplayMode === "mark" ? "checked" : ""} ${hasAnswers ? "" : "disabled"} />
+                <span class="display-toggle__track" aria-hidden="true"></span>
+              </span>
+            </label>
+
+            <button id="resetSmartAnswers" type="button" class="self-end rounded border bg-gray-100 px-2.5 py-1.5 text-xs font-medium text-gray-700" ${hasAnswers ? "" : "disabled"}>
+              Reset Answers
+            </button>
+          </div>
+        </div>
+      ` : ""}
     </div>
   `;
 }
@@ -1368,38 +1903,29 @@ function bindSmartChecklistControls() {
   const panel = document.getElementById("smartRefinePanel");
   if (!panel) return;
 
-  panel.querySelectorAll("[data-smart-question]").forEach(select => {
-    select.addEventListener("change", event => {
-      const questionId = event.currentTarget.getAttribute("data-smart-question");
-      const answer = event.currentTarget.value;
-
-      if (answer) {
-        state.smartAnswers[questionId] = answer;
-      } else {
-        delete state.smartAnswers[questionId];
-      }
-
-      renderContent({ resetScroll: false });
-      syncScrollablePanelHeights();
-    });
-  });
-
-  const displayMode = document.getElementById("smartDisplayMode");
-  if (displayMode) {
-    displayMode.addEventListener("change", event => {
-      state.smartDisplayMode = event.currentTarget.value;
+  const toggleButton = document.getElementById("toggleSmartQuestions");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", event => {
+      event.stopPropagation();
+      state.smartQuestionMenuOpen = !state.smartQuestionMenuOpen;
       renderContent({ resetScroll: false });
       syncScrollablePanelHeights();
     });
   }
 
+  bindSmartAnswerControls(panel);
+
+  const displayMode = document.getElementById("smartDisplayMode");
+  if (displayMode) {
+    displayMode.addEventListener("change", event => {
+      state.smartDisplayMode = event.currentTarget.checked ? "mark" : "hide";
+      refreshSmartAnswerViews();
+    });
+  }
+
   const resetButton = document.getElementById("resetSmartAnswers");
   if (resetButton) {
-    resetButton.addEventListener("click", () => {
-      state.smartAnswers = {};
-      renderContent({ resetScroll: false });
-      syncScrollablePanelHeights();
-    });
+    resetButton.addEventListener("click", clearSmartAnswers);
   }
 }
 
@@ -1433,8 +1959,8 @@ function renderRequirementItem(item) {
     smartStatus.isNotRequired ? "check-item--not-required" : ""
   ].join(" ");
   const titleClasses = isNotice
-    ? "special-requirement__title font-semibold"
-    : "font-medium";
+    ? `special-requirement__title font-semibold ${smartStatus.isNotRequired ? "not-required-title" : ""}`
+    : `font-medium ${smartStatus.isNotRequired ? "not-required-title" : ""}`;
   const descriptionClasses = isNotice
     ? "text-sm text-gray-700 mt-1"
     : "text-sm text-gray-500 mt-1";
@@ -1471,7 +1997,7 @@ function renderInspectionGroup(item) {
   return `
     <div class="${groupClasses}">
       ${smartStatus.isNotRequired ? `<div class="mb-2"><span class="not-required-badge">Not required</span></div>` : ""}
-      <div class="font-semibold mb-2">${item.label}</div>
+      <div class="font-semibold mb-2 ${smartStatus.isNotRequired ? "not-required-title" : ""}">${item.label}</div>
       ${smartStatus.isNotRequired && smartStatus.reason ? `<div class="text-sm text-gray-500 mb-2">${smartStatus.reason}</div>` : ""}
       <ol class="list-decimal ml-5 space-y-1 text-sm">
         ${(item.inspections || []).map(i => `<li>${i}</li>`).join("")}
@@ -1480,21 +2006,139 @@ function renderInspectionGroup(item) {
   `;
 }
 
+function renderWelcomeQuestionPanel() {
+  if (!state.smartQuestions.length) return "";
+
+  const hasAnswers = hasActiveSmartAnswers();
+  const answerSummary = getActiveAnswerSummary();
+  const summaryText = hasAnswers
+    ? `Applied to selected checklists: ${answerSummary.map(escapeHtml).join("; ")}.`
+    : "No property details selected yet. Full checklists will show until a question is answered.";
+
+  return `
+    <div id="welcomeQuestionPanel" class="landing-step landing-step--primary mb-4">
+      <div class="landing-step__header mb-3">
+        <span class="landing-step__number" aria-hidden="true">1</span>
+        <div>
+          <div class="text-lg font-semibold city-blue-text">Start With Property Type</div>
+          <p class="mt-1 text-sm text-gray-700">
+            Choose the property type first so the project list and checklist requirements can be prioritized around your situation.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+        ${renderSmartQuestionControls({ useSetupPlaceholder: true, prominent: true })}
+      </div>
+
+      <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div class="text-sm text-gray-600" aria-live="polite">${summaryText}</div>
+        <button id="resetWelcomeSmartAnswers" type="button" class="self-end rounded border bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700" ${hasAnswers ? "" : "disabled"}>
+          Reset Answers
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function renderProjectDiscoveryPanel() {
+  const commonProjectButtons = COMMON_PROJECTS
+    .filter(project => state.permits.some(permit => permit.file === project.file))
+    .map(project => `
+      <button type="button" class="project-discovery-button min-h-11 px-3 py-2 text-sm font-medium" data-common-project="${escapeHtml(project.file)}">
+        ${escapeHtml(project.label)}
+      </button>
+    `).join("");
+
+  const projectTypeButtons = PROJECT_TYPE_GROUPS.map(group => {
+    const isSelected = state.activeProjectType === group.label;
+    return `
+      <button type="button" class="project-discovery-button ${isSelected ? "project-discovery-button--selected" : ""} min-h-11 px-3 py-2 text-sm font-medium" data-project-type="${escapeHtml(group.label)}" aria-pressed="${isSelected ? "true" : "false"}">
+        ${escapeHtml(group.label)}
+      </button>
+    `;
+  }).join("");
+
+  return `
+    <div class="landing-step landing-step--primary mb-4">
+      <div class="landing-step__header mb-3">
+        <span class="landing-step__number" aria-hidden="true">2</span>
+        <div>
+          <div class="text-lg font-semibold city-blue-text">What are you working on?</div>
+          <p class="mt-1 text-sm text-gray-700">Browse by project type, then choose a common project shortcut or use search.</p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <div class="mb-2 text-xs font-semibold uppercase text-gray-500">Browse by Project Type</div>
+        <div class="grid grid-cols-2 gap-2 lg:grid-cols-4">
+          ${projectTypeButtons}
+        </div>
+      </div>
+
+      <div>
+        <div class="mb-2 text-xs font-semibold uppercase text-gray-500">Popular Projects</div>
+        <div class="grid grid-cols-2 gap-2 lg:grid-cols-3">
+          ${commonProjectButtons}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function bindProjectDiscoveryControls() {
+  document.querySelectorAll("[data-common-project]").forEach(button => {
+    button.addEventListener("click", event => {
+      selectPermitByFile(event.currentTarget.getAttribute("data-common-project"));
+    });
+  });
+
+  document.querySelectorAll("[data-project-type]").forEach(button => {
+    button.addEventListener("click", event => {
+      const projectType = event.currentTarget.getAttribute("data-project-type");
+      state.activeProjectType = state.activeProjectType === projectType ? "All" : projectType;
+      renderAll();
+      setPermitOptionsOpen(false);
+      scrollSelectedPermitIntoView("smooth");
+    });
+  });
+}
+
+function bindWelcomeQuestionControls() {
+  const panel = document.getElementById("welcomeQuestionPanel");
+  bindProjectDiscoveryControls();
+
+  if (!panel) return;
+
+  bindSmartAnswerControls(panel);
+
+  const resetButton = document.getElementById("resetWelcomeSmartAnswers");
+  if (resetButton) {
+    resetButton.addEventListener("click", clearSmartAnswers);
+  }
+}
+
 function renderContent(options = {}) {
   const container = document.getElementById("content");
   const shouldResetScroll = options.resetScroll !== false;
 
   if (!state.selectedPermit) {
     container.innerHTML = `
-      <div class="text-gray-600">
-        <div class="text-lg font-semibold mb-2">Choose a Permit Type</div>
-        <p>Use the Select Permit Type list to open a checklist with application requirements, documents, and inspection details.</p>
-        <p class="mt-2 text-sm text-gray-500">
-          Search by the name of the permit type, or use More Options to filter down by property type and permit group.
-        </p>
+      <div class="mb-4 rounded border bg-gray-50 p-3 sm:p-4 text-sm text-gray-600">
+        <div class="text-lg font-semibold mb-2 text-gray-800">Prepare Your Checklist</div>
+        <p>Choose the property type first, then find the project that best matches the work.</p>
+        <ol class="mt-3 list-decimal ml-5 space-y-1">
+          <li>Choose the property type and any other project details you know.</li>
+          <li>Browse by project type, choose a popular project, or search for the work.</li>
+          <li>Your answers will be applied to every checklist you open, and you can update them from the checklist at any time.</li>
+        </ol>
       </div>
+
+      ${renderWelcomeQuestionPanel()}
+
+      ${renderProjectDiscoveryPanel()}
+
       <!-- BETA NOTICE -->
-      &nbsp;
       <div id="betaNotice" class="mb-4 p-3 rounded border-l-4 border-yellow-400 bg-yellow-50 text-sm text-gray-700 flex justify-between items-start gap-3">
         <div>
           <div class="font-semibold text-yellow-700 mb-1">Introducing the Permit Checklist Tool</div>
@@ -1512,6 +2156,7 @@ function renderContent(options = {}) {
         </button>
       </div>
     `;
+    bindWelcomeQuestionControls();
     if (shouldResetScroll) resetChecklistScroll();
     return;
   }
