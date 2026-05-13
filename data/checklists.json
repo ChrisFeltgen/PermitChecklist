@@ -1445,7 +1445,7 @@
     },
     {
       "file": "commercial_refrigeration",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-13",
       "name": "Commercial Refrigeration",
       "category": "Mechanical",
       "propertyType": [
@@ -1475,7 +1475,7 @@
               "id": "app_zoning"
             },
             {
-              "type": "requirement",
+              "id": "req_Broward_DER",
               "label": "Broward County Environmental Approval",
               "description": "Submit Broward County Environmental approval."
             }
@@ -1522,7 +1522,7 @@
     },
     {
       "file": "commercial_spray_booth",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-13",
       "name": "Commercial Spray Booth",
       "category": "Mechanical",
       "propertyType": [
@@ -1552,7 +1552,7 @@
               "id": "app_zoning"
             },
             {
-              "type": "requirement",
+              "id": "req_Broward_DER",
               "label": "Broward County Environmental Approval",
               "description": "Submit Broward County Environmental approval."
             }
@@ -1842,7 +1842,7 @@
     },
     {
       "file": "cooling_tower",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-13",
       "name": "Cooling Tower",
       "category": "Mechanical",
       "propertyType": [
@@ -1872,13 +1872,12 @@
               "id": "app_zoning"
             },
             {
-              "type": "requirement",
+              "id": "req_Broward_DER",
               "label": "Broward County Environmental Approval",
               "description": "Submit Broward County Environmental approval."
             },
             {
-              "type": "requirement",
-              "label": "Special Inspector Form",
+              "id": "form_special_inspector",
               "description": "Required if welded structural connections are included."
             }
           ]
@@ -3581,7 +3580,7 @@
     },
     {
       "file": "kitchen_bath_renovation",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-13",
       "name": "Kitchen / Bath Renovation",
       "category": "Building",
       "propertyType": [
@@ -3612,9 +3611,7 @@
           "name": "Requirements",
           "items": [
             {
-              "type": "requirement",
-              "label": "Condo Association Approval",
-              "description": "Required for condominium projects."
+              "id": "req_hoa_approval"
             },
             {
               "type": "requirement",
@@ -4191,7 +4188,7 @@
     },
     {
       "file": "reroof",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-05-13",
       "name": "Reroof",
       "category": "Building",
       "propertyType": [
@@ -4210,15 +4207,8 @@
               "id": "app_fire"
             },
             {
-              "type": "requirement",
-              "label": "HVHZ Permit Application",
-              "description": "High Velocity Hurricane Zone Uniform Permit Application with required attachments.",
-              "links": [
-                {
-                  "label": "HVHZ Permit Application",
-                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/HVHZ-Application.pdf"
-                }
-              ]
+              "id": "app_HVHZ",
+              "description": "High Velocity Hurricane Zone Uniform Permit Application with required attachments."
             },
             {
               "type": "requirement",
@@ -4673,7 +4663,7 @@
     },
     {
       "file": "site_work",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-13",
       "name": "Site Work",
       "category": "Building",
       "propertyType": [
@@ -4733,8 +4723,7 @@
               "description": "Signed and sealed geotechnical/subsoil report."
             },
             {
-              "type": "requirement",
-              "label": "Special Inspector Form",
+              "id": "form_special_inspector",
               "description": "Required if pile or vibro-replacement installation is utilized."
             }
           ]
