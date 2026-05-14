@@ -1105,17 +1105,20 @@ function formatDate(dateStr) {
 function renderRequirementItem(item) {
   let name = "";
   let description = "";
+  let note = "";
   let links = [];
   let variant = item.variant || "";
 
   if (item.type === "requirement") {
     name = item.label || item.value || "";
     description = item.description || "";
+    note = item.note || "";
     links = item.links || [];
   } else {
     const req = state.library[item.id] || {};
     name = item.label || item.value || req.name || item.id || "";
     description = item.description || req.description || "";
+    note = item.note || req.note || "";
     links = item.links || req.links || [];
     variant = item.variant || req.variant || "";
   }
@@ -1138,6 +1141,7 @@ function renderRequirementItem(item) {
       <div class="check-item-content">
         <div class="${titleClasses}">${name}</div>
         ${description ? `<div class="${descriptionClasses}">${description}</div>` : ""}
+        ${note ? `<div class="text-sm text-gray-500 mt-1">${note}</div>` : ""}
         ${links.length ? `
           <div class="mt-1 text-sm">
             ${links.map(l => `<a href="${l.url}" target="_blank" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
@@ -1255,7 +1259,8 @@ function renderContent() {
     let firstItem = true;
 
     html += `<div class="section-start">
-      <h2 class="font-semibold mb-3">${section.name}</h2>`;
+      <h2 class="font-semibold mb-3">${section.name}</h2>
+      ${section.description ? `<div class="text-sm text-gray-500 mb-3">${section.description}</div>` : ""}`;
 
 section.items.forEach(item => {
 

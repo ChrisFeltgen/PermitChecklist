@@ -2667,7 +2667,7 @@
     },
     {
       "file": "fence",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-14",
       "name": "Fence",
       "category": "Building",
       "propertyType": [
@@ -2683,18 +2683,7 @@
               "id": "app_building"
             },
             {
-              "id": "app_fire",
-              "description": "Required for multi-family, condominium, and commercial projects"
-            },
-            {
-              "id": "app_landscape",
-              "description": "Required if trees are adjacent to the work area"
-            },
-            {
               "id": "app_zoning"
-            },
-            {
-              "id": "form_easement"
             }
           ]
         },
@@ -2702,19 +2691,40 @@
           "name": "Requirements",
           "items": [
             {
+              "type": "requirement",
+              "label": "Survey or Site Plan",
+              "description": "Provide survey or site plan showing location, height, and type of fence and gates."
+            }
+          ]
+        },
+        {
+          "name": "Required If Applicable",
+          "items": [
+            {
+              "id": "app_fire"
+            },
+            {
+              "id": "app_landscape",
+              "description": "Required if trees are adjacent to the work area."
+            },
+            {
+              "id": "form_easement"
+            },
+            {
               "id": "req_product_approvals",
               "label": "Product Approval or Engineered Details",
               "description": "Required for fence materials other than standard 6-foot chain link or wood."
             },
             {
               "type": "requirement",
-              "label": "Survey or Site Plan",
-              "description": "Provide survey or site plan showing location, height, and type of fence and gates."
-            },
-            {
-              "type": "requirement",
               "label": "Pool Safety Compliance",
-              "description": "If a pool exists within the fenced area, provide details demonstrating compliance with Florida Swimming Pool Safety Act."
+              "description": "If a pool exists within the fenced area, submit the completed Pool Safety Act form identifying which safety method or methods are being used to meet Private Swimming Pool Safety requirements.",
+              "links": [
+                {
+                  "label": "Pool Safety Compliance Form",
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Pool-Safety-Act-Form.pdf"
+                }
+              ]
             }
           ]
         },
@@ -2927,7 +2937,7 @@
     },
     {
       "file": "gas_piping",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-14",
       "name": "Gas Piping",
       "category": "Plumbing",
       "propertyType": [
@@ -2961,7 +2971,12 @@
               "type": "requirement",
               "label": "Gas Appliance & Regulator Specifications",
               "description": "Provide manufacturer specification sheets and installation instructions for all gas appliances and regulators."
-            },
+            }
+          ]
+        },
+        {
+          "name": "Required If Applicable",
+          "items": [
             {
               "type": "requirement",
               "label": "Generator Gas Plans (If applicable)",
@@ -3580,7 +3595,7 @@
     },
     {
       "file": "kitchen_bath_renovation",
-      "lastUpdated": "2026-05-13",
+      "lastUpdated": "2026-05-14",
       "name": "Kitchen / Bath Renovation",
       "category": "Building",
       "propertyType": [
@@ -3588,6 +3603,8 @@
         "Commercial"
       ],
       "whenPermitRequired": "The installation, alteration, or major repair of a kitchen or bathroom requires a permit.",
+      "hintTitle": "Typical Projects Covered",
+      "hint": "This checklist is typically used for cabinet replacement, countertop replacement, plumbing fixture replacement, electrical receptacle or lighting modifications, shower or tub replacement, tile replacement involving waterproofing, drywall replacement, layout modifications, exhaust fan installation, gas appliance replacement, and structural modifications.<br><br>Cosmetic-only work such as painting or cabinet refacing may not require a permit, subject to review.",
       "sections": [
         {
           "name": "Applications",
@@ -3602,8 +3619,7 @@
               "id": "app_plumbing"
             },
             {
-              "id": "app_fire",
-              "description": "Required for commercial and multi-family projects"
+              "id": "app_fire"
             }
           ]
         },
@@ -3611,12 +3627,9 @@
           "name": "Requirements",
           "items": [
             {
-              "id": "req_hoa_approval"
-            },
-            {
               "type": "requirement",
               "label": "Architectural Plans",
-              "description": "Provide plan view showing location and scope of work, including framing details and any fire-rated wall assemblies."
+              "description": "Provide floor plans showing the existing and proposed layout, the location of all fixtures and appliances, demolition and new construction work, wall modifications, framing details, door and window changes, and fire-rated assemblies where applicable.<br><br>Plans must be legible and drawn to scale."
             },
             {
               "type": "requirement",
@@ -3626,22 +3639,30 @@
             {
               "type": "requirement",
               "label": "Electrical Plans",
-              "description": "Electrical plans must be signed and sealed by a design professional or include contractor qualifier notarization."
-            },
-            {
-              "type": "requirement",
-              "label": "Fire Protection Plan",
-              "description": "Show location of fire devices including smoke detectors, sprinklers, and alarms (not required for single-family homes)."
-            },
-            {
-              "type": "requirement",
-              "label": "Flooring Sound Control",
-              "description": "For multi-story buildings, provide sound barrier test reports meeting ASTM E-90 and ASTM E-492 requirements."
+              "description": "Provide electrical plans showing receptacles, lighting, circuits, GFCI/AFCI protection, and load calculations where applicable.<br><br>Plans must be signed and sealed by a Florida design professional when required by law, or prepared by the licensed electrical contractor using a notarized contractor qualifier statement when permitted by code."
             },
             {
               "type": "requirement",
               "label": "Manufacturer Specifications",
               "description": "Provide manufacturer spec sheets, installation manuals, and product approvals where applicable."
+            }
+          ]
+        },
+        {
+          "name": "Required If Applicable",
+          "items": [
+            {
+              "id": "req_hoa_approval"
+            },
+            {
+              "type": "requirement",
+              "label": "Fire Protection Plan",
+              "description": "Show location of fire devices including smoke detectors, sprinklers, and alarms."
+            },
+            {
+              "type": "requirement",
+              "label": "Flooring Sound Control",
+              "description": "Required when flooring work is being performed in condominium units or apartments located above another dwelling unit.<br><br>Submit a laboratory sound transmission/acoustic test report confirming the flooring assembly (including underlayment) meets minimum STC and IIC ratings of 50. Manufacturer product data sheets, brochures, or retail listings are not acceptable. The report must reflect actual site conditions, including slab thickness and ceiling assembly."
             },
             {
               "type": "requirement",
@@ -4188,7 +4209,7 @@
     },
     {
       "file": "reroof",
-      "lastUpdated": "2026-05-13",
+      "lastUpdated": "2026-05-14",
       "name": "Reroof",
       "category": "Building",
       "propertyType": [
@@ -4238,20 +4259,12 @@
           "name": "Requirements",
           "items": [
             {
-              "id": "req_hoa_approval"
-            },
-            {
               "id": "req_product_approvals",
               "label": "Product Approvals",
               "description": "Miami-Dade NOA or Florida Product Approval for roofing materials, underlayments, fasteners, adhesives, and Fire Directory listing pages."
             },
             {
               "id": "req_asbestos"
-            },
-            {
-              "type": "requirement",
-              "label": "Site Plan",
-              "description": "Required for all multi-family, condominium, and commercial roofing projects.<br><br>Provide a site plan showing the location of dumpsters, equipment staging areas, and fire access features, including building exits and fire lanes. If a tar kettle is used, the plan must also show the kettle location, LPG cylinders, and fire extinguishers. Kettles must be operated outdoors, attended at all times, and cannot block exits or access routes."
             },
             {
               "type": "requirement",
@@ -4263,6 +4276,19 @@
                   "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/resources/Fenestration-Wind-Load-and-Roof-Uplift-Chart.pdf"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "name": "Required If Applicable",
+          "items": [
+            {
+              "id": "req_hoa_approval"
+            },
+            {
+              "type": "requirement",
+              "label": "Site Plan",
+              "description": "Required for all multi-family, condominium, and commercial roofing projects.<br><br>Provide a site plan showing the location of dumpsters, equipment staging areas, and fire access features, including building exits and fire lanes. If a tar kettle is used, the plan must also show the kettle location, LPG cylinders, and fire extinguishers. Kettles must be operated outdoors, attended at all times, and cannot block exits or access routes."
             }
           ]
         },
@@ -5318,7 +5344,7 @@
     },
     {
       "file": "swimming_pool_(new)",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-14",
       "name": "Swimming Pool (New)",
       "category": "Building",
       "propertyType": [
@@ -5352,11 +5378,11 @@
             {
               "type": "requirement",
               "label": "Pool Safety Compliance",
-              "description": "Submit completed Residential Swimming Pool, Spa and Hot Tub Safety Act form.",
+              "description": "Submit the completed Pool Safety Act form identifying which safety method or methods are being used to meet Private Swimming Pool Safety requirements.",
               "links": [
                 {
                   "label": "Pool Safety Compliance Form",
-                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Residential-Swimming-Pool-Spa-Hot-Tub-Safety-Act-Form.pdf"
+                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Pool-Safety-Act-Form.pdf"
                 }
               ]
             }
