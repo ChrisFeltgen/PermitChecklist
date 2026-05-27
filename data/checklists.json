@@ -2667,7 +2667,7 @@
     },
     {
       "file": "fence",
-      "lastUpdated": "2026-05-14",
+      "lastUpdated": "2026-05-27",
       "name": "Fence",
       "category": "Building",
       "propertyType": [
@@ -3390,7 +3390,7 @@
     },
     {
       "file": "interior_buildout",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-05-27",
       "name": "Interior Buildout",
       "category": "Building",
       "propertyType": [
@@ -4828,7 +4828,7 @@
     },
     {
       "file": "solar_systems",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-05-27",
       "name": "Solar Systems (Photovoltaic)",
       "category": "Electrical",
       "propertyType": [
@@ -6121,7 +6121,7 @@
     },
     {
       "file": "water_heater_tankless",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-05-27",
       "name": "Water Heater (Tankless)",
       "category": "Plumbing",
       "propertyType": [
