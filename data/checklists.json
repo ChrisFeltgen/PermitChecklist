@@ -2714,17 +2714,6 @@
               "id": "req_product_approvals",
               "label": "Product Approval or Engineered Details",
               "description": "Required for fence materials other than standard 6-foot chain link or wood."
-            },
-            {
-              "type": "requirement",
-              "label": "Pool Safety Compliance",
-              "description": "If a pool exists within the fenced area, submit the completed Pool Safety Act form identifying which safety method or methods are being used to meet Private Swimming Pool Safety requirements.",
-              "links": [
-                {
-                  "label": "Pool Safety Compliance Form",
-                  "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/forms/Pool-Safety-Act-Form.pdf"
-                }
-              ]
             }
           ]
         },
@@ -3434,9 +3423,6 @@
               "id": "app_zoning"
             },
             {
-              "id": "req_product_approvals"
-            },
-            {
               "id": "form_capital_recovery"
             }
           ]
@@ -3451,8 +3437,7 @@
             },
             {
               "id": "req_product_approvals",
-              "label": "Product Approvals",
-              "description": "Provide Miami-Dade NOA, Florida Product Approvals, manufacturer specifications, installation manuals, calculations, and supporting documentation."
+              "label": "Product Approvals"
             },
             {
               "id": "req_Broward_DER"
@@ -4899,11 +4884,6 @@
             },
             {
               "type": "requirement",
-              "label": "Solar Thermal System Documents",
-              "description": "Plumbing riser diagram and manufacturer specifications for panels, pumps, frames, and mounting systems."
-            },
-            {
-              "type": "requirement",
               "label": "Photovoltaic System Documents",
               "description": "Electrical diagrams showing array configuration, wiring, overcurrent protection, inverter, disconnects, grounding, and interconnection details."
             },
@@ -6148,7 +6128,7 @@
         "Residential",
         "Commercial"
       ],
-      "whenPermitRequired": "The installation or replacement of a tankless water heater requires a Plumbing Permit.",
+      "whenPermitRequired": "The installation or replacement of an electric or gas tankless water heater requires a Plumbing Permit. Electrical permits and related submittals are required when electrical work is included or when installing an electric tankless unit.",
       "sections": [
         {
           "name": "Applications and Forms",
@@ -6157,7 +6137,8 @@
               "id": "app_plumbing"
             },
             {
-              "id": "app_electrical"
+              "id": "app_electrical",
+              "description": "Required for electric tankless units and when electrical work is included, such as new circuits, service upgrades, disconnects, or wiring modifications."
             },
             {
               "type": "requirement",
@@ -6177,18 +6158,18 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Gas Piping Plans",
+              "label": "Electrical Riser Diagram (If electric tankless or electrical upgrades)",
+              "description": "Provide riser diagram showing service size, circuitry, conductor sizes, panel schedule, and grounding system."
+            },
+            {
+              "type": "requirement",
+              "label": "Gas Piping Plans (If gas tankless)",
               "description": "Provide plan and isometric drawings showing gas piping layout, total developed length, BTU loads, materials, and connection points in compliance with FBC Fuel Gas."
             },
             {
               "type": "requirement",
               "label": "Manufacturer Specifications",
-              "description": "Provide specification sheets and installation instructions showing third-party certification compliance."
-            },
-            {
-              "type": "requirement",
-              "label": "Electrical Riser Diagram",
-              "description": "Provide riser diagram showing service size, circuitry, conductor sizes, panel schedule, and grounding system."
+              "description": "Provide specification sheets and installation instructions for the proposed electric or gas tankless water heater showing third-party certification compliance."
             }
           ]
         },
@@ -6197,7 +6178,7 @@
           "items": [
             {
               "type": "inspection_group",
-              "label": "Plumbing Inspections",
+              "label": "Plumbing Inspections (Gas rough if gas tankless)",
               "inspections": [
                 "P GAS ROUGH",
                 "P FINAL PLUMBING"
@@ -6205,7 +6186,7 @@
             },
             {
               "type": "inspection_group",
-              "label": "Electrical Inspections",
+              "label": "Electrical Inspections (If electrical work is performed)",
               "inspections": [
                 "EL ROUGH",
                 "EL SERVICE ROUGH",
