@@ -154,6 +154,16 @@
         }
       ]
     },
+    "req_temp_fence_erosion_control": {
+      "name": "Temporary Fence / Erosion Control Plan",
+      "description": "For projects that disturb the site top layer and require temporary fencing, provide a plan showing the fence layout, access gates, and applicable erosion control measures such as silt fence, stabilized construction entrance or tracking pad, inlet protection, stockpile protection, and other best management practices. Submit a completed Building Permit Application for the erosion control scope.",
+      "links": [
+        {
+          "label": "Building Permit Application",
+          "url": "https://cdn.pompanobeachfl.gov/city/pages/building_inspections/applications-forms/applications/Building-Permit-Application.pdf"
+        }
+      ]
+    },
     "req_notice_of_commencement": {
       "name": "Notice of Commencement",
       "variant": "notice",
@@ -271,7 +281,7 @@
     },
     {
       "file": "additions",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-06-08",
       "name": "Additions",
       "category": "Building",
       "propertyType": [
@@ -325,6 +335,9 @@
           "items": [
             {
               "id": "req_Broward_DER"
+            },
+            {
+              "id": "req_temp_fence_erosion_control"
             },
             {
               "id": "req_product_approvals",
@@ -769,7 +782,7 @@
     },
     {
       "file": "building_shell",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-06-08",
       "name": "Building Shell",
       "category": "Building",
       "propertyType": [
@@ -824,6 +837,9 @@
               "type": "requirement",
               "label": "Broward County Approvals",
               "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            },
+            {
+              "id": "req_temp_fence_erosion_control"
             },
             {
               "id": "req_product_approvals",
@@ -1214,7 +1230,7 @@
     },
     {
       "file": "commercial_building",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-06-08",
       "name": "Commercial Building (New)",
       "category": "Building",
       "propertyType": [
@@ -1265,6 +1281,9 @@
           "items": [
             {
               "id": "req_Broward_DER"
+            },
+            {
+              "id": "req_temp_fence_erosion_control"
             },
             {
               "type": "requirement",
@@ -1956,7 +1975,7 @@
     },
     {
       "file": "demolition",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-06-08",
       "name": "Demolition",
       "category": "Building",
       "propertyType": [
@@ -2019,9 +2038,8 @@
               "description": "Provide temporary fencing and screening per City ordinance requirements."
             },
             {
-              "type": "requirement",
-              "label": "Erosion Control Plan",
-              "description": "Required for sites greater than one acre or located along a waterway."
+              "id": "req_temp_fence_erosion_control",
+              "description": "Required for demolition projects that disturb the site top layer and require temporary fencing."
             }
           ]
         },
@@ -2606,66 +2624,6 @@
       ]
     },
     {
-      "file": "erosion_control",
-      "lastUpdated": "2026-04-27",
-      "name": "Erosion Control",
-      "category": "Building",
-      "propertyType": [
-        "Residential",
-        "Commercial"
-      ],
-      "whenPermitRequired": "The installation of erosion control devices requires a Building Permit.",
-      "sections": [
-        {
-          "name": "Applications",
-          "items": [
-            {
-              "id": "app_building"
-            },
-            {
-              "id": "app_fire",
-              "description": "Required for commercial projects (not required for single-family residences)"
-            }
-          ]
-        },
-        {
-          "name": "Requirements",
-          "items": [
-            {
-              "type": "requirement",
-              "label": "Best Management Practices (BMP) Plan",
-              "description": "Provide signed and sealed plan showing location of erosion control devices including tracking pads, silt fences, filter fabric, stockpiles, and other mitigation measures."
-            },
-            {
-              "type": "requirement",
-              "label": "Survey or Site Plan",
-              "description": "Provide survey or site plan showing location, height, type of temporary construction fence, and access gates."
-            }
-          ]
-        },
-        {
-          "name": "Inspections",
-          "items": [
-            {
-              "type": "inspection_group",
-              "label": "Erosion Control Inspections",
-              "inspections": [
-                "EROSION CONTROL INSPECTION",
-                "BLDG FINAL STRUCTURAL"
-              ]
-            },
-            {
-              "type": "inspection_group",
-              "label": "Fire Inspections (If applicable)",
-              "inspections": [
-                "FIRE DEPARTMENT FINAL"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "file": "fence",
       "lastUpdated": "2026-05-27",
       "name": "Fence",
@@ -2806,7 +2764,7 @@
     },
     {
       "file": "foundation_only",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-06-08",
       "name": "Foundation Only",
       "category": "Building",
       "propertyType": [
@@ -2876,6 +2834,9 @@
             },
             {
               "id": "req_Broward_DER"
+            },
+            {
+              "id": "req_temp_fence_erosion_control"
             },
             {
               "id": "form_special_inspector"
@@ -4074,36 +4035,129 @@
       ]
     },
     {
-      "file": "plumbing_tunnel_job",
-      "lastUpdated": "2026-04-27",
-      "name": "Plumbing Tunnel Job",
+      "file": "pipe_lining_relining",
+      "lastUpdated": "2026-06-08",
+      "name": "Pipe Lining / Pipe Relining",
       "category": "Plumbing",
       "propertyType": [
         "Residential",
         "Commercial"
       ],
-      "whenPermitRequired": "Excavation below a foundation for pipe or drain replacement requires a Plumbing Permit.",
+      "whenPermitRequired": "The relining of existing building sewer or building drainage piping requires a Plumbing Permit.",
       "sections": [
         {
-          "name": "Applications",
+          "name": "Required Documents",
           "items": [
             {
               "id": "app_plumbing"
+            },
+            {
+              "type": "requirement",
+              "label": "Relining Material Product Approval",
+              "description": "Provide product approval documentation for the proposed relining material."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer's Installation Documents",
+              "description": "Provide the manufacturer's installation instructions and supporting installation documents."
             }
           ]
         },
         {
-          "name": "Requirements",
+          "name": "Florida Plumbing Code Requirements",
           "items": [
             {
               "type": "requirement",
-              "label": "Floor/Site Plan",
-              "description": "Provide plan showing the location of proposed work, clearly label areas to be replaced (e.g., kitchen, bathroom, etc.), and indicate whether the permit is for building drains only or for building drains and sewer. If sewer connection is included, provide a 6-inch cleanout at the City connection."
+              "label": "Florida Plumbing Code Section 717",
+              "description": "Per Florida Plumbing Code Section 717.2: \"The relining of existing building sewer and building drainage piping shall be limited to gravity drainage piping, 4 inches (102 mm) in diameter and larger.\" Applicants and contractors are required to read and comply with all applicable provisions of Florida Plumbing Code Section 717."
             }
           ]
         },
         {
-          "name": "Inspections",
+          "name": "Requirements Prior to Permit Issuance",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Read Florida Plumbing Code Section 717",
+              "description": "Review and comply with all applicable provisions of Florida Plumbing Code Section 717 before submitting for permit."
+            },
+            {
+              "type": "requirement",
+              "label": "Video Submission Instructions",
+              "description": "Do not submit videos to the City for review. Submit pre-installation and post-installation videos to a Florida-licensed engineer for review."
+            },
+            {
+              "type": "requirement",
+              "label": "Engineer's Letter - Existing Pipe Condition",
+              "description": "Submit a letter from a Florida-licensed engineer stating that the existing piping is in acceptable condition to be relined."
+            }
+          ]
+        },
+        {
+          "name": "Required Inspection During Installation",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "In-Progress Inspection",
+              "inspections": [
+                "P IN-PROGRESS"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Final Inspection Requirements",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Engineer's Letter - Code Compliance",
+              "description": "Prior to receiving a Final Inspection, submit a letter from a Florida-licensed engineer stating that the installation complies with Florida Plumbing Code Section 717."
+            },
+            {
+              "type": "requirement",
+              "label": "Relining Material Product Approval",
+              "description": "Prior to receiving a Final Inspection, submit the relining material product approval."
+            },
+            {
+              "type": "requirement",
+              "label": "Manufacturer's Installation Documents",
+              "description": "Prior to receiving a Final Inspection, submit the manufacturer's installation documents."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "plumbing_tunnel_job",
+      "lastUpdated": "2026-06-08",
+      "name": "Tunnel Jobs - Replacing Building Drains",
+      "category": "Plumbing",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "whenPermitRequired": "Tunnel excavation below a building slab or foundation to replace building drains requires a Plumbing Permit.",
+      "sections": [
+        {
+          "name": "Required Documents",
+          "items": [
+            {
+              "id": "app_plumbing"
+            },
+            {
+              "type": "requirement",
+              "label": "Flat Drawing Showing Piping to be Replaced",
+              "description": "Provide a flat drawing showing the piping to be replaced."
+            },
+            {
+              "type": "requirement",
+              "label": "Sewer Line Replacement Note (If applicable)",
+              "description": "If replacing the sewer line, note this on the plans and clearly show it on the drawing."
+            }
+          ]
+        },
+        {
+          "name": "Required Inspections",
           "items": [
             {
               "type": "inspection_group",
@@ -4112,6 +4166,16 @@
                 "P PLUMBING ROUGH",
                 "P FINAL PLUMBING"
               ]
+            }
+          ]
+        },
+        {
+          "name": "Required Prior to Final Inspection",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Tunnel Report",
+              "description": "Prior to receiving a Final Inspection, submit a signed letter/report from a Florida-licensed structural engineer stating that the structural integrity of the foundation/slab and other structural components has not been compromised."
             }
           ]
         }
@@ -4674,7 +4738,7 @@
     },
     {
       "file": "site_work",
-      "lastUpdated": "2026-05-13",
+      "lastUpdated": "2026-06-08",
       "name": "Site Work",
       "category": "Building",
       "propertyType": [
@@ -4722,6 +4786,9 @@
               "type": "requirement",
               "label": "Broward County Approvals",
               "description": "Environmental Review, Planning & Redevelopment approval, Transportation Concurrency Certificate, and Surface Water Management approval."
+            },
+            {
+              "id": "req_temp_fence_erosion_control"
             },
             {
               "type": "requirement",
@@ -5132,7 +5199,7 @@
     },
     {
       "file": "single_family_residence_new",
-      "lastUpdated": "2026-04-29",
+      "lastUpdated": "2026-06-08",
       "name": "Single Family Residence (New)",
       "category": "Building",
       "propertyType": [
@@ -5180,6 +5247,9 @@
           "items": [
             {
               "id": "req_Broward_DER"
+            },
+            {
+              "id": "req_temp_fence_erosion_control"
             },
             {
               "id": "req_product_approvals",
@@ -5444,7 +5514,7 @@
     },
     {
       "file": "temporary_construction_fence",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-06-08",
       "name": "Temporary Construction Fence",
       "category": "Building",
       "propertyType": [
@@ -5478,7 +5548,7 @@
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
-              "description": "Provide survey or site plan showing the location, height, type of fence, and access gates."
+              "description": "Provide survey or site plan showing the location, height, type of fence, access gates, and any applicable erosion control measures required for site-disturbing work."
             }
           ]
         },
@@ -5778,7 +5848,7 @@
     },
     {
       "file": "townhomes",
-      "lastUpdated": "2026-04-28",
+      "lastUpdated": "2026-06-08",
       "name": "Townhomes (Site, Shell, and Units)",
       "category": "Building",
       "propertyType": [
@@ -5860,6 +5930,9 @@
           "items": [
             {
               "id": "req_Broward_DER"
+            },
+            {
+              "id": "req_temp_fence_erosion_control"
             },
             {
               "id": "req_product_approvals",
