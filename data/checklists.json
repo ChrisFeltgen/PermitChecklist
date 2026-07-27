@@ -1229,6 +1229,153 @@
       ]
     },
     {
+      "file": "clearing_and_grubbing",
+      "lastUpdated": "2026-07-27",
+      "name": "Clearing and Grubbing",
+      "category": "Building",
+      "propertyType": [
+        "Residential",
+        "Commercial"
+      ],
+      "whenPermitRequired": "A Clearing and Grubbing permit is an optional Building Permit that allows an applicant to begin clearing vegetation, trees, and topsoil from a site in advance of and separate from the Site Development Building Permit. It is not required in order to obtain a Site Development Building Permit and is not part of that permit's scope; it is only needed if the applicant wants to begin site preparation before the Site Development Building Permit is approved and issued.",
+      "sections": [
+        {
+          "name": "Applications & Forms",
+          "items": [
+            {
+              "id": "app_building",
+              "label": "Building Permit Application – Clearing and Grubbing",
+              "description": "Required for the clearing and grubbing scope of work."
+            },
+            {
+              "id": "app_zoning",
+              "label": "Zoning Compliance Permit"
+            },
+            {
+              "id": "req_temp_fence_erosion_control",
+              "label": "Erosion Control Permit Application",
+              "description": "Submit a completed Building Permit Application for the erosion control scope of work."
+            },
+            {
+              "id": "app_building",
+              "label": "Temporary Fence Permit Application (If Applicable)",
+              "description": "Required if a temporary construction fence will be installed."
+            },
+            {
+              "id": "app_landscape",
+              "label": "Tree Removal/Clearing Permit (If Applicable)",
+              "description": "Required if trees are proposed for removal or clearing."
+            }
+          ]
+        },
+        {
+          "name": "Plans & Supporting Documents",
+          "items": [
+            {
+              "type": "requirement",
+              "label": "Site Survey",
+              "description": "Provide a current site survey showing existing conditions, topography, and the limits of the area to be cleared and grubbed."
+            },
+            {
+              "id": "req_temp_fence_erosion_control",
+              "label": "Erosion Control Plan and Details",
+              "description": "Provide a plan and details showing erosion control measures such as silt fence, stabilized construction entrance or tracking pad, inlet protection, stockpile protection, and other best management practices for the site."
+            },
+            {
+              "type": "requirement",
+              "label": "Tree Disposition Plan (If Applicable)",
+              "description": "Provide a tree disposition plan identifying trees proposed for removal, relocation, or protection, prepared in accordance with the City's landscape and tree preservation requirements."
+            },
+            {
+              "id": "req_Broward_DER",
+              "label": "Broward County Environmental Review Certificate"
+            },
+            {
+              "type": "requirement",
+              "label": "FDOT Drainage and Utility Permit (If Applicable)",
+              "description": "Required if the proposed work involves drainage or utility connections within FDOT right-of-way. Submit through FDOT's One-Stop Permitting (OSP) system.",
+              "links": [
+                {
+                  "label": "FDOT One-Stop Permitting (OSP)",
+                  "url": "https://osp.fdot.gov"
+                },
+                {
+                  "label": "FDOT Drainage Connection Handbook",
+                  "url": "https://fdotwww.blob.core.windows.net/sitefinity/docs/default-source/roadway/drainage/files/drainageconnectionhandbook2020.pdf"
+                }
+              ]
+            },
+            {
+              "type": "requirement",
+              "label": "FDEP Permit and Notice of Intent (NOI) (If Applicable)",
+              "description": "Required for proposed stormwater discharge. Submit the Florida Department of Environmental Protection (FDEP) permit and Notice of Intent (NOI) under the NPDES stormwater program.",
+              "links": [
+                {
+                  "label": "FDEP Construction Activity / Stormwater NOI",
+                  "url": "https://floridadep.gov/water/stormwater/content/construction-activity"
+                },
+                {
+                  "label": "FDEP Business Portal (Online NOI Submission)",
+                  "url": "https://www.fldepportal.com/go/"
+                }
+              ]
+            },
+            {
+              "type": "requirement",
+              "label": "Wastewater Management Permit/License (If Applicable)",
+              "description": "Required if the project involves wastewater management activities subject to state or county permitting or licensing.",
+              "links": [
+                {
+                  "label": "Broward County Domestic Wastewater Program",
+                  "url": "https://www.broward.org/Environment/WaterPrograms/Pages/DomesticWastewater.aspx"
+                },
+                {
+                  "label": "FDEP Wastewater Permitting",
+                  "url": "https://floridadep.gov/water/domestic-wastewater/content/wastewater-permitting"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inspections",
+          "items": [
+            {
+              "type": "inspection_group",
+              "label": "Fence/Screening Inspections (If Applicable)",
+              "inspections": [
+                "BLDG TEMP FENCE/SCREENING",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Erosion Control Inspections",
+              "inspections": [
+                "EROSION CONTROL INSPECTION",
+                "BLDG FINAL STRUCTURAL"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Tree Inspections (If Applicable)",
+              "inspections": [
+                "L TREE PROTECTION INSPECTION",
+                "L FINAL LANDSCAPE"
+              ]
+            },
+            {
+              "type": "inspection_group",
+              "label": "Zoning Inspections",
+              "inspections": [
+                "Z ZONING FINAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "file": "commercial_building",
       "lastUpdated": "2026-06-08",
       "name": "Commercial Building (New)",
