@@ -311,6 +311,10 @@
       display: none;
     }
 
+    .filters-panel.options-open #permitInlineLabel {
+      display: none;
+    }
+
     .filters-panel {
       min-height: 0;
     }
@@ -641,7 +645,7 @@
       <div class="screen-title md:hidden mb-3 text-xl font-semibold leading-tight">Permit Application Checklists</div>
 
       <div class="mb-3 sm:mb-4 flex gap-2">
-        <input id="searchInput" placeholder="Search permit type..." class="min-h-11 w-full rounded border p-2" />
+        <input id="searchInput" placeholder="Search permit type..." aria-label="Search permit type" class="min-h-11 w-full rounded border p-2" />
         <button id="clearSearch" aria-label="Clear search" class="min-h-11 rounded border bg-gray-100 px-3 text-sm">Clear</button>
       </div>
 
@@ -726,7 +730,10 @@ function init() {
 
 function loadData() {
   fetch(DATA_FILE)
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw new Error(`Failed to load checklist data (${r.status})`);
+      return r.json();
+    })
     .then(data => {
       state.library = data.library || {};
       state.permits = data.permits || [];
@@ -750,7 +757,24 @@ function loadData() {
         scrollSelectedPermitIntoView("auto");
         scrollToContentOnMobile("auto");
       }
+    })
+    .catch(err => {
+      console.error(err);
+      renderLoadError();
     });
+}
+
+function renderLoadError() {
+  const listContainer = document.getElementById("permitList");
+  const contentContainer = document.getElementById("content");
+  const message = `
+    <div class="text-red-600 text-sm p-3">
+      We couldn't load the permit checklist data. Please refresh the page, or contact the Building Department if the problem continues.
+    </div>
+  `;
+
+  if (listContainer) listContainer.innerHTML = message;
+  if (contentContainer) contentContainer.innerHTML = message;
 }
 
 function bindSearch() {
@@ -1144,7 +1168,7 @@ function renderRequirementItem(item) {
         ${note ? `<div class="text-sm text-gray-500 mt-1">${note}</div>` : ""}
         ${links.length ? `
           <div class="mt-1 text-sm">
-            ${links.map(l => `<a href="${l.url}" target="_blank" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
+            ${links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
           </div>
         ` : ""}
       </div>
