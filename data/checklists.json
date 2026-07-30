@@ -188,7 +188,7 @@
     },
     "req_hoa_approval": {
       "name": "HOA / Condo Approval Letter",
-      "description": "Required when work is performed on a property governed by a Homeowners Association (HOA) or condominium association. Submit a letter confirming the association has reviewed and approved the proposed work."
+      "description": "Required when work is performed on a property governed by a Homeowners Association (HOA) or condominium association. Submit a letter confirming the association has reviewed and approved the proposed work.<br><br>Per Florida Statute 720.3035(1)(c), an association or architectural/construction review committee may not require a building permit to be issued as a prerequisite for its own review of proposed construction or improvements."
     },
     "req_product_approvals": {
       "name": "Product Approvals",
