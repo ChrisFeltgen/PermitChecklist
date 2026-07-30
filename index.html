@@ -729,7 +729,8 @@ function init() {
 }
 
 function loadData() {
-  fetch(DATA_FILE)
+  const cacheBustedUrl = `${DATA_FILE}${DATA_FILE.includes("?") ? "&" : "?"}v=${Date.now()}`;
+  fetch(cacheBustedUrl, { cache: "no-store" })
     .then(r => {
       if (!r.ok) throw new Error(`Failed to load checklist data (${r.status})`);
       return r.json();
