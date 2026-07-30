@@ -5042,7 +5042,7 @@
     },
     {
       "file": "solar_systems",
-      "lastUpdated": "2026-05-27",
+      "lastUpdated": "2026-07-30",
       "name": "Solar Systems (Photovoltaic)",
       "category": "Electrical",
       "propertyType": [
@@ -5063,7 +5063,8 @@
               "description": "Required for photovoltaic systems"
             },
             {
-              "id": "app_fire"
+              "id": "app_fire",
+              "description": "Required for all property types. Submit a Fire Plan Review Application detailing building details and existing life safety systems."
             },
             {
               "id": "app_zoning"
@@ -5140,7 +5141,7 @@
             },
             {
               "type": "inspection_group",
-              "label": "Fire Inspections (If applicable)",
+              "label": "Fire Inspections",
               "inspections": [
                 "FIRE DEPARTMENT FINAL"
               ]
