@@ -2798,7 +2798,7 @@
             {
               "type": "requirement",
               "label": "Survey or Site Plan",
-              "description": "Provide survey or site plan showing location, height, and type of fence and gates."
+              "description": "Provide a survey or site plan showing the location, type, height, and length of each straight segment of the fence, the setbacks from property lines, and the direction each gate swings open."
             }
           ]
         },
@@ -2818,7 +2818,7 @@
             {
               "id": "req_product_approvals",
               "label": "Product Approval or Engineered Details",
-              "description": "Required for fence materials other than standard 6-foot chain link or wood."
+              "description": "Provide Miami-Dade NOA or Florida Product Approval for fence materials other than standard 6-foot chain link or wood."
             }
           ]
         },
