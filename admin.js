@@ -366,6 +366,14 @@ function buildPermitFormHTML(p, isNew) {
         </label>
       </div>
 
+      <p class="empty-state">Last updated: ${p.lastUpdated ? escapeHtml(p.lastUpdated) : "(will be set on save)"}</p>
+
+      <h2>Sections</h2>
+      <div id="sectionsContainer">${sectionsHtml}</div>
+      <button type="button" class="btn btn--ghost btn--small" data-action="add-section">+ Add Section</button>
+
+      <h2>Notice of Commencement</h2>
+      <p class="empty-state">Always shown last on the public checklist, after all sections above.</p>
       <label>Notice of Commencement text (yellow callout)
         <textarea data-field="noticeOfCommencement">${escapeHtml(p.noticeOfCommencement || "")}</textarea>
       </label>
@@ -379,12 +387,6 @@ function buildPermitFormHTML(p, isNew) {
           <input type="text" data-field="noticeOfCommencementRequirementId" value="${escapeHtml(p.noticeOfCommencementRequirementId || "")}" placeholder="req_notice_of_commencement (default)">
         </label>
       </div>
-
-      <p class="empty-state">Last updated: ${p.lastUpdated ? escapeHtml(p.lastUpdated) : "(will be set on save)"}</p>
-
-      <h2>Sections</h2>
-      <div id="sectionsContainer">${sectionsHtml}</div>
-      <button type="button" class="btn btn--ghost btn--small" data-action="add-section">+ Add Section</button>
 
       <p class="form-error" id="permitFormError" hidden></p>
 
