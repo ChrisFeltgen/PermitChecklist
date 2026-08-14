@@ -21,6 +21,18 @@
     .hint-border {border-color:#16A34A;}
     .hint-text {color:#166534;}
 
+    .preview-mode-banner {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #92400e;
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.6rem 1rem;
+    }
+
     :root {
       --city-blue: #2A768D;
       --city-green: #66A785;
@@ -717,6 +729,39 @@ function getTargetPermit() {
   return queryPermit || hash || null;
 }
 
+// Preview mode: the admin panel's Preview button opens this page with
+// ?preview=1 and hands over the checklist currently being edited (including
+// unsaved changes, and regardless of its published/draft state) via
+// sessionStorage instead of checklists.json — window.open() copies
+// sessionStorage into the new tab, so this is only ever populated when
+// admin.js just set it moments earlier for this exact tab.
+function isPreviewMode() {
+  return new URLSearchParams(window.location.search).get("preview") === "1";
+}
+
+function consumePreviewData() {
+  let raw = null;
+  try {
+    raw = sessionStorage.getItem("checklistPreview");
+    sessionStorage.removeItem("checklistPreview");
+  } catch (e) {
+    return null;
+  }
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch (e) {
+    return null;
+  }
+}
+
+function showPreviewBanner() {
+  const banner = document.createElement("div");
+  banner.className = "preview-mode-banner no-print";
+  banner.textContent = "Preview only — this draft is not visible to the public yet.";
+  document.body.insertBefore(banner, document.body.firstChild);
+}
+
 init();
 
 function init() {
@@ -729,15 +774,25 @@ function init() {
 }
 
 function loadData() {
-  const cacheBustedUrl = `${DATA_FILE}${DATA_FILE.includes("?") ? "&" : "?"}v=${Date.now()}`;
-  fetch(cacheBustedUrl, { cache: "no-store" })
-    .then(r => {
-      if (!r.ok) throw new Error(`Failed to load checklist data (${r.status})`);
-      return r.json();
-    })
+  const preview = isPreviewMode() ? consumePreviewData() : null;
+
+  const dataPromise = preview
+    ? Promise.resolve({ library: preview.library || {}, permits: [preview.permit] })
+    : fetch(`${DATA_FILE}${DATA_FILE.includes("?") ? "&" : "?"}v=${Date.now()}`, { cache: "no-store" }).then(r => {
+        if (!r.ok) throw new Error(`Failed to load checklist data (${r.status})`);
+        return r.json();
+      });
+
+  dataPromise
     .then(data => {
       state.library = data.library || {};
-      state.permits = data.permits || [];
+      // Checklists the admin panel has marked as drafts (published: false)
+      // are filtered out here, before anything else runs — they never
+      // appear in the list, search, filters, or via a direct link. Preview
+      // mode is the one exception: it exists specifically to view a draft.
+      state.permits = preview
+        ? (data.permits || [])
+        : (data.permits || []).filter(p => p.published !== false);
 
       const target = getTargetPermit();
       let shouldScrollToContent = false;
@@ -753,6 +808,10 @@ function loadData() {
       }
 
       renderAll();
+
+      if (preview) {
+        showPreviewBanner();
+      }
 
       if (shouldScrollToContent) {
         scrollSelectedPermitIntoView("auto");

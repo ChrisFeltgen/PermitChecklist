@@ -9,6 +9,7 @@ The app is designed so most content changes happen in `data/checklists.json`. Th
 - `index.html` - Main interface, rendering logic, responsive behavior, and print styles.
 - `data/checklists.json` - Permit checklist data and reusable library items.
 - `assets/css/tailwind.css` - Local Tailwind CSS utility file used by the page.
+- `login.php`, `admin.php`, `admin.js`, `admin.css`, `api/` - Admin panel (login, Library Manager, Checklist Editor, User Management). See [Admin Panel](#admin-panel) below.
 
 ## Main Interface
 
@@ -127,6 +128,7 @@ Each object in `permits` represents one selectable permit type.
 Available permit fields:
 
 - `file` - Required. Stable unique ID used for URLs, selection state, and direct links. Use lowercase words separated by underscores, such as `water_heater_changeout`.
+- `published` - Optional. Set to `false` to keep a checklist hidden from the public page entirely — not in the list, search, filters, or reachable via a direct link — while staff finish it in the admin panel. Defaults to `true`. See [Admin Panel](#admin-panel).
 - `lastUpdated` - Optional. Date string in `YYYY-MM-DD` format. Rendered as `MM/DD/YYYY`.
 - `name` - Required. Permit name shown in the permit list and detail heading.
 - `category` - Required. A string or array of strings used to generate category filters.
@@ -359,3 +361,66 @@ This is a static site with no build step. Because the page fetches JSON, it shou
 - Confirm `DATA_FILE` in `index.html` points to the deployed JSON path.
 - No package install or build is required for the app itself.
 - Keep JSON valid: no trailing commas, comments, or unquoted keys.
+- If deploying the admin panel too, see [Admin Panel](#admin-panel) — it needs a PHP-capable host.
+
+## Admin Panel
+
+`admin.php` is a login-gated interface for editing `data/checklists.json` without hand-editing JSON. It's a separate app from the public checklist page — `index.html` still just fetches the JSON file directly and has no login of its own.
+
+The architecture deliberately mirrors the sibling [pompano-beach-project-map](https://github.com/ChrisFeltgen/pompano-beach-project-map) admin panel: a PHP session set by a server-rendered `login.php`, `admin.php` gated by `require_admin_auth()` as its first line (redirects to `login.php` if there's no session — the page never renders unauthenticated), a JSON account file (`api/auth-config.json`, gitignored) instead of a database, and API endpoints under `api/` that return `{error: "..."}` on failure and rely on the session cookie's `SameSite=Lax` rather than a separate CSRF token. There's no build step; deploy the whole repo to a PHP 8+ host (tested against the `scrapcraft.dev` host during development).
+
+Two intentional differences from that sibling project, both because `checklists.json` feeds the live public checklist page directly (the sibling's `projects.json` doesn't carry the same weight):
+
+- **Three roles instead of two** — see below.
+- **Backups + conflict detection on save** — the sibling's `projects.php` does a plain locked write with neither. `api/lib/checklistsStore.php` takes a timestamped backup before every save (`data/backups/`, most recent 30 kept) and validates the file's shape first, so a bad edit or two overlapping saves can't take down the public page.
+
+### Roles
+
+Roles are a hierarchy — each one includes everything the role below it can do:
+
+- **Limited editor** - Edit fields, sections, and items on *existing* checklists only. Cannot create/delete checklists, cannot touch the Library, cannot manage users.
+- **Full editor** - Everything a limited editor can do, plus create/delete checklists and manage Library items (the reusable application forms/snippets checklists reference by `id`).
+- **Full admin** - Everything a full editor can do, plus add/remove user accounts and reset passwords.
+
+Every role/permission check is enforced server-side in `api/*.php` (`require_admin_role()` in `api/auth.php`), not just hidden in the UI.
+
+### First-time setup
+
+No admin credentials are stored in this repository (it's a public repo). After deploying:
+
+1. Copy `api/auth-config.example.json` to `api/auth-config.json` (same folder — that file is gitignored).
+2. Generate a password hash — on the server, or on any machine with PHP, then upload the file:
+   ```
+   php -r "echo password_hash('your-password-here', PASSWORD_DEFAULT), PHP_EOL;"
+   ```
+3. Paste that hash into `api/auth-config.json`, set `role` to `full_admin`.
+4. Visit `admin.php` and log in. Once at least one `full_admin` account exists, add the rest of the staff from the Users tab instead of editing the file again.
+
+To start over, delete `api/auth-config.json` on the server and repeat from step 1.
+
+### How saving works
+
+- Every save to `checklists.json` takes a timestamped backup first and validates the file's shape server-side, so a bad edit can't take down the public page.
+- If two people save around the same time, the second save is rejected with a conflict message instead of silently overwriting the first person's edit — reload and reapply in that case.
+- `lastUpdated` on a checklist is set automatically by the server whenever it's saved through the admin panel.
+
+### Draft checklists and previewing
+
+Every checklist has a `published` field (see [Permit Fields](#permit-fields)). New checklists created in the admin panel start as drafts — unpublished — so staff can build them out before the public ever sees them; the Checklists tab shows a **Draft** badge next to any unpublished checklist in the list, and a Published/Draft toggle at the top of its editor.
+
+Draft checklists are filtered out of `index.html` entirely — not in the list, search, category filters, or reachable via a direct `?permit=` link — until switched to Published and saved.
+
+To see how a checklist (draft or not, saved or not) will actually look, click **Preview** in its editor. It opens the real public page in a new tab rendering exactly what's currently in the form, including unsaved edits — no need to save first just to check formatting.
+
+### Deploying to a different JSON location
+
+`api/lib/checklistsStore.php`'s `checklists_path()` points at `data/checklists.json` relative to the repo root by default, which matches local dev and the `scrapcraft.dev` test host. The real production site serves the JSON from a different path (see "Data Loading" above — `../../../../assets/json/checklists.json` relative to `index.html`). If you deploy the admin panel there, update `checklists_path()` to the real on-disk path first, or the admin panel will edit a file the public page never reads.
+
+### Local development without PHP
+
+`admin-server.js` is a Node.js twin of the PHP admin backend, for clicking through the whole panel with `node admin-server.js` when you don't have PHP installed locally — same idea as the sibling project's own `admin-server.js`. Auth there is HTTP Basic instead of the real session/login.php flow, and it's opt-in:
+
+- With nothing configured, `/admin` is open and you're treated as a `full_admin` — convenient for testing every tab, but *only* the local dev server behaves this way; the real PHP host always requires a login.
+- Set `ADMIN_USERS` to test specific roles: `ADMIN_USERS='[{"username":"lim","password":"...","role":"limited_editor"}]' node admin-server.js` (or the legacy single-account `ADMIN_USER`/`ADMIN_PASS` pair, which gets `full_admin`).
+- The Users tab isn't implemented locally (it writes to the gitignored `api/auth-config.json` on the real host, same limitation the sibling project's dev server has) — you'll see a clear error if you try.
+- It also serves `index.html` and the rest of the static site, so `node admin-server.js` alone is enough to browse and test the whole app at `http://127.0.0.1:5174`.

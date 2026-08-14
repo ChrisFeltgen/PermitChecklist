@@ -1,0 +1,4 @@
+# Admin backend secrets and local data — never commit real credentials or
+# edit history to this public repository. See api/auth-config.example.json.
+api/auth-config.json
+data/backups/*.json

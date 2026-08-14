@@ -1,0 +1,10 @@
+# auth-config.json holds password hashes and must never be served directly.
+<Files "auth-config.json">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>
