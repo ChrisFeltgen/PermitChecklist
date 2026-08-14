@@ -314,8 +314,19 @@ function renderPermitEditor() {
   container.innerHTML = buildPermitFormHTML(state.currentPermit, state.currentPermit.__isNew === true);
 }
 
+// Notice of Commencement library items (req_notice_of_commencement,
+// req_notice_of_commencement_hvac_15000, and any future variant) are only
+// ever meant to be shown via the automatic box controlled by the "Show
+// Notice of Commencement box" checkbox and requirement id override below —
+// never added by hand as a section item, or the checklist ends up with two
+// copies of the same yellow box.
+function isNoticeOfCommencementLibraryId(id) {
+  return typeof id === "string" && id.startsWith("req_notice_of_commencement");
+}
+
 function buildPermitFormHTML(p, isNew) {
   const libraryOptions = Object.entries(state.library)
+    .filter(([id]) => !isNoticeOfCommencementLibraryId(id))
     .slice()
     .sort((a, b) => (a[1].name || "").localeCompare(b[1].name || ""))
     .map(([id, item]) => `<option value="${escapeHtml(id)}">${escapeHtml(item.name || id)}</option>`)
@@ -611,6 +622,10 @@ async function savePermit() {
   if (!payload.name) return showFormError(errorEl, "A name is required.");
   if (!payload.category || (Array.isArray(payload.category) && !payload.category.length)) {
     return showFormError(errorEl, "At least one category is required.");
+  }
+  const hasManualNoc = payload.sections.some((s) => s.items.some((it) => isNoticeOfCommencementLibraryId(it.id)));
+  if (hasManualNoc) {
+    return showFormError(errorEl, 'Remove the Notice of Commencement item from your sections — it\'s added automatically. Use "Show Notice of Commencement box" below Sections instead.');
   }
 
   try {
