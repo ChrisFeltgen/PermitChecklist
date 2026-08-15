@@ -324,6 +324,20 @@ function isNoticeOfCommencementLibraryId(id) {
   return typeof id === "string" && id.startsWith("req_notice_of_commencement");
 }
 
+// Options for the NOC "Version" dropdown: the standard box (empty value —
+// noticeOfCommencementRequirementId omitted means the default
+// req_notice_of_commencement) plus any other req_notice_of_commencement_*
+// library item, picked up automatically as they're added to the Library.
+function buildNocVersionOptions(selected) {
+  const variants = Object.entries(state.library)
+    .filter(([id]) => isNoticeOfCommencementLibraryId(id) && id !== "req_notice_of_commencement")
+    .sort((a, b) => a[0].localeCompare(b[0]));
+  const variantOptions = variants
+    .map(([id]) => `<option value="${escapeHtml(id)}" ${id === selected ? "selected" : ""}>${escapeHtml(id)}</option>`)
+    .join("");
+  return `<option value="" ${selected ? "" : "selected"}>Standard (req_notice_of_commencement)</option>${variantOptions}`;
+}
+
 function buildPermitFormHTML(p, isNew) {
   const libraryEntries = Object.entries(state.library)
     .filter(([id]) => !isNoticeOfCommencementLibraryId(id))
@@ -378,21 +392,24 @@ function buildPermitFormHTML(p, isNew) {
       <div id="sectionsContainer">${sectionsHtml}</div>
       <button type="button" class="btn btn--ghost btn--small" data-action="add-section">+ Add Section</button>
 
+      <div class="section-spacer"></div>
+
       <h2>Notice of Commencement</h2>
-      <p class="empty-state">Always shown last on the public checklist, after all sections above.</p>
-      <label>Notice of Commencement text (yellow callout)
-        <textarea data-field="noticeOfCommencement">${escapeHtml(p.noticeOfCommencement || "")}</textarea>
+      <label class="checkbox-row">
+        <input type="checkbox" data-field="__nocRequired" ${p.__nocRequired ? "checked" : ""}>
+        Show Notice of Commencement box
       </label>
 
-      <div class="field-grid">
-        <label class="checkbox-row">
-          <input type="checkbox" data-field="__nocRequired" ${p.__nocRequired ? "checked" : ""}>
-          Show Notice of Commencement box
+      ${p.__nocRequired ? `
+        <label>Version
+          <select data-field="noticeOfCommencementRequirementId">
+            ${buildNocVersionOptions(p.noticeOfCommencementRequirementId || "")}
+          </select>
         </label>
-        <label>Notice of Commencement requirement id override
-          <input type="text" data-field="noticeOfCommencementRequirementId" value="${escapeHtml(p.noticeOfCommencementRequirementId || "")}" placeholder="req_notice_of_commencement (default)">
+        <label>Additional text (optional, yellow callout)
+          <textarea data-field="noticeOfCommencement">${escapeHtml(p.noticeOfCommencement || "")}</textarea>
         </label>
-      </div>
+      ` : ""}
 
       <p class="form-error" id="permitFormError" hidden></p>
 
@@ -553,9 +570,9 @@ function onPermitEditorChange(e) {
       state.currentPermit.sections[Number(el.dataset.sectionIndex)][field] = value;
     } else {
       state.currentPermit[field] = value;
-      if (field === "__published") {
+      if (field === "__published" || field === "__nocRequired") {
         // Checkbox toggle, not a text field — a full re-render is fine and
-        // keeps the Draft/Published badge in sync immediately.
+        // keeps the badge / Notice of Commencement fields in sync immediately.
         renderPermitEditor();
         return;
       }

@@ -242,6 +242,7 @@ textarea { resize: vertical; min-height: 4.5rem; font-weight: 400; }
 .card-form h2 { margin: 0; font-size: 1rem; }
 
 h2 { font-size: 1.05rem; }
+.section-spacer { height: 1.5rem; }
 .row-actions { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 
 .status-row {
