@@ -1,0 +1,13 @@
+# checklists.json is intentionally public (drafts already stripped out by
+# write_public_checklists() — this is the file the public page fetches).
+# checklists.source.json is the admin-only master copy and includes draft
+# checklists that must never be served directly.
+<Files "checklists.source.json">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</Files>

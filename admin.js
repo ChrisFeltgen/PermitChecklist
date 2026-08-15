@@ -695,7 +695,8 @@ async function deleteCurrentPermit() {
   const file = state.currentPermit.file;
   if (!confirm(`Delete the "${state.currentPermit.name || file}" checklist? A backup is kept on the server, but this can't be undone from the admin page.`)) return;
   try {
-    await apiFetch(`api/permits.php?file=${encodeURIComponent(file)}`, { method: "DELETE" });
+    const hashParam = state.checklistsHash ? `&expectedHash=${encodeURIComponent(state.checklistsHash)}` : "";
+    await apiFetch(`api/permits.php?file=${encodeURIComponent(file)}${hashParam}`, { method: "DELETE" });
     showToast("Checklist deleted");
     state.currentPermit = null;
     state.currentPermitFile = null;
@@ -875,14 +876,15 @@ async function deleteCurrentLibraryItem() {
   if (!item || item.__isNew) return;
   const id = item.id;
   if (!confirm(`Delete the "${item.name || id}" library item?`)) return;
+  const hashParam = state.checklistsHash ? `&expectedHash=${encodeURIComponent(state.checklistsHash)}` : "";
   try {
-    await apiFetch(`api/library.php?id=${encodeURIComponent(id)}`, { method: "DELETE" });
+    await apiFetch(`api/library.php?id=${encodeURIComponent(id)}${hashParam}`, { method: "DELETE" });
     await afterLibraryDelete();
   } catch (e) {
     if (String(e.message).includes("still used by")) {
       if (confirm(`"${item.name || id}" is still in use by other permits.\n\nDelete anyway? Those checklists will show the raw id until updated.`)) {
         try {
-          await apiFetch(`api/library.php?id=${encodeURIComponent(id)}&force=1`, { method: "DELETE" });
+          await apiFetch(`api/library.php?id=${encodeURIComponent(id)}&force=1${hashParam}`, { method: "DELETE" });
           await afterLibraryDelete();
         } catch (e2) {
           showToast(e2.message, true);
@@ -902,6 +904,13 @@ async function loadUsers() {
   const res = await apiFetch("api/users.php");
   state.users = res.users;
   renderUsersTable();
+  const noticeEl = document.getElementById("usersTableError");
+  if (res.notice) {
+    noticeEl.textContent = res.notice;
+    noticeEl.hidden = false;
+  } else {
+    noticeEl.hidden = true;
+  }
 }
 
 function renderUsersTable() {

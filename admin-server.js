@@ -10,10 +10,19 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { verifyBasicAuth, hasConfiguredUsers } = require('./api/lib/adminUsers');
 
 const root = __dirname;
-const checklistsFile = path.join(root, 'data', 'checklists.json');
+// checklists.source.json is the admin-only master copy (drafts included).
+// checklists.json — same name/location the public page has always fetched
+// — is regenerated on every save with draft (published: false) permits
+// stripped out. Drafts must never reach that file: index.html reads it
+// directly with no server involved, so filtering has to happen at write
+// time here, not client-side. See api/lib/checklistsStore.php's header
+// comment for the PHP side of this same split.
+const checklistsFile = path.join(root, 'data', 'checklists.source.json');
+const publicChecklistsFile = path.join(root, 'data', 'checklists.json');
 const backupsDir = path.join(root, 'data', 'backups');
 const port = Number(process.env.PORT || 5174);
 
@@ -94,7 +103,11 @@ async function serveAdminPage(request, response) {
     // what the real PHP host renders once a request is authenticated.
     const html = content
       .replace(/^<\?php[\s\S]*?\?>\s*/, '')
-      .replace(/<\?php\s+echo\s+json_encode\(\$currentAdminUser\);\s*\?>/, JSON.stringify(adminUser));
+      // A replacer function, not a string — a string replacement treats
+      // "$&", "$1", etc. in adminUser's JSON as regex backreferences
+      // instead of literal text (e.g. a locally-configured username
+      // containing "$&" would corrupt this instead of being inserted as-is).
+      .replace(/<\?php\s+echo\s+json_encode\(\$currentAdminUser\);\s*\?>/, () => JSON.stringify(adminUser));
     response.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     response.end(html);
   } catch {
@@ -116,7 +129,19 @@ function serveLoginNotice(response) {
 /* checklists.json store — mirrors api/lib/checklistsStore.php             */
 /* ---------------------------------------------------------------------- */
 
+// One-time migration for existing deployments: before this source/public
+// split existed, checklists.json WAS the full data. If the source file
+// hasn't been created yet but the old public file is there, seed the
+// source from it — mirrors bootstrap_checklists_source_if_missing() in
+// api/lib/checklistsStore.php.
+async function bootstrapChecklistsSourceIfMissing() {
+  if (await pathExists(checklistsFile)) return;
+  if (!(await pathExists(publicChecklistsFile))) return;
+  await fs.promises.copyFile(publicChecklistsFile, checklistsFile);
+}
+
 async function loadChecklists() {
+  await bootstrapChecklistsSourceIfMissing();
   const content = await fs.promises.readFile(checklistsFile, 'utf8');
   const decoded = JSON.parse(content);
   if (!decoded.library || typeof decoded.library !== 'object') decoded.library = {};
@@ -125,8 +150,29 @@ async function loadChecklists() {
 }
 
 function checklistsHash(data) {
-  const crypto = require('crypto');
   return crypto.createHash('sha1').update(JSON.stringify(data)).digest('hex');
+}
+
+function encodeChecklistsMatchingStyle(data, referenceRaw) {
+  const useCrlf = referenceRaw.includes('\r\n');
+  let output = JSON.stringify(data, null, 2);
+  if (useCrlf) output = output.replace(/\n/g, '\r\n');
+  return output + (useCrlf ? '\r\n' : '\n');
+}
+
+// Regenerates the public checklists.json from the full (source) data,
+// stripping out anything marked published: false — see the top-of-file
+// comment on publicChecklistsFile for why this has to happen here.
+async function writePublicChecklists(data) {
+  const publicData = { ...data, permits: data.permits.filter((p) => (p.published ?? true) !== false) };
+  let existingRaw = '';
+  try {
+    existingRaw = await fs.promises.readFile(publicChecklistsFile, 'utf8');
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  const output = encodeChecklistsMatchingStyle(publicData, existingRaw);
+  await fs.promises.writeFile(publicChecklistsFile, output, 'utf8');
 }
 
 function validateChecklists(data) {
@@ -175,12 +221,21 @@ function validateChecklists(data) {
   return errors;
 }
 
+async function pathExists(candidate) {
+  try {
+    await fs.promises.access(candidate);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 async function backupChecklists(rawJson) {
   await fs.promises.mkdir(backupsDir, { recursive: true });
   const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\..+/, '').replace('T', '-');
   let backupPath = path.join(backupsDir, `checklists-${stamp}.json`);
   let suffix = 0;
-  while (fs.existsSync(backupPath)) {
+  while (await pathExists(backupPath)) {
     suffix += 1;
     backupPath = path.join(backupsDir, `checklists-${stamp}-${suffix}.json`);
   }
@@ -193,6 +248,8 @@ async function backupChecklists(rawJson) {
 }
 
 async function saveChecklists(data, expectedHash) {
+  await bootstrapChecklistsSourceIfMissing();
+
   const errors = validateChecklists(data);
   if (errors.length) {
     const err = new Error(errors.join('; '));
@@ -203,8 +260,12 @@ async function saveChecklists(data, expectedHash) {
   let currentRaw = '';
   try {
     currentRaw = await fs.promises.readFile(checklistsFile, 'utf8');
-  } catch {
-    // No existing file — nothing to conflict-check or back up.
+  } catch (error) {
+    // Only a genuinely missing file means "nothing to conflict-check or
+    // back up" — anything else (permissions, a transient I/O error) must
+    // not be silently treated the same way, or a save could go through
+    // with no conflict check and no backup while masking a real problem.
+    if (error.code !== 'ENOENT') throw error;
   }
 
   if (expectedHash && currentRaw.trim()) {
@@ -220,15 +281,12 @@ async function saveChecklists(data, expectedHash) {
     await backupChecklists(currentRaw);
   }
 
-  // Match the file's existing line-ending convention (this repo's
-  // checklists.json is CRLF) — otherwise every save rewrites every line
-  // ending and turns a one-field edit into a full-file diff.
-  const useCrlf = currentRaw.includes('\r\n');
-  let output = JSON.stringify(data, null, 2);
-  if (useCrlf) output = output.replace(/\n/g, '\r\n');
-  output += useCrlf ? '\r\n' : '\n';
-
+  const output = encodeChecklistsMatchingStyle(data, currentRaw);
   await fs.promises.writeFile(checklistsFile, output, 'utf8');
+
+  // Only reached once the source file is safely written — a failure here
+  // still leaves the source (the canonical data) intact and backed up.
+  await writePublicChecklists(data);
 }
 
 /* ---------------------------------------------------------------------- */
@@ -237,6 +295,13 @@ async function saveChecklists(data, expectedHash) {
 
 async function handlePermitsApi(request, response, url) {
   const method = request.method;
+
+  // Auth required for every method, including GET: this endpoint reads
+  // checklists.source.json, which includes drafts — only the regenerated
+  // public checklists.json (served as a plain static file) is safe to hand
+  // to an unauthenticated caller.
+  const user = checkLocalAdminAuth(request, response);
+  if (user === false) return;
 
   if (method === 'GET') {
     const data = await loadChecklists();
@@ -252,9 +317,6 @@ async function handlePermitsApi(request, response, url) {
     }));
     return sendJson(response, 200, { permits: summaries, hash: checklistsHash(data) });
   }
-
-  const user = checkLocalAdminAuth(request, response);
-  if (user === false) return;
 
   if (method === 'POST') {
     if (!hasMinRole(user, 'full_editor')) return sendJson(response, 403, { error: 'You do not have permission to do that.' });
@@ -303,13 +365,14 @@ async function handlePermitsApi(request, response, url) {
   if (method === 'DELETE') {
     if (!hasMinRole(user, 'full_editor')) return sendJson(response, 403, { error: 'You do not have permission to do that.' });
     const file = url.searchParams.get('file');
+    const expectedHash = url.searchParams.get('expectedHash') || undefined;
     const data = await loadChecklists();
     const before = data.permits.length;
     data.permits = data.permits.filter((p) => p.file !== file);
     if (data.permits.length === before) return sendJson(response, 404, { error: 'Permit not found.' });
 
     try {
-      await saveChecklists(data);
+      await saveChecklists(data, expectedHash);
     } catch (error) {
       return sendJson(response, error.status || 400, { error: error.message });
     }
@@ -338,13 +401,16 @@ function libraryItemUsages(data, id) {
 async function handleLibraryApi(request, response, url) {
   const method = request.method;
 
+  // Same reasoning as handlePermitsApi: this reads checklists.source.json,
+  // which includes drafts, so GET needs auth too now.
+  const user = checkLocalAdminAuth(request, response);
+  if (user === false) return;
+
   if (method === 'GET') {
     const data = await loadChecklists();
     return sendJson(response, 200, { library: data.library, hash: checklistsHash(data) });
   }
 
-  const user = checkLocalAdminAuth(request, response);
-  if (user === false) return;
   if (!hasMinRole(user, 'full_editor')) return sendJson(response, 403, { error: 'You do not have permission to do that.' });
 
   if (method === 'POST') {
@@ -398,6 +464,7 @@ async function handleLibraryApi(request, response, url) {
   if (method === 'DELETE') {
     const id = url.searchParams.get('id') || '';
     const force = url.searchParams.get('force') === '1';
+    const expectedHash = url.searchParams.get('expectedHash') || undefined;
     const data = await loadChecklists();
     if (!id || !data.library[id]) return sendJson(response, 404, { error: 'Library item not found.' });
 
@@ -406,7 +473,7 @@ async function handleLibraryApi(request, response, url) {
 
     delete data.library[id];
     try {
-      await saveChecklists(data);
+      await saveChecklists(data, expectedHash);
     } catch (error) {
       return sendJson(response, error.status || 400, { error: error.message });
     }
@@ -418,10 +485,16 @@ async function handleLibraryApi(request, response, url) {
 }
 
 function handleUsersApi(request, response) {
-  // Account management writes to the gitignored api/auth-config.json on the
-  // real PHP host — there's nothing meaningful for this Node twin to do
-  // locally, same call the sibling project's admin-server.js makes.
-  sendJson(response, 501, { error: 'User management runs on the PHP host only — not available in the local dev server.' });
+  const notice = 'User management runs on the PHP host only — not available in the local dev server.';
+  // GET succeeds with an empty list + a notice rather than erroring, so
+  // opening /admin doesn't show an alarming error toast on every single
+  // page load just because the default local identity is full_admin (which
+  // makes the Users tab visible, and admin.js loads it on init). Writes
+  // (account management) genuinely can't work locally — those still error.
+  if (request.method === 'GET') {
+    return sendJson(response, 200, { users: [], notice });
+  }
+  sendJson(response, 501, { error: notice });
 }
 
 function handleLogoutApi(request, response) {
@@ -440,13 +513,31 @@ function handleLogoutApi(request, response) {
 function getStaticFilePath(urlPathname) {
   const pathname = urlPathname === '/' ? '/index.html' : urlPathname;
   const filePath = path.resolve(root, `.${decodeURIComponent(pathname)}`);
-  if (!filePath.startsWith(root)) return null;
+  // A plain startsWith(root) would also match a sibling directory whose
+  // name happens to share root as a string prefix (e.g. root "…/App" would
+  // wrongly admit "…/App-backup/secret.json") — require the next character
+  // to be the path separator (or an exact match) so only root itself or a
+  // real descendant of it passes.
+  if (filePath !== root && !filePath.startsWith(root + path.sep)) return null;
   return filePath;
+}
+
+// Files the real PHP host blocks via .htaccess (api/.htaccess,
+// data/backups/.htaccess) — nothing enforces that here, since Node ignores
+// .htaccess entirely, so the same paths need blocking explicitly.
+const STATIC_DENYLIST = [
+  path.join(root, 'api', 'auth-config.json'),
+  path.join(root, 'data', 'checklists.source.json'),
+  path.join(root, 'data', 'backups'),
+];
+
+function isStaticDenied(filePath) {
+  return STATIC_DENYLIST.some((denied) => filePath === denied || filePath.startsWith(denied + path.sep));
 }
 
 async function serveStatic(request, response, urlPathname) {
   const filePath = getStaticFilePath(urlPathname);
-  if (!filePath) {
+  if (!filePath || isStaticDenied(filePath)) {
     response.writeHead(403);
     response.end('Forbidden');
     return;

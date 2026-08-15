@@ -35,14 +35,19 @@ function library_item_usages(array $data, string $id): array
 try {
     $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 
+    // Auth required for every method, including GET: this endpoint reads
+    // checklists.source.json, which can reference library items only used
+    // by draft checklists — only the regenerated public checklists.json
+    // (served as a plain static file) is safe to hand to an unauthenticated
+    // caller.
+    require __DIR__ . '/auth.php';
+    $currentUser = require_admin_auth('json');
+
     if ($method === 'GET') {
-        // Same public-data reasoning as api/permits.php.
         $data = load_checklists();
         send_json(200, ['library' => $data['library'], 'hash' => checklists_hash($data)]);
     }
 
-    require __DIR__ . '/auth.php';
-    $currentUser = require_admin_auth('json');
     // Limited editors can edit checklist pages but not the shared Library —
     // it's referenced by many permits at once.
     require_admin_role($currentUser, 'full_editor');
@@ -67,7 +72,7 @@ try {
             'description' => $body['description'] ?? null,
             'links' => $body['links'] ?? null,
             'variant' => $body['variant'] ?? null,
-        ], static fn($v): bool => $v !== null && $v !== '');
+        ], 'value_is_present');
 
         try {
             save_checklists($data, $body['expectedHash'] ?? null);
@@ -92,7 +97,7 @@ try {
                 $item[$field] = $body[$field];
             }
         }
-        $data['library'][$id] = array_filter($item, static fn($v): bool => $v !== null && $v !== '');
+        $data['library'][$id] = array_filter($item, 'value_is_present');
 
         try {
             save_checklists($data, $body['expectedHash'] ?? null);
@@ -106,6 +111,7 @@ try {
     if ($method === 'DELETE') {
         $id = (string) ($_GET['id'] ?? '');
         $force = ($_GET['force'] ?? '') === '1';
+        $expectedHash = $_GET['expectedHash'] ?? null;
 
         $data = load_checklists();
         if ($id === '' || !isset($data['library'][$id])) {
@@ -120,9 +126,9 @@ try {
         unset($data['library'][$id]);
 
         try {
-            save_checklists($data);
+            save_checklists($data, $expectedHash);
         } catch (Throwable $error) {
-            send_json(400, ['error' => $error->getMessage()]);
+            send_json(str_starts_with($error->getMessage(), 'CONFLICT') ? 409 : 400, ['error' => $error->getMessage()]);
         }
 
         send_json(200, ['ok' => true]);

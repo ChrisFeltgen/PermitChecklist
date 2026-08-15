@@ -11,12 +11,20 @@ require_once __DIR__ . '/lib/session.php';
  * Include this at the very top of any file that needs protecting, before
  * any other output, then call require_admin_auth() explicitly.
  *
- * Returns the authenticated user's public identity ({username, role}) so
- * callers can gate role-specific features (see require_admin_role()) —
- * every account passes this check regardless of role; the role only
- * matters for role-gated actions.
+ * Returns the authenticated user's current public identity ({username,
+ * role}), freshly re-checked against api/auth-config.json on every call —
+ * not just whatever was stashed in the session at login time. That refresh
+ * matters: without it, a session cookie left open in a browser would keep
+ * its original role (or keep working at all) even after a full_admin
+ * revokes or demotes that account from the Users tab, since PHP sessions
+ * here have no server-side expiry (session.lifetime is 0 — "until the
+ * browser closes", not a fixed TTL). Callers can gate role-specific
+ * features on the returned role (see require_admin_role()) — every account
+ * passes this check regardless of role; the role only matters for
+ * role-gated actions.
  *
- * $onFail controls what happens when there's no valid session:
+ * $onFail controls what happens when there's no valid session (or the
+ * account behind it no longer exists):
  *   'redirect' (default) — for HTML pages (admin.php): sends the browser to
  *     login.php, preserving the current URL as ?next= so login returns here.
  *   'json' — for API endpoints: a fetch() call can't follow that redirect
@@ -27,12 +35,25 @@ function require_admin_auth(string $onFail = 'redirect'): array
 {
     start_admin_session();
 
-    $user = $_SESSION['user'] ?? null;
-    if (is_array($user) && isset($user['username'])) {
-        return [
-            'username' => (string) $user['username'],
-            'role' => normalize_role($user['role'] ?? null),
-        ];
+    $sessionUser = $_SESSION['user'] ?? null;
+    $username = is_array($sessionUser) ? (string) ($sessionUser['username'] ?? '') : '';
+
+    if ($username !== '') {
+        $currentAccount = find_auth_user(read_auth_users(), $username);
+        if ($currentAccount !== null) {
+            $identity = [
+                'username' => (string) $currentAccount['username'],
+                'role' => normalize_role($currentAccount['role'] ?? null),
+            ];
+            // Keep the session's cached role in sync so it doesn't drift
+            // from the account record between requests.
+            $_SESSION['user'] = $identity;
+            return $identity;
+        }
+
+        // The account behind this session was deleted since login — drop
+        // the stale session instead of continuing to honor it.
+        unset($_SESSION['user']);
     }
 
     if ($onFail === 'json') {

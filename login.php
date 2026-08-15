@@ -18,28 +18,59 @@ if (isset($_SESSION['user']['username'])) {
 
 $error = '';
 $username = '';
+const LOGIN_MAX_ATTEMPTS = 5;
+const LOGIN_LOCKOUT_SECONDS = 15 * 60;
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
     $username = trim((string) ($_POST['username'] ?? ''));
     $password = (string) ($_POST['password'] ?? '');
 
-    $authenticatedUser = null;
-    foreach (read_auth_users() as $user) {
-        $expectedUser = (string) ($user['username'] ?? '');
-        $expectedHash = (string) ($user['passwordHash'] ?? '');
+    // A dummy hash so a nonexistent username still costs a password_verify
+    // call — otherwise "no such user" would return measurably faster than
+    // "wrong password", leaking which usernames exist.
+    $dummyHash = '$2y$10$C6UzMDM.H6dfI/f/IKcEeOtNjWkxKGZ4z8Z8eQxrNvBznf1H1Kv0O';
 
-        if ($expectedUser === '' || $expectedHash === '') {
-            continue;
+    $authenticatedUser = null;
+    $lockedOut = false;
+
+    // The read-check-verify-write happens under one lock (update_auth_users)
+    // so a burst of concurrent guesses against the same account can't each
+    // read the same "before" attempt count and undercount the lockout.
+    update_auth_users(function (array $users) use ($username, $password, $dummyHash, &$authenticatedUser, &$lockedOut, &$error): array {
+        $index = find_auth_user_index($users, $username);
+
+        if ($index === null) {
+            password_verify($password, $dummyHash);
+            return $users;
         }
 
-        if (hash_equals($expectedUser, $username) && password_verify($password, $expectedHash)) {
+        $user = $users[$index];
+        $lockedUntil = $user['lockedUntil'] ?? null;
+        if ($lockedUntil && strtotime((string) $lockedUntil) > time()) {
+            $lockedOut = true;
+            return $users;
+        }
+
+        if (password_verify($password, (string) ($user['passwordHash'] ?? ''))) {
+            $users[$index]['failedAttempts'] = 0;
+            $users[$index]['lockedUntil'] = null;
             $authenticatedUser = [
-                'username' => $expectedUser,
+                'username' => (string) $user['username'],
                 'role' => normalize_role($user['role'] ?? null),
             ];
-            break;
+            return $users;
         }
-    }
+
+        $attempts = (int) ($user['failedAttempts'] ?? 0) + 1;
+        if ($attempts >= LOGIN_MAX_ATTEMPTS) {
+            $users[$index]['failedAttempts'] = 0;
+            $users[$index]['lockedUntil'] = gmdate('c', time() + LOGIN_LOCKOUT_SECONDS);
+        } else {
+            $users[$index]['failedAttempts'] = $attempts;
+        }
+
+        return $users;
+    });
 
     if ($authenticatedUser !== null) {
         session_regenerate_id(true);
@@ -48,7 +79,9 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         exit;
     }
 
-    $error = 'Incorrect username or password.';
+    $error = $lockedOut
+        ? 'Too many failed attempts. Try again in a few minutes.'
+        : 'Incorrect username or password.';
 }
 
 $nextField = htmlspecialchars($next, ENT_QUOTES);

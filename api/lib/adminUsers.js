@@ -17,8 +17,15 @@ const crypto = require('crypto');
 
 const ROLES = ['limited_editor', 'full_editor', 'full_admin'];
 
+// Defaults an unrecognized/misconfigured role to the lowest privilege, not
+// the highest — matching api/lib/authStore.php's normalize_role() on the
+// real PHP host, so a role-name typo in ADMIN_USERS doesn't silently grant
+// more access locally than the same typo would on the live site. (This is
+// separate from admin-server.js's "no ADMIN_USERS configured at all"
+// fallback, which intentionally stays full_admin for convenience — that
+// path never calls this function.)
 function normalizeRole(role) {
-  return ROLES.includes(role) ? role : 'full_admin';
+  return ROLES.includes(role) ? role : 'limited_editor';
 }
 
 function getConfiguredUsers() {

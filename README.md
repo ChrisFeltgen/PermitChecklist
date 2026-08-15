@@ -382,7 +382,9 @@ Roles are a hierarchy — each one includes everything the role below it can do:
 - **Full editor** - Everything a limited editor can do, plus create/delete checklists and manage Library items (the reusable application forms/snippets checklists reference by `id`).
 - **Full admin** - Everything a full editor can do, plus add/remove user accounts and reset passwords.
 
-Every role/permission check is enforced server-side in `api/*.php` (`require_admin_role()` in `api/auth.php`), not just hidden in the UI.
+Every role/permission check is enforced server-side in `api/*.php` (`require_admin_role()` in `api/auth.php`), not just hidden in the UI. Sessions are also re-checked against `api/auth-config.json` on every request, not just at login — if a `full_admin` removes or demotes an account from the Users tab, that change takes effect on that user's very next request instead of waiting for them to log out.
+
+Login is rate-limited: 5 failed attempts against one account lock it out for 15 minutes.
 
 ### First-time setup
 
@@ -398,23 +400,29 @@ No admin credentials are stored in this repository (it's a public repo). After d
 
 To start over, delete `api/auth-config.json` on the server and repeat from step 1.
 
+### Two data files: checklists.source.json and checklists.json
+
+The admin panel edits `data/checklists.source.json` — the full data, including draft checklists. `data/checklists.json` (same name and location the public page has always fetched) is regenerated automatically after every save, with draft (`published: false`) checklists stripped out entirely. This split exists because `index.html` — and, in production, whatever fetches its deployed copy — reads `checklists.json` directly as a static file with no server or auth involved at all, so a client-side "hide drafts" filter alone can't stop someone from requesting the raw file and reading a draft's full content. Filtering has to happen at write time, server-side, which is what `write_public_checklists()` in `api/lib/checklistsStore.php` does.
+
+`checklists.source.json` is gitignored, same reasoning as `api/auth-config.json` — draft content shouldn't sit in this public repo either. **Existing deployments migrate automatically**: the first time the admin panel loads or saves after this update, if `checklists.source.json` doesn't exist yet but `checklists.json` does, it's seeded from that file (identical content, since there were no drafts before this feature existed) — no manual step required.
+
 ### How saving works
 
-- Every save to `checklists.json` takes a timestamped backup first and validates the file's shape server-side, so a bad edit can't take down the public page.
-- If two people save around the same time, the second save is rejected with a conflict message instead of silently overwriting the first person's edit — reload and reapply in that case.
+- Every save takes a timestamped backup of `checklists.source.json` first and validates the file's shape server-side, so a bad edit can't take down the public page.
+- If two people save (or delete) around the same time, the second one is rejected with a conflict message instead of silently overwriting the first person's edit — reload and reapply in that case.
 - `lastUpdated` on a checklist is set automatically by the server whenever it's saved through the admin panel.
 
 ### Draft checklists and previewing
 
 Every checklist has a `published` field (see [Permit Fields](#permit-fields)). New checklists created in the admin panel start as drafts — unpublished — so staff can build them out before the public ever sees them; the Checklists tab shows a **Draft** badge next to any unpublished checklist in the list, and a Published/Draft toggle at the top of its editor.
 
-Draft checklists are filtered out of `index.html` entirely — not in the list, search, category filters, or reachable via a direct `?permit=` link — until switched to Published and saved.
+Draft checklists never reach `data/checklists.json` (see above) — not in the list, search, category filters, or reachable via a direct `?permit=` link — until switched to Published and saved. The admin API (`api/permits.php`, `api/library.php`) requires login for every request, including reads, since it operates on the full `checklists.source.json`.
 
 To see how a checklist (draft or not, saved or not) will actually look, click **Preview** in its editor. It opens the real public page in a new tab rendering exactly what's currently in the form, including unsaved edits — no need to save first just to check formatting.
 
 ### Deploying to a different JSON location
 
-`api/lib/checklistsStore.php`'s `checklists_path()` points at `data/checklists.json` relative to the repo root by default, which matches local dev and the `scrapcraft.dev` test host. The real production site serves the JSON from a different path (see "Data Loading" above — `../../../../assets/json/checklists.json` relative to `index.html`). If you deploy the admin panel there, update `checklists_path()` to the real on-disk path first, or the admin panel will edit a file the public page never reads.
+`api/lib/checklistsStore.php` has two path functions: `checklists_path()` (the admin-only source, drafts included) and `public_checklists_path()` (what the public page fetches, drafts stripped). Both default to `data/checklists.source.json` and `data/checklists.json` relative to the repo root, which matches local dev and the `scrapcraft.dev` test host. The real production site serves the public JSON from a different path (see "Data Loading" above — `../../../../assets/json/checklists.json` relative to `index.html`). If you deploy the admin panel there, update `public_checklists_path()` to that real on-disk path — and make sure it's not reachable by any URL other than the one `index.html` already fetches — or drafts published from the admin panel won't reach the live public page. `checklists_path()` (the source) just needs to live somewhere the PHP process can read and write; it doesn't need to be, and must not be, web-accessible (see `data/.htaccess`).
 
 ### Local development without PHP
 
@@ -422,5 +430,6 @@ To see how a checklist (draft or not, saved or not) will actually look, click **
 
 - With nothing configured, `/admin` is open and you're treated as a `full_admin` — convenient for testing every tab, but *only* the local dev server behaves this way; the real PHP host always requires a login.
 - Set `ADMIN_USERS` to test specific roles: `ADMIN_USERS='[{"username":"lim","password":"...","role":"limited_editor"}]' node admin-server.js` (or the legacy single-account `ADMIN_USER`/`ADMIN_PASS` pair, which gets `full_admin`).
-- The Users tab isn't implemented locally (it writes to the gitignored `api/auth-config.json` on the real host, same limitation the sibling project's dev server has) — you'll see a clear error if you try.
+- The Users tab isn't implemented locally (it writes to the gitignored `api/auth-config.json` on the real host, same limitation the sibling project's dev server has) — opening it shows an inline notice instead of an error.
+- It reads and writes the same `data/checklists.source.json` / `data/checklists.json` split described above, including the auto-migration and the draft-stripping on every save, so testing draft visibility locally matches what the real host does.
 - It also serves `index.html` and the rest of the static site, so `node admin-server.js` alone is enough to browse and test the whole app at `http://127.0.0.1:5174`.

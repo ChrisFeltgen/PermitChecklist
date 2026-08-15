@@ -17,10 +17,15 @@ function send_json(int $statusCode, array $payload): void
 try {
     $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 
+    // Auth required for every method, including GET: this endpoint reads
+    // checklists.source.json, which includes drafts (published: false) —
+    // only the regenerated public checklists.json (served as a plain
+    // static file, drafts already stripped by write_public_checklists())
+    // is safe to hand to an unauthenticated caller.
+    require __DIR__ . '/auth.php';
+    $currentUser = require_admin_auth('json');
+
     if ($method === 'GET') {
-        // Reading checklist data is public — it's the same content anyone
-        // can already fetch from the static checklists.json file. Only
-        // writes (below) need authentication.
         $data = load_checklists();
 
         $file = $_GET['file'] ?? '';
@@ -43,9 +48,6 @@ try {
         ], $data['permits']);
         send_json(200, ['permits' => $summaries, 'hash' => checklists_hash($data)]);
     }
-
-    require __DIR__ . '/auth.php';
-    $currentUser = require_admin_auth('json');
 
     if ($method === 'POST') {
         require_admin_role($currentUser, 'full_editor');
@@ -122,6 +124,7 @@ try {
         require_admin_role($currentUser, 'full_editor');
 
         $file = (string) ($_GET['file'] ?? '');
+        $expectedHash = $_GET['expectedHash'] ?? null;
         $data = load_checklists();
         $before = count($data['permits']);
         $data['permits'] = array_values(array_filter($data['permits'], static fn(array $p): bool => $p['file'] !== $file));
@@ -131,9 +134,9 @@ try {
         }
 
         try {
-            save_checklists($data);
+            save_checklists($data, $expectedHash);
         } catch (Throwable $error) {
-            send_json(400, ['error' => $error->getMessage()]);
+            send_json(str_starts_with($error->getMessage(), 'CONFLICT') ? 409 : 400, ['error' => $error->getMessage()]);
         }
 
         send_json(200, ['ok' => true]);
