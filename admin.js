@@ -325,20 +325,15 @@ function isNoticeOfCommencementLibraryId(id) {
 }
 
 function buildPermitFormHTML(p, isNew) {
-  const libraryOptions = Object.entries(state.library)
+  const libraryEntries = Object.entries(state.library)
     .filter(([id]) => !isNoticeOfCommencementLibraryId(id))
-    .slice()
-    .sort((a, b) => (a[1].name || "").localeCompare(b[1].name || ""))
-    .map(([id, item]) => `<option value="${escapeHtml(id)}">${escapeHtml(item.name || id)}</option>`)
-    .join("");
+    .sort((a, b) => (a[1].name || "").localeCompare(b[1].name || ""));
 
-  const sectionsHtml = (p.sections || []).map((section, si) => buildSectionHTML(section, si, p.sections.length)).join("")
+  const sectionsHtml = (p.sections || []).map((section, si) => buildSectionHTML(section, si, p.sections.length, libraryEntries)).join("")
     || '<p class="empty-state">No sections yet.</p>';
 
   return `
     <form class="editor-form" id="permitForm">
-      <datalist id="libraryOptionsList">${libraryOptions}</datalist>
-
       <div class="status-row">
         <span class="badge ${p.__published ? "badge--live" : "badge--draft"}">${p.__published ? "Published" : "Draft"}</span>
         <label class="checkbox-row">
@@ -411,8 +406,8 @@ function buildPermitFormHTML(p, isNew) {
   `;
 }
 
-function buildSectionHTML(section, si, total) {
-  const itemsHtml = (section.items || []).map((item, ii) => buildItemHTML(item, si, ii, section.items.length)).join("")
+function buildSectionHTML(section, si, total, libraryEntries) {
+  const itemsHtml = (section.items || []).map((item, ii) => buildItemHTML(item, si, ii, section.items.length, libraryEntries)).join("")
     || '<p class="empty-state">No items in this section.</p>';
   return `
     <div class="section-block" data-section-index="${si}">
@@ -428,7 +423,21 @@ function buildSectionHTML(section, si, total) {
   `;
 }
 
-function buildItemHTML(item, si, ii, total) {
+function buildLibrarySelectOptions(libraryEntries, selectedId) {
+  const hasMatch = libraryEntries.some(([id]) => id === selectedId);
+  const options = libraryEntries
+    .map(([id, item]) => `<option value="${escapeHtml(id)}" ${id === selectedId ? "selected" : ""}>${escapeHtml(item.name || id)}</option>`)
+    .join("");
+  // If the stored id isn't in the current library (removed, or a typo),
+  // keep it as its own option instead of silently swapping the selection
+  // to something else — the raw id is still shown as a fallback on save.
+  const orphan = selectedId && !hasMatch
+    ? `<option value="${escapeHtml(selectedId)}" selected>${escapeHtml(selectedId)} (not found in Library)</option>`
+    : "";
+  return `<option value="" ${selectedId ? "" : "selected"}>-- Select a library item --</option>${orphan}${options}`;
+}
+
+function buildItemHTML(item, si, ii, total, libraryEntries) {
   const kind = item.type === "requirement" ? "requirement" : item.type === "inspection_group" ? "inspection_group" : "library_ref";
   const attrs = `data-scope="item" data-section-index="${si}" data-item-index="${ii}"`;
 
@@ -436,7 +445,9 @@ function buildItemHTML(item, si, ii, total) {
   if (kind === "library_ref") {
     bodyHtml = `
       <label>Library item
-        <input type="text" list="libraryOptionsList" data-field="id" ${attrs} value="${escapeHtml(item.id || "")}" placeholder="library item id">
+        <select data-field="id" ${attrs}>
+          ${buildLibrarySelectOptions(libraryEntries, item.id || "")}
+        </select>
       </label>
       <details>
         <summary>Overrides (optional)</summary>
