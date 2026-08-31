@@ -1170,7 +1170,7 @@
     },
     {
       "file": "change_of_use",
-      "lastUpdated": "2026-04-27",
+      "lastUpdated": "2026-08-31",
       "name": "Change of Use",
       "category": "Building",
       "propertyType": [
@@ -1178,15 +1178,23 @@
         "Commercial"
       ],
       "whenPermitRequired": "A Change of Use permit is required when Planning and Zoning determines that the use or occupancy of a building or tenant space has changed. This process allows the Building Department to verify that the existing construction, layout, and life safety systems comply with current code requirements for the proposed use prior to issuing a new Certificate of Occupancy.<br><br>A Change of Use permit may only be issued when NO construction work is required. If alterations are necessary to meet the requirements of the new occupancy, a standard building permit must be obtained instead.",
+      "noticeOfCommencementRequired": false,
       "sections": [
         {
           "name": "Applications",
           "items": [
             {
-              "id": "app_building"
+              "id": "app_building",
+              "description": "Identify the current and proposed use or occupancy and clearly state: \"Change of Use - No construction proposed.\" The contractor/company section is not required for a no-work application."
             },
             {
-              "id": "app_fire"
+              "type": "requirement",
+              "label": "Signed Owner Authorization, if applicable",
+              "description": "Required when the application is submitted by anyone other than the property owner, including a prospective tenant or business operator."
+            },
+            {
+              "id": "app_fire",
+              "description": "Required for commercial, multi-family, and condominium projects, as applicable."
             }
           ]
         },
@@ -1195,13 +1203,23 @@
           "items": [
             {
               "type": "requirement",
-              "label": "Life Safety Plan",
-              "description": "Provide a life safety plan showing construction type, occupancy classification, occupant load, fire ratings, exits, travel distances, emergency lighting, exit signage, fire protection systems, and exit capacities."
+              "label": "Life-Safety Plan and Egress Analysis",
+              "description": "Show the construction type; current and proposed occupancy classification; occupant load calculation; fire ratings; number, location, width, and capacity of exits; travel distances; emergency lighting; exit signage; and other applicable egress information."
             },
             {
               "type": "requirement",
-              "label": "Floor Plan",
-              "description": "Provide a floor plan showing existing and proposed conditions."
+              "label": "Current and Proposed Floor Plans",
+              "description": "Show the existing and proposed layouts, room names and uses, dimensions, doors, exits, and other features needed to evaluate the proposed occupancy."
+            },
+            {
+              "type": "requirement",
+              "label": "Plumbing Fixture Count",
+              "description": "Provide the required and existing number of plumbing fixtures for the proposed occupancy in accordance with Florida Building Code - Plumbing, Section 403."
+            },
+            {
+              "type": "requirement",
+              "label": "Fire-Protection and Alarm Compatibility",
+              "description": "Identify existing fire sprinkler, fire alarm, and other fire-protection systems and demonstrate that they are compatible with the proposed occupancy."
             }
           ]
         },
