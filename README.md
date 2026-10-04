@@ -14,9 +14,10 @@ The app is designed so most content changes happen in `data/checklists.json`. Th
 
 The first screen is the working checklist interface, not a landing page.
 
-- Search filters permit types by permit name.
-- Property Type filters by `propertyType` values such as `Residential`, `Commercial`, and `Multi-Family`.
+- Search matches permit names and the common terms in `SEARCH_ALIASES` (in `index.html`) by word prefix, so "roof" finds Reroof and "AC" finds A/C Changeout. Add terms there when a permit is commonly searched by a different name.
+- Property Type filters by `propertyType` values such as `Residential`, `Commercial`, and `Multi-Family`. The filters are always visible.
 - Category buttons are generated from each permit's `category` value. Current categories include `Building`, `Electrical`, `Mechanical`, and `Plumbing`.
+- The introductory notice can be dismissed; the dismissal is remembered in this browser's local storage.
 - Selecting a permit updates the URL with `?permit=<file>`, renders the checklist, and shows the Print Checklist button.
 - Direct links also support hash navigation with `#<file>`.
 - On desktop, selecting a new permit scrolls the page back to the absolute top so the header and Print Checklist button are visible.
@@ -34,10 +35,8 @@ Desktop layout uses a two-column interface:
 
 Mobile layout prioritizes the selected permit list and keeps filters compact:
 
-- Search stays visible near the top.
-- Property type and category filters are tucked behind the More Options button.
+- Search and filters stay visible near the top.
 - Selecting a permit scrolls down to the checklist content.
-- More Options automatically closes after changing filters.
 - Text and checklist items are wrapped for smaller screens.
 
 ## Checklist Printing
