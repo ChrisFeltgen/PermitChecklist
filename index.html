@@ -532,6 +532,7 @@
   }
 
   .no-print,
+  .section-jump,
   #searchInput,
   #clearSearch,
   #toggleMoreOptions,
@@ -793,7 +794,20 @@ function init() {
   bindPropertyFilter();
   bindPermitListSizing();
   bindEmptySpaceChecklistScrolling();
+  bindChecklistActions();
 }
+
+// Permits shown as quick-pick cards on the landing screen, in display order.
+const FEATURED_PERMITS = [
+  "reroof",
+  "water_heater_changeout",
+  "fence",
+  "swimming_pool_(new)",
+  "solar_systems",
+  "ac_changeout",
+  "shutters",
+  "window_door_changeouts"
+];
 
 function loadData() {
   const cacheBustedUrl = `${DATA_FILE}${DATA_FILE.includes("?") ? "&" : "?"}v=${Date.now()}`;
@@ -1131,23 +1145,98 @@ function renderPermitList() {
       </div>
     `;
 
-    btn.onclick = () => {
-      state.selectedPermit = permit;
-      state.selectedFile = permit.file;
-      state.selectedCategory = permit.category;
-
-      // Update URL.
-      const url = new URL(window.location);
-      url.searchParams.set("permit", permit.file);
-      window.history.replaceState({}, "", url);
-
-      renderAll();
-      scrollSelectedPermitIntoView("smooth");
-      scrollToContentOnMobile("smooth");
-      scrollToContentOnDesktop("smooth");
-    };
+    btn.onclick = () => selectPermit(permit.file);
 
     container.appendChild(btn);
+  });
+}
+
+function selectPermit(file) {
+  const permit = state.permits.find(p => p.file === file);
+  if (!permit) return;
+
+  state.selectedPermit = permit;
+  state.selectedFile = permit.file;
+  state.selectedCategory = permit.category;
+
+  // Update URL.
+  const url = new URL(window.location);
+  url.searchParams.set("permit", permit.file);
+  window.history.replaceState({}, "", url);
+
+  renderAll();
+  scrollSelectedPermitIntoView("smooth");
+  scrollToContentOnMobile("smooth");
+  scrollToContentOnDesktop("smooth");
+}
+
+// Checkbox state is remembered per permit in this browser only.
+const CHECKS_PREFIX = "permitChecklist.checks.";
+
+function checkStorageKey(permitFile, checkKey) {
+  return `${CHECKS_PREFIX}${permitFile}.${checkKey}`;
+}
+
+function getStoredFlag(key) {
+  try {
+    return window.localStorage.getItem(key) === "1";
+  } catch (err) {
+    return false;
+  }
+}
+
+function setStoredFlag(key, on) {
+  try {
+    if (on) {
+      window.localStorage.setItem(key, "1");
+    } else {
+      window.localStorage.removeItem(key);
+    }
+  } catch (err) {
+    // Storage unavailable; checkmarks simply won't persist.
+  }
+}
+
+function clearChecksForCurrentPermit() {
+  const prefix = checkStorageKey(state.selectedPermit.file, "");
+  document.querySelectorAll("#content input[data-storage-key]").forEach(box => {
+    box.checked = false;
+  });
+  try {
+    Object.keys(window.localStorage)
+      .filter(key => key.startsWith(prefix))
+      .forEach(key => window.localStorage.removeItem(key));
+  } catch (err) {
+    // Storage unavailable; nothing persisted to clear.
+  }
+}
+
+function bindChecklistActions() {
+  const content = document.getElementById("content");
+  if (!content) return;
+
+  content.addEventListener("change", (e) => {
+    const box = e.target.closest("input[data-storage-key]");
+    if (box) setStoredFlag(box.dataset.storageKey, box.checked);
+  });
+
+  content.addEventListener("click", (e) => {
+    const pick = e.target.closest("[data-select-file]");
+    if (pick) {
+      selectPermit(pick.dataset.selectFile);
+      return;
+    }
+
+    const jump = e.target.closest("[data-jump-to]");
+    if (jump) {
+      const target = document.getElementById(jump.dataset.jumpTo);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    if (e.target.closest("[data-clear-checks]")) {
+      clearChecksForCurrentPermit();
+    }
   });
 }
 
@@ -1173,7 +1262,13 @@ function formatDate(dateStr) {
   return `${month}/${day}/${year}`;
 }
 
-function renderRequirementItem(item) {
+function checkboxHtml(checkKey) {
+  const storageKey = checkStorageKey(state.selectedPermit.file, checkKey);
+  const checked = getStoredFlag(storageKey) ? "checked" : "";
+  return `<input type="checkbox" class="mt-1 w-4 h-4 shrink-0" data-storage-key="${storageKey}" ${checked} />`;
+}
+
+function renderRequirementItem(item, checkKey = "") {
   let name = "";
   let description = "";
   let note = "";
@@ -1208,14 +1303,14 @@ function renderRequirementItem(item) {
 
   return `
     <div class="${itemClasses}">
-      <input type="checkbox" class="mt-1 w-4 h-4 shrink-0" />
+      ${checkKey ? checkboxHtml(checkKey) : `<input type="checkbox" class="mt-1 w-4 h-4 shrink-0" />`}
       <div class="check-item-content">
         <div class="${titleClasses}">${name}</div>
         ${description ? `<div class="${descriptionClasses}">${description}</div>` : ""}
         ${note ? `<div class="text-sm text-gray-500 mt-1">${note}</div>` : ""}
         ${links.length ? `
           <div class="mt-1 text-sm">
-            ${links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${l.label}</a>`).join("<br>")}
+            ${links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">${l.label === name ? `${l.label} (open form)` : l.label}</a>`).join("<br>")}
           </div>
         ` : ""}
       </div>
@@ -1254,6 +1349,15 @@ function renderContent() {
         <p class="mt-2 text-sm text-gray-500">
           Search by name or common term (for example, "roof" or "AC"), or use the property type and permit group filters to narrow the list.
         </p>
+      </div>
+      <div class="mt-4 text-sm font-semibold text-gray-700">Common permits</div>
+      <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
+        ${FEATURED_PERMITS.map(file => state.permits.find(p => p.file === file)).filter(Boolean).map(p => `
+          <button type="button" data-select-file="${p.file}" class="text-left rounded border bg-white hover:bg-gray-100 px-3 py-3">
+            <div class="font-medium leading-snug">${p.name}</div>
+            <div class="text-xs text-gray-500 mt-1">${getCategories(p).join(", ")}</div>
+          </button>
+        `).join("")}
       </div>
       ${isBetaNoticeDismissed() ? "" : `
       <!-- BETA NOTICE -->
@@ -1346,8 +1450,19 @@ function renderContent() {
     `;
   }
 
-  data.sections.forEach(section => {
-    html += `<div class="section-card mb-4 sm:mb-6 border rounded-lg p-3 sm:p-4 bg-gray-50">`;
+  if (data.sections.length > 1) {
+    html += `
+      <nav aria-label="Jump to section" class="section-jump mb-4 flex flex-wrap gap-2 items-center">
+        ${data.sections.map((section, i) => `
+          <button type="button" data-jump-to="section-${i}" class="px-3 py-1 rounded border bg-white text-sm hover:bg-gray-100">${section.name}</button>
+        `).join("")}
+        <button type="button" data-clear-checks class="ml-auto px-2 py-1 text-sm text-gray-600 underline">Clear checkmarks</button>
+      </nav>
+    `;
+  }
+
+  data.sections.forEach((section, sectionIndex) => {
+    html += `<div id="section-${sectionIndex}" class="section-card mb-4 sm:mb-6 border rounded-lg p-3 sm:p-4 bg-gray-50">`;
 
     let firstItem = true;
 
@@ -1355,7 +1470,7 @@ function renderContent() {
       <h2 class="font-semibold mb-3">${section.name}</h2>
       ${section.description ? `<div class="text-sm text-gray-500 mb-3">${section.description}</div>` : ""}`;
 
-section.items.forEach(item => {
+section.items.forEach((item, itemIndex) => {
 
   let blockHtml = "";
 
@@ -1369,7 +1484,7 @@ section.items.forEach(item => {
       </div>
     `;
   } else {
-    blockHtml = renderRequirementItem(item);
+    blockHtml = renderRequirementItem(item, `${sectionIndex}-${itemIndex}`);
   }
 
   if (firstItem) {
@@ -1392,7 +1507,7 @@ if (shouldShowNoticeOfCommencement) {
     data.noticeOfCommencementRequirementId || "req_notice_of_commencement";
 
   if (state.library[noticeOfCommencementRequirementId]) {
-    html += renderRequirementItem({ id: noticeOfCommencementRequirementId });
+    html += renderRequirementItem({ id: noticeOfCommencementRequirementId }, "notice-of-commencement");
   }
 
   if (data.noticeOfCommencement) {
