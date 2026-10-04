@@ -532,7 +532,6 @@
   }
 
   .no-print,
-  .section-jump,
   #searchInput,
   #clearSearch,
   #toggleMoreOptions,
@@ -1227,13 +1226,6 @@ function bindChecklistActions() {
       return;
     }
 
-    const jump = e.target.closest("[data-jump-to]");
-    if (jump) {
-      const target = document.getElementById(jump.dataset.jumpTo);
-      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-
     if (e.target.closest("[data-clear-checks]")) {
       clearChecksForCurrentPermit();
     }
@@ -1450,16 +1442,11 @@ function renderContent() {
     `;
   }
 
-  if (data.sections.length > 1) {
-    html += `
-      <nav aria-label="Jump to section" class="section-jump mb-4 flex flex-wrap gap-2 items-center">
-        ${data.sections.map((section, i) => `
-          <button type="button" data-jump-to="section-${i}" class="px-3 py-1 rounded border bg-white text-sm hover:bg-gray-100">${section.name}</button>
-        `).join("")}
-        <button type="button" data-clear-checks class="ml-auto px-2 py-1 text-sm text-gray-600 underline">Clear checkmarks</button>
-      </nav>
-    `;
-  }
+  html += `
+    <div class="checks-toolbar no-print mb-4 text-right">
+      <button type="button" data-clear-checks class="px-2 py-1 text-sm text-gray-600 underline">Clear checkmarks</button>
+    </div>
+  `;
 
   data.sections.forEach((section, sectionIndex) => {
     html += `<div id="section-${sectionIndex}" class="section-card mb-4 sm:mb-6 border rounded-lg p-3 sm:p-4 bg-gray-50">`;
